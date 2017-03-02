@@ -1,0 +1,1 @@
+export const PAGE_IS_LOADING = 'PAGE_IS_LOADING';
