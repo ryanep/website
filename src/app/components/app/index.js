@@ -1,12 +1,29 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import styles from './style.scss';
+import Header from '../header';
+import Footer from '../footer';
 
-export default class App extends Component {
+export class App extends Component {
 
     render() {
         return (
-        	{this.props.children}
+            <div>
+            	<Header />
+					{this.props.children}
+        		<Footer />
+        	</div>
         )
     }
     
 }
+
+const mapStateToProps = (state) => {
+    return {}
+};
+
+const mapDispatchToProps = (dispatch) => {
+    return {}
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
