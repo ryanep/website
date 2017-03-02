@@ -1,0 +1,10 @@
+{
+  "sourceMaps": true,
+  "presets": ["es2015", "react"],
+  "plugins": [
+    ["transform-object-rest-spread"],
+    ["transform-class-properties"],
+    ["transform-async-to-generator"],
+    ["transform-decorators-legacy"]
+  ]
+}
