@@ -1,0 +1,17 @@
+* {
+	box-sizing: border-box;
+
+	&::before, &::after {
+		box-sizing: border-box;
+	}
+}
+
+html {
+	font-size: 62.5%;
+	line-height: 1.2;
+}
+
+body {
+	font-size: 1.6rem;
+	-webkit-font-smoothing: antialiased;
+}
