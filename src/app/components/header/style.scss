@@ -1,3 +1,19 @@
+.banner {
+	position: relative;
+	height: 45rem;
+	background-color: #a25656;
+	color: #ffffff;
+}
+
 .header {
-	background-color: red;
+	background-color: #a25656;
+	color: #ffffff;
+}
+
+.heading {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	text-align: center;
 }
