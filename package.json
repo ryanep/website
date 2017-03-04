@@ -4,6 +4,7 @@
   "description": "",
   "main": "./dist/server.js",
   "scripts": {
+    "start": "NODE_ENV=production node ./dist/server.js",
     "dev": "rm -rf ./dist && webpack -w & nodemon ./dist/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
