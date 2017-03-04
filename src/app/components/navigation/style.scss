@@ -1,0 +1,43 @@
+.nav {
+	position: fixed;
+	width: 100%;
+	text-align: right;
+	background-color: #a25656;
+}
+
+.wrap {
+	display: flex;
+	max-width: 1280px;
+	margin: 0 auto;
+	padding: 0 2rem;
+}
+
+.logo {
+	flex-grow: 1;
+	text-align: left;
+}
+
+.logolink {
+	display: inline-block;
+	padding: 2.4rem 0;
+	color: #ffffff;
+	text-decoration: none;
+	text-transform: lowercase;
+}
+
+.link {
+	margin-right: 2.5rem;
+	padding: 2.4rem 0;
+	color: #ffffff;
+	text-decoration: none;
+
+	&:last-child {
+		margin-right: 0;
+	}
+}
+
+.active {
+	color: #ffffff;
+	font-weight: bold;
+	text-decoration: none;
+}
