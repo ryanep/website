@@ -8,12 +8,17 @@
 
 html {
 	font-size: 62.5%;
-	line-height: 1.2;
 }
 
 body {
 	margin: 0;
 	font-family: Montserrat, Helvetica, Arial, sans-serif;
-	font-size: 1.6rem;
+	font-size: 1.4rem;
+	line-height: 1.2;
+	color: #555555;
 	-webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	color: #333333; 
 }
