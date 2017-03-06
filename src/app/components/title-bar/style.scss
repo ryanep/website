@@ -19,4 +19,16 @@
 	font-size: 2.4rem;
 	font-weight: 500;
 	color: #ffffff;
+	animation: animate 0.25s ease;
+}
+
+@keyframes animate {
+	0% {
+		transform: translateY(40%);
+		opacity: 0;
+	}
+	100% {
+		transform: translateY(0);
+		opacity: 1;
+	}
 }
