@@ -11,10 +11,13 @@ export default class Header extends Component {
         return (
             <header className={className}>
             	<Navigation />
+
+                {this.props.path === '/' &&
             	<div className={styles.heading}>
-	            	<h1>Ryan Elliott-Potter</h1>
-	            	<p>Web Developer</p>
+	            	<h1 className={styles.title}>Ryan Elliott-Potter</h1>
+	            	<p className={styles.desc}>Web Developer</p>
             	</div>
+                }
             </header>
         )
     }
