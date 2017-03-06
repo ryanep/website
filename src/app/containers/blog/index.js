@@ -3,14 +3,14 @@ import Helmet from 'react-helmet';
 import TitleBar from '../../components/title-bar';
 import styles from './style.scss';
 
-export default class About extends Component {
+export default class Blog extends Component {
 
     render() {
         return (
         	<main className={styles.main}>
-        		<Helmet title={'About - Ryan Elliott-Potter'} />
-        		<TitleBar heading={'About'} />
-        		About
+        		<Helmet title={'Blog - Ryan Elliott-Potter'} />
+        		<TitleBar heading={'Blog'} />
+        		Blog
         	</main>
         )
     }
