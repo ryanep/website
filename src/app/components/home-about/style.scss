@@ -24,3 +24,18 @@
 	max-width: 82rem;
 	margin: 0 auto 2rem;
 }
+
+.button {
+	display: inline-block;
+	border: 0.2rem solid #a25656;
+	color: #a25656;
+	padding: 0.8rem 2.5rem;
+	border-radius: 10rem;
+	text-decoration: none;
+	font-weight: 500;
+
+	&:hover {
+		background-color: #a25656;
+		color: #ffffff;
+	}
+}

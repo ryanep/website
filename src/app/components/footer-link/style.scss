@@ -1,7 +1,18 @@
 .link {
-	width: 2rem;
-	height: 2rem;
+	width: 3rem;
+	height: 3rem;
 	border-radius: 50%;
 	border: 0.2rem solid white;
 	color: #ffffff;
+	margin-right: 1rem;
+	overflow: hidden;
+
+	&:hover {
+		background-color: #ffffff;
+		color: #a25656;
+	}
+
+	&:last-child {
+		margin-right: 0;
+	}
 }

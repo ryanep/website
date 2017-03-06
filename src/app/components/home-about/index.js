@@ -11,7 +11,7 @@ export default class HomeAbout extends Component {
             		<img src={this.props.image} width="120" height="120" className={styles.photo} alt="Ryan Elliott-Potter" />
             		<h1 className={styles.heading}>{this.props.title}</h1>
             		<p className={styles.info}>{this.props.desc}</p>
-            		<Link to={'/about'}>{this.props.cta}</Link>
+            		<Link to={'/about'} className={styles.button}>{this.props.cta}</Link>
             	</div>
             </section>
         )
