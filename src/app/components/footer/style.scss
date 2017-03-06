@@ -2,4 +2,21 @@
 	padding: 1.2rem 0;
 	background-color: #a25656;
 	color: #ffffff;
+	font-size: 1.2rem;
+}
+
+.wrap {
+	display: flex;
+	max-width: 1280px;
+	padding: 0 2rem;
+	margin: 0 auto;
+	align-items: center;
+}
+
+.copyright {
+	flex-grow: 1;
+}
+
+.icons {
+	display: flex;
 }
