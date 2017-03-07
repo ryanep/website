@@ -2,6 +2,7 @@ import React from 'react';
 import { renderToString } from 'react-dom/server';
 import { Provider } from 'react-redux';
 import { RouterContext } from 'react-router';
+import Helmet from 'react-helmet';
 import configureStore from '../app/store/configure-store';
 
 export function handleRender(res, props) {
@@ -20,8 +21,10 @@ export function handleRender(res, props) {
 		</Provider>
 	);
 
+	let head = Helmet.rewind();
+
 	const initialState = JSON.stringify(store.getState());
-	res.render('index', { app, initialState });
+	res.render('index', { head, app, initialState });
 }
 
 export function handleNotFound(res, req) {
