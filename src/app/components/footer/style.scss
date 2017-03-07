@@ -1,22 +1,24 @@
 .footer {
-	padding: 1.2rem 0;
+	padding: 2rem 0;
 	background-color: #a25656;
 	color: #ffffff;
 	font-size: 1.2rem;
 }
 
 .wrap {
-	display: flex;
-	max-width: 1280px;
-	padding: 0 2rem;
+	text-align: center;
 	margin: 0 auto;
-	align-items: center;
+	padding: 0 2rem;
 }
 
 .copyright {
+	display: block;
 	flex-grow: 1;
+	margin-bottom: 2rem;
 }
 
 .icons {
-	display: flex;
+	display: inline-flex;
+	text-align: center;
+	margin: 0 auto;
 }

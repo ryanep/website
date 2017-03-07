@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import FooterLink from '../footer-link';
+import FooterLink from './footer-link';
 import styles from './style.scss';
 
 export default class Footer extends Component {
@@ -33,7 +33,7 @@ export default class Footer extends Component {
         return (
             <footer className={styles.footer}>
             	<div className={styles.wrap}>
-            		<div className={styles.copyright}>© Ryan Elliott-Potter 2016. All rights reserved.</div>
+            		<div className={styles.copyright}>© Ryan Elliott-Potter {new Date().getFullYear()}. All rights reserved.</div>
 	            	<div className={styles.icons}>
 	            		{footerLinks.map((link, index) => <FooterLink key={index} link={link} />)}
 	            	</div>
