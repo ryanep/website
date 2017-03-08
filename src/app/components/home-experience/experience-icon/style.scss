@@ -1,0 +1,42 @@
+.icon {
+	position: relative;
+	width: 6rem;
+	height: 6rem;
+	margin-left: 1rem;
+	border-radius: 50%;
+	color: #ffffff;
+
+	&::before {
+		position: absolute;
+		left: 50%;
+		padding: 0.5rem;
+		transform: translate(-50%, -90%);
+		transition: all 0.25s ease;
+		background-color: #ffffff;
+		color: #000000;
+		font-size: 1.4rem;
+		content: attr(title);
+		opacity: 0;
+		visibility: hidden;
+		box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+		border-radius: 2px;
+		will-change: opacity, visibility, transform;
+		font-weight: normal;
+	}
+
+	&:hover {
+		&::before {
+			opacity: 1;
+			visibility: visible;
+			transform: translate(-50%, -110%);
+		}
+	}
+
+	&:nth-child(-n+4) {
+		margin-bottom: 1rem;
+	}
+
+	&:nth-child(4n+1) {
+		margin-left: 0;
+	}
+}
