@@ -4,6 +4,7 @@ import HomeAbout from '../../components/home-about';
 import HomeExperience from '../../components/home-experience';
 import HomeWork from '../../components/home-work';
 import HomeTimeline from '../../components/home-timeline';
+import ContactForm from '../../components/contact-form';
 import styles from './style.scss';
 
 export default class Home extends Component {
@@ -16,6 +17,7 @@ export default class Home extends Component {
         		<HomeExperience />
                 <HomeWork />
         		<HomeTimeline />
+                <ContactForm />
         	</main>
         )
     }

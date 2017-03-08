@@ -1,0 +1,66 @@
+.contact {
+	padding: 4rem 0;
+	text-align: center;
+}
+
+label {
+	display: block;
+	text-align: left;
+}
+
+input[type='text'], input[type='email'], textarea {
+	display: block;
+	width: 100%;
+}
+
+.section {
+	width: 48%;
+	margin-bottom: 3rem;
+
+	&:nth-child(2) {
+		margin-left: 4%;
+	}
+}
+
+.wrap {
+	max-width: 85rem;
+	margin: 0 auto;
+	padding: 0 2rem;
+}
+
+.form {
+	display: flex;
+	flex-flow: row wrap;
+	text-align: left;
+}
+
+.heading {
+	font-weight: 500;
+	font-size: 2.8rem;
+	margin-bottom: 2rem;
+}
+
+.desc {
+	margin-bottom: 3rem;
+}
+
+.button {
+	display: inline-block;
+	margin: 0 auto;
+	border: 0.2rem solid #a25656;
+	color: #a25656;
+	padding: 0.8rem 2.5rem;
+	border-radius: 10rem;
+	text-decoration: none;
+	font-weight: 500;
+	font-size: 1.4rem;
+	background-color: transparent;
+	cursor: pointer;
+	outline: none;
+	line-height: 1.5;
+
+	&:hover {
+		background-color: #a25656;
+		color: #ffffff;
+	}
+}
