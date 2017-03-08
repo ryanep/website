@@ -11,17 +11,20 @@ export default class HomeTimeline extends Component {
     		{
     			company: 'MMT Digital',
     			role: 'Frontend / PHP developer',
-    			time: '2014 - present'
+    			time: '2014 - present',
+                url: '/work#mmt'
     		},
     		{
     			company: 'in.house.media',
     			role: 'Frontend / PHP developer',
-    			time: '2012 - 2014'
+    			time: '2012 - 2014',
+                url: '/work#ihm'
     		},
     		{
     			company: 'Raffenday',
     			role: 'Frontend / PHP developer',
-    			time: '2011 - 2014'
+    			time: '2011 - 2014',
+                url: '/work#raffenday'
     		}
     	];
 
