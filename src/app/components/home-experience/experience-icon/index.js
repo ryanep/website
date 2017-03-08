@@ -12,7 +12,7 @@ export default class ExperienceIcon extends Component {
 
         return (
             <li className={styles.icon} style={style} title={this.props.data.name}>
-            	{this.props.data.name}
+            	<div className={styles.hide}>{this.props.data.name}</div>
             </li>
         )
     }

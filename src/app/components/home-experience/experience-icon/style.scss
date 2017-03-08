@@ -40,3 +40,11 @@
 		margin-left: 0;
 	}
 }
+
+.hide {
+	position: absolute;
+	width: 0;
+	height: 0;
+	overflow: hidden;
+	clip: rect(1px, 1px, 1px, 1px);
+}

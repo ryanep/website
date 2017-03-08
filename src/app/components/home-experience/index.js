@@ -10,35 +10,35 @@ export default class HomeExperience extends Component {
     	let icons = [
     		{
     			name: 'HTML',
-    			colour: 'blue'
+    			colour: '#e34e30'
     		},
     		{
     			name: 'CSS',
-    			colour: 'red'
+    			colour: '#1e73b3'
     		},
     		{
     			name: 'JavaScript',
-    			colour: 'red'
+    			colour: '#ffda3d'
     		},
     		{
     			name: 'Node.js',
-    			colour: 'red'
+    			colour: '#85cc39'
     		},
     		{
     			name: 'PHP',
-    			colour: 'red'
+    			colour: '#6283ba'
     		},
     		{
     			name: 'WordPress',
-    			colour: 'red'
+    			colour: '#27769a'
     		},
     		{
     			name: 'MySQL',
-    			colour: 'red'
+    			colour: '#0c6289'
     		},
     		{
     			name: 'MongoDB',
-    			colour: 'red'
+    			colour: '#8ac365'
     		},
     	];
 
