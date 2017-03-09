@@ -17,16 +17,16 @@ export default class ContactForm extends Component {
 
 					<form className={styles.form} onSubmit={this.handleSubmit}>
 						<div className={styles.section}>
-							<label htmlFor={'name'}>Name</label>
-							<input type="text" id="name" name="name" required />
-							<label htmlFor={'subject'}>Subject</label>
-							<input type="text" id="subject" name="subject" required />
-							<label htmlFor={'email'}>Email</label>
-							<input type="text" id="email" name="email" required />
+							<label className={styles.label} htmlFor={'name'}>Name</label>
+							<input className={styles.textbox} type="text" id="name" name="name" required />
+							<label className={styles.label} htmlFor={'subject'}>Subject</label>
+							<input className={styles.textbox} type="text" id="subject" name="subject" required />
+							<label className={styles.label} htmlFor={'email'}>Email</label>
+							<input className={styles.email} type="text" id="email" name="email" required />
 						</div>
 						<div className={styles.section}>
-							<label htmlFor={'message'}>Message</label>
-							<textarea id="message" name="message" required></textarea>
+							<label className={styles.label} htmlFor={'message'}>Message</label>
+							<textarea className={styles.textarea} id="message" name="message" required></textarea>
 						</div>
 						<input type="submit" value="Send message" className={styles.button} />
 					</form>

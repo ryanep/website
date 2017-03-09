@@ -3,22 +3,33 @@
 	text-align: center;
 }
 
-label {
+.label {
 	display: block;
 	text-align: left;
+	font-weight: 500;
+	margin-bottom: 0.5rem;
 }
 
-input[type='text'], input[type='email'], textarea {
+.textbox, .email, .textarea {
 	display: block;
 	width: 100%;
+	background-color: #f0f0f0;
+	border: 0;
+	border-radius: 0.4rem;
+	padding: 1rem;
+	margin-bottom: 2rem;
+	resize: vertical;
+	font-size: 1.4rem;
+}
+
+.textarea {
+	min-height: 8rem;
+	margin-bottom: 0;
 }
 
 .section {
-	width: 48%;
-	margin-bottom: 3rem;
-
-	&:nth-child(2) {
-		margin-left: 4%;
+	&:last-of-type {
+		margin-bottom: 4rem;
 	}
 }
 
@@ -29,8 +40,6 @@ input[type='text'], input[type='email'], textarea {
 }
 
 .form {
-	display: flex;
-	flex-flow: row wrap;
 	text-align: left;
 }
 
@@ -45,7 +54,7 @@ input[type='text'], input[type='email'], textarea {
 }
 
 .button {
-	display: inline-block;
+	display: block;
 	margin: 0 auto;
 	border: 0.2rem solid #a25656;
 	color: #a25656;
