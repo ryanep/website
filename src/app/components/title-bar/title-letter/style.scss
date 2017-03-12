@@ -1,0 +1,18 @@
+.letter {
+	position: relative;
+	animation: animate 0.25s cubic-bezier(0.20, 0.90, 0.3, 1.5);
+}
+
+@keyframes animate {
+	from {
+		top: 2rem;
+		opacity: 0;
+		visibility: hidden;
+	}
+
+	to {
+		top: 0;
+		opacity: 1;
+		visibility: visible;
+	}
+}
