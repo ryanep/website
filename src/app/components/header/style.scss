@@ -1,13 +1,15 @@
+@import '../../resources/scss/global';
+
 .banner {
 	position: relative;
 	height: 45rem;
-	background-color: #a25656;
-	color: #ffffff;
+	background-color: $red;
+	color: $white;
 }
 
 .header {
-	background-color: #a25656;
-	color: #ffffff;
+	background-color: $red;
+	color: $white;
 }
 
 .heading {

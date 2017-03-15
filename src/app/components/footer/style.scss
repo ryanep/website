@@ -1,14 +1,15 @@
+@import '../../resources/scss/global';
+
 .footer {
 	padding: 2rem 0;
-	background-color: #a25656;
-	color: #ffffff;
+	background-color: $red;
+	color: $white;
 	font-size: 1.2rem;
 }
 
 .wrap {
+	@include wrap;
 	text-align: center;
-	margin: 0 auto;
-	padding: 0 2rem;
 }
 
 .copyright {
@@ -19,6 +20,6 @@
 
 .icons {
 	display: inline-flex;
-	text-align: center;
 	margin: 0 auto;
+	text-align: center;
 }

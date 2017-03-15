@@ -1,24 +1,24 @@
+@import '../../resources/scss/global';
+
 .about {
 	padding: 4rem 0;
 	text-align: center;
 }
 
 .wrap {
-	max-width: 1280px;
-	margin: 0 auto;
-	padding: 0 2rem;
+	@include wrap;
 }
 
 .photo {
 	width: 12rem;
-	border-radius: 50%;
 	margin-bottom: 2rem;
+	border-radius: 50%;
 }
 
 .heading {
-	font-weight: 500;
-	font-size: 2.8rem;
 	margin-bottom: 2rem;
+	font-size: 2.8rem;
+	font-weight: 500;
 }
 
 .info {
@@ -28,15 +28,15 @@
 
 .button {
 	display: inline-block;
-	border: 0.2rem solid #a25656;
-	color: #a25656;
 	padding: 0.8rem 2.5rem;
+	border: 0.2rem solid $red;
 	border-radius: 10rem;
-	text-decoration: none;
+	color: $red;
 	font-weight: 500;
+	text-decoration: none;
 
 	&:hover {
-		background-color: #a25656;
-		color: #ffffff;
+		background-color: $red;
+		color: $white;
 	}
 }
