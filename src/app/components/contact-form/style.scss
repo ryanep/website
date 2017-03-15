@@ -1,3 +1,5 @@
+@import '../../resources/scss/global';
+
 .contact {
 	padding: 4rem 0;
 	text-align: center;
@@ -5,21 +7,21 @@
 
 .label {
 	display: block;
-	text-align: left;
-	font-weight: 500;
 	margin-bottom: 0.5rem;
+	font-weight: 500;
+	text-align: left;
 }
 
 .textbox, .email, .textarea {
 	display: block;
 	width: 100%;
-	background-color: #f0f0f0;
+	margin-bottom: 2rem;
+	padding: 1rem;
 	border: 0;
 	border-radius: 0.4rem;
-	padding: 1rem;
-	margin-bottom: 2rem;
-	resize: vertical;
+	background-color: #f0f0f0;
 	font-size: 1.4rem;
+	resize: vertical;
 }
 
 .textarea {
@@ -34,9 +36,8 @@
 }
 
 .wrap {
+	@include wrap;
 	max-width: 85rem;
-	margin: 0 auto;
-	padding: 0 2rem;
 }
 
 .form {
@@ -44,9 +45,9 @@
 }
 
 .heading {
-	font-weight: 500;
-	font-size: 2.8rem;
 	margin-bottom: 2rem;
+	font-size: 2.8rem;
+	font-weight: 500;
 }
 
 .desc {
@@ -56,20 +57,20 @@
 .button {
 	display: block;
 	margin: 0 auto;
-	border: 0.2rem solid #a25656;
-	color: #a25656;
 	padding: 0.8rem 2.5rem;
+	border: 0.2rem solid $red;
 	border-radius: 10rem;
-	text-decoration: none;
-	font-weight: 500;
-	font-size: 1.4rem;
-	background-color: transparent;
-	cursor: pointer;
 	outline: none;
+	background-color: transparent;
+	color: $red;
+	font-size: 1.4rem;
+	font-weight: 500;
 	line-height: 1.5;
+	text-decoration: none;
+	cursor: pointer;
 
 	&:hover {
-		background-color: #a25656;
-		color: #ffffff;
+		background-color: $red;
+		color: $white;
 	}
 }

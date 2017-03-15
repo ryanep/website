@@ -22,8 +22,8 @@ module.exports = [
             loaders: [
                 {
                     test: /.js$/,
-                    loader: 'babel-loader',
-                    include: path.resolve(__dirname, "src")
+                    include: path.resolve(__dirname, "src"),
+                    loader: 'babel-loader'
                 },
                 {
                     test: /\.scss$/,
@@ -62,8 +62,8 @@ module.exports = [
             loaders: [
                 {
                     test: /.js$/,
-                    loader: 'babel-loader',
-                    include: path.resolve(__dirname, "src")
+                    include: path.resolve(__dirname, "src"),
+                    loader: 'babel-loader'
                 },
                 {
                     test: /\.scss$/,
