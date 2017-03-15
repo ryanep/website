@@ -22,7 +22,7 @@ export default class ContactForm extends Component {
 							<label className={styles.label} htmlFor={'subject'}>Subject</label>
 							<input className={styles.textbox} type="text" id="subject" name="subject" required />
 							<label className={styles.label} htmlFor={'email'}>Email</label>
-							<input className={styles.email} type="text" id="email" name="email" required />
+							<input className={styles.email} type="email" id="email" name="email" required />
 						</div>
 						<div className={styles.section}>
 							<label className={styles.label} htmlFor={'message'}>Message</label>
