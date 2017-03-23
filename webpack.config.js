@@ -28,7 +28,7 @@ module.exports = [
                 {
                     test: /\.scss$/,
                     include: path.resolve(__dirname, "src"),
-                    loader: ExtractTextPlugin.extract(['css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]', 'sass-loader'])
+                    loader: ExtractTextPlugin.extract(['css-loader?modules&minimize&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]', 'sass-loader'])
                 },
                 {
                     test: /\.svg$/,
@@ -40,13 +40,13 @@ module.exports = [
         plugins: [
             new ExtractTextPlugin({ filename: 'style.css', allChunks: true }),
             // @TODO: Enable for production
-            // new webpack.optimize.UglifyJsPlugin(),
-            // new webpack.optimize.OccurrenceOrderPlugin(),
-            // new webpack.DefinePlugin({
-            //     'process.env': {
-            //         'NODE_ENV': JSON.stringify('production')
-            //     }
-            // })
+            new webpack.optimize.UglifyJsPlugin(),
+            new webpack.optimize.OccurrenceOrderPlugin(),
+            new webpack.DefinePlugin({
+                'process.env': {
+                    'NODE_ENV': JSON.stringify('production')
+                }
+            })
         ]
     },
     {
