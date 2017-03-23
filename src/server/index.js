@@ -14,7 +14,7 @@ app.use(compression());
 
 app.use(express.static('dist/public'));
 
-app.use(function(req, res, next) {
+app.use((req, res, next) => {
 	if(req.url.substr(-1) === '/' && req.url.length > 1) {
 		res.redirect(301, req.url.substring(0, req.url.length-1));
 	} else {
