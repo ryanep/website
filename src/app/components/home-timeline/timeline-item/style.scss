@@ -1,17 +1,84 @@
+@import '../../../resources/scss/global';
+
 .link {
 	display: block;
 	position: relative;
 	margin-bottom: 2rem;
 	padding: 1.5rem;
 	border-radius: 3px;
-	background-color: #ffffff;
+	background-color: $white;
+	color: $grey;
 	text-align: left;
-	box-shadow: 0 1px 2px #cccccc;
 	text-decoration: none;
-	color: #666666;
+	box-shadow: 0 1px 2px $silver;
+
+	@include mobile {
+		&::after {
+			position: absolute;
+			top: 100%;
+			left: 50%;
+			width: 0.4rem;
+			height: 2rem;
+			transform: translateX(-50%);
+			background-color: $silver;
+			content: '';
+		}
+	}
+
+	@include tablet-desktop {
+		width: calc(50% - 2rem);
+
+		&::before {
+			position: absolute;
+			background-color: rgba($grey, 0.2);
+			width: 0.4rem;
+			height: calc(100% + 2rem);
+			top: -1rem;
+			right: -2rem;
+			content: '';
+			transform: translateX(50%);
+		}
+
+		&::after {
+			position: absolute;
+			top: 50%;
+			right: -2rem;
+			content: '';
+			width: 1.2rem;
+			height: 1.2rem;
+			background-color: $dustygrey;
+			border-radius: 50%;
+			transform: translate(50%, -50%);
+		}
+
+		&:nth-child(even) {
+			&::before {
+				right: initial;
+				left: -2rem;
+				transform: translateX(-50%);
+			}
+
+			&::after {
+				right: initial;
+				left: -2rem;
+				transform: translate(-50%, -50%);
+			}
+		}
+	}
 
 	&:hover {
-		background-color: darken(#ffffff, 1%);
+		background-color: darken($white, 1%);
+	}
+
+	&:nth-child(even) {
+		margin-left: auto;
+	}
+
+	&:first-child {
+		&::before {
+			border-top-left-radius: 1rem;
+			border-top-right-radius: 1rem;
+		}
 	}
 
 	&:last-child {
@@ -19,24 +86,20 @@
 
 		&::after {
 			content: none;
+
+			@include tablet-desktop {
+				content: '';
+			}
+		}
+
+		&::before {
+			border-bottom-left-radius: 1rem;
+			border-bottom-right-radius: 1rem;
 		}
 	}
-
-	&::after {
-		position: absolute;
-		top: 100%;
-		left: 50%;
-		width: 0.4rem;
-		height: 2rem;
-		transform: translateX(-50%);
-		background-color: #cccccc;
-		content: '';
-	}
 }
 
-.item {
 
-}
 
 .header {
 	display: flex;
@@ -45,9 +108,9 @@
 }
 
 .company {
+	flex-grow: 1;
 	font-size: 2rem;
 	font-weight: 500;
-	flex-grow: 1;
 }
 
 .time {
