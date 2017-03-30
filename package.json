@@ -7,7 +7,7 @@
     "build": "rm -rf ./dist && webpack",
     "start": "NODE_ENV=production node ./dist/server.js",
     "dev": "rm -rf ./dist && webpack -w & nodemon ./dist/server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest && codeceptjs run --steps"
   },
   "repository": {
     "type": "git",
@@ -24,6 +24,7 @@
     "compression": "^1.6.2",
     "ejs": "^2.5.6",
     "express": "^4.15.0",
+    "express-minify-html": "^0.10.0",
     "file-loader": "^0.10.1",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
@@ -48,13 +49,23 @@
     "babel-preset-es2015-minimal": "^2.1.0",
     "babel-preset-react": "^6.16.0",
     "babel-preset-stage-0": "^6.16.0",
+    "codeceptjs": "^0.5.1",
     "css-loader": "^0.25.0",
     "extract-text-webpack-plugin": "^2.0.0",
     "ignore-styles": "^5.0.1",
+    "jest": "^19.0.2",
+    "nightmare": "^2.10.0",
+    "nightmare-upload": "^0.1.1",
     "node-sass": "^3.10.1",
     "nodemon": "^1.11.0",
     "sass-loader": "^4.0.2",
     "source-map-support": "^0.4.11",
-    "style-loader": "^0.13.1"
+    "style-loader": "^0.13.1",
+    "webdriverio": "^4.6.2"
+  },
+  "jest": {
+    "roots": [
+      "./tests/jest/"
+    ]
   }
 }

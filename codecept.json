@@ -1,0 +1,15 @@
+{
+  "tests": "./tests/selenium/*.test.js",
+  "timeout": 10000,
+  "output": "./output",
+  "helpers": {
+  	"WebDriverIO": {
+    	"url": "https://google.com",
+    	"browser": "chrome"
+    }
+  },
+  "include": {},
+  "bootstrap": false,
+  "mocha": {},
+  "name": "ryanep.com-frontend"
+}
