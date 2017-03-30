@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link, IndexLink } from 'react-router';
 import Navigation from '../navigation';
+import Bubbles from '../bubbles';
 import styles from './style.scss';
 
 export default class Header extends Component {
@@ -11,6 +12,7 @@ export default class Header extends Component {
         return (
             <header className={className}>
             	<Navigation />
+                <Bubbles path={this.props.path} />
 
                 {this.props.path === '/' &&
             	<div className={styles.heading}>

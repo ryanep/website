@@ -1,0 +1,10 @@
+@import '../../../resources/scss/global';
+
+.bubble {
+	position: absolute;
+	display: inline-block;
+	width: 6rem;
+	height: 6rem;
+	border-radius: 50%;
+	background-color: rgba($black, 0.2);
+}
