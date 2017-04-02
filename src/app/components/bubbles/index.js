@@ -4,6 +4,10 @@ import Bubble from './bubble';
 
 export default class Bubbles extends Component {
 
+    shouldComponentUpdate() {
+        return false;
+    }
+
     render() {
         return (
             <div className={styles.bubbles}>
