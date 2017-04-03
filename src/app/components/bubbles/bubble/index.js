@@ -3,15 +3,15 @@ import styles from './style.scss';
 
 export default class Bubble extends Component {
 
-	getRandomNumber(length) {
-		return Math.floor((Math.random() * length) + 1);
+	getRandomNumber(length, start = 1) {
+		return Math.floor((Math.random() * (length - start)) + start);
 	}
 
     render() {
 
     	let style = {
     		left: this.getRandomNumber(1920),
-    		top: this.getRandomNumber(450),
+    		top: this.getRandomNumber(350, 80),
             transform: `scale(1.${this.getRandomNumber(6)})`
     	}
 
