@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import Helmet from 'react-helmet';
 import HomeAbout from '../../components/home-about';
 import HomeExperience from '../../components/home-experience';
@@ -7,9 +8,17 @@ import HomeTimeline from '../../components/home-timeline';
 import ContactForm from '../../components/contact-form';
 import styles from './style.scss';
 
-export default class Home extends Component {
+import { fetchPageData } from '../../actions/page';
+
+export class Home extends Component {
+
+    componentWillMount() {
+        this.props.fetchData('home');
+    }
 
     render() {
+        console.log("rendering home");
+        console.log(this.props.data);
         return (
         	<main className={styles.main}>
         		<Helmet title={'Home - Ryan Elliott-Potter'} />
@@ -23,3 +32,17 @@ export default class Home extends Component {
     }
     
 }
+
+const mapStateToProps = (state) => {
+    return {
+        data: state.page
+    }
+};
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        fetchData: (type, location) => { dispatch(fetchPageData(type, location)) }
+    }
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home);

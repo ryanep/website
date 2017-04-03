@@ -1,9 +1,16 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import Helmet from 'react-helmet';
 import TitleBar from '../../components/title-bar';
 import styles from './style.scss';
 
-export default class About extends Component {
+import { fetchPageData } from '../../actions/page';
+
+export class About extends Component {
+
+	componentWillMount() {
+        this.props.fetchData('about');
+    }
 
     render() {
         return (
@@ -16,3 +23,17 @@ export default class About extends Component {
     }
     
 }
+
+const mapStateToProps = (state) => {
+    return {
+        data: state.page
+    }
+};
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        fetchData: (type, location) => { dispatch(fetchPageData(type, location)) }
+    }
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(About);
