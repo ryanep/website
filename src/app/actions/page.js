@@ -29,8 +29,7 @@ export function fetchPageData(slug) {
 		})
 		.then(handleErrors)
 		.then(data => {
-			console.log(data);
-			dispatch(fetchPageSuccess(data.data));
+			dispatch(fetchPageSuccess(data));
 			dispatch(pageIsLoading(false));
 		})
 		.catch(() => {

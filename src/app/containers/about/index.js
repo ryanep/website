@@ -13,6 +13,7 @@ export class About extends Component {
     }
 
     render() {
+        console.log("Rendering about");
         return (
         	<main className={styles.main}>
         		<Helmet title={'About - Ryan Elliott-Potter'} />
@@ -32,7 +33,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        fetchData: (type, location) => { dispatch(fetchPageData(type, location)) }
+        fetchData: (slug) => { dispatch(fetchPageData(slug)) }
     }
 };
 
