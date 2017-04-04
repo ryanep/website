@@ -9,12 +9,28 @@ export function pageIsLoading(isLoading) {
 	};
 }
 
+export function fetchPageRequest(slug) {
+	return {
+		type: types.PAGE_FETCH_REQUEST,
+		slug: slug
+	};
+}
+
 export function fetchPageSuccess(data) {
 	return {
 		type: types.PAGE_FETCH_SUCCESS,
 		data: data
 	};
 }
+
+export function fetchPageError(error) {
+	return {
+		type: types.PAGE_FETCH_ERROR,
+		error: error
+	};
+}
+
+/*
 
 export function fetchPageData(slug) {
 	return (dispatch) => {
@@ -45,3 +61,5 @@ function handleErrors(response) {
     }
     return response.json();
 }
+
+*/

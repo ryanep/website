@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { fetchPageRequest } from '../../actions/page';
 import Helmet from 'react-helmet';
 import TitleBar from '../../components/title-bar';
 import styles from './style.scss';
 
-import { fetchPageData } from '../../actions/page';
-
 export class About extends Component {
 
 	componentWillMount() {
-        this.props.fetchData('about');
+        this.props.getPageData('about');
     }
 
     render() {
@@ -33,7 +32,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        fetchData: (slug) => { dispatch(fetchPageData(slug)) }
+        getPageData: (slug) => { dispatch(fetchPageRequest(slug)) }
     }
 };
 

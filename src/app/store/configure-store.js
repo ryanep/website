@@ -5,6 +5,7 @@ import reducers from '../reducers';
 
 export default function configureStore(preloadedState) {
 	const initialState = preloadedState || {};
+	
 	const sagaMiddleware = createSagaMiddleware();
 	const store = createStore(reducers, initialState, applyMiddleware(thunk, sagaMiddleware));
     

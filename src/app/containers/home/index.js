@@ -8,12 +8,12 @@ import HomeTimeline from '../../components/home-timeline';
 import ContactForm from '../../components/contact-form';
 import styles from './style.scss';
 
-import { fetchPageData } from '../../actions/page';
+import { fetchPageRequest } from '../../actions/page';
 
 export class Home extends Component {
 
     componentWillMount() {
-        this.props.fetchData('home');
+        this.props.getPageData('home');
     }
 
     render() {
@@ -40,7 +40,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        fetchData: (slug) => { dispatch(fetchPageData(slug)) }
+        getPageData: (slug) => { dispatch(fetchPageRequest(slug)) }
     }
 };
 
