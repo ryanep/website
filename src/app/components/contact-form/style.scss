@@ -91,23 +91,10 @@
 	margin-bottom: 3rem;
 }
 
-.button {
-	display: block;
-	margin: 0 auto;
-	padding: 0.8rem 2.5rem;
-	border: 0.2rem solid $red;
-	border-radius: 10rem;
-	outline: none;
-	background-color: transparent;
-	color: $red;
-	font-size: 1.4rem;
-	font-weight: 500;
-	line-height: 1.5;
-	text-decoration: none;
-	cursor: pointer;
+.buttons {
+	text-align: center;
+}
 
-	&:hover {
-		background-color: $red;
-		color: $white;
-	}
+.button {
+	@include button;
 }

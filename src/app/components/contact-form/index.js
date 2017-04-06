@@ -30,7 +30,9 @@ export default class ContactForm extends Component {
 								<textarea className={styles.textarea} id="message" name="message" required></textarea>
 							</div>
 						</div>
-						<input type="submit" value="Send message" className={styles.button} />
+						<div className={styles.buttons}>
+							<input type="submit" value="Send message" className={styles.button} />
+						</div>
 					</form>
 				</div>
 			</div>

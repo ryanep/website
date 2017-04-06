@@ -4,6 +4,7 @@ import { fetchPageRequest } from '../../actions/page';
 import Helmet from 'react-helmet';
 import TitleBar from '../../components/title-bar';
 import ContactForm from '../../components/contact-form';
+import ContactConnect from '../../components/contact-connect';
 import styles from './style.scss';
 
 export class Contact extends Component {
@@ -19,6 +20,7 @@ export class Contact extends Component {
         	<main className={styles.main}>
         		<Helmet title={'Contact - Ryan Elliott-Potter'} />
         		<TitleBar heading={'Contact'} />
+                <ContactConnect />
         		<ContactForm />
         	</main>
         )
