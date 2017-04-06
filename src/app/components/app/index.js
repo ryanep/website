@@ -12,9 +12,9 @@ export class App extends Component {
         return (
             <div>
             	<Header path={this.props.location.pathname} />
-					{this.props.children}
+				{this.props.children}
         		<Footer />
-                <Loader isLoading={this.props.isLoading} />
+                <Loader />
         	</div>
         )
     }
