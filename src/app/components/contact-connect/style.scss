@@ -1,0 +1,18 @@
+@import '../../resources/scss/global';
+
+.connect {
+	padding: 4rem 0;
+}
+
+.wrap {
+	@include wrap;
+}
+
+.heading {
+	@include h1;
+}
+
+.desc {
+	text-align: center;
+	margin-bottom: 3rem;
+}
