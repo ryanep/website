@@ -1,0 +1,14 @@
+.work {
+	width: 30%;
+	margin-left: 5%;
+
+	&:first-child {
+		margin-left: 0;
+	}
+}
+
+.image {
+	display: block;
+	margin-bottom: 2rem;
+	border-radius: 4px;
+}
