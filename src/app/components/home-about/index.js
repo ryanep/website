@@ -8,10 +8,10 @@ export default class HomeAbout extends Component {
         return (
             <section className={styles.about}>
             	<div className={styles.wrap}>
-            		<img src={this.props.image} width="120" height="120" className={styles.photo} alt="Ryan Elliott-Potter" />
-            		<h2 className={styles.heading}>{this.props.title}</h2>
-            		<p className={styles.info}>{this.props.desc}</p>
-            		<Link to={'/about'} className={styles.button}>{this.props.cta}</Link>
+            		<img src={this.props.content.image} width="120" height="120" className={styles.photo} alt={this.props.content.imageAlt} />
+            		<h2 className={styles.heading}>{this.props.content.title}</h2>
+            		<p className={styles.info}>{this.props.content.desc}</p>
+            		<Link to={this.props.content.buttonURL} className={styles.button}>{this.props.content.buttonText}</Link>
             	</div>
             </section>
         )
