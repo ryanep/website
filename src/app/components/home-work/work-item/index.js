@@ -7,7 +7,7 @@ export default class HomeWork extends Component {
     render() {
         return (
             <div className={styles.work}>
-                <img src={this.props.image} className={styles.image} />
+                <img src={this.props.image} alt={this.props.alt} className={styles.image} />
                 <p className={styles.desc}>{this.props.desc}</p>
             </div>
         )
