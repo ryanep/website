@@ -20,10 +20,12 @@
 }
 
 .items {
-	display: flex;
-	flex-flow: row wrap;
-	max-width: 100rem;
-	margin: 0 auto 3rem;
+	@include tablet-desktop {
+		display: flex;
+		flex-flow: row wrap;
+		max-width: 100rem;
+		margin: 0 auto 3rem;
+	}
 }
 
 .button {
