@@ -29,37 +29,3 @@ export function fetchPageError(error) {
 		error: error
 	};
 }
-
-/*
-
-export function fetchPageData(slug) {
-	return (dispatch) => {
-		dispatch(pageIsLoading(true));
-
-		fetch(`${api.apiURL}/pages/?page=${slug}`, {
-			method: 'get',
-			headers: new Headers({
-				'Accept': 'application/json',
-				'Content-Type': 'application/json'
-			})
-		})
-		.then(handleErrors)
-		.then(data => {
-			dispatch(fetchPageSuccess(data));
-			dispatch(pageIsLoading(false));
-		})
-		.catch(() => {
-			throw new Error('Error whilst fetching data');
-		});
-
-	};
-}
-
-function handleErrors(response) {
-    if (response.status >= 400) {
-        throw new Error('Bad response from server');
-    }
-    return response.json();
-}
-
-*/
