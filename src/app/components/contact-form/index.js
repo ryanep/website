@@ -12,8 +12,8 @@ export default class ContactForm extends Component {
 		return (
 		    <div className={styles.contact}>
 			    <div className={styles.wrap}>
-			    	<h2 className={styles.heading}>Contact me</h2>
-			    	<p className={styles.desc}>Feel free to contact me</p>
+			    	<h2 className={styles.heading}>{this.props.content.title}</h2>
+			    	<p className={styles.desc}>{this.props.content.desc}</p>
 
 					<form className={styles.form} onSubmit={this.handleSubmit}>
 						<div className={styles.sections}>
@@ -31,7 +31,7 @@ export default class ContactForm extends Component {
 							</div>
 						</div>
 						<div className={styles.buttons}>
-							<input type="submit" value="Send message" className={styles.button} />
+							<input type="submit" className={styles.button} value={this.props.content.buttonText} />
 						</div>
 					</form>
 				</div>
