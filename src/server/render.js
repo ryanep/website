@@ -22,8 +22,12 @@ export function handleRender(res, props) {
         const initialState = JSON.stringify(store.getState());
         const markup = renderToString(rootComponent);
         res.render('index', { head, markup, initialState });
-    });
-    
+    })
+    .catch((err) => {
+        console.log(err);
+        res.status(500).send(err.message)
+    })
+
     renderToString(rootComponent);
     store.close();
 }
