@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import reset from './reset.scss';
 import styles from './style.scss';
-import Header from '../header';
-import Footer from '../footer';
-import Loader from '../loader';
+import Header from '../../components/header';
+import Footer from '../../components/footer';
+import Loader from '../../components/loader';
 
 export class App extends Component {
 
