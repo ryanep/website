@@ -24,6 +24,7 @@ rules:
       exclude:
         - mobile
         - tablet
+        - tablet-desktop
         - desktop
         - breakpoint
   empty-line-between-blocks: 1
