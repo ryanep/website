@@ -1,14 +1,22 @@
-.work {
-	width: 30%;
-	margin-left: 5%;
+@import '../../../resources/scss/global';
 
-	&:first-child {
-		margin-left: 0;
+.work {
+	margin-bottom: 2rem;
+
+	@include tablet-desktop {
+		width: 30%;
+		margin-left: 5%;
+		margin-bottom: 0;
+
+		&:first-child {
+			margin-left: 0;
+		}
 	}
 }
 
 .image {
 	display: block;
+	width: 100%;
 	margin-bottom: 2rem;
 	border-radius: 4px;
 }
