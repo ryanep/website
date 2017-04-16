@@ -17,15 +17,15 @@ export class Home extends Component {
     }
 
     render() {
-        console.log("rendering home");
+        if (Object.keys(this.props.data).length == 0) return null; // @TODO: Fix
         return (
         	<main className={styles.main}>
         		<Helmet title={'Home - Ryan Elliott-Potter'} />
-        		<HomeAbout image={'https://avatars2.githubusercontent.com/u/11217494?v=3&s=460'} title={'About Me'} desc={'My name is Ryan Elliott-Potter and I am a software engineer and web developer. I have a passion for all types of technology and enjoy developing software and web applications.'} cta={'Learn more'}  />
-        		<HomeExperience />
-                <HomeWork />
-        		<HomeTimeline />
-                <ContactForm />
+        		<HomeAbout content={this.props.data.components.about}  />
+        		<HomeExperience content={this.props.data.components.experience} />
+                <HomeWork content={this.props.data.components.work} />
+        		<HomeTimeline content={this.props.data.components.timeline} />
+                <ContactForm content={this.props.data.components.contactForm} />
         	</main>
         )
     }
@@ -34,7 +34,7 @@ export class Home extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        data: state.page
+        data: state.page.page
     }
 };
 
