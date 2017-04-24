@@ -25,6 +25,7 @@ app.use(minifyHTML({
 }));
 
 app.use(express.static('dist/public'));
+app.use(express.static('static'));
 
 app.use((req, res, next) => {
 	if(req.url.substr(-1) === '/' && req.url.length > 1) {
