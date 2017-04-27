@@ -1,5 +1,3 @@
-import fetch from 'isomorphic-fetch';
-import * as api from '../constants/api';
 import * as types from '../constants/action-types';
 
 export function pageIsLoading(isLoading) {

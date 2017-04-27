@@ -14,14 +14,13 @@ export class Contact extends Component {
     }
 
     render() {
-        console.log('Rendering contact');
-        
+        if (Object.keys(this.props.data).length == 0) return null; // @TODO: Fix
         return (
         	<main className={styles.main}>
         		<Helmet title={'Contact - Ryan Elliott-Potter'} />
         		<TitleBar heading={'Contact'} />
                 <ContactConnect />
-        		<ContactForm />
+        		<ContactForm content={this.props.data.components.contactForm} />
         	</main>
         )
     }
@@ -30,7 +29,7 @@ export class Contact extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        data: state.page
+        data: state.page.page
     }
 };
 

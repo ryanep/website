@@ -5,13 +5,15 @@ import * as pageActions from '../actions/page';
 import * as types from '../constants/action-types';
 import * as api from '../constants/api';
 
+export function fetchPageData(slug) {
+	return fetch(`${api.apiURL}/pages/?page=${slug}`)
+		.then(response => response.json());
+}
+
 export function* getPage(action) {
 	try {
-		const response = yield call(fetch, `${api.apiURL}/pages/?page=${action.slug}`);
-        const res = yield response.json();
-
-		yield put(pageActions.fetchPageSuccess(res));
-
+		const data = yield call(fetchPageData, action.slug);
+		yield put(pageActions.fetchPageSuccess(data));
 	} catch(err) {
 		yield put(pageActions.fetchPageError(err));
 	}

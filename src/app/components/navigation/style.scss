@@ -15,6 +15,10 @@
 	display: flex;
 }
 
+.hide {
+	@include hide;
+}
+
 .logo {
 	flex-grow: 1;
 	font-family: Pacifico, cursive;
@@ -23,8 +27,8 @@
 }
 
 .logolink {
-	position: relative;
 	display: inline-block;
+	position: relative;
 	padding: 0.5rem 0;
 	color: $white;
 	text-decoration: none;
@@ -46,4 +50,46 @@
 .active {
 	color: $white;
 	font-weight: bold;
+}
+
+.burger {
+	display: none;
+	position: relative;
+	width: 2rem;
+	height: 1.2rem;
+	margin-top: 1.6rem;
+	cursor: pointer;
+
+	@include tablet-desktop {
+		display: none;
+	}
+
+	&::before, &::after {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 2rem;
+		height: 0.2rem;
+		transition: all 0.2s ease;
+		background-color: $white;
+		content: '';
+	}
+
+	&::after {
+		top: 10px;
+	}
+}
+
+.burger-open {
+	&::before, &::after {
+		top: 7px;
+	}
+
+	&::before {
+		transform: rotate(45deg);
+	}
+
+	&::after {
+		transform: rotate(-45deg);
+	}
 }

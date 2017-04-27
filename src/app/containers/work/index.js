@@ -7,13 +7,8 @@ import styles from './style.scss';
 
 export class Work extends Component {
 
-	componentWillMount() {
-        this.props.getPageData('work');
-    }
-
     render() {
         console.log('Rendering work');
-        
         return (
         	<main className={styles.main}>
         		<Helmet title={'Work - Ryan Elliott-Potter'} />

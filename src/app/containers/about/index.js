@@ -7,12 +7,11 @@ import styles from './style.scss';
 
 export class About extends Component {
 
-	componentWillMount() {
+    componentWillMount() {
         this.props.getPageData('about');
     }
 
     render() {
-        console.log("Rendering about");
         return (
         	<main className={styles.main}>
         		<Helmet title={'About - Ryan Elliott-Potter'} />
@@ -26,7 +25,7 @@ export class About extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        data: state.page
+        data: state.page.page
     }
 };
 

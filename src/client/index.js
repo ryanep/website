@@ -8,8 +8,7 @@ import routes from '../app/routes';
 import sagas from '../app/sagas';
 
 const preloadedState = window.SERVER_STATE;
-const store = configureStore(preloadedState);
-
+const store = configureStore(browserHistory, preloadedState);
 store.runSaga(sagas);
 
 render(

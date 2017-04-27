@@ -10,22 +10,26 @@ export default class Footer extends Component {
     		{
     			class : 'github',
     			url :'//github.com/ryanep',
-    			title: 'GitHub'
+    			title: 'GitHub',
+                icon: '/images/github.svg'
     		},
     		{
     			class : 'twitter',
     			url :'//twitter.com/ryanep2',
-    			title: 'Twitter'
+    			title: 'Twitter',
+                icon: '/images/github.svg'
     		},
     		{
     			class : 'linkedin',
     			url :'//www.linkedin.com/in/ryanep/',
-    			title: 'LinkedIn'
+    			title: 'LinkedIn',
+                icon: '/images/github.svg'
     		},
     		{
     			class : 'dribbble',
     			url: 'https://dribbble.com/ryanep/',
-    			title: 'Dribbble'
+    			title: 'Dribbble',
+                icon: '/images/github.svg'
     		}
     	];
 
