@@ -14,7 +14,7 @@ export class App extends Component {
             	<Header path={this.props.location.pathname} />
 				{this.props.children}
         		<Footer />
-                <Loader />
+                <Loader isLoading={this.props.isLoading} />
         	</div>
         )
     }
@@ -23,7 +23,7 @@ export class App extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        isLoading: state.isLoading
+        isLoading: state.page.isLoading
     }
 };
 
