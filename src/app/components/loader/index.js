@@ -5,7 +5,6 @@ export default class Loader extends Component {
 
     render() {
     	let className = this.props.isLoading ? styles.loader : styles.hidden;
-
         return (
             <div className={className}>
                 <div className={styles.hide}>Loading...</div>
