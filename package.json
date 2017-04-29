@@ -27,6 +27,7 @@
     "express-minify-html": "^0.10.0",
     "file-loader": "^0.10.1",
     "isomorphic-fetch": "^2.2.1",
+    "prop-types": "^15.5.8",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-helmet": "^4.0.0",
