@@ -8,7 +8,7 @@ import styles from './style.scss';
 export class About extends Component {
 
     componentWillMount() {
-        this.props.getPageData('about');
+        this.props.getPageData(this.props.route.path);
     }
 
     render() {

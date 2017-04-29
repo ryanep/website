@@ -13,19 +13,22 @@ import { fetchPageRequest } from '../../actions/page';
 export class Home extends Component {
 
     componentWillMount() {
-        this.props.getPageData('home');
+        this.props.getPageData(!this.props.route.path ? 'home' : this.props.route.path);
     }
 
     render() {
-        if (Object.keys(this.props.data).length == 0) return null; // @TODO: Fix
         return (
         	<main className={styles.main}>
+            {this.props.data.home &&
+                <div>
         		<Helmet title={'Home - Ryan Elliott-Potter'} />
-        		<HomeAbout content={this.props.data.components.about}  />
-        		<HomeExperience content={this.props.data.components.experience} />
-                <HomeWork content={this.props.data.components.work} />
-        		<HomeTimeline content={this.props.data.components.timeline} />
-                <ContactForm content={this.props.data.components.contactForm} />
+        		<HomeAbout content={this.props.data.home.components.about} />
+        		<HomeExperience content={this.props.data.home.components.experience} />
+                <HomeWork content={this.props.data.home.components.work} />
+                <HomeTimeline content={this.props.data.home.components.timeline} />
+                <ContactForm content={this.props.data.home.components.contactForm} />
+                </div>
+            }
         	</main>
         )
     }

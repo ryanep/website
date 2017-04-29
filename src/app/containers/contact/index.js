@@ -10,17 +10,20 @@ import styles from './style.scss';
 export class Contact extends Component {
 
 	componentWillMount() {
-        this.props.getPageData('contact');
+        this.props.getPageData(this.props.route.path);
     }
 
     render() {
-        if (Object.keys(this.props.data).length == 0) return null; // @TODO: Fix
         return (
         	<main className={styles.main}>
         		<Helmet title={'Contact - Ryan Elliott-Potter'} />
         		<TitleBar heading={'Contact'} />
-                <ContactConnect />
-        		<ContactForm content={this.props.data.components.contactForm} />
+                {this.props.data.contact &&
+                    <div>
+                        <ContactConnect />
+                        <ContactForm content={this.props.data.contact.components.contactForm} />
+                    </div>
+                }
         	</main>
         )
     }
