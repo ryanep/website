@@ -26,6 +26,10 @@
 	z-index: 2;
 	animation-delay: 3s;
 	animation: animate 0.3s ease;
+
+	@include reduced-motion {
+		animation: none;
+	}
 }
 
 .title {

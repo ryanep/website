@@ -27,6 +27,7 @@ rules:
         - tablet-desktop
         - desktop
         - breakpoint
+        - reduced-animation
   empty-line-between-blocks: 1
   no-duplicate-properties: 1
   no-empty-rulesets: 1
