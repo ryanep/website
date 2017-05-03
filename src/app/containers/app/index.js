@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import reset from './reset.scss';
 import styles from './style.scss';
+import fonts from './fonts.scss';
 import Header from '../../components/header';
 import Footer from '../../components/footer';
 import Loader from '../../components/loader';
