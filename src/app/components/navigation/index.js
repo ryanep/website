@@ -12,9 +12,9 @@ export default class Navigation extends Component {
         return (
             <nav className={styles.nav}>
                 <div className={styles.wrap}>
-                    <div className={styles.logo}>
-                        <IndexLink to={'/'} className={styles.logolink}>Ryanep</IndexLink>
-                    </div>
+                    <IndexLink to={'/'} className={styles.logolink}>
+                        <img src="/images/logo.svg" width="80" height="30" className={styles.logo} />
+                    </IndexLink>
                 	<IndexLink to={'/'} className={styles.link} activeClassName={styles.active}>Home</IndexLink>
                 	<Link to={'/about'} className={styles.link} activeClassName={styles.active}>About</Link>
                 	<Link to={'/work'} className={styles.link} activeClassName={styles.active}>Work</Link>

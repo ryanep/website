@@ -13,6 +13,7 @@
 .wrap {
 	@include wrap;
 	display: flex;
+	align-items: center;
 }
 
 .hide {
@@ -20,19 +21,15 @@
 }
 
 .logo {
-	flex-grow: 1;
-	font-family: Pacifico, cursive;
-	font-size: 2.8rem;
-	text-align: left;
+	display: block;
 }
 
 .logolink {
-	display: inline-block;
 	position: relative;
-	padding: 0.5rem 0;
+	flex-grow: 1;
+	padding-top: 1rem;
 	color: $white;
-	text-decoration: none;
-	text-transform: lowercase;
+	text-align: left;
 	z-index: 3;
 }
 
