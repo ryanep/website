@@ -35,7 +35,11 @@ module.exports = [
         plugins: [
             new ExtractTextPlugin({ filename: 'style.css', allChunks: true }),
             // @TODO: Enable for production
-            new webpack.optimize.UglifyJsPlugin(),
+            new webpack.optimize.UglifyJsPlugin({
+                output: {
+                    comments: false
+                }
+            }),
             new webpack.optimize.OccurrenceOrderPlugin(),
             new webpack.DefinePlugin({
                 'process.env': {
