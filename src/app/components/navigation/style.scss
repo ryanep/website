@@ -3,6 +3,7 @@
 .nav {
 	position: fixed;
 	width: 100%;
+	height: 6.1rem;
 	background-color: $red;
 	font-size: 1.4rem;
 	font-weight: 500;
@@ -13,6 +14,7 @@
 .wrap {
 	@include wrap;
 	display: flex;
+	height: 100%;
 	align-items: center;
 }
 
@@ -33,13 +35,21 @@
 	z-index: 3;
 }
 
+.links {
+	display: none;
+
+	@include tablet-desktop {
+		display: block;
+	}
+}
+
 .link {
 	margin-right: 2.8rem;
 	padding: 2rem 0;
 	color: $white;
 	text-decoration: none;
 
-	&:last-child {
+	&:last-of-type {
 		margin-right: 0;
 	}
 }
@@ -50,11 +60,10 @@
 }
 
 .burger {
-	display: none;
+	display: block;
 	position: relative;
 	width: 2rem;
 	height: 1.2rem;
-	margin-top: 1.6rem;
 	cursor: pointer;
 
 	@include tablet-desktop {

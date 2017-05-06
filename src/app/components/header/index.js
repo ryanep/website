@@ -11,7 +11,7 @@ export default class Header extends Component {
     	
         return (
             <header className={className}>
-            	<Navigation />
+                <Navigation />
                 <Bubbles path={this.props.path} />
 
                 {this.props.path === '/' &&

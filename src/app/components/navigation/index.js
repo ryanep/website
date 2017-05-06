@@ -5,7 +5,7 @@ import styles from './style.scss';
 export default class Navigation extends Component {
 
     burgerButtonClicked() {
-        console.log("burger clicked");
+        console.log('Burger clicked');
     }
 
     render() {
@@ -15,13 +15,15 @@ export default class Navigation extends Component {
                     <IndexLink to={'/'} className={styles.logolink}>
                         <img src="/images/logo.svg" width="80" height="30" className={styles.logo} />
                     </IndexLink>
-                	<IndexLink to={'/'} className={styles.link} activeClassName={styles.active}>Home</IndexLink>
-                	<Link to={'/about'} className={styles.link} activeClassName={styles.active}>About</Link>
-                	<Link to={'/work'} className={styles.link} activeClassName={styles.active}>Work</Link>
-                	<Link to={'/contact'} className={styles.link} activeClassName={styles.active}>Contact</Link>
-                </div>
-                <div className={styles.burger} onClick={this.burgerButtonClicked}>
-                    <div className={styles.hide}>Menu</div>
+                    <div className={styles.links}>
+                    	<IndexLink to={'/'} className={styles.link} activeClassName={styles.active}>Home</IndexLink>
+                    	<Link to={'/about'} className={styles.link} activeClassName={styles.active}>About</Link>
+                    	<Link to={'/work'} className={styles.link} activeClassName={styles.active}>Work</Link>
+                    	<Link to={'/contact'} className={styles.link} activeClassName={styles.active}>Contact</Link>
+                    </div>
+                    <div className={styles.burger} onClick={this.burgerButtonClicked}>
+                        <div className={styles.hide}>Menu</div>
+                    </div>
                 </div>
             </nav>
         )
