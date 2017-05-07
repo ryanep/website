@@ -3,6 +3,8 @@
 .banner {
 	position: relative;
 	height: 75vh;
+	min-height: 30rem;
+	max-height: 45rem;
 	background-color: $red;
 	color: $white;
 	overflow: hidden;
@@ -22,7 +24,7 @@
 	left: 50%;
 	width: 100%;
 	padding: 0 2rem;
-	transform: translate(-50%, -30%);
+	transform: translate(-50%, -50%);
 	text-align: center;
 	z-index: 2;
 	animation-delay: 3s;
@@ -49,12 +51,12 @@
 
 @keyframes animate {
 	from {
-		transform: translate(-50%, -20%);
+		transform: translate(-50%, -30%);
 		opacity: 0;
 	}
 
 	to {
-		transform: translate(-50%, -30%);
+		transform: translate(-50%, -50%);
 		opacity: 1;
 	}
 }
