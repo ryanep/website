@@ -43,11 +43,29 @@
 	}
 }
 
+.linksOpen {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	width: 100%;
+	text-align: left;
+	background-color: #8c4848;
+	background-color: darken(#a25656, 5%);
+}
+
 .link {
-	margin-right: 2.8rem;
-	padding: 2rem 0;
+	display: block;
+	padding: 1.6rem 2rem;
 	color: $white;
 	text-decoration: none;
+	border-bottom: 1px solid lighten($red, 1%);
+
+	@include tablet-desktop {
+		display: inline-block;
+		border-bottom: 0;
+		padding: 0;
+		margin-right: 2.8rem;
+	}
 
 	&:last-of-type {
 		margin-right: 0;
@@ -57,6 +75,12 @@
 .active {
 	color: $white;
 	font-weight: bold;
+	background-color: darken($red, 10%);
+	transition: background-color 0.2s ease;
+
+	@include tablet-desktop {
+		background-color: $red;
+	}
 }
 
 .burger {
@@ -86,9 +110,26 @@
 	}
 }
 
-.burger-open {
+.burgerOpen {
+	display: block;
+	position: relative;
+	width: 2rem;
+	height: 1.2rem;
+	cursor: pointer;
+
+	@include tablet-desktop {
+		display: none;
+	}
+
 	&::before, &::after {
+		position: absolute;
 		top: 7px;
+		left: 0;
+		width: 2rem;
+		height: 0.2rem;
+		transition: all 0.2s ease;
+		background-color: $white;
+		content: '';
 	}
 
 	&::before {
