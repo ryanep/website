@@ -19,4 +19,27 @@
 	width: 100%;
 	margin-bottom: 2rem;
 	border-radius: 4px;
+	transition: opacity 0.4s ease;
+	will-change: opacity;
+
+	&:hover {
+		opacity: 0.9;
+	}
+}
+
+.link {
+	position: relative;
+	display: block;
+}
+
+.progress {
+	position: absolute;
+	top: 1rem;
+	left: 1rem;
+	background-color: rgba($black, 0.2);
+	color: $white;
+	padding: 0.2rem 0.5rem;
+    border-radius: 3px;
+	font-size: 1.2rem;
+	z-index: 1;
 }
