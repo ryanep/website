@@ -15,6 +15,10 @@ export default class Navigation extends Component {
         this.setState({ open: !this.state.open });
     }
 
+    navItemClicked = () => {
+        this.setState({ open: false });
+    }
+
     render() {
         return (
             <nav className={styles.nav}>
@@ -23,11 +27,11 @@ export default class Navigation extends Component {
                         <img src="/images/logo.svg" width="80" height="30" alt="Logo" className={styles.logo} />
                     </IndexLink>
                     <div className={this.state.open ? styles.linksOpen : styles.links}>
-                    	<IndexLink to={'/'} className={styles.link} activeClassName={styles.active}>Home</IndexLink>
-                    	<Link to={'/about'} className={styles.link} activeClassName={styles.active}>About</Link>
-                    	<Link to={'/work'} className={styles.link} activeClassName={styles.active}>Work</Link>
-                        <Link to={'/blog'} className={styles.link} activeClassName={styles.active}>Blog</Link>
-                    	<Link to={'/contact'} className={styles.link} activeClassName={styles.active}>Contact</Link>
+                    	<IndexLink to={'/'} className={styles.link} activeClassName={styles.active} onClick={this.navItemClicked}>Home</IndexLink>
+                    	<Link to={'/about'} className={styles.link} activeClassName={styles.active} onClick={this.navItemClicked}>About</Link>
+                    	<Link to={'/work'} className={styles.link} activeClassName={styles.active} onClick={this.navItemClicked}>Work</Link>
+                        <Link to={'/blog'} className={styles.link} activeClassName={styles.active} onClick={this.navItemClicked}>Blog</Link>
+                    	<Link to={'/contact'} className={styles.link} activeClassName={styles.active} onClick={this.navItemClicked}>Contact</Link>
                     </div>
                     <div className={this.state.open ? styles.burgerOpen : styles.burger} onClick={this.burgerButtonClicked}>
                         <div className={styles.hide}>Menu</div>

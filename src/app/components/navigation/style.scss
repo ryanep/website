@@ -28,7 +28,6 @@
 
 .logolink {
 	position: relative;
-	flex-grow: 1;
 	padding-top: 1rem;
 	color: $white;
 	text-align: left;
@@ -40,6 +39,7 @@
 
 	@include tablet-desktop {
 		display: block;
+		margin-left: auto;
 	}
 }
 
@@ -91,6 +91,7 @@
 	width: 2rem;
 	height: 1.2rem;
 	cursor: pointer;
+	margin-left: auto;
 
 	@include tablet-desktop {
 		display: none;
@@ -99,7 +100,7 @@
 	&::before, &::after {
 		position: absolute;
 		top: 0;
-		left: 0;
+		right: 0;
 		width: 2rem;
 		height: 0.2rem;
 		transition: all 0.2s ease;
@@ -108,7 +109,7 @@
 	}
 
 	&::after {
-		top: 10px;
+		top: 1rem;
 	}
 }
 
@@ -118,6 +119,7 @@
 	width: 2rem;
 	height: 1.2rem;
 	cursor: pointer;
+	margin-left: auto;
 
 	@include tablet-desktop {
 		display: none;
