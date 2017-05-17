@@ -29,6 +29,10 @@ module.exports = [
                     test: /\.scss$/,
                     include: path.resolve(__dirname, "src"),
                     loader: ExtractTextPlugin.extract(['css-loader?modules&minimize&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]', 'sass-loader'])
+                },
+                {
+                    test: /\.svg$/,
+                    loader: 'raw-loader'
                 }
             ]
         },
@@ -68,6 +72,10 @@ module.exports = [
                     test: /\.scss$/,
                     include: path.resolve(__dirname, "src"),
                     loader: ExtractTextPlugin.extract(['css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]', 'sass-loader'])
+                },
+                {
+                    test: /\.svg$/,
+                    loader: 'raw-loader'
                 }
             ]
         },

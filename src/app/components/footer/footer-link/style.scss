@@ -1,18 +1,43 @@
+@import '../../../resources/scss/global';
+
 .link {
+	position: relative;
 	width: 3rem;
 	height: 3rem;
 	border-radius: 50%;
 	border: 0.2rem solid white;
-	color: #ffffff;
+	color: $white;
 	margin-right: 1rem;
 	overflow: hidden;
 
 	&:hover {
-		background-color: #ffffff;
-		color: #a25656;
+		background-color: $white;
+		color: $red;
 	}
 
 	&:last-child {
 		margin-right: 0;
+	}
+
+	&:hover {
+		svg {
+			fill: $red;
+		}
+	}
+}
+
+.hide {
+	@include hide;
+}
+
+.icon {
+	svg {
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+		width: 1.5rem;
+		height: 1.5rem;
+		fill: $white;
 	}
 }

@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import FooterLink from './footer-link';
 import styles from './style.scss';
+import githubIcon from "./icons/github.svg";
+import dribbbleIcon from "./icons/dribbble.svg";
+import twittericon from "./icons/twitter.svg";
+import linkedInIcon from "./icons/linkedin.svg";
 
 export default class Footer extends Component {
 
@@ -11,25 +15,25 @@ export default class Footer extends Component {
     			class : 'github',
     			url :'//github.com/ryanep',
     			title: 'GitHub',
-                icon: '/images/github.svg'
+                icon: githubIcon
     		},
     		{
     			class : 'twitter',
     			url :'//twitter.com/ryanep2',
     			title: 'Twitter',
-                icon: '/images/github.svg'
+				icon: twittericon
     		},
     		{
     			class : 'linkedin',
     			url :'//www.linkedin.com/in/ryanep/',
     			title: 'LinkedIn',
-                icon: '/images/github.svg'
+				icon: linkedInIcon
     		},
     		{
     			class : 'dribbble',
     			url: 'https://dribbble.com/ryanep/',
     			title: 'Dribbble',
-                icon: '/images/github.svg'
+				icon: dribbbleIcon
     		}
     	];
 
