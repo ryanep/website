@@ -9,6 +9,7 @@ export default class TimelineItem extends Component {
             <Link to={this.props.data.url} className={styles.link}>
                 <article className={styles.item}>
                     <header className={styles.header}>
+                        <img src={this.props.data.icon} width="30" height="30" alt={this.props.data.company} className={styles.icon} />
                         <div className={styles.company}>{this.props.data.company}</div>
                         <div className={styles.time}>{this.props.data.time}</div>
                     </header>

@@ -67,7 +67,7 @@
 	}
 
 	&:hover {
-		background-color: darken($white, 1%);
+		background-color: darken($white, 2%);
 	}
 
 	&:nth-child(even) {
@@ -116,4 +116,9 @@
 .time {
 	font-size: 1.2rem;
 	font-weight: 500;
+}
+
+.icon {
+	margin-right: 1rem;
+	width: 2rem;
 }
