@@ -7,7 +7,12 @@
     "build": "rm -rf ./dist && webpack",
     "start": "NODE_ENV=production node ./dist/server.js",
     "dev": "rm -rf ./dist && webpack -w & nodemon ./dist/server.js",
-    "test": "jest && codeceptjs run --steps"
+    "test": "jest && codeceptjs run --steps",
+    "lint": "npm run lint:css && npm run lint:js",
+    "lint:css": "stylelint '**/*.scss'",
+    "lint:js": "eslint 'src/**/*.js'",
+    "fmt:css": "stylefmt -r '**/*.scss'",
+    "precommit": "npm run lint"
   },
   "repository": {
     "type": "git",
@@ -25,7 +30,6 @@
     "ejs": "^2.5.6",
     "express": "^4.15.2",
     "express-minify-html": "^0.10.0",
-    "file-loader": "^0.10.1",
     "isomorphic-fetch": "^2.2.1",
     "prop-types": "^15.5.8",
     "react": "^15.5.4",
@@ -44,6 +48,7 @@
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
+    "babel-eslint": "^7.2.3",
     "babel-loader": "^6.4.1",
     "babel-plugin-transform-async-to-generator": "^6.24.1",
     "babel-plugin-transform-class-properties": "^6.24.1",
@@ -58,7 +63,14 @@
     "babel-preset-stage-0": "^6.24.1",
     "codeceptjs": "^0.5.1",
     "css-loader": "^0.25.0",
+    "eslint": "^3.19.0",
+    "eslint-config-walmart": "^1.2.2",
+    "eslint-plugin-babel": "^4.1.1",
+    "eslint-plugin-filenames": "^1.2.0",
+    "eslint-plugin-react": "^7.0.1",
     "extract-text-webpack-plugin": "^2.1.0",
+    "file-loader": "^0.10.1",
+    "husky": "^0.13.4",
     "ignore-styles": "^5.0.1",
     "jest": "^19.0.2",
     "nightmare": "^2.10.0",
@@ -69,6 +81,9 @@
     "sass-loader": "^4.1.1",
     "source-map-support": "^0.4.14",
     "style-loader": "^0.13.2",
+    "stylefmt": "^6.0.0",
+    "stylelint": "^7.10.1",
+    "stylelint-config-standard": "^16.0.0",
     "webdriverio": "^4.6.2"
   },
   "jest": {
