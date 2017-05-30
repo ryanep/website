@@ -10,36 +10,39 @@ import styles from './style.scss';
 export class Contact extends Component {
 
 	componentWillMount() {
-        this.props.getPageData(this.props.route.path);
-    }
+		this.props.getPageData(this.props.route.path);
+	}
 
-    render() {
-        return (
-        	<main className={styles.main}>
-        		<Helmet title={'Contact - Ryan Elliott-Potter'} />
-        		<TitleBar heading={'Contact'} />
-                {this.props.data.contact &&
-                    <div>
-                        <ContactConnect />
-                        <ContactForm content={this.props.data.contact.components.contactForm} />
-                    </div>
-                }
-        	</main>
-        )
-    }
-    
+	render() {
+		return (
+			<main className={styles.main}>
+				<Helmet title={'Contact - Ryan Elliott-Potter'} />
+				<TitleBar heading={'Contact'} />
+				{this.props.data.contact &&
+					<div>
+						<ContactConnect />
+						<ContactForm
+							content={
+								this.props.data.contact.components.contactForm
+							}
+						/>
+					</div>}
+			</main>
+		);
+	}
+
 }
 
-const mapStateToProps = (state) => {
-    return {
-        data: state.page.page
-    }
+const mapStateToProps = state => {
+	return {
+		data: state.page.page
+	};
 };
 
-const mapDispatchToProps = (dispatch) => {
-    return {
-        getPageData: (slug) => { dispatch(fetchPageRequest(slug)) }
-    }
+const mapDispatchToProps = dispatch => {
+	return {
+		getPageData: slug => { dispatch(fetchPageRequest(slug)); }
+	};
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Contact);

@@ -5,15 +5,14 @@ export default class ContactForm extends Component {
 
 	handleSubmit = (event) => {
 		event.preventDefault();
-		console.log("Submitted");
 	}
 
 	render() {
 		return (
-		    <div className={styles.contact}>
-			    <div className={styles.wrap}>
-			    	<h2 className={styles.heading}>{this.props.content.title}</h2>
-			    	<p className={styles.desc}>{this.props.content.desc}</p>
+			<div className={styles.contact}>
+				<div className={styles.wrap}>
+					<h2 className={styles.heading}>{this.props.content.title}</h2>
+					<p className={styles.desc}>{this.props.content.desc}</p>
 
 					<form className={styles.form} onSubmit={this.handleSubmit}>
 						<div className={styles.sections}>
@@ -36,7 +35,7 @@ export default class ContactForm extends Component {
 					</form>
 				</div>
 			</div>
-		)
+		);
 	}
-	
+
 }

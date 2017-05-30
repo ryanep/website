@@ -7,32 +7,32 @@ import styles from './style.scss';
 
 export class Work extends Component {
 
-    componentWillMount() {
-        this.props.getPageData(this.props.route.path);
-    }
+	componentWillMount() {
+		this.props.getPageData(this.props.route.path);
+	}
 
-    render() {
-        return (
-        	<main className={styles.main}>
-        		<Helmet title={'Work - Ryan Elliott-Potter'} />
-        		<TitleBar heading={'Work'} />
-        		Work
-        	</main>
-        )
-    }
-    
+	render() {
+		return (
+			<main className={styles.main}>
+				<Helmet title={'Work - Ryan Elliott-Potter'} />
+				<TitleBar heading={'Work'} />
+				Work
+			</main>
+		);
+	}
+
 }
 
-const mapStateToProps = (state) => {
-    return {
-        data: state.page
-    }
+const mapStateToProps = state => {
+	return {
+		data: state.page
+	};
 };
 
-const mapDispatchToProps = (dispatch) => {
-    return {
-        getPageData: (slug) => { dispatch(fetchPageRequest(slug)) }
-    }
+const mapDispatchToProps = dispatch => {
+	return {
+		getPageData: slug => { dispatch(fetchPageRequest(slug)); }
+	};
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Work);

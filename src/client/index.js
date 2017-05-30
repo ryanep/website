@@ -12,8 +12,8 @@ const store = configureStore(browserHistory, preloadedState);
 store.runSaga(sagas);
 
 render(
-    <Provider store={store}>
-    	<Router history={browserHistory} render={applyRouterMiddleware(useScroll())} routes={routes} />
-    </Provider>,
-    document.getElementById('app')
+	<Provider store={store}>
+		<Router history={browserHistory} render={applyRouterMiddleware(useScroll())} routes={routes} />
+	</Provider>,
+	document.getElementById('app')
 );

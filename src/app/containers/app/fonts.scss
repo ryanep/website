@@ -4,143 +4,124 @@
 	font-family: 'Montserrat';
 	font-style: normal;
 	font-weight: 100;
-	src: url('#{$font-path}/montserrat/thin.woff2') format('woff2'),
-	url('#{$font-path}/montserrat/thin.woff') format('woff');
+	src: url('#{$font-path}/montserrat/thin.woff2') format('woff2'), url('#{$font-path}/montserrat/thin.woff') format('woff');
 }
 
 @font-face {
 	font-family: 'Montserrat';
 	font-style: italic;
 	font-weight: 100;
-	src: url('#{$font-path}/montserrat/thin-italic.woff2') format('woff2'),
-	url('#{$font-path}/montserrat/thin-italic.woff') format('woff');
+	src: url('#{$font-path}/montserrat/thin-italic.woff2') format('woff2'), url('#{$font-path}/montserrat/thin-italic.woff') format('woff');
 }
 
 @font-face {
 	font-family: 'Montserrat';
 	font-style: normal;
 	font-weight: 200;
-	src: url('#{$font-path}/montserrat/extralight.woff2') format('woff2'),
-	url('#{$font-path}/montserrat/extralight.woff') format('woff');
+	src: url('#{$font-path}/montserrat/extralight.woff2') format('woff2'), url('#{$font-path}/montserrat/extralight.woff') format('woff');
 }
 
 @font-face {
 	font-family: 'Montserrat';
 	font-style: italic;
 	font-weight: 200;
-	src: url('#{$font-path}/montserrat/extralight-italic.woff2') format('woff2'),
-	url('#{$font-path}/montserrat/extralight-italic.woff') format('woff');
+	src: url('#{$font-path}/montserrat/extralight-italic.woff2') format('woff2'), url('#{$font-path}/montserrat/extralight-italic.woff') format('woff');
 }
 
 @font-face {
 	font-family: 'Montserrat';
 	font-style: normal;
 	font-weight: 300;
-	src: url('#{$font-path}/montserrat/light.woff2') format('woff2'),
-	url('#{$font-path}/montserrat/light.woff') format('woff');
+	src: url('#{$font-path}/montserrat/light.woff2') format('woff2'), url('#{$font-path}/montserrat/light.woff') format('woff');
 }
 
 @font-face {
 	font-family: 'Montserrat';
 	font-style: italic;
 	font-weight: 300;
-	src: url('#{$font-path}/montserrat/light-italic.woff2') format('woff2'),
-	url('#{$font-path}/montserrat/light-italic.woff') format('woff');
+	src: url('#{$font-path}/montserrat/light-italic.woff2') format('woff2'), url('#{$font-path}/montserrat/light-italic.woff') format('woff');
 }
 
 @font-face {
 	font-family: 'Montserrat';
 	font-style: normal;
 	font-weight: 400;
-	src: url('#{$font-path}/montserrat/regular.woff2') format('woff2'),
-	url('#{$font-path}/montserrat/regular.woff') format('woff');
+	src: url('#{$font-path}/montserrat/regular.woff2') format('woff2'), url('#{$font-path}/montserrat/regular.woff') format('woff');
 }
 
 @font-face {
 	font-family: 'Montserrat';
 	font-style: italic;
 	font-weight: 400;
-	src: url('#{$font-path}/montserrat/italic.woff2') format('woff2'),
-	url('#{$font-path}/montserrat/italic.woff') format('woff');
+	src: url('#{$font-path}/montserrat/italic.woff2') format('woff2'), url('#{$font-path}/montserrat/italic.woff') format('woff');
 }
-
 
 @font-face {
 	font-family: 'Montserrat';
 	font-style: normal;
 	font-weight: 500;
-	src: url('#{$font-path}/montserrat/medium.woff2') format('woff2'),
-	url('#{$font-path}/montserrat/medium.woff') format('woff');
+	src: url('#{$font-path}/montserrat/medium.woff2') format('woff2'), url('#{$font-path}/montserrat/medium.woff') format('woff');
 }
 
 @font-face {
 	font-family: 'Montserrat';
 	font-style: italic;
 	font-weight: 500;
-	src: url('#{$font-path}/montserrat/medium-italic.woff2') format('woff2'),
-	url('#{$font-path}/montserrat/medium-italic.woff') format('woff');
+	src: url('#{$font-path}/montserrat/medium-italic.woff2') format('woff2'), url('#{$font-path}/montserrat/medium-italic.woff') format('woff');
 }
 
 @font-face {
 	font-family: 'Montserrat';
 	font-style: normal;
 	font-weight: 600;
-	src: url('#{$font-path}/montserrat/semibold.woff2') format('woff2'),
-	url('#{$font-path}/montserrat/semibold.woff') format('woff');
+	src: url('#{$font-path}/montserrat/semibold.woff2') format('woff2'), url('#{$font-path}/montserrat/semibold.woff') format('woff');
 }
 
 @font-face {
 	font-family: 'Montserrat';
 	font-style: italic;
 	font-weight: 600;
-	src: url('#{$font-path}/montserrat/semibold-italic.woff2') format('woff2'),
-	url('#{$font-path}/montserrat/semibold-italic.woff') format('woff');
+	src: url('#{$font-path}/montserrat/semibold-italic.woff2') format('woff2'), url('#{$font-path}/montserrat/semibold-italic.woff') format('woff');
 }
 
 @font-face {
 	font-family: 'Montserrat';
 	font-style: normal;
 	font-weight: 700;
-	src: url('#{$font-path}/montserrat/bold.woff2') format('woff2'),
-	url('#{$font-path}/montserrat/bold.woff') format('woff');
+	src: url('#{$font-path}/montserrat/bold.woff2') format('woff2'), url('#{$font-path}/montserrat/bold.woff') format('woff');
 }
 
 @font-face {
 	font-family: 'Montserrat';
 	font-style: italic;
 	font-weight: 700;
-	src: url('#{$font-path}/montserrat/bold-italic.woff2') format('woff2'),
-	url('#{$font-path}/montserrat/#{$font-path}/montserrat/bold-italic.woff') format('woff');
+	src: url('#{$font-path}/montserrat/bold-italic.woff2') format('woff2'), url('#{$font-path}/montserrat/#{$font-path}/montserrat/bold-italic.woff') format('woff');
 }
 
 @font-face {
 	font-family: 'Montserrat';
 	font-style: normal;
 	font-weight: 800;
-	src: url('#{$font-path}/montserrat/extrabold.woff2') format('woff2'),
-	url('#{$font-path}/montserrat/extrabold.woff') format('woff');
+	src: url('#{$font-path}/montserrat/extrabold.woff2') format('woff2'), url('#{$font-path}/montserrat/extrabold.woff') format('woff');
 }
 
 @font-face {
 	font-family: 'Montserrat';
 	font-style: italic;
 	font-weight: 800;
-	src: url('#{$font-path}/montserrat/extrabold-italic.woff2') format('woff2'),
-	url('#{$font-path}/montserrat/extrabold-italic.woff') format('woff');
+	src: url('#{$font-path}/montserrat/extrabold-italic.woff2') format('woff2'), url('#{$font-path}/montserrat/extrabold-italic.woff') format('woff');
 }
 
 @font-face {
 	font-family: 'Montserrat';
 	font-style: normal;
 	font-weight: 900;
-	src: url('#{$font-path}/montserrat/black.woff2') format('woff2'),
-	url('#{$font-path}/montserrat/black.woff') format('woff');
+	src: url('#{$font-path}/montserrat/black.woff2') format('woff2'), url('#{$font-path}/montserrat/black.woff') format('woff');
 }
 
 @font-face {
 	font-family: 'Montserrat';
 	font-style: italic;
 	font-weight: 900;
-	src: url('#{$font-path}/montserrat/black-italic.woff2') format('woff2'),
-	url('#{$font-path}/montserrat/black-italic.woff') format('woff');
+	src: url('#{$font-path}/montserrat/black-italic.woff2') format('woff2'), url('#{$font-path}/montserrat/black-italic.woff') format('woff');
 }

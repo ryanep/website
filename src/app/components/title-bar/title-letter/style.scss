@@ -2,7 +2,7 @@
 
 .letter {
 	position: relative;
-	animation: animate 0.25s cubic-bezier(0.20, 0.90, 0.3, 1.5);
+	animation: animate 0.25s cubic-bezier(0.2, 0.9, 0.3, 1.5);
 
 	@include reduced-motion {
 		animation: none;

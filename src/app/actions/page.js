@@ -1,29 +1,29 @@
 import * as types from '../constants/action-types';
 
-export function pageIsLoading(isLoading) {
+export const pageIsLoading = (isLoading) => {
 	return {
 		type: types.PAGE_IS_LOADING,
-		isLoading: isLoading
+		isLoading
 	};
-}
+};
 
-export function fetchPageRequest(slug) {
+export const fetchPageRequest = (slug) => {
 	return {
 		type: types.PAGE_FETCH_REQUEST,
-		slug: slug
+		slug
 	};
-}
+};
 
-export function fetchPageSuccess(data) {
+export const fetchPageSuccess = (data) => {
 	return {
 		type: types.PAGE_FETCH_SUCCESS,
-		data: data
+		data
 	};
-}
+};
 
-export function fetchPageError(error) {
+export const fetchPageError = (error) => {
 	return {
 		type: types.PAGE_FETCH_ERROR,
-		error: error
+		error
 	};
-}
+};

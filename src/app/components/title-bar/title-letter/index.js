@@ -3,15 +3,18 @@ import styles from './style.scss';
 
 export default class TitleLetter extends Component {
 
-    render() {
+	render() {
+		const delay = 40;
 
-        let style = {
-            animationDelay: `${this.props.index / 40}s`
-        }
+		const style = {
+			animationDelay: `${this.props.index / delay}s`
+		};
 
-        return (
-            <span className={styles.letter} style={style}>{this.props.letter}</span>
-        )
-    }
-    
+		return (
+			<span className={styles.letter} style={style}>
+				{this.props.letter}
+			</span>
+		);
+	}
+
 }
