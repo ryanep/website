@@ -37,9 +37,9 @@ export default class Navigation extends Component {
 						<img src="/images/logo.svg" width="80" height="30" alt="Logo" className={styles.logo} />
 					</IndexLink>
 					<div className={this.state.open ? styles.linksOpen : styles.links}>
-						{links.map(link => <Link to={link.to} className={styles.link}
+						{links.map((link, index) => <Link key={index} to={link.to} className={styles.link}
 							activeClassName={styles.active}
-							onClick={this.navItemClicked}>{link.name}</Link>)}
+							onClick={this.navItemClicked}>{link.title}</Link>)}
 					</div>
 					<div className={burgerClass} onClick={this.burgerButtonClicked}>
 						<div className={styles.hide}>Menu</div>
