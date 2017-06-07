@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { IndexLink } from 'react-router';
 import styles from './style.scss';
 
 export default class Navigation extends Component {
@@ -20,7 +21,7 @@ export default class Navigation extends Component {
 
 	render() {
 		const links = [
-			{ to: '/', title: 'Home' },
+			{ to: '#', title: 'Home' },
 			{ to: '#about', title: 'About' },
 			{ to: '#work', title: 'Work' },
 			// { to: '/blog', title: 'Blog' },
