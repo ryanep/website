@@ -6,7 +6,7 @@ export default class HomeExperience extends Component {
 
 	render() {
 		return (
-			<section className={styles.experience}>
+			<section id={'experience'} className={styles.experience}>
 				<div className={styles.wrap}>
 					<h2 className={styles.heading}>{this.props.content.title}</h2>
 					<p className={styles.desc}>{this.props.content.desc}</p>

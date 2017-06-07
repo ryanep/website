@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router';
 import WorkItem from './work-item';
 import styles from './style.scss';
 
@@ -7,7 +6,7 @@ export default class HomeWork extends Component {
 
     render() {
         return (
-            <section className={styles.work}>
+            <section id={'work'} className={styles.work}>
                 <div className={styles.wrap}>
                     <h2 className={styles.heading}>{this.props.content.title}</h2>
                     <p className={styles.desc}>{this.props.content.desc}</p>
@@ -19,9 +18,9 @@ export default class HomeWork extends Component {
                             url={item.url}
                             inProgress={item.inProgress} />)}
                     </div>
-                    <Link to={this.props.content.aboutButtonURL} className={styles.button}>
+                    {/*<Link to={this.props.content.aboutButtonURL} className={styles.button}>
                         {this.props.content.aboutButtonText}
-                    </Link>
+                    </Link>*/}
                 </div>
             </section>
         );
