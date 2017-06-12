@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { IndexLink } from 'react-router';
+import { IndexLink, Link } from 'react-router';
 import styles from './style.scss';
 
 export default class Navigation extends Component {
@@ -21,11 +21,11 @@ export default class Navigation extends Component {
 
 	render() {
 		const links = [
-			{ to: '#', title: 'Home' },
-			{ to: '#about', title: 'About' },
-			{ to: '#work', title: 'Work' },
+			{ to: '/', title: 'Home' },
+			{ to: '/about', title: 'About' },
+			{ to: '/work', title: 'Work' },
 			// { to: '/blog', title: 'Blog' },
-			{ to: '#contact', title: 'Contact' }
+			{ to: '/contact', title: 'Contact' }
 		];
 
 		const burgerClass = this.state.open ? styles.burgerOpen : styles.burger;
@@ -37,10 +37,9 @@ export default class Navigation extends Component {
 						<img src="/images/logo.svg" width="80" height="30" alt="Logo" className={styles.logo} />
 					</IndexLink>
 					<div className={this.state.open ? styles.linksOpen : styles.links}>
-						{/*{links.map((link, index) => <Link key={index} to={link.to} className={styles.link}
+						{links.map((link, index) => <Link key={index} to={link.to} className={styles.link}
 							activeClassName={styles.active}
-							onClick={this.navItemClicked}>{link.title}</Link>)}*/}
-						{links.map(link => <a href={link.to} className={styles.link}>{link.title}</a>)}
+							onClick={this.navItemClicked}>{link.title}</Link>)}
 					</div>
 					<div className={burgerClass} onClick={this.burgerButtonClicked}>
 						<div className={styles.hide}>Menu</div>
