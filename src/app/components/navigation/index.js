@@ -34,7 +34,7 @@ export default class Navigation extends Component {
 				<div className={styles.wrap}>
 					<Link to={'/'} className={styles.logolink}>
 						<img
-							src="/images/logo.svg"
+							src="//cdn.ryanep.com/images/logo.svg"
 							width="80"
 							height="30"
 							alt="Logo"
