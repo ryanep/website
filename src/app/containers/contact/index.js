@@ -8,9 +8,8 @@ import ContactConnect from '../../components/contact-connect';
 import styles from './style.scss';
 
 export class Contact extends Component {
-
 	componentWillMount() {
-		this.props.getPageData(this.props.route.path);
+		this.props.getPageData(this.props.location.pathname);
 	}
 
 	render() {
@@ -22,15 +21,12 @@ export class Contact extends Component {
 					<div>
 						<ContactConnect />
 						<ContactForm
-							content={
-								this.props.data.contact.components.contactForm
-							}
+							content={this.props.data.contact.components.contactForm}
 						/>
 					</div>}
 			</main>
 		);
 	}
-
 }
 
 const mapStateToProps = state => {
@@ -41,7 +37,9 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
 	return {
-		getPageData: slug => { dispatch(fetchPageRequest(slug)); }
+		getPageData: slug => {
+			dispatch(fetchPageRequest(slug));
+		}
 	};
 };
 

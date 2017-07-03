@@ -1,19 +1,21 @@
 import React from 'react';
 import { render } from 'react-dom';
-import { Router, browserHistory, applyRouterMiddleware } from 'react-router';
+import { BrowserRouter as Router } from 'react-router-dom';
 import { Provider } from 'react-redux';
-import { useScroll } from 'react-router-scroll';
+import { Route } from 'react-router';
 import configureStore from '../app/store/configure-store';
-import routes from '../app/routes';
 import sagas from '../app/sagas';
+import App from '../app/components/app';
 
 const preloadedState = window.SERVER_STATE;
-const store = configureStore(browserHistory, preloadedState);
+const store = configureStore(preloadedState);
 store.runSaga(sagas);
 
 render(
 	<Provider store={store}>
-		<Router history={browserHistory} render={applyRouterMiddleware(useScroll())} routes={routes} />
+		<Router>
+			<Route path={'/'} component={App} />
+		</Router>
 	</Provider>,
 	document.getElementById('app')
 );

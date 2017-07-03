@@ -1,50 +1,46 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import Helmet from 'react-helmet';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import HomeAbout from '../../components/home-about';
 import HomeExperience from '../../components/home-experience';
 import HomeWork from '../../components/home-work';
 import HomeTimeline from '../../components/home-timeline';
 import ContactForm from '../../components/contact-form';
 import styles from './style.scss';
-
 import { fetchPageRequest } from '../../actions/page';
 
 export class Home extends Component {
-
 	componentWillMount() {
-		this.props.getPageData(
-			!this.props.route.path ? 'home' : this.props.route.path
-		);
+		this.props.getPageData('home');
 	}
 
 	render() {
+		if (!this.props.page || !this.props.page.home) return null;
 		return (
 			<main className={styles.main}>
-				{this.props.data.home &&
-					<div>
-						<Helmet title={'Home - Ryan Elliott-Potter'} />
-						<HomeAbout content={this.props.data.home.components.about} />
-						<HomeExperience content={this.props.data.home.components.experience} />
-						<HomeWork content={this.props.data.home.components.work} />
-						<HomeTimeline content={this.props.data.home.components.timeline} />
-						<ContactForm content={this.props.data.home.components.contactForm} />
-					</div>}
+				{/*<Helmet title={'Home - Ryan Elliott-Potter'} />*/}
+				<HomeAbout {...this.props.page.home.components.about} />
+				<HomeExperience content={this.props.page.home.components.experience} />
+				<HomeWork content={this.props.page.home.components.work} />
+				<HomeTimeline content={this.props.page.home.components.timeline} />
+				<ContactForm content={this.props.page.home.components.contactForm} />
 			</main>
 		);
 	}
-
 }
 
 const mapStateToProps = state => {
 	return {
-		data: state.page.page
+		page: state.page.page
 	};
 };
 
 const mapDispatchToProps = dispatch => {
 	return {
-		getPageData: slug => { dispatch(fetchPageRequest(slug)); }
+		getPageData: slug => {
+			dispatch(fetchPageRequest(slug));
+		}
 	};
 };
 

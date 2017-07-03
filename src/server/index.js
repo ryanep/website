@@ -1,11 +1,19 @@
 import express from 'express';
-import { match } from 'react-router';
-import routes from '../app/routes';
+import React from 'react';
+import Helmet from 'react-helmet';
 import * as middleware from './middleware';
 import config from './config';
-import { handleRender } from './render';
+import { renderToString } from 'react-dom/server';
+import { Provider } from 'react-redux';
+import { StaticRouter as Router } from 'react-router';
+import { Route } from 'react-router-dom';
+import { STATUS_500 } from '../app/constants/status-types';
+import configureStore from '../app/store/configure-store';
+import sagas from '../app/sagas';
+import App from '../app/components/app';
 
 const app = express();
+const store = configureStore();
 
 middleware.setup(app);
 
@@ -14,21 +22,42 @@ app.get('/send', (req, res) => {
 
 	if (name && subject && email && message) {
 		res.json({
-			'success': 200,
-			'message': 'Email sent.'
+			success: 200,
+			message: 'Email sent.'
 		});
 	} else {
 		res.json({
-			'success': 500,
-			'message': 'An error occured. Please try again.'
+			success: 500,
+			message: 'An error occured. Please try again.'
 		});
 	}
 });
 
 app.get('*', (req, res) => {
-	match({ routes, location: req.url }, (err, redirect, props) => {
-		handleRender(res, props);
-	});
+	const context = {};
+
+	const rootComponent = (
+		<Provider store={store}>
+			<Router location={req.url} context={context}>
+				<Route path={'/'} component={App} />
+			</Router>
+		</Provider>
+	);
+
+	store
+		.runSaga(sagas)
+		.done.then(() => {
+			const head = Helmet.rewind();
+			const initialState = JSON.stringify(store.getState());
+			const markup = renderToString(rootComponent);
+			res.render('index', { head, markup, initialState });
+		})
+		.catch(error => {
+			res.status(STATUS_500).send(error.message);
+		});
+
+	renderToString(rootComponent);
+	store.close();
 });
 
 app.listen(config.app.port, () => {

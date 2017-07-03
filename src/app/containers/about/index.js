@@ -6,9 +6,8 @@ import TitleBar from '../../components/title-bar';
 import styles from './style.scss';
 
 export class About extends Component {
-
 	componentWillMount() {
-		this.props.getPageData(this.props.route.path);
+		this.props.getPageData(this.props.location.pathname);
 	}
 
 	render() {
@@ -20,7 +19,6 @@ export class About extends Component {
 			</main>
 		);
 	}
-
 }
 
 const mapStateToProps = state => {
@@ -31,7 +29,9 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
 	return {
-		getPageData: slug => { dispatch(fetchPageRequest(slug)); }
+		getPageData: slug => {
+			dispatch(fetchPageRequest(slug));
+		}
 	};
 };
 
