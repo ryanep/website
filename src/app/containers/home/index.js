@@ -19,7 +19,7 @@ export class Home extends Component {
 		if (!this.props.page || !this.props.page.home) return null;
 		return (
 			<main className={styles.main}>
-				{/*<Helmet title={'Home - Ryan Elliott-Potter'} />*/}
+				<Helmet title={'Home - Ryan Elliott-Potter'} />
 				<HomeAbout {...this.props.page.home.components.about} />
 				<HomeExperience content={this.props.page.home.components.experience} />
 				<HomeWork content={this.props.page.home.components.work} />
