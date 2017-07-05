@@ -30,7 +30,16 @@ module.exports = [
 					include: path.resolve(__dirname, '../src'),
 					loader: ExtractTextPlugin.extract([
 						'css-loader?modules&minimize&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]',
-						'sass-loader'
+						'sass-loader',
+						{
+							loader: 'sass-resources-loader',
+							options: {
+								resources: [
+									path.resolve(__dirname, '../src/app/resources/scss/variables/*.scss'),
+									path.resolve(__dirname, '../src/app/resources/scss/mixins/*.scss')
+								]
+							}
+						}
 					])
 				},
 				{
@@ -38,6 +47,16 @@ module.exports = [
 					loader: 'raw-loader'
 				}
 			]
+		},
+		resolve: {
+			alias: {
+				'@actions': path.resolve(__dirname, '../src/app/actions/'),
+				'@components': path.resolve(__dirname, '../src/app/components/'),
+				'@constants': path.resolve(__dirname, '../src/app/constants/'),
+				'@containers': path.resolve(__dirname, '../src/app/containers/'),
+				'@reducers': path.resolve(__dirname, '../src/app/reducers/'),
+				'@sagas': path.resolve(__dirname, '../src/app/sagas/')
+			}
 		},
 		plugins: [
 			new ExtractTextPlugin({ filename: 'style.css', allChunks: true }),
@@ -75,7 +94,16 @@ module.exports = [
 					include: path.resolve(__dirname, '../src'),
 					loader: ExtractTextPlugin.extract([
 						'css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]',
-						'sass-loader'
+						'sass-loader',
+						{
+							loader: 'sass-resources-loader',
+							options: {
+								resources: [
+									path.resolve(__dirname, '../src/app/resources/scss/variables/*.scss'),
+									path.resolve(__dirname, '../src/app/resources/scss/mixins/*.scss')
+								]
+							}
+						}
 					])
 				},
 				{
@@ -83,6 +111,16 @@ module.exports = [
 					loader: 'raw-loader'
 				}
 			]
+		},
+		resolve: {
+			alias: {
+				'@actions': path.resolve(__dirname, '../src/app/actions/'),
+				'@components': path.resolve(__dirname, '../src/app/components/'),
+				'@constants': path.resolve(__dirname, '../src/app/constants/'),
+				'@containers': path.resolve(__dirname, '../src/app/containers/'),
+				'@reducers': path.resolve(__dirname, '../src/app/reducers/'),
+				'@sagas': path.resolve(__dirname, '../src/app/sagas/')
+			}
 		},
 		externals,
 		plugins: [
