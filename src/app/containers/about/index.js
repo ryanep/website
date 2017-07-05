@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchPageRequest } from '../../actions/page';
 import Helmet from 'react-helmet';
-import TitleBar from '../../components/title-bar';
+import TitleBar from '@components/title-bar';
+import { fetchPageRequest } from '@actions/page';
 import styles from './style.scss';
 
 export class About extends Component {

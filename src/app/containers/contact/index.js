@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchPageRequest } from '../../actions/page';
 import Helmet from 'react-helmet';
-import TitleBar from '../../components/title-bar';
-import ContactForm from '../../components/contact-form';
-import ContactConnect from '../../components/contact-connect';
+import TitleBar from '@components/title-bar';
+import ContactForm from '@components/contact-form';
+import ContactConnect from '@components/contact-connect';
+import { fetchPageRequest } from '@actions/page';
 import styles from './style.scss';
 
 export class Contact extends Component {

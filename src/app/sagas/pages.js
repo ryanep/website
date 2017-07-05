@@ -1,9 +1,9 @@
 import fetch from 'isomorphic-fetch';
 import { takeEvery } from 'redux-saga';
 import { call, put } from 'redux-saga/effects';
-import * as pageActions from '../actions/page';
-import * as types from '../constants/action-types';
-import * as api from '../constants/api';
+import * as pageActions from '@actions/page';
+import * as types from '@constants/action-types';
+import * as api from '@constants/api';
 
 export const fetchPageData = (slug) => {
 	return fetch(`${api.apiURL}/pages/?page=${slug}`).then(response =>
@@ -11,7 +11,7 @@ export const fetchPageData = (slug) => {
 	);
 };
 
-export const getPage = function *(action) {
+export const getPage = function* (action) {
 	try {
 		yield put(pageActions.pageIsLoading(true));
 		const data = yield call(fetchPageData, action.slug);
@@ -23,6 +23,6 @@ export const getPage = function *(action) {
 	}
 };
 
-export default function *watchPageRequests() {
+export default function* watchPageRequests() {
 	yield takeEvery(types.PAGE_FETCH_REQUEST, getPage);
 }

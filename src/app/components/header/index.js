@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Navigation from '../navigation';
-import Bubbles from '../bubbles';
+import Navigation from '@components/navigation';
+import Bubbles from '@components/bubbles';
 import styles from './style.scss';
 
 export default class Header extends Component {
