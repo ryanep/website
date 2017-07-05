@@ -1,0 +1,12 @@
+version: '3'
+services:
+    express:
+        build: .
+        image: ryanep_portfolio_image:local
+        container_name: ryanep_portfolio_container
+        restart: always
+        ports:
+            - "3000:3000"
+        volumes:
+            - ./:/app
+            - /app/node_modules
