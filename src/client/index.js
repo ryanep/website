@@ -5,17 +5,17 @@ import { Provider } from 'react-redux';
 import { Route } from 'react-router';
 import configureStore from '../app/store/configure-store';
 import sagas from '../app/sagas';
-import App from '../app/components/app';
+import App from '@containers/app';
 
 const preloadedState = window.SERVER_STATE;
 const store = configureStore(preloadedState);
 store.runSaga(sagas);
 
 render(
-	<Provider store={store}>
-		<Router>
-			<Route path={'/'} component={App} />
-		</Router>
-	</Provider>,
-	document.getElementById('app')
+  <Provider store={store}>
+    <Router>
+      <Route path={'/'} component={App} />
+    </Router>
+  </Provider>,
+  document.getElementById('app')
 );

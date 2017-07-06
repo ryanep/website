@@ -90,15 +90,11 @@
     "webpack-dev-server": "^2.5.0"
   },
   "jest": {
-    "setupFiles": [
-      "./tests/unit/config.js"
-    ],
+    "setupFiles": ["./tests/unit/config.js"],
     "moduleNameMapper": {
       "\\.(css|less|scss)$": "identity-obj-proxy",
       "^@components(.*)$": "<rootDir>/src/app/components$1"
     },
-    "collectCoverageFrom": [
-      "src/**/*.js"
-    ]
+    "collectCoverageFrom": ["src/**/*.js"]
   }
 }
