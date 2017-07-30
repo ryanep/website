@@ -1,11 +1,8 @@
 import React from 'react';
 import Header from './';
-import Bubbles from '../bubbles';
 import styles from './style.scss';
 
 describe('<Header />', () => {
-  let wrapper;
-
   it('Render component on home', () => {
     const component = shallow(<Header path={'/'} />);
     expect(component.hasClass(styles.banner)).toEqual(true);

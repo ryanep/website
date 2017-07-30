@@ -3,6 +3,7 @@ import { render } from 'react-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { Route } from 'react-router';
+import ScrollToTop from '@components/scroll-to-top';
 import configureStore from '../app/store/configure-store';
 import sagas from '../app/sagas';
 import App from '@containers/app';
@@ -14,7 +15,9 @@ store.runSaga(sagas);
 render(
   <Provider store={store}>
     <Router>
-      <Route path={'/'} component={App} />
+      <ScrollToTop>
+        <Route path={'/'} component={App} />
+      </ScrollToTop>
     </Router>
   </Provider>,
   document.getElementById('app')
