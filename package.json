@@ -92,10 +92,18 @@
     "webpack-dev-server": "^2.5.0"
   },
   "standard": {
-    "env": ["jest"]
+    "env": [
+      "jest"
+    ]
   },
   "lint-staged": {
-    "*.js": ["prettier --write --single-quote", "git add"],
-    "*.scss": ["stylefmt -r", "git add"]
+    "*.js": [
+      "prettier --write --single-quote",
+      "git add"
+    ],
+    "*.scss": [
+      "stylefmt -r",
+      "git add"
+    ]
   }
 }
