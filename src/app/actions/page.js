@@ -1,12 +1,5 @@
 import * as types from '../constants/action-types';
 
-export const pageIsLoading = isLoading => {
-  return {
-    type: types.PAGE_IS_LOADING,
-    isLoading
-  };
-};
-
 export const fetchPageRequest = slug => {
   return {
     type: types.PAGE_FETCH_REQUEST,

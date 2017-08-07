@@ -7,10 +7,12 @@ const initialState = {
 
 export default function pageDidChange(state = initialState, action) {
   switch (action.type) {
-    case types.PAGE_IS_LOADING:
-      return { ...state, isLoading: action.isLoading };
+    case types.PAGE_FETCH_REQUEST:
+      return { ...state, isLoading: true };
     case types.PAGE_FETCH_SUCCESS:
-      return { ...state, page: action.data.page };
+      return { ...state, page: action.data.page, isLoading: false };
+    case types.PAGE_FETCH_FAILURE:
+      return { ...state, isLoading: false };
     default:
       return state;
   }

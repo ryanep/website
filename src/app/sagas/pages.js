@@ -13,13 +13,10 @@ export const fetchPageData = slug => {
 
 export const getPage = function*(action) {
   try {
-    yield put(pageActions.pageIsLoading(true));
     const data = yield call(fetchPageData, action.slug);
     yield put(pageActions.fetchPageSuccess(data));
-    yield put(pageActions.pageIsLoading(false));
   } catch (err) {
     yield put(pageActions.fetchPageError(err));
-    yield put(pageActions.pageIsLoading(false));
   }
 };
 
