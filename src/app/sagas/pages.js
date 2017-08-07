@@ -1,20 +1,17 @@
-import fetch from 'isomorphic-fetch';
 import { takeEvery } from 'redux-saga';
 import { call, put } from 'redux-saga/effects';
 import * as pageActions from '@actions/page';
+import { fetchPageData } from '@services/api';
 import * as types from '@constants/action-types';
-import * as api from '@constants/api';
-
-export const fetchPageData = slug => {
-  return fetch(`${api.apiURL}/pages/?page=${slug}`).then(response =>
-    response.json()
-  );
-};
 
 export const getPage = function*(action) {
   try {
-    const data = yield call(fetchPageData, action.slug);
-    yield put(pageActions.fetchPageSuccess(data));
+    const response = yield call(fetchPageData, action.slug);
+    if (response.error) {
+      yield put(pageActions.fetchPageError(response.error));
+    } else {
+      yield put(pageActions.fetchPageSuccess(response));
+    }
   } catch (err) {
     yield put(pageActions.fetchPageError(err));
   }
