@@ -1,18 +1,15 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import styles from './style.scss';
 
-export default class TitleLetter extends Component {
-  render() {
-    const delay = 40;
+const TitleLetter = ({ index, letter }) =>
+  <span className={styles.letter} style={{ animationDelay: `${index / 40}s` }}>
+    {letter}
+  </span>;
 
-    const style = {
-      animationDelay: `${this.props.index / delay}s`
-    };
+TitleLetter.propTypes = {
+  index: PropTypes.number.isRequired,
+  letter: PropTypes.string.isRequired
+};
 
-    return (
-      <span className={styles.letter} style={style}>
-        {this.props.letter}
-      </span>
-    );
-  }
-}
+export default TitleLetter;

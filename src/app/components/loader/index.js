@@ -1,14 +1,14 @@
-import React, { Component } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import styles from './style.scss';
 
-export default class Loader extends Component {
-  render() {
-    const className = this.props.isLoading ? styles.loader : styles.hidden;
+const Loader = ({ isLoading }) =>
+  <div className={isLoading ? styles.loader : styles.hidden}>
+    <div className={styles.hide}>Loading...</div>
+  </div>;
 
-    return (
-      <div className={className}>
-        <div className={styles.hide}>Loading...</div>
-      </div>
-    );
-  }
-}
+Loader.propTypes = {
+  isLoading: PropTypes.bool.isRequired
+};
+
+export default Loader;

@@ -1,8 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import TitleLetter from './title-letter';
 import styles from './style.scss';
 
-export default ({ heading }) =>
+const TitleBar = ({ heading }) =>
   <div className={styles.bar}>
     <div className={styles.wrap}>
       <h1 className={styles.heading}>
@@ -14,3 +15,9 @@ export default ({ heading }) =>
       </h1>
     </div>
   </div>;
+
+TitleBar.propTypes = {
+  heading: PropTypes.string.isRequired
+};
+
+export default TitleBar;

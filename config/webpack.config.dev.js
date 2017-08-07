@@ -52,7 +52,7 @@ module.exports = [
     devServer: {
       host: '0.0.0.0',
       port: 3000,
-      contentBase: './src/client',
+      contentBase: path.join(__dirname, '../src/client/'),
       hot: true,
       historyApiFallback: true,
       overlay: true

@@ -61,7 +61,8 @@ module.exports = [
         '@constants': path.resolve(__dirname, '../src/app/constants/'),
         '@containers': path.resolve(__dirname, '../src/app/containers/'),
         '@reducers': path.resolve(__dirname, '../src/app/reducers/'),
-        '@sagas': path.resolve(__dirname, '../src/app/sagas/')
+        '@sagas': path.resolve(__dirname, '../src/app/sagas/'),
+        '@services': path.resolve(__dirname, '../src/app/services/')
       }
     },
     plugins: [
@@ -131,7 +132,8 @@ module.exports = [
         '@constants': path.resolve(__dirname, '../src/app/constants/'),
         '@containers': path.resolve(__dirname, '../src/app/containers/'),
         '@reducers': path.resolve(__dirname, '../src/app/reducers/'),
-        '@sagas': path.resolve(__dirname, '../src/app/sagas/')
+        '@sagas': path.resolve(__dirname, '../src/app/sagas/'),
+        '@services': path.resolve(__dirname, '../src/app/services/')
       }
     },
     externals,
