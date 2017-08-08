@@ -1,23 +1,21 @@
-import React, { Component } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import styles from './style.scss';
 
-export default class Bubble extends Component {
-  getRandomNumber(length, start = 1) {
-    return Math.floor(Math.random() * (length - start) + start);
-  }
+const Bubble = ({ left, top, transform }) =>
+  <div
+    className={styles.bubble}
+    style={{
+      left,
+      top,
+      transform
+    }}
+  />;
 
-  render() {
-    const bubbleWidth = 80;
-    const maxWidth = 1920;
-    const maxHeight = 350;
-    const scale = 6;
+Bubble.propTypes = {
+  left: PropTypes.number.isRequired,
+  top: PropTypes.number.isRequired,
+  transform: PropTypes.string.isRequired
+};
 
-    const style = {
-      left: this.getRandomNumber(maxWidth),
-      top: this.getRandomNumber(maxHeight, bubbleWidth),
-      transform: `scale(1.${this.getRandomNumber(scale)})`
-    };
-
-    return <div style={style} className={styles.bubble} />;
-  }
-}
+export default Bubble;
