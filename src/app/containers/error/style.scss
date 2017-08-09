@@ -1,3 +1,16 @@
+.error {
+	display: flex;
+	flex-flow: column wrap;
+	flex-grow: 1;
+	align-items: center;
+	justify-content: center;
+}
+
 .heading {
-	font-weight: bold;
+	@include h1;
+	font-size: 4rem;
+}
+
+.desc {
+	font-size: 1.6rem;
 }
