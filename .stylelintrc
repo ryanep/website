@@ -7,6 +7,7 @@
         "color-hex-length": "long",
         "no-missing-end-of-source-newline": null,
         "property-no-unknown": [ true, { ignoreProperties:["font-smoothing"] }],
-        "media-feature-name-no-unknown": [true, ignoreMediaFeatureNames: ["prefers-reduced-motion"]]
+        "media-feature-name-no-unknown": [true, ignoreMediaFeatureNames: ["prefers-reduced-motion"]],
+        "declaration-empty-line-before": null
     }
 }
