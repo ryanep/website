@@ -1,9 +1,9 @@
 .loader {
-	position: fixed;
+	position: absolute;
 	top: 50%;
 	left: 50%;
-	width: 4rem;
-	height: 4rem;
+	width: 2.5rem;
+	height: 2.5rem;
 	transform: translate(-50%, -50%);
 	transform-origin: center;
 	border: 0.3rem solid $red;
@@ -11,10 +11,6 @@
 	border-top-color: transparent;
 	content: '';
 	animation: loader 0.6s linear infinite;
-}
-
-.hidden {
-	display: none;
 }
 
 .hide {

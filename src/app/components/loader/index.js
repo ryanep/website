@@ -2,13 +2,22 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './style.scss';
 
-const Loader = ({ isLoading }) =>
-  <div className={isLoading ? styles.loader : styles.hidden}>
+const Loader = ({ size, colour }) =>
+  <div
+    className={styles.loader}
+    style={{
+      width: size,
+      height: size,
+      borderColor: colour,
+      borderTopColor: 'transparent'
+    }}
+  >
     <div className={styles.hide}>Loading...</div>
   </div>;
 
 Loader.propTypes = {
-  isLoading: PropTypes.bool.isRequired
+  size: PropTypes.string,
+  color: PropTypes.string
 };
 
 export default Loader;

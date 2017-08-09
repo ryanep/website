@@ -19,6 +19,7 @@ body {
 	line-height: 1.5;
 	min-width: 32rem;
 	-webkit-font-smoothing: antialiased;
+	font-display: fallback;
 }
 
 input, textarea {
@@ -27,4 +28,10 @@ input, textarea {
 
 h1, h2, h3, h4, h5, h6 {
 	color: #333333;
+}
+
+.app {
+	display: flex;
+	flex-flow: column wrap;
+	min-height: 100vh;
 }

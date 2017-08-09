@@ -17,7 +17,11 @@ export class App extends Component {
   render() {
     return (
       <div className={styles.app}>
-        <Header path={location.pathname} />
+        <Header
+          isBanner={location.pathname === '/'}
+          heading={'Ryan Elliott-Potter'}
+          description={'Web Developer'}
+        />
         <Switch>
           <Route exact path={'/'} component={Home} />
           <Route exact path={'/about'} component={About} />
@@ -26,7 +30,7 @@ export class App extends Component {
           <Route component={Error} />
         </Switch>
         <Footer />
-        <Loader isLoading={this.props.isLoading} />
+        {this.props.isLoading && <Loader />}
       </div>
     );
   }

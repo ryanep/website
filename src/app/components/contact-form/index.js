@@ -1,78 +1,74 @@
-import React, { Component } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
+import TextInput from '@components/forms/text-input';
+import EmailInput from '@components/forms/email-input';
+import Textarea from '@components/forms/textarea';
+import SubmitButton from '@components/forms/submit-button';
+import Wrap from '@components/wrap';
 import styles from './style.scss';
 
-export default class ContactForm extends Component {
-  handleSubmit = event => {
-    event.preventDefault();
-  };
+const ContactForm = ({
+  title,
+  desc,
+  buttonText,
+  isLoading,
+  onInputChange,
+  onSubmit
+}) =>
+  <div id={'contact'} className={styles.contact}>
+    <Wrap width={'84rem'}>
+      <h2 className={styles.heading}>
+        {title}
+      </h2>
+      <p className={styles.desc}>
+        {desc}
+      </p>
 
-  render() {
-    return (
-      <div id={'contact'} className={styles.contact}>
-        <div className={styles.wrap}>
-          <h2 className={styles.heading}>
-            {this.props.content.title}
-          </h2>
-          <p className={styles.desc}>
-            {this.props.content.desc}
-          </p>
-
-          <form className={styles.form} onSubmit={this.handleSubmit}>
-            <div className={styles.sections}>
-              <div className={styles.left}>
-                <label className={styles.label} htmlFor={'name'}>
-                  Name
-                </label>
-                <input
-                  className={styles.textbox}
-                  type="text"
-                  id="name"
-                  name="name"
-                  required
-                />
-                <label className={styles.label} htmlFor={'subject'}>
-                  Subject
-                </label>
-                <input
-                  className={styles.textbox}
-                  type="text"
-                  id="subject"
-                  name="subject"
-                  required
-                />
-                <label className={styles.label} htmlFor={'email'}>
-                  Email
-                </label>
-                <input
-                  className={styles.email}
-                  type="email"
-                  id="email"
-                  name="email"
-                  required
-                />
-              </div>
-              <div className={styles.right}>
-                <label className={styles.label} htmlFor={'message'}>
-                  Message
-                </label>
-                <textarea
-                  className={styles.textarea}
-                  id="message"
-                  name="message"
-                  required
-                />
-              </div>
-            </div>
-            <div className={styles.buttons}>
-              <input
-                type="submit"
-                className={styles.button}
-                value={this.props.content.buttonText}
-              />
-            </div>
-          </form>
+      <form className={styles.form} onSubmit={onSubmit} noValidate>
+        <div className={styles.sections}>
+          <div className={styles.left}>
+            <TextInput
+              label="Name"
+              name="name"
+              required={true}
+              onChange={onInputChange}
+            />
+            <TextInput
+              label="Subject"
+              name="subject"
+              required={true}
+              onChange={onInputChange}
+            />
+            <EmailInput
+              label="Email address"
+              name="email"
+              required={true}
+              onChange={onInputChange}
+            />
+          </div>
+          <div className={styles.right}>
+            <Textarea
+              label="Message"
+              name="message"
+              required={true}
+              onChange={onInputChange}
+            />
+          </div>
         </div>
-      </div>
-    );
-  }
-}
+        <div className={styles.buttons}>
+          <SubmitButton name={buttonText} isLoading={false} />
+        </div>
+      </form>
+    </Wrap>
+  </div>;
+
+ContactForm.propTypes = {
+  title: PropTypes.string.isRequired,
+  desc: PropTypes.string.isRequired,
+  buttonText: PropTypes.string.isRequired,
+  isLoading: PropTypes.bool.isRequired,
+  onInputChange: PropTypes.func.isRequired,
+  onSubmit: PropTypes.func.isRequired
+};
+
+export default ContactForm;

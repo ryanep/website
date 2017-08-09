@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import LazyLoad from 'react-lazyload';
+import Gradient from '@components/gradient';
 import styles from './style.scss';
 
 export default class HomeWork extends Component {
   render() {
     return (
       <div className={styles.work}>
-        <LazyLoad height={200}>
+        <LazyLoad width={300} height={200} placeholder={<Gradient />}>
           <a href={this.props.url} className={styles.link} target={'_blank'}>
             {this.props.inProgress &&
               <div className={styles.progress}>In progress</div>}

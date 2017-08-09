@@ -11,20 +11,46 @@ import { fetchPageRequest } from '@actions/page';
 import styles from './style.scss';
 
 export class Home extends Component {
+  constructor(props) {
+    super(props);
+  }
+
   componentWillMount() {
     this.props.getPageData('home');
   }
 
+  handleInputChange = event => {
+    console.log(event.target.value);
+  };
+
+  handleFormSubmit = event => {
+    event.preventDefault();
+    console.log('form submitted');
+  };
+
   render() {
     if (!this.props.page || !this.props.page.home) return null;
+    const {
+      about,
+      experience,
+      work,
+      timeline,
+      contactForm
+    } = this.props.page.home.components;
+
     return (
       <main className={styles.main}>
         <Helmet title={'Home - Ryan Elliott-Potter'} />
-        <HomeAbout {...this.props.page.home.components.about} />
-        <HomeExperience {...this.props.page.home.components.experience} />
-        <HomeWork content={this.props.page.home.components.work} />
-        <HomeTimeline {...this.props.page.home.components.timeline} />
-        <ContactForm content={this.props.page.home.components.contactForm} />
+        <HomeAbout {...about} />
+        <HomeExperience {...experience} />
+        <HomeWork content={work} />
+        <HomeTimeline {...timeline} />
+        <ContactForm
+          {...contactForm}
+          isLoading={true}
+          onInputChange={this.handleInputChange}
+          onSubmit={this.handleFormSubmit}
+        />
       </main>
     );
   }

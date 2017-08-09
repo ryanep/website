@@ -3,41 +3,6 @@
 	text-align: center;
 }
 
-.label {
-	display: block;
-	margin-bottom: 0.5rem;
-	font-weight: 500;
-	text-align: left;
-}
-
-.textbox, .email, .textarea {
-	display: block;
-	width: 100%;
-	margin-bottom: 1rem;
-	padding: 1rem;
-	border: 0;
-	border-radius: 0.4rem;
-	background-color: #f0f0f0;
-	font-size: 1.4rem;
-	resize: vertical;
-
-	@include tablet-desktop {
-		&:last-child {
-			margin-bottom: 0;
-		}
-	}
-}
-
-.textarea {
-	min-height: 8rem;
-	margin-bottom: 0;
-	resize: none;
-
-	@include tablet-desktop {
-		flex-grow: 1;
-	}
-}
-
 .sections {
 	@include tablet-desktop {
 		display: flex;
@@ -63,16 +28,8 @@
 	}
 }
 
-.right {
-	@include tablet-desktop {
-		display: flex;
-		flex-flow: column wrap;
-	}
-}
-
 .wrap {
 	@include wrap;
-
 	max-width: 85rem;
 }
 
@@ -92,8 +49,4 @@
 
 .buttons {
 	text-align: center;
-}
-
-.button {
-	@include button;
 }

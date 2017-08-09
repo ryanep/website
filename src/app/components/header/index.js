@@ -1,16 +1,29 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Navigation from '@components/navigation';
 import Bubbles from '@components/bubbles';
 import styles from './style.scss';
 
-export default ({ path }) =>
-  <header className={path === '/' ? styles.banner : styles.header}>
+const Header = ({ isBanner, heading, description }) =>
+  <header className={isBanner ? styles.banner : styles.header}>
     <Navigation />
-    <Bubbles path={path} />
+    <Bubbles bubbles={20} />
 
-    {path === '/' &&
+    {isBanner &&
       <div className={styles.heading}>
-        <h1 className={styles.title}>Ryan Elliott-Potter</h1>
-        <p className={styles.desc}>Web Developer</p>
+        <h1 className={styles.title}>
+          {heading}
+        </h1>
+        <p className={styles.desc}>
+          {description}
+        </p>
       </div>}
   </header>;
+
+Header.propTypes = {
+  isBanner: PropTypes.bool.isRequired,
+  heading: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired
+};
+
+export default Header;
