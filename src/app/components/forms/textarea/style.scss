@@ -1,5 +1,7 @@
 .label {
-	display: block;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
 	font-weight: 500;
 	text-align: left;
 	margin-bottom: 1rem;
@@ -20,6 +22,7 @@
 	font-size: 1.4rem;
 	resize: vertical;
 	resize: none;
+	min-height: 10rem;
 
 	@include tablet-desktop {
 		flex-grow: 1;

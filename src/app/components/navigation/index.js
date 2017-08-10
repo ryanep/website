@@ -41,19 +41,20 @@ export default class Navigation extends Component {
               className={styles.logo}
             />
           </Link>
-          <div className={this.state.open ? styles.linksOpen : styles.links}>
-            {links.map((link, index) =>
-              <NavLink
-                key={index}
-                to={link.to}
-                className={styles.link}
-                activeClassName={styles.active}
-                onClick={this.navItemClicked}
-              >
-                {link.title}
-              </NavLink>
-            )}
-          </div>
+          {false &&
+            <div className={this.state.open ? styles.linksOpen : styles.links}>
+              {links.map((link, index) =>
+                <NavLink
+                  key={index}
+                  to={link.to}
+                  className={styles.link}
+                  activeClassName={styles.active}
+                  onClick={this.navItemClicked}
+                >
+                  {link.title}
+                </NavLink>
+              )}
+            </div>}
           <div className={burgerClass} onClick={this.burgerButtonClicked}>
             <div className={styles.hide}>Menu</div>
           </div>

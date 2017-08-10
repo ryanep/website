@@ -3,7 +3,7 @@ import FooterLink from './footer-link';
 import styles from './style.scss';
 import githubIcon from './icons/github.svg';
 import dribbbleIcon from './icons/dribbble.svg';
-import twittericon from './icons/twitter.svg';
+import twitterIcon from './icons/twitter.svg';
 import linkedInIcon from './icons/linkedin.svg';
 
 export default class Footer extends Component {
@@ -19,7 +19,7 @@ export default class Footer extends Component {
         class: 'twitter',
         url: '//twitter.com/ryanep2',
         title: 'Twitter',
-        icon: twittericon
+        icon: twitterIcon
       },
       {
         class: 'linkedin',

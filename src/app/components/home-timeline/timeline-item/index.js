@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom';
 import styles from './style.scss';
 
 export default ({ url, icon, company, time, role }) =>
-  <Link to={url} className={styles.link}>
+  <div className={styles.link}>
+    {/* <Link to={url} className={styles.link}> */}
     <article className={styles.item}>
       <header className={styles.header}>
         <img
@@ -24,4 +25,5 @@ export default ({ url, icon, company, time, role }) =>
         {role}
       </div>
     </article>
-  </Link>;
+    {/* </Link> */}
+  </div>;

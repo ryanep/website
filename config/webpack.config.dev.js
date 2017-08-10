@@ -64,6 +64,7 @@ module.exports = [
         '@constants': path.resolve(__dirname, '../src/app/constants/'),
         '@containers': path.resolve(__dirname, '../src/app/containers/'),
         '@reducers': path.resolve(__dirname, '../src/app/reducers/'),
+        '@resources': path.resolve(__dirname, '../src/app/resources/'),
         '@sagas': path.resolve(__dirname, '../src/app/sagas/'),
         '@services': path.resolve(__dirname, '../src/app/services/')
       }

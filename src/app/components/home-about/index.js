@@ -17,8 +17,8 @@ export default ({ image, imageAlt, title, desc, buttonURL, buttonText }) =>
         {title}
       </h2>
       <Markdown source={desc} className={styles.info} />
-      <Link to={buttonURL} className={styles.button}>
+      {/* <Link to={buttonURL} className={styles.button}>
         {buttonText}
-      </Link>
+      </Link> */}
     </div>
   </div>;
