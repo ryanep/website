@@ -9,7 +9,7 @@ import { StaticRouter as Router } from 'react-router';
 import { Route } from 'react-router-dom';
 import { STATUS_500 } from '@constants/status-types';
 import configureStore from '@store/configure-store';
-import sagas from '@sagas/sagas';
+import sagas from '@sagas';
 import App from '@containers/app';
 
 const app = express();

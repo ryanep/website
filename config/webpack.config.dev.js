@@ -66,7 +66,8 @@ module.exports = [
         '@reducers': path.resolve(__dirname, '../src/app/reducers/'),
         '@resources': path.resolve(__dirname, '../src/app/resources/'),
         '@sagas': path.resolve(__dirname, '../src/app/sagas/'),
-        '@services': path.resolve(__dirname, '../src/app/services/')
+        '@services': path.resolve(__dirname, '../src/app/services/'),
+        '@store': path.resolve(__dirname, '../src/app/store/')
       }
     },
     plugins: [new webpack.optimize.OccurrenceOrderPlugin()]

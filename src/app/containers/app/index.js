@@ -18,7 +18,7 @@ export class App extends Component {
     return (
       <div className={styles.app}>
         <Header
-          isBanner={location.pathname === '/'}
+          isBanner={this.props.location.pathname === '/'}
           heading={'Ryan Elliott-Potter'}
           description={'Web Developer'}
         />

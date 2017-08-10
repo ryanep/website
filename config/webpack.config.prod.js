@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 const fs = require('fs');
 const nodeModules = {};
@@ -23,7 +24,8 @@ module.exports = [
         {
           test: /.js$/,
           include: path.resolve(__dirname, '../src'),
-          loader: 'babel-loader'
+          loader: 'babel-loader',
+          exclude: /node_modules/
         },
         {
           test: /\.scss$/,
@@ -68,11 +70,6 @@ module.exports = [
     },
     plugins: [
       new ExtractTextPlugin({ filename: 'style.css', allChunks: true }),
-      new webpack.optimize.UglifyJsPlugin({
-        output: {
-          comments: false
-        }
-      }),
       new webpack.optimize.OccurrenceOrderPlugin(),
       new webpack.DefinePlugin({
         'process.env': {
@@ -135,7 +132,8 @@ module.exports = [
         '@reducers': path.resolve(__dirname, '../src/app/reducers/'),
         '@resources': path.resolve(__dirname, '../src/app/resources/'),
         '@sagas': path.resolve(__dirname, '../src/app/sagas/'),
-        '@services': path.resolve(__dirname, '../src/app/services/')
+        '@services': path.resolve(__dirname, '../src/app/services/'),
+        '@store': path.resolve(__dirname, '../src/app/store/')
       }
     },
     externals,
