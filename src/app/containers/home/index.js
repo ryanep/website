@@ -8,11 +8,21 @@ import HomeWork from '@components/home-work';
 import HomeTimeline from '@components/home-timeline';
 import ContactForm from '@components/contact-form';
 import { fetchPageRequest } from '@actions/page';
+import { contactFormRequest } from '@actions/contact-form';
 import styles from './style.scss';
 
 export class Home extends Component {
   constructor(props) {
     super(props);
+
+    this.state = {
+      contactFormInputs: {
+        name: '',
+        subject: '',
+        email: '',
+        message: ''
+      }
+    };
   }
 
   componentWillMount() {
@@ -20,12 +30,36 @@ export class Home extends Component {
   }
 
   handleInputChange = event => {
-    console.log(event.target.value);
+    const input = event.target;
+    const name = input.name;
+
+    this.setState({
+      contactFormInputs: {
+        ...this.state.contactFormInputs,
+        [name]: input.value
+      }
+    });
   };
 
   handleFormSubmit = event => {
     event.preventDefault();
-    console.log('form submitted');
+    const form = event.target;
+    const formIsValid = form.checkValidity();
+
+    if (formIsValid) {
+      const { name, subject, email, message } = this.state.contactFormInputs;
+
+      this.setState({
+        contactFormInputs: {
+          name: '',
+          subject: '',
+          email: '',
+          message: ''
+        }
+      });
+
+      this.props.contactFormRequest(name, subject, email, message);
+    }
   };
 
   render() {
@@ -47,9 +81,10 @@ export class Home extends Component {
         <HomeTimeline {...timeline} />
         <ContactForm
           {...contactForm}
-          isLoading={true}
+          isLoading={this.props.contactForm.isLoading}
           onInputChange={this.handleInputChange}
           onSubmit={this.handleFormSubmit}
+          inputs={this.state.contactFormInputs}
         />
       </main>
     );
@@ -58,7 +93,8 @@ export class Home extends Component {
 
 const mapStateToProps = state => {
   return {
-    page: state.page.page
+    page: state.page.page,
+    contactForm: state.contactForm
   };
 };
 
@@ -66,6 +102,9 @@ const mapDispatchToProps = dispatch => {
   return {
     getPageData: slug => {
       dispatch(fetchPageRequest(slug));
+    },
+    contactFormRequest: (name, subject, email, message) => {
+      dispatch(contactFormRequest(name, subject, email, message));
     }
   };
 };

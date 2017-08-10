@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styles from './style.scss';
 
 const Wrap = ({ children, width }) =>
-  <div className={styles.wrap} style={{ width }}>
+  <div className={styles.wrap} style={{ maxWidth: width }}>
     {children}
   </div>;
 

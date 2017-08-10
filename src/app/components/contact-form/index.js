@@ -24,7 +24,7 @@ const ContactForm = ({
         {desc}
       </p>
 
-      <form className={styles.form} onSubmit={onSubmit} noValidate>
+      <form className={styles.form} onSubmit={onSubmit}>
         <div className={styles.sections}>
           <div className={styles.left}>
             <TextInput
@@ -56,7 +56,7 @@ const ContactForm = ({
           </div>
         </div>
         <div className={styles.buttons}>
-          <SubmitButton name={buttonText} isLoading={false} />
+          <SubmitButton name={buttonText} isLoading={isLoading} />
         </div>
       </form>
     </Wrap>

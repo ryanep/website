@@ -5,7 +5,7 @@ const initialState = {
   page: {}
 };
 
-export default function pageDidChange(state = initialState, action) {
+export default (state = initialState, action) => {
   switch (action.type) {
     case types.PAGE_FETCH_REQUEST:
       return { ...state, isLoading: true };
@@ -16,4 +16,4 @@ export default function pageDidChange(state = initialState, action) {
     default:
       return state;
   }
-}
+};
