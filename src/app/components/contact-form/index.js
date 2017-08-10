@@ -13,7 +13,8 @@ const ContactForm = ({
   buttonText,
   isLoading,
   onInputChange,
-  onSubmit
+  onSubmit,
+  inputs
 }) =>
   <div id={'contact'} className={styles.contact}>
     <Wrap width={'84rem'}>
@@ -30,18 +31,21 @@ const ContactForm = ({
             <TextInput
               label="Name"
               name="name"
+              value={inputs.name}
               required={true}
               onChange={onInputChange}
             />
             <TextInput
               label="Subject"
               name="subject"
+              value={inputs.subject}
               required={true}
               onChange={onInputChange}
             />
             <EmailInput
               label="Email address"
               name="email"
+              value={inputs.email}
               required={true}
               onChange={onInputChange}
             />
@@ -51,6 +55,7 @@ const ContactForm = ({
               label="Message"
               name="message"
               required={true}
+              value={inputs.message}
               onChange={onInputChange}
             />
           </div>
@@ -68,7 +73,8 @@ ContactForm.propTypes = {
   buttonText: PropTypes.string.isRequired,
   isLoading: PropTypes.bool.isRequired,
   onInputChange: PropTypes.func.isRequired,
-  onSubmit: PropTypes.func.isRequired
+  onSubmit: PropTypes.func.isRequired,
+  inputs: PropTypes.object.isRequired
 };
 
 export default ContactForm;
