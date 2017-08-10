@@ -7,10 +7,10 @@ import { renderToString } from 'react-dom/server';
 import { Provider } from 'react-redux';
 import { StaticRouter as Router } from 'react-router';
 import { Route } from 'react-router-dom';
-import { STATUS_500 } from '../app/constants/status-types';
-import configureStore from '../app/store/configure-store';
-import sagas from '../app/sagas';
-import App from '../app/components/app';
+import { STATUS_500 } from '@constants/status-types';
+import configureStore from '@store/configure-store';
+import sagas from '@sagas/sagas';
+import App from '@containers/app';
 
 const app = express();
 const store = configureStore();
