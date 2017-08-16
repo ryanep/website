@@ -1,4 +1,5 @@
 import express from 'express';
+import path from 'path';
 import fs from 'fs';
 import http from 'http';
 import https from 'https';
@@ -36,6 +37,8 @@ app.get('/send', (req, res) => {
   }
 });
 
+app.use(express.static('static'));
+
 app.get('*', (req, res) => {
   const context = {};
 
@@ -63,7 +66,12 @@ app.get('*', (req, res) => {
   store.close();
 });
 
-const credentials = {};
+/*
+const credentials = {
+  key: fs.readFileSync('./vault/key.pem'),
+  cert: fs.readFileSync('./vault/cert.pem')
+};
+*/
 
 http.createServer(app).listen(config.app.port);
-https.createServer(credentials, app).listen(3443);
+// https.createServer(credentials, app).listen(3443);
