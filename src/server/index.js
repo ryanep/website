@@ -1,4 +1,7 @@
 import express from 'express';
+import fs from 'fs';
+import http from 'http';
+import https from 'https';
 import React from 'react';
 import Helmet from 'react-helmet';
 import * as middleware from './middleware';
@@ -60,6 +63,7 @@ app.get('*', (req, res) => {
   store.close();
 });
 
-app.listen(config.app.port, () => {
-  console.log(`Serving site on port ${config.app.port}`); // eslint-disable-line no-console
-});
+const credentials = {};
+
+http.createServer(app).listen(config.app.port);
+https.createServer(credentials, app).listen(3443);
