@@ -4,10 +4,9 @@ import Navigation from '@components/navigation';
 import Bubbles from '@components/bubbles';
 import styles from './style.scss';
 
-const Header = ({ isBanner, heading, description }) =>
+const Header = ({ isBanner, heading, description, children }) =>
   <header className={isBanner ? styles.banner : styles.header}>
-    <Navigation />
-    <Bubbles bubbles={20} />
+    {children}
 
     {isBanner &&
       <div className={styles.heading}>

@@ -4,8 +4,8 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { Route } from 'react-router';
 import ScrollToTop from '@components/scroll-to-top';
-import configureStore from '../app/store/configure-store';
-import sagas from '../app/sagas';
+import configureStore from '@store/configure-store';
+import sagas from '@sagas';
 import App from '@containers/app';
 
 const preloadedState = window.SERVER_STATE;

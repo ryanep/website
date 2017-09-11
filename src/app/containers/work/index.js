@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Helmet from 'react-helmet';
 import TitleBar from '@components/title-bar';
-import { fetchPageRequest } from '@actions/page';
+import { pageFetchRequest } from '@actions/page';
 import styles from './style.scss';
 
 export class Work extends Component {
@@ -30,7 +30,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     getPageData: slug => {
-      dispatch(fetchPageRequest(slug));
+      dispatch(pageFetchRequest(slug));
     }
   };
 };
