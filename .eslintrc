@@ -1,9 +1,8 @@
 {
-  "extends": [
-    "walmart/configurations/es6"
-  ],
+  "extends": ["walmart/configurations/es6"],
   "env": {
-      "browser": true
+    "browser": true,
+    "jest/globals": true
   },
   "root": true,
   "parserOptions": {
@@ -12,10 +11,7 @@
       "jsx": true
     }
   },
-  "plugins": [
-    "babel",
-    "react"
-  ],
+  "plugins": ["babel", "react", "jest"],
   "rules": {
     "react/jsx-uses-react": "error",
     "react/jsx-uses-vars": "error",
@@ -23,13 +19,13 @@
     "no-invalid-this": 0,
     "babel/no-invalid-this": 1,
     "max-len": ["error", 120],
-    "quotes": [
+    "quotes": ["error", "single", "avoid-escape"],
+    "max-statements": [
       "error",
-      "single",
-      "avoid-escape"
-    ],
-    "max-statements": ["error", 30, {
+      30,
+      {
         "ignoreTopLevelFunctions": true
-    }]
+      }
+    ]
   }
 }

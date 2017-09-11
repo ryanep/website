@@ -64,6 +64,7 @@
     "eslint-config-walmart": "^1.2.4",
     "eslint-plugin-babel": "^4.1.1",
     "eslint-plugin-filenames": "^1.2.0",
+    "eslint-plugin-jest": "^21.0.2",
     "eslint-plugin-react": "^7.1.0",
     "extract-text-webpack-plugin": "^2.1.0",
     "file-loader": "^0.10.1",
@@ -76,8 +77,8 @@
     "nodemon": "^1.11.0",
     "prettier": "^1.5.2",
     "raw-loader": "^0.5.1",
-    "react-addons-test-utils": "^15.6.0",
     "react-hot-loader": "^1.3.1",
+    "react-test-renderer": "^15.6.1",
     "redux-mock-store": "^1.2.3",
     "sass-loader": "^4.1.1",
     "sass-resources-loader": "^1.2.1",
@@ -93,6 +94,24 @@
   },
   "standard": {
     "env": ["jest"]
+  },
+  "jest": {
+    "setupFiles": ["./config/jest/"],
+    "moduleNameMapper": {
+      "\\.(css|less|scss)$": "identity-obj-proxy",
+      "^@actions(.*)$": "<rootDir>/src/app/actions$1",
+      "^@adapters(.*)$": "<rootDir>/src/app/adapters$1",
+      "^@components(.*)$": "<rootDir>/src/app/components$1",
+      "^@constants(.*)$": "<rootDir>/src/app/constants$1",
+      "^@containers(.*)$": "<rootDir>/src/app/containers$1",
+      "^@helpers(.*)$": "<rootDir>/src/app/helpers$1",
+      "^@models(.*)$": "<rootDir>/src/app/models$1",
+      "^@reducers(.*)$": "<rootDir>/src/app/reducers$1",
+      "^@sagas(.*)$": "<rootDir>/src/app/sagas$1",
+      "^@services(.*)$": "<rootDir>/src/app/services$1",
+      "^@store(.*)$": "<rootDir>/src/app/store$1"
+    },
+    "collectCoverageFrom": ["src/**/*.js"]
   },
   "lint-staged": {
     "*.js": ["prettier --write --single-quote", "git add"],
