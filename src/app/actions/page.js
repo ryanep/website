@@ -1,22 +1,22 @@
 import * as types from '../constants/action-types';
 
-export const fetchPageRequest = slug => {
+export const pageFetchRequest = slug => {
   return {
     type: types.PAGE_FETCH_REQUEST,
     slug
   };
 };
 
-export const fetchPageSuccess = data => {
+export const pageFetchSuccess = data => {
   return {
     type: types.PAGE_FETCH_SUCCESS,
     data
   };
 };
 
-export const fetchPageError = error => {
+export const pageFetchFailure = error => {
   return {
-    type: types.PAGE_FETCH_ERROR,
+    type: types.PAGE_FETCH_FAILIRE,
     error
   };
 };

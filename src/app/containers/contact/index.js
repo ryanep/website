@@ -4,7 +4,7 @@ import Helmet from 'react-helmet';
 import TitleBar from '@components/title-bar';
 import ContactForm from '@components/contact-form';
 import ContactConnect from '@components/contact-connect';
-import { fetchPageRequest } from '@actions/page';
+import { pageFetchRequest } from '@actions/page';
 import { contactFormRequest } from '@actions/contact-form';
 import styles from './style.scss';
 
@@ -91,7 +91,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     getPageData: slug => {
-      dispatch(fetchPageRequest(slug));
+      dispatch(pageFetchRequest(slug));
     },
     contactFormRequest: (name, subject, email, message) => {
       dispatch(contactFormRequest(name, subject, email, message));

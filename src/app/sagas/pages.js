@@ -8,12 +8,12 @@ export const getPage = function*(action) {
   try {
     const response = yield call(fetchPageData, action.slug);
     if (response.error) {
-      yield put(pageActions.fetchPageError(response.error));
+      yield put(pageActions.pageFetchFailure(response.error));
     } else {
-      yield put(pageActions.fetchPageSuccess(response));
+      yield put(pageActions.pageFetchSuccess(response));
     }
   } catch (err) {
-    yield put(pageActions.fetchPageError(err));
+    yield put(pageActions.pageFetchFailure(err));
   }
 };
 

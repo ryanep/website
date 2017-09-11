@@ -7,7 +7,7 @@ import HomeExperience from '@components/home-experience';
 import HomeWork from '@components/home-work';
 import HomeTimeline from '@components/home-timeline';
 import ContactForm from '@components/contact-form';
-import { fetchPageRequest } from '@actions/page';
+import { pageFetchRequest } from '@actions/page';
 import { contactFormRequest } from '@actions/contact-form';
 import styles from './style.scss';
 
@@ -101,7 +101,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     getPageData: slug => {
-      dispatch(fetchPageRequest(slug));
+      dispatch(pageFetchRequest(slug));
     },
     contactFormRequest: (name, subject, email, message) => {
       dispatch(contactFormRequest(name, subject, email, message));
