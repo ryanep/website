@@ -1,12 +1,26 @@
 version: '3'
 services:
-    express:
+    website:
         build: .
-        image: ryanep_portfolio_image:local
-        container_name: ryanep_portfolio_container
+        image: ryanep-website-image:local
+        container_name: ryanep-portfolio-container
         restart: always
         ports:
             - "3000:3000"
         volumes:
             - ./:/app
             - /app/node_modules
+        links:
+            - api
+        depends_on:
+            - api
+    api:
+        build: ../ryanep.com-backend/
+        image: ryanep-api-image:local
+        container_name: ryanep-api-container
+        restart: always
+        ports:
+            - "3001:3001"
+        volumes:
+            - ../ryanep.com-backend:/api
+            - /api/node_modules
