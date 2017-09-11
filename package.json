@@ -72,8 +72,6 @@
     "ignore-styles": "^5.0.1",
     "jest": "^19.0.2",
     "lint-staged": "^4.0.2",
-    "nightmare": "^2.10.0",
-    "nightmare-upload": "^0.1.1",
     "node-sass": "^3.13.1",
     "nodemon": "^1.11.0",
     "prettier": "^1.5.2",
@@ -94,18 +92,10 @@
     "webpack-dev-server": "^2.5.0"
   },
   "standard": {
-    "env": [
-      "jest"
-    ]
+    "env": ["jest"]
   },
   "lint-staged": {
-    "*.js": [
-      "prettier --write --single-quote",
-      "git add"
-    ],
-    "*.scss": [
-      "stylefmt -r",
-      "git add"
-    ]
+    "*.js": ["prettier --write --single-quote", "git add"],
+    "*.scss": ["stylefmt -r", "git add"]
   }
 }
