@@ -6,16 +6,11 @@ export const fetchPageData = async slug => {
   return response.json();
 };
 
-export const contactFormSubmit = async (name, subject, email, message) => {
+export const contactFormSubmit = async payload => {
   const response = await fetch(`${api.apiURL}/contact`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      name,
-      subject,
-      email,
-      message
-    })
+    body: JSON.stringify({ ...payload })
   });
   return response.json();
 };

@@ -1,7 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Navigation from '@components/navigation';
-import Bubbles from '@components/bubbles';
 import styles from './style.scss';
 
 const Header = ({ isBanner, heading, description, children }) =>

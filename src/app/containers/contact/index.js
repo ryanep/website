@@ -55,7 +55,7 @@ export class Contact extends Component {
         }
       });
 
-      this.props.contactFormRequest(name, subject, email, message);
+      this.props.contactFormRequest({ name, subject, email, message });
     }
   };
 
@@ -93,8 +93,8 @@ const mapDispatchToProps = dispatch => {
     getPageData: slug => {
       dispatch(pageFetchRequest(slug));
     },
-    contactFormRequest: (name, subject, email, message) => {
-      dispatch(contactFormRequest(name, subject, email, message));
+    contactFormRequest: payload => {
+      dispatch(contactFormRequest(payload));
     }
   };
 };

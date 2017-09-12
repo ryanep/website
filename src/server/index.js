@@ -1,8 +1,5 @@
 import express from 'express';
-import path from 'path';
-import fs from 'fs';
 import http from 'http';
-import https from 'https';
 import React from 'react';
 import Helmet from 'react-helmet';
 import * as middleware from './middleware';
@@ -66,12 +63,4 @@ app.get('*', (req, res) => {
   store.close();
 });
 
-/*
-const credentials = {
-  key: fs.readFileSync('./vault/key.pem'),
-  cert: fs.readFileSync('./vault/cert.pem')
-};
-*/
-
 http.createServer(app).listen(config.app.port);
-// https.createServer(credentials, app).listen(3443);

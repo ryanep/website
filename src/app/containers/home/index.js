@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Helmet from 'react-helmet';
-import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import HomeAbout from '@components/home-about';
 import HomeExperience from '@components/home-experience';
@@ -58,7 +57,7 @@ export class Home extends Component {
         }
       });
 
-      this.props.contactFormRequest(name, subject, email, message);
+      this.props.contactFormRequest({ name, subject, email, message });
     }
   };
 
@@ -103,8 +102,8 @@ const mapDispatchToProps = dispatch => {
     getPageData: slug => {
       dispatch(pageFetchRequest(slug));
     },
-    contactFormRequest: (name, subject, email, message) => {
-      dispatch(contactFormRequest(name, subject, email, message));
+    contactFormRequest: payload => {
+      dispatch(contactFormRequest(payload));
     }
   };
 };

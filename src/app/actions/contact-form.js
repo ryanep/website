@@ -1,12 +1,9 @@
 import * as types from '@constants/action-types';
 
-export const contactFormRequest = (name, subject, email, message) => {
+export const contactFormRequest = payload => {
   return {
     type: types.CONTACT_FORM_REQUEST,
-    name,
-    subject,
-    email,
-    message
+    payload
   };
 };
 

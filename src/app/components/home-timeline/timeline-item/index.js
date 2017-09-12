@@ -1,10 +1,8 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import styles from './style.scss';
 
-export default ({ url, icon, company, time, role }) =>
+export default ({ icon, company, time, role }) =>
   <div className={styles.link}>
-    {/* <Link to={url} className={styles.link}> */}
     <article className={styles.item}>
       <header className={styles.header}>
         <img
@@ -25,5 +23,4 @@ export default ({ url, icon, company, time, role }) =>
         {role}
       </div>
     </article>
-    {/* </Link> */}
   </div>;

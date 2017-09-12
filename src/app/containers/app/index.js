@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Route, Switch } from 'react-router-dom';
-import reset from './reset.scss';
-import fonts from './fonts.scss';
+import reset from './reset.scss'; // eslint-disable-line no-unused-vars
+import fonts from './fonts.scss'; // eslint-disable-line no-unused-vars
 import styles from './style.scss';
 import Header from '@components/header';
 import Footer from '@components/footer';

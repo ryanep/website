@@ -6,15 +6,9 @@ import * as types from '@constants/action-types';
 
 export const handleContactFormSubmit = function*(action) {
   try {
-    const { name, subject, email, message } = action;
+    const { payload } = action;
 
-    const response = yield call(
-      contactFormSubmit,
-      name,
-      subject,
-      email,
-      message
-    );
+    const response = yield call(contactFormSubmit, payload);
 
     if (response.error) {
       yield put(contactFormActions.contactFormFailure(response.error));
