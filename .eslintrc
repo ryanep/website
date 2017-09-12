@@ -1,5 +1,5 @@
 {
-  "extends": ["walmart/configurations/es6"],
+  "extends": ["walmart/configurations/es6", "prettier"],
   "env": {
     "browser": true,
     "jest/globals": true

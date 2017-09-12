@@ -61,6 +61,7 @@
     "css-loader": "^0.25.0",
     "enzyme": "^2.9.1",
     "eslint": "^3.19.0",
+    "eslint-config-prettier": "^2.4.0",
     "eslint-config-walmart": "^1.2.4",
     "eslint-plugin-babel": "^4.1.1",
     "eslint-plugin-filenames": "^1.2.0",
@@ -93,10 +94,14 @@
     "webpack-dev-server": "^2.5.0"
   },
   "standard": {
-    "env": ["jest"]
+    "env": [
+      "jest"
+    ]
   },
   "jest": {
-    "setupFiles": ["./config/jest/"],
+    "setupFiles": [
+      "./config/jest/"
+    ],
     "moduleNameMapper": {
       "\\.(css|less|scss)$": "identity-obj-proxy",
       "^@actions(.*)$": "<rootDir>/src/app/actions$1",
@@ -111,10 +116,18 @@
       "^@services(.*)$": "<rootDir>/src/app/services$1",
       "^@store(.*)$": "<rootDir>/src/app/store$1"
     },
-    "collectCoverageFrom": ["src/**/*.js"]
+    "collectCoverageFrom": [
+      "src/**/*.js"
+    ]
   },
   "lint-staged": {
-    "*.js": ["prettier --write --single-quote", "git add"],
-    "*.scss": ["stylefmt -r", "git add"]
+    "*.js": [
+      "prettier --write --single-quote",
+      "git add"
+    ],
+    "*.scss": [
+      "stylefmt -r",
+      "git add"
+    ]
   }
 }
