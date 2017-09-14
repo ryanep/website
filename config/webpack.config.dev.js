@@ -1,5 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
+const Dotenv = require('dotenv-webpack');
 
 module.exports = [
   {
@@ -70,6 +71,11 @@ module.exports = [
         '@store': path.resolve(__dirname, '../src/app/store/')
       }
     },
-    plugins: [new webpack.optimize.OccurrenceOrderPlugin()]
+    plugins: [
+      new webpack.optimize.OccurrenceOrderPlugin(),
+      new Dotenv({
+        path: './.env'
+      })
+    ]
   }
 ];

@@ -16,7 +16,7 @@ export const pageFetchSuccess = data => {
 
 export const pageFetchFailure = error => {
   return {
-    type: types.PAGE_FETCH_FAILIRE,
+    type: types.PAGE_FETCH_FAILURE,
     error
   };
 };

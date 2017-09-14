@@ -1,7 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+const Dotenv = require('dotenv-webpack');
 
 const fs = require('fs');
 const nodeModules = {};
@@ -65,7 +65,8 @@ module.exports = [
         '@reducers': path.resolve(__dirname, '../src/app/reducers/'),
         '@resources': path.resolve(__dirname, '../src/app/resources/'),
         '@sagas': path.resolve(__dirname, '../src/app/sagas/'),
-        '@services': path.resolve(__dirname, '../src/app/services/')
+        '@services': path.resolve(__dirname, '../src/app/services/'),
+        '@store': path.resolve(__dirname, '../src/app/store/')
       }
     },
     plugins: [
@@ -75,6 +76,14 @@ module.exports = [
         'process.env': {
           NODE_ENV: JSON.stringify('production')
         }
+      }),
+      new Dotenv({
+        path: './.env'
+      }),
+      new webpack.optimize.UglifyJsPlugin({
+        output: {
+          comments: false
+        }
       })
     ]
   },
@@ -82,7 +91,6 @@ module.exports = [
     name: 'server-side rendering',
     entry: ['babel-polyfill', path.join(__dirname, '../src/server/index.js')],
     target: 'node',
-    devtool: 'source-map',
     output: {
       path: path.join(__dirname, '../dist/server'),
       filename: 'index.js'
@@ -139,10 +147,18 @@ module.exports = [
     externals,
     plugins: [
       new ExtractTextPlugin({ filename: 'style.css', allChunks: true }),
-      new webpack.BannerPlugin({
-        banner: 'require("source-map-support").install();',
-        raw: true,
-        entryOnly: false
+      new webpack.DefinePlugin({
+        'process.env': {
+          NODE_ENV: JSON.stringify('production')
+        }
+      }),
+      new Dotenv({
+        path: './.env'
+      }),
+      new webpack.optimize.UglifyJsPlugin({
+        output: {
+          comments: false
+        }
       })
     ]
   }

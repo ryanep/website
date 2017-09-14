@@ -14,7 +14,6 @@ import sagas from '@sagas';
 import App from '@containers/app';
 
 const app = express();
-const store = configureStore();
 
 middleware.setup(app);
 
@@ -37,6 +36,7 @@ app.get('/send', (req, res) => {
 app.use(express.static('static'));
 
 app.get('*', (req, res) => {
+  const store = configureStore();
   const context = {};
 
   const rootComponent = (

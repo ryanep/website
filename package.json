@@ -22,6 +22,7 @@
     "precommit": "lint-staged"
   },
   "dependencies": {
+    "babel-polyfill": "^6.23.0",
     "compression": "^1.6.2",
     "ejs": "^2.5.6",
     "express": "^4.15.2",
@@ -59,6 +60,7 @@
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
     "css-loader": "^0.25.0",
+    "dotenv-webpack": "^1.5.4",
     "enzyme": "^2.9.1",
     "eslint": "^3.19.0",
     "eslint-config-prettier": "^2.4.0",
@@ -94,10 +96,14 @@
     "webpack-dev-server": "^2.5.0"
   },
   "standard": {
-    "env": ["jest"]
+    "env": [
+      "jest"
+    ]
   },
   "jest": {
-    "setupFiles": ["./config/jest/"],
+    "setupFiles": [
+      "./config/jest/"
+    ],
     "moduleNameMapper": {
       "\\.(css|less|scss)$": "identity-obj-proxy",
       "^@actions(.*)$": "<rootDir>/src/app/actions$1",
@@ -112,10 +118,19 @@
       "^@services(.*)$": "<rootDir>/src/app/services$1",
       "^@store(.*)$": "<rootDir>/src/app/store$1"
     },
-    "collectCoverageFrom": ["src/**/*.js"]
+    "collectCoverageFrom": [
+      "src/**/*.js"
+    ]
   },
   "lint-staged": {
-    "*.js": ["prettier --write --single-quote", "eslint", "git add"],
-    "*.scss": ["stylefmt -r", "git add"]
+    "*.js": [
+      "prettier --write --single-quote",
+      "eslint",
+      "git add"
+    ],
+    "*.scss": [
+      "stylefmt -r",
+      "git add"
+    ]
   }
 }
