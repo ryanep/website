@@ -15,7 +15,7 @@ module.exports = [
         {
           test: /.js$/,
           include: path.resolve(__dirname, '../src'),
-          loader: ['react-hot-loader', 'babel-loader']
+          loader: ['babel-loader']
         },
         {
           test: /\.scss$/,
