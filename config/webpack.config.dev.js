@@ -56,7 +56,8 @@ module.exports = [
       contentBase: path.join(__dirname, '../src/client/'),
       hot: true,
       historyApiFallback: true,
-      overlay: true
+      overlay: true,
+      disableHostCheck: true
     },
     resolve: {
       alias: {
