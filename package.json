@@ -8,11 +8,9 @@
     "url": "git+https://github.com/ryanep/ryanep.com-frontend.git"
   },
   "scripts": {
-    "build":
-      "rm -rf ./dist && webpack --config ./config/webpack.config.prod.js",
+    "build": "rm -rf ./dist && webpack --config ./config/webpack.config.prod.js",
     "start": "NODE_ENV=production && node ./dist/server/",
-    "dev":
-      "webpack-dev-server ./src/client --hot --inline --config ./config/webpack.config.dev.js",
+    "dev": "webpack-dev-server ./src/client --hot --inline --config ./config/webpack.config.dev.js",
     "test": "jest",
     "test:coverage": "jest --coverage",
     "lint": "npm run lint:css && npm run lint:js",
@@ -49,12 +47,13 @@
     "babel-eslint": "8.0.1",
     "babel-jest": "21.2.0",
     "babel-loader": "7.1.2",
-    "babel-polyfill": "6.26.0",
     "babel-plugin-transform-async-to-generator": "6.24.1",
     "babel-plugin-transform-class-properties": "6.24.1",
     "babel-plugin-transform-object-rest-spread": "6.26.0",
+    "babel-polyfill": "6.26.0",
     "babel-preset-env": "1.6.0",
     "babel-preset-react": "6.24.1",
+    "copy-webpack-plugin": "^4.1.1",
     "css-loader": "0.28.7",
     "dotenv-webpack": "1.5.4",
     "enzyme": "3.0.0",
@@ -93,10 +92,14 @@
     "webpack-dev-server": "2.8.2"
   },
   "standard": {
-    "env": ["jest"]
+    "env": [
+      "jest"
+    ]
   },
   "jest": {
-    "setupFiles": ["./config/jest/"],
+    "setupFiles": [
+      "./config/jest/"
+    ],
     "moduleNameMapper": {
       "\\.(css|less|scss)$": "identity-obj-proxy",
       "^@actions(.*)$": "<rootDir>/src/app/actions$1",
@@ -111,10 +114,19 @@
       "^@services(.*)$": "<rootDir>/src/app/services$1",
       "^@store(.*)$": "<rootDir>/src/app/store$1"
     },
-    "collectCoverageFrom": ["src/**/*.js"]
+    "collectCoverageFrom": [
+      "src/**/*.js"
+    ]
   },
   "lint-staged": {
-    "*.js": ["prettier --write --single-quote", "eslint", "git add"],
-    "*.scss": ["stylefmt -r", "git add"]
+    "*.js": [
+      "prettier --write --single-quote",
+      "eslint",
+      "git add"
+    ],
+    "*.scss": [
+      "stylefmt -r",
+      "git add"
+    ]
   }
 }
