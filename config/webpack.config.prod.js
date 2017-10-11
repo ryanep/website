@@ -1,7 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const Dotenv = require('dotenv-webpack');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const fs = require('fs');
 const nodeModules = {};
@@ -74,11 +74,9 @@ module.exports = [
       new webpack.optimize.OccurrenceOrderPlugin(),
       new webpack.DefinePlugin({
         'process.env': {
-          NODE_ENV: JSON.stringify('production')
+          NODE_ENV: JSON.stringify('production'),
+          API_URL: JSON.stringify('https://api.ryanep.com/v1')
         }
-      }),
-      new Dotenv({
-        path: './.env'
       }),
       new webpack.optimize.UglifyJsPlugin({
         output: {
@@ -149,17 +147,21 @@ module.exports = [
       new ExtractTextPlugin({ filename: 'style.css', allChunks: true }),
       new webpack.DefinePlugin({
         'process.env': {
-          NODE_ENV: JSON.stringify('production')
+          NODE_ENV: JSON.stringify('production'),
+          API_URL: JSON.stringify('https://api.ryanep.com/v1')
         }
-      }),
-      new Dotenv({
-        path: './.env'
       }),
       new webpack.optimize.UglifyJsPlugin({
         output: {
           comments: false
         }
-      })
+      }),
+      new CopyWebpackPlugin([
+        {
+          from: './src/server/views/index.ejs',
+          to: './views/index.ejs'
+        }
+      ])
     ]
   }
 ];

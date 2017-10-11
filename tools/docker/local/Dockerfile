@@ -4,5 +4,5 @@ RUN mkdir /app
 WORKDIR /app
 RUN cd /app
 COPY . .
-RUN npm install
-CMD npm run dev
+RUN yarn
+CMD yarn run dev
