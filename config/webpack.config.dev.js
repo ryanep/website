@@ -77,7 +77,7 @@ module.exports = [
       new webpack.DefinePlugin({
         'process.env': {
           NODE_ENV: JSON.stringify('development'),
-          API_URL: JSON.stringify('https://api.ryanep.com/v1')
+          API_URL: JSON.stringify('http://localhost:3002')
         }
       })
     ]
