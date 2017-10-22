@@ -15,15 +15,11 @@ const ContactForm = ({
   onInputChange,
   onSubmit,
   inputs
-}) =>
+}) => (
   <div id={'contact'} className={styles.contact}>
     <Wrap width={'84rem'}>
-      <h2 className={styles.heading}>
-        {title}
-      </h2>
-      <p className={styles.desc}>
-        {desc}
-      </p>
+      <h2 className={styles.heading}>{title}</h2>
+      <p className={styles.desc}>{desc}</p>
 
       <form className={styles.form} onSubmit={onSubmit}>
         <div className={styles.sections}>
@@ -32,31 +28,31 @@ const ContactForm = ({
               label="Name"
               name="name"
               value={inputs.name}
-              required={true}
               onChange={onInputChange}
+              required
             />
             <TextInput
               label="Subject"
               name="subject"
               value={inputs.subject}
-              required={true}
               onChange={onInputChange}
+              required
             />
             <EmailInput
               label="Email address"
               name="email"
               value={inputs.email}
-              required={true}
               onChange={onInputChange}
+              required
             />
           </div>
           <div className={styles.right}>
             <Textarea
               label="Message"
               name="message"
-              required={true}
               value={inputs.message}
               onChange={onInputChange}
+              required
             />
           </div>
         </div>
@@ -65,7 +61,8 @@ const ContactForm = ({
         </div>
       </form>
     </Wrap>
-  </div>;
+  </div>
+);
 
 ContactForm.propTypes = {
   title: PropTypes.string.isRequired,

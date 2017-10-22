@@ -5,6 +5,7 @@ module.exports = [
   {
     name: 'browser',
     entry: ['babel-polyfill', path.join(__dirname, '../src/client/index.js')],
+    devtool: 'eval',
     output: {
       path: path.join(__dirname, '../dist/client/'),
       filename: 'build.js'
@@ -76,7 +77,7 @@ module.exports = [
       new webpack.DefinePlugin({
         'process.env': {
           NODE_ENV: JSON.stringify('development'),
-          API_URL: JSON.stringify('http://localhost:3002')
+          API_URL: JSON.stringify('https://api.ryanep.com/v1')
         }
       })
     ]

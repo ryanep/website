@@ -5,7 +5,7 @@ import styles from './style.scss';
 
 describe('<Header />', () => {
   it('Render component on home', () => {
-    const component = shallow(<Header isBanner={true} />);
+    const component = shallow(<Header isBanner />);
     expect(component.hasClass(styles.banner)).toEqual(true);
   });
 });

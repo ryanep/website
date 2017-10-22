@@ -6,9 +6,9 @@ import styles from './style.scss';
 const Navigation = ({
   links,
   isOpen,
-  handleBurgerClick,
-  handleNavigationLinkClick
-}) =>
+  onBurgerClick,
+  onNavigationLinkClick
+}) => (
   <nav className={styles.nav}>
     <div className={styles.wrap}>
       <Link to={'/'} className={styles.logolink}>
@@ -20,33 +20,36 @@ const Navigation = ({
           className={styles.logo}
         />
       </Link>
-      {false &&
+      {false && (
         <div className={isOpen ? styles.linksOpen : styles.links}>
-          {links.map((link, index) =>
+          {links.map((link, index) => (
             <NavLink
               key={index}
               to={link.to}
               className={styles.link}
               activeClassName={styles.active}
-              onClick={handleNavigationLinkClick}
+              onClick={onNavigationLinkClick}
             >
               {link.title}
             </NavLink>
-          )}
-        </div>}
+          ))}
+        </div>
+      )}
       <div
         className={isOpen ? styles.burgerOpen : styles.burger}
-        onClick={handleBurgerClick}
+        onClick={onBurgerClick}
       >
         <div className={styles.hide}>Menu</div>
       </div>
     </div>
-  </nav>;
+  </nav>
+);
 
 Navigation.propTypes = {
+  links: PropTypes.array.isRequired,
   isOpen: PropTypes.bool.isRequired,
-  handleBurgerClick: PropTypes.func.isRequired,
-  handleNavigationLinkClick: PropTypes.func.isRequired
+  onBurgerClick: PropTypes.func.isRequired,
+  onNavigationLinkClick: PropTypes.func.isRequired
 };
 
 export default Navigation;

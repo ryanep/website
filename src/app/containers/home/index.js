@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { connect } from 'react-redux';
 import HomeAbout from '@components/home-about';
@@ -89,6 +90,11 @@ export class Home extends Component {
     );
   }
 }
+
+Home.propTypes = {
+  page: PropTypes.object,
+  contactForm: PropTypes.object.isRequired
+};
 
 const mapStateToProps = state => {
   return {

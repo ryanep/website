@@ -1,5 +1,4 @@
-import { takeEvery } from 'redux-saga';
-import { call, put } from 'redux-saga/effects';
+import { takeEvery, call, put } from 'redux-saga/effects';
 import * as contactFormActions from '@actions/contact-form';
 import { contactFormSubmit } from '@services/api';
 import * as types from '@constants/action-types';

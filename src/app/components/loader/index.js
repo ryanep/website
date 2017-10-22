@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './style.scss';
 
-const Loader = ({ size, colour }) =>
+const Loader = ({ size, colour }) => (
   <div
     className={styles.loader}
     style={{
@@ -13,11 +13,12 @@ const Loader = ({ size, colour }) =>
     }}
   >
     <div className={styles.hide}>Loading...</div>
-  </div>;
+  </div>
+);
 
 Loader.propTypes = {
   size: PropTypes.string,
-  color: PropTypes.string
+  colour: PropTypes.string
 };
 
 export default Loader;

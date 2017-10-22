@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Helmet from 'react-helmet';
 import TitleBar from '@components/title-bar';
@@ -20,6 +21,10 @@ export class Work extends Component {
     );
   }
 }
+
+Work.propTypes = {
+  location: PropTypes.object.isRequired
+};
 
 const mapStateToProps = state => {
   return {

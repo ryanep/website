@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Route, Switch } from 'react-router-dom';
-import reset from './reset.scss'; // eslint-disable-line no-unused-vars
-import fonts from './fonts.scss'; // eslint-disable-line no-unused-vars
+import './reset.scss';
+import './fonts.scss';
 import styles from './style.scss';
 import Header from '@components/header';
 import Footer from '@components/footer';
@@ -50,8 +51,8 @@ export class App extends Component {
           <Navigation
             links={navLinks}
             isOpen={this.state.isNavigationOpen}
-            handleBurgerClick={this.handleBurgerClick}
-            handleNavigationLinkClick={this.handleNavigationLinkClick}
+            onBurgerClick={this.handleBurgerClick}
+            onNavigationLinkClick={this.handleNavigationLinkClick}
           />
           <Bubbles bubbles={20} />
         </Header>
@@ -68,6 +69,11 @@ export class App extends Component {
     );
   }
 }
+
+App.propTypes = {
+  location: PropTypes.object.isRequired,
+  isLoading: PropTypes.bool
+};
 
 const mapStateToProps = state => {
   return {
