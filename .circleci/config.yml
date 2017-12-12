@@ -6,11 +6,10 @@ general:
 jobs:
   build:
     docker:
-      - image: circleci/node:8.5.0
+      - image: circleci/node:9.2.1
     working_directory: ~/app
     steps:
       - checkout
-      - setup_remote_docker
       - run:
           name: Install npm modules
           command: yarn
@@ -20,8 +19,9 @@ jobs:
       - run:
           name: Build application Docker image
           command: docker build -f tools/docker/prod/Dockerfile -t ryanep/portfolio .
+      - run:
+          name: test
+          command: docker save dokku/ryanep-frontend:$(git rev-parse --short HEAD) | bzip2 | ssh root@$SERVER_IP "bunzip2 | docker load"
       - deploy:
-          name: Push application Docker image
-          command: |
-            docker login -u $DOCKER_USER -p $DOCKER_PASS
-            docker push ryanep/portfolio
+          name: Deploy application to server
+          command: ssh root@$SERVER_IP "dokku tags:create ryanep-frontend previous; dokku tags:deploy ryanep-frontend $(git rev-parse --short HEAD) && dokku tags:create ryanep-frontend latest"
