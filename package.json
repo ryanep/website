@@ -9,7 +9,7 @@
   },
   "scripts": {
     "build": "rm -rf ./dist && webpack --config ./config/webpack.config.prod.js",
-    "start": "NODE_ENV=production && node ./dist/server/",
+    "start": "NODE_ENV=development && node ./dist/server/",
     "dev": "webpack-dev-server ./src/client --hot --inline --config ./config/webpack.config.dev.js",
     "test": "jest",
     "test:coverage": "jest --coverage",
