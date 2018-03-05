@@ -1,26 +1,28 @@
-import React, { Component } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import LazyLoad from 'react-lazyload';
 import styles from './style.scss';
 
-export default class HomeWork extends Component {
-  render() {
-    return (
-      <div className={styles.work}>
-        <LazyLoad width={300} height={200}>
-          <a href={this.props.url} className={styles.link} target={'_blank'}>
-            {this.props.inProgress &&
-              <div className={styles.progress}>In progress</div>}
-            <img
-              src={this.props.image}
-              alt={this.props.alt}
-              className={styles.image}
-            />
-          </a>
-        </LazyLoad>
-        <p className={styles.desc}>
-          {this.props.desc}
-        </p>
-      </div>
-    );
-  }
-}
+const WorkItem = ({ url, desc, inProgress, image, imageAlt }) => (
+  <div className={styles.work}>
+    <LazyLoad width={300} height={200}>
+      <a href={url} className={styles.link} target="_blank">
+        {inProgress && <div className={styles.progress}>In progress</div>}
+        <img src={image} alt={imageAlt} className={styles.image} />
+      </a>
+    </LazyLoad>
+    <p className={styles.desc}>{desc}</p>
+  </div>
+);
+
+WorkItem.propTypes = {
+  url: PropTypes.string.isRequired,
+  desc: PropTypes.string.isRequired,
+  inProgress: PropTypes.bool.isRequired,
+  image: PropTypes.string.isRequired,
+  imageAlt: PropTypes.string.isRequired
+};
+
+WorkItem.defaultProps = {};
+
+export default WorkItem;

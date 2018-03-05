@@ -1,5 +1,5 @@
-import * as actions from './contact-form';
 import * as types from '@constants/action-types';
+import * as actions from './contact-form';
 
 describe('actions/contact-form', () => {
   const payload = {

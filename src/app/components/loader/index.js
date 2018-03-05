@@ -2,14 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './style.scss';
 
-const Loader = ({ size, colour }) => (
+const Loader = ({ size }) => (
   <div
     className={styles.loader}
     style={{
       width: size,
-      height: size,
-      borderColor: colour,
-      borderTopColor: 'transparent'
+      height: size
     }}
   >
     <div className={styles.hide}>Loading...</div>
@@ -17,8 +15,11 @@ const Loader = ({ size, colour }) => (
 );
 
 Loader.propTypes = {
-  size: PropTypes.string,
-  colour: PropTypes.string
+  size: PropTypes.string
+};
+
+Loader.defaultProps = {
+  size: '2.5rem'
 };
 
 export default Loader;

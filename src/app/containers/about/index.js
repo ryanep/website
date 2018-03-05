@@ -13,26 +13,22 @@ export class About extends Component {
   render() {
     return (
       <main className={styles.main}>
-        <Helmet title={'About - Ryan Elliott-Potter'} />
-        <TitleBar heading={'About'} />
+        <Helmet title="About - Ryan Elliott-Potter" />
+        <TitleBar heading="About" />
         About
       </main>
     );
   }
 }
 
-const mapStateToProps = state => {
-  return {
-    data: state.page.page
-  };
-};
+const mapStateToProps = state => ({
+  data: state.page.page
+});
 
-const mapDispatchToProps = dispatch => {
-  return {
-    getPageData: slug => {
-      dispatch(pageFetchRequest(slug));
-    }
-  };
-};
+const mapDispatchToProps = dispatch => ({
+  getPageData: slug => {
+    dispatch(pageFetchRequest(slug));
+  }
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(About);

@@ -36,6 +36,11 @@
 	cursor: pointer;
 	appearance: none;
 
+	&:active {
+		padding: 0.8rem 3rem;
+		transform: scale(0.95);
+	}
+
 	&[disabled] {
 		background-color: transparent;
 		color: transparent;
@@ -47,11 +52,6 @@
 			background-color: $red;
 			color: $white;
 		}
-	}
-
-	&:active {
-		padding: 0.8rem 3rem;
-		transform: scale(0.95);
 	}
 }
 

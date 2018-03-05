@@ -1,3 +1,5 @@
-import app from './app';
+import * as app from './app';
 
-export default { app };
+export default {
+  app
+};

@@ -1,22 +1,16 @@
 import * as types from '@constants/action-types';
 
-export const contactFormRequest = payload => {
-  return {
-    type: types.CONTACT_FORM_REQUEST,
-    payload
-  };
-};
+export const contactFormRequest = payload => ({
+  type: types.CONTACT_FORM_REQUEST,
+  payload
+});
 
-export const contactFormSuccess = response => {
-  return {
-    type: types.CONTACT_FORM_SUCCESS,
-    response
-  };
-};
+export const contactFormSuccess = response => ({
+  type: types.CONTACT_FORM_SUCCESS,
+  response
+});
 
-export const contactFormFailure = error => {
-  return {
-    type: types.CONTACT_FORM_FAILURE,
-    error
-  };
-};
+export const contactFormFailure = error => ({
+  type: types.CONTACT_FORM_FAILURE,
+  error
+});

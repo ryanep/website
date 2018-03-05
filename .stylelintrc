@@ -1,13 +1,15 @@
 {
-    "extends": "stylelint-config-standard",
+    "extends": ["stylelint-config-standard"],
+    "plugins": ["stylelint-scss"],
     "rules": {
         "indentation": "tab",
         "selector-list-comma-newline-after": "never-multi-line",
         "selector-list-comma-space-after": "always",
         "color-hex-length": "long",
         "no-missing-end-of-source-newline": null,
-        "property-no-unknown": [ true, { ignoreProperties:["font-smoothing"] }],
-        "media-feature-name-no-unknown": [true, ignoreMediaFeatureNames: ["prefers-reduced-motion"]],
-        "declaration-empty-line-before": null
+        "property-no-unknown": [ true, { "ignoreProperties": ["font-smoothing"] }],
+        "media-feature-name-no-unknown": [true, "ignoreMediaFeatureNames": ["prefers-reduced-motion"]],
+        "declaration-empty-line-before": null,
+        "at-rule-no-unknown": null
     }
 }

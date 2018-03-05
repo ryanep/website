@@ -1,26 +1,30 @@
 version: '3'
 services:
-    website:
-        build: ./tools/docker/local/
-        image: ryanep-website-image:local
-        container_name: ryanep-portfolio-container
-        restart: always
-        ports:
-            - "3000:3000"
-        volumes:
-            - ./:/app
-            - /app/node_modules
-        links:
-            - api
-        depends_on:
-            - api
-    api:
-        build: ../ryanep.com-backend/
-        image: ryanep-api-image:local
-        container_name: ryanep-api-container
-        restart: always
-        ports:
-            - "3001:3001"
-        volumes:
-            - ../ryanep.com-backend:/api
-            - /api/node_modules
+  website:
+    build:
+      context: .
+      dockerfile: ./tools/docker/dev/dockerfile
+    image: ryanep-website-image:local
+    container_name: ryanep-portfolio-container
+    restart: always
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./:/app
+      - /app/node_modules
+    links:
+      - api
+    depends_on:
+      - api
+  api:
+    build:
+      context: ../ryanep.com-backend/
+      dockerfile: ./tools/docker/dev/dockerfile
+    image: ryanep-api-image:local
+    container_name: ryanep-api-container
+    restart: always
+    ports:
+      - "3001:3001"
+    volumes:
+      - ../ryanep.com-backend:/api
+      - /api/node_modules

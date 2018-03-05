@@ -2,17 +2,19 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './style.scss';
 
-const Textarea = ({ label, name, value, required, onChange }) =>
-  <label className={styles.label}>
+const Textarea = ({ label, name, value, required, onChange }) => (
+  <label htmlFor={`textarea-${name}`} className={styles.label}>
     {label}
     <textarea
+      id={`textarea-${name}`}
       name={name}
       required={required}
       value={value}
       className={styles.input}
       onChange={onChange}
     />
-  </label>;
+  </label>
+);
 
 Textarea.propTypes = {
   label: PropTypes.string.isRequired,

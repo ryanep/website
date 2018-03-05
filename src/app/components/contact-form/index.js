@@ -16,8 +16,8 @@ const ContactForm = ({
   onSubmit,
   inputs
 }) => (
-  <div id={'contact'} className={styles.contact}>
-    <Wrap width={'84rem'}>
+  <div id="contact" className={styles.contact}>
+    <Wrap width="84rem">
       <h2 className={styles.heading}>{title}</h2>
       <p className={styles.desc}>{desc}</p>
 
@@ -73,5 +73,7 @@ ContactForm.propTypes = {
   onSubmit: PropTypes.func.isRequired,
   inputs: PropTypes.object.isRequired
 };
+
+ContactForm.defaultProps = {};
 
 export default ContactForm;

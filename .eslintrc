@@ -1,15 +1,31 @@
 {
-  "extends": ["walmart/configurations/es6-react", "prettier"],
+  "extends": ["airbnb", "prettier"],
   "plugins": ["babel", "react", "jest"],
+  "parser": "babel-eslint",
+  "root": true,
   "env": {
     "browser": true,
-    "node": true,
     "jest/globals": true
   },
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
   "rules": {
-    "react/wrap-multilines": 0,
-    "react/prop-types": 0,
-    "no-invalid-this": 0,
-    "babel/no-invalid-this": 1
+    "import/no-unresolved": 0, // @TODO: Webpack aliases?
+    "import/extensions": 0, // @TODO: Review
+    "react/prop-types": 0, // @TODO: Remove
+    "import/no-extraneous-dependencies": 0,
+    "import/prefer-default-export": 0,
+    "react/jsx-filename-extension": ["error", { "extensions": [".js"] }],
+    "jsx-a11y/anchor-is-valid": [
+      "error",
+      {
+        "components": ["Link"],
+        "specialLink": ["to"]
+      }
+    ]
   }
 }

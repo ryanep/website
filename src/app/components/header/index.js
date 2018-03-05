@@ -22,4 +22,6 @@ Header.propTypes = {
   children: PropTypes.node.isRequired
 };
 
+Header.defaultProps = {};
+
 export default Header;

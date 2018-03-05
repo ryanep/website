@@ -1,24 +1,31 @@
-import React, { Component } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import styles from './style.scss';
 
-export default class ExperienceIcon extends Component {
-  render() {
-    const style = {
-      backgroundColor: this.props.data.colour
-    };
+const ExperienceIcon = ({ colour, name, image }) => (
+  <li className={styles.item}>
+    <div
+      className={styles.icon}
+      style={{ backgroundColor: colour }}
+      title={name}
+    >
+      <img
+        src={image}
+        width="50"
+        height="50"
+        className={styles.image}
+        alt={name}
+      />
+    </div>
+  </li>
+);
 
-    return (
-      <li className={styles.item}>
-        <div className={styles.icon} style={style} title={this.props.data.name}>
-          <img
-            src={this.props.data.image}
-            width="50"
-            height="50"
-            className={styles.image}
-            alt={this.props.data.name}
-          />
-        </div>
-      </li>
-    );
-  }
-}
+ExperienceIcon.propTypes = {
+  colour: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired
+};
+
+ExperienceIcon.defaultProps = {};
+
+export default ExperienceIcon;

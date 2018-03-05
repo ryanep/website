@@ -14,8 +14,8 @@ export class Blog extends Component {
   render() {
     return (
       <main className={styles.main}>
-        <Helmet title={'Blog - Ryan Elliott-Potter'} />
-        <TitleBar heading={'Blog'} />
+        <Helmet title="Blog - Ryan Elliott-Potter" />
+        <TitleBar heading="Blog" />
         Blog
       </main>
     );
@@ -26,18 +26,14 @@ Blog.propTypes = {
   route: PropTypes.object.isRequired
 };
 
-const mapStateToProps = state => {
-  return {
-    data: state.page
-  };
-};
+const mapStateToProps = state => ({
+  data: state.page
+});
 
-const mapDispatchToProps = dispatch => {
-  return {
-    getPageData: slug => {
-      dispatch(pageFetchRequest(slug));
-    }
-  };
-};
+const mapDispatchToProps = dispatch => ({
+  getPageData: slug => {
+    dispatch(pageFetchRequest(slug));
+  }
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(Blog);

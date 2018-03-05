@@ -11,7 +11,7 @@ const Navigation = ({
 }) => (
   <nav className={styles.nav}>
     <div className={styles.wrap}>
-      <Link to={'/'} className={styles.logolink}>
+      <Link to="/" className={styles.logolink}>
         <img
           src="//cdn.ryanep.com/images/logo.svg"
           width="80"
@@ -22,9 +22,9 @@ const Navigation = ({
       </Link>
       {false && (
         <div className={isOpen ? styles.linksOpen : styles.links}>
-          {links.map((link, index) => (
+          {links.map(link => (
             <NavLink
-              key={index}
+              key={link.to}
               to={link.to}
               className={styles.link}
               activeClassName={styles.active}
@@ -35,12 +35,12 @@ const Navigation = ({
           ))}
         </div>
       )}
-      <div
+      <button
         className={isOpen ? styles.burgerOpen : styles.burger}
         onClick={onBurgerClick}
       >
         <div className={styles.hide}>Menu</div>
-      </div>
+      </button>
     </div>
   </nav>
 );
@@ -51,5 +51,7 @@ Navigation.propTypes = {
   onBurgerClick: PropTypes.func.isRequired,
   onNavigationLinkClick: PropTypes.func.isRequired
 };
+
+Navigation.defaultProps = {};
 
 export default Navigation;

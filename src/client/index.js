@@ -16,7 +16,7 @@ render(
   <Provider store={store}>
     <Router>
       <ScrollToTop>
-        <Route path={'/'} component={App} />
+        <Route path="/" component={App} />
       </ScrollToTop>
     </Router>
   </Provider>,

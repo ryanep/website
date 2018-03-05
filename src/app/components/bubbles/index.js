@@ -28,9 +28,9 @@ export default class Bubbles extends Component {
   render() {
     return (
       <div className={styles.bubbles}>
-        {[...Array(this.props.bubbles)].map((x, i) =>
+        {[...Array(this.props.bubbles)].map((x, i) => (
           <Bubble key={i} {...this.generatePosition()} />
-        )}
+        ))}
       </div>
     );
   }

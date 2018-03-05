@@ -14,8 +14,8 @@ export class Work extends Component {
   render() {
     return (
       <main className={styles.main}>
-        <Helmet title={'Work - Ryan Elliott-Potter'} />
-        <TitleBar heading={'Work'} />
+        <Helmet title="Work - Ryan Elliott-Potter" />
+        <TitleBar heading="Work" />
         Work
       </main>
     );
@@ -23,21 +23,19 @@ export class Work extends Component {
 }
 
 Work.propTypes = {
-  location: PropTypes.object.isRequired
+  location: PropTypes.shape({
+    pathname: PropTypes.string.isRequired
+  }).isRequired
 };
 
-const mapStateToProps = state => {
-  return {
-    data: state.page
-  };
-};
+const mapStateToProps = state => ({
+  data: state.page
+});
 
-const mapDispatchToProps = dispatch => {
-  return {
-    getPageData: slug => {
-      dispatch(pageFetchRequest(slug));
-    }
-  };
-};
+const mapDispatchToProps = dispatch => ({
+  getPageData: slug => {
+    dispatch(pageFetchRequest(slug));
+  }
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(Work);

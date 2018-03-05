@@ -1,5 +1,5 @@
-import * as actions from './page';
 import * as types from '@constants/action-types';
+import * as actions from './page';
 
 describe('actions/page', () => {
   const data = {};

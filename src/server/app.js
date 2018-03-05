@@ -1,15 +1,14 @@
 import express from 'express';
 import React from 'react';
 import Helmet from 'react-helmet';
-import * as middleware from './middleware';
 import { renderToString } from 'react-dom/server';
 import { Provider } from 'react-redux';
 import { StaticRouter as Router } from 'react-router';
 import { Route } from 'react-router-dom';
-import { STATUS_500 } from '@constants/status-types';
 import configureStore from '@store/configure-store';
 import sagas from '@sagas';
 import App from '@containers/app';
+import * as middleware from './middleware';
 
 const app = express();
 
@@ -24,7 +23,7 @@ app.get('*', (req, res) => {
   const rootComponent = (
     <Provider store={store}>
       <Router location={req.url} context={context}>
-        <Route path={'/'} component={App} />
+        <Route path="/" component={App} />
       </Router>
     </Provider>
   );
@@ -38,7 +37,7 @@ app.get('*', (req, res) => {
       res.render('index', { head, markup, initialState });
     })
     .catch(error => {
-      res.status(STATUS_500).send(error);
+      res.status(500).send(error);
     });
 
   renderToString(rootComponent);

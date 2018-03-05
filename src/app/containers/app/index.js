@@ -2,9 +2,6 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Route, Switch } from 'react-router-dom';
-import './reset.scss';
-import './fonts.scss';
-import styles from './style.scss';
 import Header from '@components/header';
 import Footer from '@components/footer';
 import Loader from '@components/loader';
@@ -15,6 +12,9 @@ import Contact from '@containers/contact';
 import Error from '@containers/error';
 import Navigation from '@components/navigation';
 import Bubbles from '@components/bubbles';
+import './reset.scss';
+import './fonts.scss';
+import styles from './style.scss';
 
 export class App extends Component {
   constructor(props) {
@@ -45,8 +45,8 @@ export class App extends Component {
       <div className={styles.app}>
         <Header
           isBanner={this.props.location.pathname === '/'}
-          heading={'Ryan Elliott-Potter'}
-          description={'Web Developer'}
+          heading="Ryan Elliott-Potter"
+          description="Web Developer"
         >
           <Navigation
             links={navLinks}
@@ -57,10 +57,10 @@ export class App extends Component {
           <Bubbles bubbles={20} />
         </Header>
         <Switch>
-          <Route exact path={'/'} component={Home} />
-          <Route exact path={'/about'} component={About} />
-          <Route exact path={'/work'} component={Work} />
-          <Route exact path={'/contact'} component={Contact} />
+          <Route exact path="/" component={Home} />
+          <Route exact path="/about" component={About} />
+          <Route exact path="/work" component={Work} />
+          <Route exact path="/contact" component={Contact} />
           <Route component={Error} />
         </Switch>
         <Footer />
@@ -71,18 +71,20 @@ export class App extends Component {
 }
 
 App.propTypes = {
-  location: PropTypes.object.isRequired,
+  location: PropTypes.shape({
+    pathname: PropTypes.string.isRequired
+  }).isRequired,
   isLoading: PropTypes.bool
 };
 
-const mapStateToProps = state => {
-  return {
-    isLoading: state.page.isLoading
-  };
+App.defaultProps = {
+  isLoading: false
 };
 
-const mapDispatchToProps = () => {
-  return {};
-};
+const mapStateToProps = state => ({
+  isLoading: state.page.isLoading
+});
+
+const mapDispatchToProps = () => ({});
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

@@ -1,18 +1,27 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import ExperienceIcon from './experience-icon';
 import styles from './style.scss';
 
-export default ({ title, desc, icons }) =>
-  <section id={'experience'} className={styles.experience}>
+const HomeExperience = ({ title, desc, icons }) => (
+  <section id="experience" className={styles.experience}>
     <div className={styles.wrap}>
-      <h2 className={styles.heading}>
-        {title}
-      </h2>
-      <p className={styles.desc}>
-        {desc}
-      </p>
+      <h2 className={styles.heading}>{title}</h2>
+      <p className={styles.desc}>{desc}</p>
       <ul className={styles.icons}>
-        {icons.map((icon, index) => <ExperienceIcon key={index} data={icon} />)}
+        {icons.map(icon => <ExperienceIcon key={icon.id} {...icon} />)}
       </ul>
     </div>
-  </section>;
+  </section>
+);
+
+HomeExperience.propTypes = {
+  title: PropTypes.string.isRequired,
+  desc: PropTypes.string.isRequired,
+  icons: PropTypes.arrayOf(PropTypes.shape(ExperienceIcon.propTypes).isRequired)
+    .isRequired
+};
+
+HomeExperience.defaultProps = {};
+
+export default HomeExperience;

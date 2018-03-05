@@ -31,7 +31,7 @@ export class Home extends Component {
 
   handleInputChange = event => {
     const input = event.target;
-    const name = input.name;
+    const { name } = input;
 
     this.setState({
       contactFormInputs: {
@@ -74,10 +74,10 @@ export class Home extends Component {
 
     return (
       <main className={styles.main}>
-        <Helmet title={'Home - Ryan Elliott-Potter'} />
+        <Helmet title="Home - Ryan Elliott-Potter" />
         <HomeAbout {...about} />
         <HomeExperience {...experience} />
-        <HomeWork content={work} />
+        <HomeWork {...work} />
         <HomeTimeline {...timeline} />
         <ContactForm
           {...contactForm}
@@ -96,22 +96,22 @@ Home.propTypes = {
   contactForm: PropTypes.object.isRequired
 };
 
-const mapStateToProps = state => {
-  return {
-    page: state.page.page,
-    contactForm: state.contactForm
-  };
+Home.defaultProps = {
+  page: null
 };
 
-const mapDispatchToProps = dispatch => {
-  return {
-    getPageData: slug => {
-      dispatch(pageFetchRequest(slug));
-    },
-    contactFormRequest: payload => {
-      dispatch(contactFormRequest(payload));
-    }
-  };
-};
+const mapStateToProps = state => ({
+  page: state.page.page,
+  contactForm: state.contactForm
+});
+
+const mapDispatchToProps = dispatch => ({
+  getPageData: slug => {
+    dispatch(pageFetchRequest(slug));
+  },
+  contactFormRequest: payload => {
+    dispatch(contactFormRequest(payload));
+  }
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);
