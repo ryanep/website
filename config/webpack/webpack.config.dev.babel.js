@@ -1,10 +1,13 @@
-const path = require('path');
-const webpack = require('webpack');
+import path from 'path';
+import webpack from 'webpack';
 
-module.exports = [
+const config = [
   {
     name: 'browser',
-    entry: ['babel-polyfill', path.join(__dirname, '../../src/client/index.js')],
+    entry: [
+      'babel-polyfill',
+      path.join(__dirname, '../../src/client/index.js')
+    ],
     devtool: 'eval',
     output: {
       path: path.join(__dirname, '../../dist/client/'),
@@ -77,9 +80,11 @@ module.exports = [
       new webpack.DefinePlugin({
         'process.env': {
           NODE_ENV: JSON.stringify('development'),
-          API_URL: JSON.stringify('http://localhost:3001/v1')
+          API_URL: JSON.stringify('http://localhost:3002/v1')
         }
       })
     ]
   }
 ];
+
+export default config;

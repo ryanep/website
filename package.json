@@ -8,8 +8,8 @@
     "url": "git+https://github.com/ryanep/ryanep.com-frontend.git"
   },
   "scripts": {
-    "build": "rm -rf ./dist && webpack --config ./config/webpack/webpack.config.prod.js",
-    "start": "webpack-dev-server ./src/client --hot --inline --config ./config/webpack/webpack.config.dev.js",
+    "build": "rm -rf ./dist && webpack --config ./config/webpack/webpack.config.prod.babel.js",
+    "start": "webpack-dev-server ./src/client --hot --inline --config ./config/webpack/webpack.config.dev.babel.js",
     "test": "jest",
     "test:coverage": "jest --coverage",
     "lint": "npm run lint:css && npm run lint:js",

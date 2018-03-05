@@ -1,21 +1,23 @@
-const path = require('path');
-const webpack = require('webpack');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
-
-const fs = require('fs');
+import path from 'path';
+import fs from 'fs';
+import webpack from 'webpack';
+import ExtractTextPlugin from 'extract-text-webpack-plugin';
+import CopyWebpackPlugin from 'copy-webpack-plugin';
 
 const nodeModules = {};
 fs.readdirSync('node_modules').forEach(module => {
   if (module !== '.bin') nodeModules[module] = `commonjs ${module}`;
 });
 
-const externals = Object.assign({}, nodeModules, {});
+const externals = { ...nodeModules };
 
-module.exports = [
+const config = [
   {
     name: 'browser',
-    entry: ['babel-polyfill', path.join(__dirname, '../../src/client/index.js')],
+    entry: [
+      'babel-polyfill',
+      path.join(__dirname, '../../src/client/index.js')
+    ],
     output: {
       path: path.join(__dirname, '../../dist/client/'),
       filename: 'build.js'
@@ -88,7 +90,10 @@ module.exports = [
   },
   {
     name: 'server-side rendering',
-    entry: ['babel-polyfill', path.join(__dirname, '../../src/server/index.js')],
+    entry: [
+      'babel-polyfill',
+      path.join(__dirname, '../../src/server/index.js')
+    ],
     target: 'node',
     output: {
       path: path.join(__dirname, '../../dist/server'),
@@ -166,3 +171,5 @@ module.exports = [
     ]
   }
 ];
+
+export default config;
