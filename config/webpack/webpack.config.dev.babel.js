@@ -80,7 +80,7 @@ const config = [
       new webpack.DefinePlugin({
         'process.env': {
           NODE_ENV: JSON.stringify('development'),
-          API_URL: JSON.stringify('http://localhost:3002/v1')
+          API_URL: JSON.stringify('http://localhost:3001/v1')
         }
       })
     ]
