@@ -1,3 +1,4 @@
+import path from 'path';
 import express from 'express';
 import React from 'react';
 import Helmet from 'react-helmet';
@@ -8,13 +9,14 @@ import { Route } from 'react-router-dom';
 import configureStore from '@store/configure-store';
 import sagas from '@sagas';
 import App from '@containers/app';
-import * as middleware from './middleware';
+import middleware from './middleware';
 
 const app = express();
 
-middleware.setup(app);
+app.use(...middleware);
 
-app.use(express.static('static'));
+app.set('views', path.resolve('./views/'));
+app.set('view engine', 'ejs');
 
 app.get('*', (req, res) => {
   const store = configureStore();
