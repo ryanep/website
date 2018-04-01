@@ -1,7 +1,8 @@
 .DS_Store
-node_modules
+*.tar.gz
 *.map
-dist
 *.log
 .env
+node_modules
+dist
 coverage
