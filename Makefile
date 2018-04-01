@@ -28,13 +28,24 @@ build: #// build: build website
 build-docker: #// build-docker: build docker image
 	${TASK_STARTED}
 	docker build -t ${DOCKER_IMAGE}:${COMMIT} . -f ./tools/docker/prod/dockerfile
-	docker save ${DOCKER_IMAGE}:${COMMIT} -o image.tar && gzip image.tar
+	${TASK_DONE}
+deploy-static: #// deploy-static: deploy static files
+	${TASK_STARTED}
+	echo s3://${CDN_RYANEP}
+	aws s3 cp --recursive ./dist/client/ s3://${CDN_RYANEP} --acl public-read
 	${TASK_DONE}
 deploy: #// deploy: deploy app
 	${TASK_STARTED}
+	docker save ${DOCKER_IMAGE}:${COMMIT} -o image.tar && gzip image.tar
 	scp -o StrictHostKeyChecking=no ./image.tar.gz ${SERVER_USER}@${SERVER_IP}:~/
 	ssh -o StrictHostKeyChecking=no ${SERVER_USER}@${SERVER_IP} "gunzip ~/image.tar.gz && docker load -i ~/image.tar"
 	ssh -o StrictHostKeyChecking=no ${SERVER_USER}@${SERVER_IP} "dokku tags:create ${APP_NAME} previous; dokku tags:deploy ${APP_NAME} ${COMMIT} && dokku tags:create ${APP_NAME} latest && dokku cleanup && rm ~/image.tar && docker image prune -a -f --filter "label=${APP_NAME}""
+	${TASK_DONE}
+release: clean build build-docker deploy-static deploy #// release: release app
+clean:
+	${TASK_STARTED}
+	-rm -rf ./dist
+	-rm image.tar.gz
 	${TASK_DONE}
 lint: #// lint: lint code
 	${TASK_STARTED}
