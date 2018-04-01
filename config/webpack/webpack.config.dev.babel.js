@@ -1,9 +1,11 @@
 import path from 'path';
 import webpack from 'webpack';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
 
 const config = [
   {
     name: 'browser',
+    mode: 'development',
     entry: [
       'babel-polyfill',
       path.join(__dirname, '../../src/client/index.js')
@@ -14,7 +16,7 @@ const config = [
       filename: 'build.js'
     },
     module: {
-      loaders: [
+      rules: [
         {
           test: /.js$/,
           include: path.resolve(__dirname, '../../src'),
@@ -81,6 +83,13 @@ const config = [
         'process.env': {
           NODE_ENV: JSON.stringify('development'),
           API_URL: JSON.stringify('http://localhost:3001/v1')
+        }
+      }),
+      new HtmlWebpackPlugin({
+        template: path.resolve(__dirname, '../../src/client/index.html'),
+        title: '',
+        inject: {
+          body: '<div id="app"></div>'
         }
       })
     ]
