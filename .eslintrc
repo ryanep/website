@@ -26,6 +26,9 @@
         "components": ["Link"],
         "specialLink": ["to"]
       }
-    ]
+    ],
+    "react/forbid-prop-types": 0, // @TODO: Remove
+    "react/no-array-index-key": 0, // @TODO: Remove
+    "class-methods-use-this": 0 // @TODO: Remove
   }
 }
