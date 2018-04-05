@@ -34,10 +34,7 @@ const config = {
       },
       {
         test: /\.svg$/,
-        loader: 'raw-loader',
-        options: {
-          publicPath: 'http://localhost:3000/'
-        }
+        loader: 'raw-loader'
       }
     ]
   },

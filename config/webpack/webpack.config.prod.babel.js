@@ -17,7 +17,8 @@ const configs = [
     ],
     output: {
       path: path.join(__dirname, '../../dist/client/'),
-      filename: 'build.js'
+      filename: 'build.[hash:8].min.js',
+      publicPath: '//cdn.ryanep.com/'
     },
     plugins: [
       new ExtractTextPlugin({
@@ -66,4 +67,9 @@ const configs = [
   }
 ];
 
-export default configs.map(config => merge(baseConfig, config));
+export default configs.map(config => {
+  const newConfig = merge(baseConfig, config);
+  const loaders = ExtractTextPlugin.extract(newConfig.module.rules[1].loader);
+  newConfig.module.rules[1].loader = loaders;
+  return newConfig;
+});
