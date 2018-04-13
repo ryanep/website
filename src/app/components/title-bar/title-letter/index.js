@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { TITLE_LETTER_ANIMATION_DELAY } from '@constants/general';
 import styles from './style.scss';
+
+const TITLE_LETTER_ANIMATION_DELAY = 40;
 
 const TitleLetter = ({ index, letter }) => (
   <span

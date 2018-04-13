@@ -1,1 +1,0 @@
-export const TITLE_LETTER_ANIMATION_DELAY = 40;
