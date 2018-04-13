@@ -5,9 +5,7 @@ RUN mkdir /app
 WORKDIR /app
 RUN cd /app
 
-COPY ./package.json /app
-COPY ./dist/server/index.js /app
-COPY ./dist/server/views/index.ejs /app/views/
+COPY . .
 
 RUN yarn
 CMD yarn start
