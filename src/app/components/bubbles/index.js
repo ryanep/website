@@ -4,6 +4,18 @@ import Bubble from './bubble';
 import styles from './style.scss';
 
 export default class Bubbles extends Component {
+  constructor(props) {
+    super(props);
+    const bubbles = [...Array(this.props.bubbles)].map((item, index) => ({
+      id: index,
+      ...this.generatePosition()
+    }));
+
+    this.state = {
+      bubbles
+    };
+  }
+
   shouldComponentUpdate() {
     return false;
   }
@@ -28,8 +40,8 @@ export default class Bubbles extends Component {
   render() {
     return (
       <div className={styles.bubbles}>
-        {[...Array(this.props.bubbles)].map((x, i) => (
-          <Bubble key={i} {...this.generatePosition()} />
+        {this.state.bubbles.map(({ id, ...position }) => (
+          <Bubble key={id} {...position} />
         ))}
       </div>
     );
