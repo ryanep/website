@@ -13,9 +13,15 @@
       "jsx": true
     }
   },
+  "settings": {
+    "import/resolver": {
+      "webpack": {
+        "config": "./config/webpack/webpack.config.base.babel.js"
+      }
+    }
+  },
   "rules": {
-    "import/no-unresolved": 0, // @TODO: Webpack aliases?
-    "import/extensions": 0, // @TODO: Review
+    "import/no-named-as-default": 0,
     "react/prop-types": 0, // @TODO: Remove
     "import/no-extraneous-dependencies": 0,
     "import/prefer-default-export": 0,
