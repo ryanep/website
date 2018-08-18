@@ -21,6 +21,11 @@ help: #// help: lists all tasks
 	@echo ""
 	@echo "available targets:"
 	@grep -Eh '^.+:\ #//\ .+' ${MAKEFILE_LIST} | cut -d ' ' -f '3-' | column -t -s ':'
+clean:
+	${TASK_STARTED}
+	-rm -rf ./dist
+	-rm image.tar.gz
+	${TASK_DONE}
 build: #// build: build website
 	${TASK_STARTED}
 	npm run build
@@ -41,12 +46,7 @@ deploy: #// deploy: deploy app
 	ssh -o StrictHostKeyChecking=no ${SERVER_USER}@${SERVER_IP} "gunzip ~/image.tar.gz && docker load -i ~/image.tar"
 	ssh -o StrictHostKeyChecking=no ${SERVER_USER}@${SERVER_IP} "dokku tags:create ${APP_NAME} previous; dokku tags:deploy ${APP_NAME} ${COMMIT} && dokku tags:create ${APP_NAME} latest && dokku cleanup && rm ~/image.tar && docker image prune -a -f --filter "label=${APP_NAME}""
 	${TASK_DONE}
-release: clean build build-docker deploy-static deploy #// release: release app
-clean:
-	${TASK_STARTED}
-	-rm -rf ./dist
-	-rm image.tar.gz
-	${TASK_DONE}
+release: clean build build-docker deploy-static deploy clean #// release: release app
 lint: #// lint: lint code
 	${TASK_STARTED}
 	npm run lint
