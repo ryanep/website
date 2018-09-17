@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Route, Switch } from 'react-router-dom';
+import Root from '@components/root';
 import Header from '@components/header';
 import Footer from '@components/footer';
 import Loader from '@components/loader';
@@ -10,9 +11,7 @@ import Contact from '@containers/contact';
 import Error from '@containers/error';
 import Navigation from '@components/navigation';
 import Bubbles from '@components/bubbles';
-import './reset.scss';
 import './fonts.scss';
-import styles from './style.scss';
 
 export class App extends Component {
   constructor(props) {
@@ -40,7 +39,7 @@ export class App extends Component {
     ];
 
     return (
-      <div className={styles.app}>
+      <Root>
         <Header
           isBanner={this.props.location.pathname === '/'}
           heading="Ryan Elliott-Potter"
@@ -61,7 +60,7 @@ export class App extends Component {
         </Switch>
         <Footer />
         {this.props.isLoading && <Loader />}
-      </div>
+      </Root>
     );
   }
 }
