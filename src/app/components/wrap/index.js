@@ -1,11 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from './style.scss';
+import * as styled from './styled';
 
 const Wrap = ({ children, width }) => (
-  <div className={styles.wrap} style={{ maxWidth: width }}>
-    {children}
-  </div>
+  <styled.Wrap width={width}>{children}</styled.Wrap>
 );
 
 Wrap.propTypes = {

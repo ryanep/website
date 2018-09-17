@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import WorkItem from './work-item';
+import HomeWorkItem from '@components/home-work-item';
 import styles from './style.scss';
 
 const HomeWork = ({ title, desc, work }) => (
@@ -10,10 +10,7 @@ const HomeWork = ({ title, desc, work }) => (
       <p className={styles.desc}>{desc}</p>
       <div className={styles.items}>
         {work.map(item => (
-          <WorkItem
-            key={item.id}
-            {...item}
-          />
+          <HomeWorkItem key={item.id} {...item} />
         ))}
       </div>
       {/* <Link to={this.props.content.aboutButtonURL} className={styles.button}>
@@ -26,7 +23,7 @@ const HomeWork = ({ title, desc, work }) => (
 HomeWork.propTypes = {
   title: PropTypes.string.isRequired,
   desc: PropTypes.string.isRequired,
-  work: PropTypes.arrayOf(PropTypes.shape(WorkItem.propTypes).isRequired)
+  work: PropTypes.arrayOf(PropTypes.shape(HomeWorkItem.propTypes).isRequired)
     .isRequired
 };
 

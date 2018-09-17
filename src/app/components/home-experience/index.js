@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import ExperienceIcon from './experience-icon';
+import HomeExperienceIcon from '@components/home-experience-icon';
 import styles from './style.scss';
 
 const HomeExperience = ({ title, desc, icons }) => (
@@ -9,7 +9,9 @@ const HomeExperience = ({ title, desc, icons }) => (
       <h2 className={styles.heading}>{title}</h2>
       <p className={styles.desc}>{desc}</p>
       <ul className={styles.icons}>
-        {icons.map(icon => <ExperienceIcon key={icon.id} {...icon} />)}
+        {icons.map(icon => (
+          <HomeExperienceIcon key={icon.id} {...icon} />
+        ))}
       </ul>
     </div>
   </section>
@@ -18,8 +20,9 @@ const HomeExperience = ({ title, desc, icons }) => (
 HomeExperience.propTypes = {
   title: PropTypes.string.isRequired,
   desc: PropTypes.string.isRequired,
-  icons: PropTypes.arrayOf(PropTypes.shape(ExperienceIcon.propTypes).isRequired)
-    .isRequired
+  icons: PropTypes.arrayOf(
+    PropTypes.shape(HomeExperienceIcon.propTypes).isRequired
+  ).isRequired
 };
 
 HomeExperience.defaultProps = {};

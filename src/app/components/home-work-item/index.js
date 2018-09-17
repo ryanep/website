@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import LazyLoad from 'react-lazyload';
 import styles from './style.scss';
 
-const WorkItem = ({ url, desc, inProgress, image, imageAlt }) => (
+const HomeWorkItem = ({ url, desc, inProgress, image, imageAlt }) => (
   <div className={styles.work}>
     <LazyLoad width={300} height={200}>
       <a href={url} className={styles.link} target="_blank">
@@ -15,7 +15,7 @@ const WorkItem = ({ url, desc, inProgress, image, imageAlt }) => (
   </div>
 );
 
-WorkItem.propTypes = {
+HomeWorkItem.propTypes = {
   url: PropTypes.string.isRequired,
   desc: PropTypes.string.isRequired,
   inProgress: PropTypes.bool.isRequired,
@@ -23,6 +23,6 @@ WorkItem.propTypes = {
   imageAlt: PropTypes.string.isRequired
 };
 
-WorkItem.defaultProps = {};
+HomeWorkItem.defaultProps = {};
 
-export default WorkItem;
+export default HomeWorkItem;

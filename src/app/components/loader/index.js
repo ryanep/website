@@ -1,17 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from './style.scss';
+import * as styled from './styled';
 
 const Loader = ({ size }) => (
-  <div
-    className={styles.loader}
-    style={{
-      width: size,
-      height: size
-    }}
-  >
-    <div className={styles.hide}>Loading...</div>
-  </div>
+  <styled.Loader size={size}>
+    <styled.Hide>Loading...</styled.Hide>
+  </styled.Loader>
 );
 
 Loader.propTypes = {

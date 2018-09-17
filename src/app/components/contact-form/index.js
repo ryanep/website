@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import TextInput from '@components/forms/text-input';
-import EmailInput from '@components/forms/email-input';
-import Textarea from '@components/forms/textarea';
-import SubmitButton from '@components/forms/submit-button';
+import TextInput from '@components/text-input';
+import EmailInput from '@components/email-input';
+import Textarea from '@components/textarea';
+import SubmitButton from '@components/submit-button';
 import Wrap from '@components/wrap';
 import styles from './style.scss';
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import FooterLink from './footer-link';
+import FooterLink from '../footer-link';
 import styles from './style.scss';
 import githubIcon from './icons/github.svg';
 import dribbbleIcon from './icons/dribbble.svg';
@@ -44,7 +44,9 @@ const Footer = () => (
         © Ryan Elliott-Potter {new Date().getFullYear()}. All rights reserved.
       </div>
       <div className={styles.icons}>
-        {footerLinks.map(link => <FooterLink key={link.id} {...link} />)}
+        {footerLinks.map(link => (
+          <FooterLink key={link.id} {...link} />
+        ))}
       </div>
     </div>
   </footer>

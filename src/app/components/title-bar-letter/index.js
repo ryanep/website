@@ -4,7 +4,7 @@ import styles from './style.scss';
 
 const TITLE_LETTER_ANIMATION_DELAY = 40;
 
-const TitleLetter = ({ index, letter }) => (
+const TitleBarLetter = ({ index, letter }) => (
   <span
     className={styles.letter}
     style={{ animationDelay: `${index / TITLE_LETTER_ANIMATION_DELAY}s` }}
@@ -13,11 +13,11 @@ const TitleLetter = ({ index, letter }) => (
   </span>
 );
 
-TitleLetter.propTypes = {
+TitleBarLetter.propTypes = {
   index: PropTypes.number.isRequired,
   letter: PropTypes.string.isRequired
 };
 
-TitleLetter.defaultProps = {};
+TitleBarLetter.defaultProps = {};
 
-export default TitleLetter;
+export default TitleBarLetter;

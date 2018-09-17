@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './style.scss';
 
-const ExperienceIcon = ({ colour, name, image }) => (
+const HomeExperienceIcon = ({ colour, name, image }) => (
   <li className={styles.item}>
     <div
       className={styles.icon}
@@ -20,12 +20,12 @@ const ExperienceIcon = ({ colour, name, image }) => (
   </li>
 );
 
-ExperienceIcon.propTypes = {
+HomeExperienceIcon.propTypes = {
   colour: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired
 };
 
-ExperienceIcon.defaultProps = {};
+HomeExperienceIcon.defaultProps = {};
 
-export default ExperienceIcon;
+export default HomeExperienceIcon;

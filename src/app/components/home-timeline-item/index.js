@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './style.scss';
 
-const TimelineItem = ({ icon, company, time, role }) => (
+const HomeTimelineItem = ({ icon, company, time, role }) => (
   <div className={styles.link}>
     <article className={styles.item}>
       <header className={styles.header}>
@@ -21,13 +21,13 @@ const TimelineItem = ({ icon, company, time, role }) => (
   </div>
 );
 
-TimelineItem.propTypes = {
+HomeTimelineItem.propTypes = {
   icon: PropTypes.string.isRequired,
   company: PropTypes.string.isRequired,
   time: PropTypes.string.isRequired,
   role: PropTypes.string.isRequired
 };
 
-TimelineItem.defaultProps = {};
+HomeTimelineItem.defaultProps = {};
 
-export default TimelineItem;
+export default HomeTimelineItem;

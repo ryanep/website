@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Bubble from './bubble';
+import Bubble from '../bubble';
 import styles from './style.scss';
 
 export default class Bubbles extends Component {

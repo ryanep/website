@@ -6,8 +6,6 @@ import Header from '@components/header';
 import Footer from '@components/footer';
 import Loader from '@components/loader';
 import Home from '@containers/home';
-import About from '@containers/about';
-import Work from '@containers/work';
 import Contact from '@containers/contact';
 import Error from '@containers/error';
 import Navigation from '@components/navigation';
@@ -58,10 +56,8 @@ export class App extends Component {
         </Header>
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route exact path="/about" component={About} />
-          <Route exact path="/work" component={Work} />
           <Route exact path="/contact" component={Contact} />
-          <Route component={Error} />
+          <Route component={Error} status={404} />
         </Switch>
         <Footer />
         {this.props.isLoading && <Loader />}
@@ -87,4 +83,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = () => ({});
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(App);
