@@ -1,13 +1,15 @@
 import React from 'react';
-import styles from './style.scss';
+import * as styled from './styled';
 
 const Error = () => (
-  <main className={styles.error}>
-    <h1 className={styles.heading}>Error 404</h1>
-    <p className={styles.desc}>The page you are looking for does not exist.</p>
-  </main>
+  <styled.Error>
+    <styled.Heading>Error 404</styled.Heading>
+    <styled.Desc>The page you are looking for does not exist.</styled.Desc>
+  </styled.Error>
 );
 
 Error.propTypes = {};
+
+Error.defaultProps = {};
 
 export default Error;

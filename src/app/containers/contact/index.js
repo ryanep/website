@@ -7,7 +7,7 @@ import ContactForm from '@components/contact-form';
 import ContactConnect from '@components/contact-connect';
 import { pageFetchRequest } from '@actions/page';
 import { contactFormRequest } from '@actions/contact-form';
-import styles from './style.scss';
+import * as styled from './styled';
 
 export class Contact extends Component {
   constructor(props) {
@@ -66,7 +66,7 @@ export class Contact extends Component {
     const { contactForm } = this.props.page.contact.components;
 
     return (
-      <main className={styles.main}>
+      <styled.Contact>
         <Helmet title="Contact - Ryan Elliott-Potter" />
         <TitleBar heading="Contact" />
         <ContactConnect />
@@ -77,7 +77,7 @@ export class Contact extends Component {
           onSubmit={this.handleFormSubmit}
           inputs={this.state.contactFormInputs}
         />
-      </main>
+      </styled.Contact>
     );
   }
 }
@@ -106,4 +106,7 @@ const mapDispatchToProps = dispatch => ({
   }
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Contact);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Contact);

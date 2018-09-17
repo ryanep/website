@@ -13,9 +13,6 @@ const HomeWork = ({ title, desc, work }) => (
           <HomeWorkItem key={item.id} {...item} />
         ))}
       </div>
-      {/* <Link to={this.props.content.aboutButtonURL} className={styles.button}>
-            {this.props.content.aboutButtonText}
-        </Link> */}
     </div>
   </section>
 );

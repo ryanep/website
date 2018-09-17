@@ -32,7 +32,7 @@
 		width: auto;
 	}
 
-	@include reduced-motion {
+	@media (prefers-reduced-motion) {
 		animation: none;
 	}
 }

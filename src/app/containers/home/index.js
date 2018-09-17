@@ -9,7 +9,7 @@ import HomeTimeline from '@components/home-timeline';
 import ContactForm from '@components/contact-form';
 import { pageFetchRequest } from '@actions/page';
 import { contactFormRequest } from '@actions/contact-form';
-import styles from './style.scss';
+import * as styled from './styled';
 
 export class Home extends Component {
   constructor(props) {
@@ -73,7 +73,7 @@ export class Home extends Component {
     } = this.props.page.home.components;
 
     return (
-      <main className={styles.main}>
+      <styled.Home>
         <Helmet title="Home - Ryan Elliott-Potter" />
         <HomeAbout {...about} />
         <HomeExperience {...experience} />
@@ -86,7 +86,7 @@ export class Home extends Component {
           onSubmit={this.handleFormSubmit}
           inputs={this.state.contactFormInputs}
         />
-      </main>
+      </styled.Home>
     );
   }
 }
@@ -114,4 +114,7 @@ const mapDispatchToProps = dispatch => ({
   }
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Home);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Home);

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { ThemeProvider } from 'styled-components';
 import { connect } from 'react-redux';
 import { Route, Switch } from 'react-router-dom';
 import Root from '@components/root';
@@ -11,7 +12,12 @@ import Contact from '@containers/contact';
 import Error from '@containers/error';
 import Navigation from '@components/navigation';
 import Bubbles from '@components/bubbles';
-import './fonts.scss';
+
+const theme = {
+  colours: {
+    primary: '#a25656'
+  }
+};
 
 export class App extends Component {
   constructor(props) {
@@ -30,37 +36,39 @@ export class App extends Component {
   };
 
   render() {
-    const navLinks = [
-      { to: '/', title: 'Home' },
-      { to: '/about', title: 'About' },
-      { to: '/work', title: 'Work' },
-      // { to: '/blog', title: 'Blog' },
-      { to: '/contact', title: 'Contact' }
-    ];
+    // const navLinks = [
+    //   { to: '/', title: 'Home' },
+    //   { to: '/about', title: 'About' },
+    //   { to: '/work', title: 'Work' },
+    //   // { to: '/blog', title: 'Blog' },
+    //   { to: '/contact', title: 'Contact' }
+    // ];
 
     return (
-      <Root>
-        <Header
-          isBanner={this.props.location.pathname === '/'}
-          heading="Ryan Elliott-Potter"
-          description="Web Developer"
-        >
-          <Navigation
-            links={navLinks}
-            isOpen={this.state.isNavigationOpen}
-            onBurgerClick={this.handleBurgerClick}
-            onNavigationLinkClick={this.handleNavigationLinkClick}
-          />
-          <Bubbles bubbles={20} />
-        </Header>
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/contact" component={Contact} />
-          <Route component={Error} status={404} />
-        </Switch>
-        <Footer />
-        {this.props.isLoading && <Loader />}
-      </Root>
+      <ThemeProvider theme={theme}>
+        <Root>
+          <Header
+            isBanner={this.props.location.pathname === '/'}
+            heading="Ryan Elliott-Potter"
+            description="Web Developer"
+          >
+            {/* <Navigation
+              links={navLinks}
+              isOpen={this.state.isNavigationOpen}
+              onBurgerClick={this.handleBurgerClick}
+              onNavigationLinkClick={this.handleNavigationLinkClick}
+            /> */}
+            <Bubbles bubbles={20} />
+          </Header>
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/contact" component={Contact} />
+            <Route component={Error} status={404} />
+          </Switch>
+          <Footer />
+          {/* {this.props.isLoading && <Loader />} */}
+        </Root>
+      </ThemeProvider>
     );
   }
 }
