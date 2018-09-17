@@ -1,20 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from './style.scss';
+import * as styled from './styled';
 
 const EmailInput = ({ label, name, value, required, onChange }) => (
-  <label htmlFor={`email-${name}`} className={styles.label}>
+  <styled.Label htmlFor={`email-${name}`}>
     {label}
-    <input
+    <styled.Input
       type="email"
       id={`email-${name}`}
       name={name}
       value={value}
       required={required}
-      className={styles.input}
       onChange={onChange}
     />
-  </label>
+  </styled.Label>
 );
 
 EmailInput.propTypes = {

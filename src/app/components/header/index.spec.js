@@ -1,6 +1,6 @@
 import { shallow } from 'enzyme';
 import React from 'react';
-import Header from './';
+import Header from '.';
 import styles from './style.scss';
 
 describe('<Header />', () => {

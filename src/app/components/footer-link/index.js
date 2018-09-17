@@ -1,13 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import SVGInline from 'react-svg-inline';
-import styles from './style.scss';
+import * as styled from './styled';
 
 const FooterLink = ({ title, url, icon }) => (
-  <a href={url} target="_blank" className={styles.link}>
-    <SVGInline svg={icon} className={styles.icon} />
-    <div className={styles.hide}>{title}</div>
-  </a>
+  <styled.FooterLink href={url} target="_blank" rel="noopener noreferrer">
+    <styled.Icon svg={icon} />
+    <styled.Hide>{title}</styled.Hide>
+  </styled.FooterLink>
 );
 
 FooterLink.propTypes = {

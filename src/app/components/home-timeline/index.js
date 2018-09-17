@@ -1,19 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Wrap from '@components/wrap';
 import HomeTimelineItem from '@components/home-timeline-item';
 import styles from './style.scss';
 
 const HomeTimeline = ({ title, desc, timeline }) => (
   <section className={styles.timeline}>
-    <div className={styles.wrap}>
-      <h2 className={styles.heading}>{title}</h2>
-      <p className={styles.desc}>{desc}</p>
+    <Wrap>
+      <h2 className={styles.heading}>
+        {title}
+      </h2>
+      <p className={styles.desc}>
+        {desc}
+      </p>
       <div className={styles.items}>
         {timeline.map(item => (
           <HomeTimelineItem key={item.id} {...item} />
         ))}
       </div>
-    </div>
+    </Wrap>
   </section>
 );
 

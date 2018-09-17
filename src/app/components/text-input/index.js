@@ -1,20 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from './style.scss';
+import * as styled from './styled';
 
 const TextInput = ({ label, name, value, required, onChange }) => (
-  <label htmlFor={`text-${name}`} className={styles.label}>
+  <styled.Label htmlFor={`text-${name}`}>
     {label}
-    <input
+    <styled.Input
       type="text"
       id={`text-${name}`}
       name={name}
       value={value}
       required={required}
-      className={styles.input}
       onChange={onChange}
     />
-  </label>
+  </styled.Label>
 );
 
 TextInput.propTypes = {

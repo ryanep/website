@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import TitleBarLetter from '../title-bar-letter';
-import styles from './style.scss';
+import Wrap from '@components/wrap';
+import TitleBarLetter from '@components/title-bar-letter';
+import * as styled from './styled';
 
 class TitleBar extends Component {
   constructor(props) {
@@ -16,16 +17,17 @@ class TitleBar extends Component {
   }
 
   render() {
+    const { letters } = this.state;
     return (
-      <div className={styles.bar}>
-        <div className={styles.wrap}>
-          <h1 className={styles.heading}>
-            {this.state.letters.map(({ id, letter }, index) => (
+      <styled.TitleBar>
+        <Wrap>
+          <styled.Heading>
+            {letters.map(({ id, letter }, index) => (
               <TitleBarLetter key={id} index={index} letter={letter} />
             ))}
-          </h1>
-        </div>
-      </div>
+          </styled.Heading>
+        </Wrap>
+      </styled.TitleBar>
     );
   }
 }

@@ -1,19 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from './style.scss';
+import * as styled from './styled';
 
 const Textarea = ({ label, name, value, required, onChange }) => (
-  <label htmlFor={`textarea-${name}`} className={styles.label}>
+  <styled.Label htmlFor={`textarea-${name}`}>
     {label}
-    <textarea
+    <styled.Input
       id={`textarea-${name}`}
       name={name}
       required={required}
       value={value}
-      className={styles.input}
       onChange={onChange}
     />
-  </label>
+  </styled.Label>
 );
 
 Textarea.propTypes = {
@@ -23,5 +22,7 @@ Textarea.propTypes = {
   required: PropTypes.bool.isRequired,
   onChange: PropTypes.func.isRequired
 };
+
+Textarea.defaultProps = {};
 
 export default Textarea;

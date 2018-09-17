@@ -1,19 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Wrap from '@components/wrap';
 import HomeWorkItem from '@components/home-work-item';
 import styles from './style.scss';
 
 const HomeWork = ({ title, desc, work }) => (
   <section id="work" className={styles.work}>
-    <div className={styles.wrap}>
-      <h2 className={styles.heading}>{title}</h2>
-      <p className={styles.desc}>{desc}</p>
+    <Wrap>
+      <h2 className={styles.heading}>
+        {title}
+      </h2>
+      <p className={styles.desc}>
+        {desc}
+      </p>
       <div className={styles.items}>
         {work.map(item => (
           <HomeWorkItem key={item.id} {...item} />
         ))}
       </div>
-    </div>
+    </Wrap>
   </section>
 );
 

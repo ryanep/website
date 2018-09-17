@@ -1,19 +1,22 @@
 import React from 'react';
-import styles from './style.scss';
+import Wrap from '@components/wrap';
+import * as styled from './styled';
 
 const ContactConnect = () => (
-  <div className={styles.connect}>
-    <div className={styles.wrap}>
-      <h1 className={styles.heading}>Connect with me</h1>
-      <p className={styles.desc}>
+  <styled.Connect>
+    <Wrap>
+      <styled.Heading>
+        Connect with me
+      </styled.Heading>
+      <styled.Desc>
         You can connect with me on a number of accounts
-      </p>
-    </div>
-  </div>
+      </styled.Desc>
+    </Wrap>
+  </styled.Connect>
 );
 
 ContactConnect.propTypes = {};
 
-ContactConnect.defaultPropss = {};
+ContactConnect.defaultProps = {};
 
 export default ContactConnect;

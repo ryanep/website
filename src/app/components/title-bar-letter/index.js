@@ -1,16 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from './style.scss';
+import * as styled from './styled';
 
-const TITLE_LETTER_ANIMATION_DELAY = 40;
+const TITLE_LETTER_ANIMATION_DELAY = 20;
 
 const TitleBarLetter = ({ index, letter }) => (
-  <span
-    className={styles.letter}
-    style={{ animationDelay: `${index / TITLE_LETTER_ANIMATION_DELAY}s` }}
+  <styled.TitleBarLetter
+    delay={index / TITLE_LETTER_ANIMATION_DELAY}
   >
     {letter}
-  </span>
+  </styled.TitleBarLetter>
 );
 
 TitleBarLetter.propTypes = {

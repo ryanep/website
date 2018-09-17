@@ -1,11 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Markdown from 'react-markdown';
+import Wrap from '@components/wrap';
 import styles from './style.scss';
 
 const HomeAbout = ({ image, imageAlt, title, desc }) => (
   <div className={styles.about}>
-    <div className={styles.wrap}>
+    <Wrap>
       <img
         src={image}
         width="120"
@@ -13,9 +14,11 @@ const HomeAbout = ({ image, imageAlt, title, desc }) => (
         className={styles.photo}
         alt={imageAlt}
       />
-      <h2 className={styles.heading}>{title}</h2>
+      <h2 className={styles.heading}>
+        {title}
+      </h2>
       <Markdown source={desc} className={styles.info} />
-    </div>
+    </Wrap>
   </div>
 );
 

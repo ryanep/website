@@ -1,10 +1,11 @@
 import React from 'react';
-import FooterLink from '../footer-link';
-import styles from './style.scss';
+import Wrap from '@components/wrap';
+import FooterLink from '@components/footer-link';
 import githubIcon from './icons/github.svg';
 import dribbbleIcon from './icons/dribbble.svg';
 import twitterIcon from './icons/twitter.svg';
 import linkedInIcon from './icons/linkedin.svg';
+import * as styled from './styled';
 
 const footerLinks = [
   {
@@ -38,18 +39,23 @@ const footerLinks = [
 ];
 
 const Footer = () => (
-  <footer className={styles.footer}>
-    <div className={styles.wrap}>
-      <div className={styles.copyright}>
-        © Ryan Elliott-Potter {new Date().getFullYear()}. All rights reserved.
-      </div>
-      <div className={styles.icons}>
-        {footerLinks.map(link => (
-          <FooterLink key={link.id} {...link} />
-        ))}
-      </div>
-    </div>
-  </footer>
+  <styled.Footer>
+    <Wrap>
+      <styled.Content>
+        <styled.Copyright>
+          © Ryan Elliott-Potter
+          {' '}
+          {new Date().getFullYear()}
+          . All rights reserved.
+        </styled.Copyright>
+        <styled.Icons>
+          {footerLinks.map(link => (
+            <FooterLink key={link.id} {...link} />
+          ))}
+        </styled.Icons>
+      </styled.Content>
+    </Wrap>
+  </styled.Footer>
 );
 
 Footer.propTypes = {};

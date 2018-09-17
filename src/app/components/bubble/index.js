@@ -1,22 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from './style.scss';
+import * as styled from './styled';
 
-const Bubble = ({ left, top, transform }) => (
-  <div
-    className={styles.bubble}
-    style={{
-      left,
-      top,
-      transform
-    }}
+const Bubble = ({ left, top, size }) => (
+  <styled.Bubble
+    left={left}
+    top={top}
+    size={size}
   />
 );
 
 Bubble.propTypes = {
   left: PropTypes.number.isRequired,
   top: PropTypes.number.isRequired,
-  transform: PropTypes.string.isRequired
+  size: PropTypes.string.isRequired
 };
 
 Bubble.defaultProps = {};

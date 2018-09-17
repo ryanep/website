@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Bubble from '../bubble';
-import styles from './style.scss';
+import * as styled from './styled';
 
-export default class Bubbles extends Component {
+class Bubbles extends Component {
   constructor(props) {
     super(props);
     const bubbles = [...Array(this.props.bubbles)].map((item, index) => ({
@@ -33,17 +33,17 @@ export default class Bubbles extends Component {
     return {
       left: this.getRandomNumber(maxWidth),
       top: this.getRandomNumber(maxHeight, bubbleWidth),
-      transform: `scale(1.${this.getRandomNumber(scale)})`
+      size: `scale(1.${this.getRandomNumber(scale)})`
     };
   }
 
   render() {
     return (
-      <div className={styles.bubbles}>
+      <styled.Bubbles>
         {this.state.bubbles.map(({ id, ...position }) => (
           <Bubble key={id} {...position} />
         ))}
-      </div>
+      </styled.Bubbles>
     );
   }
 }
@@ -51,3 +51,7 @@ export default class Bubbles extends Component {
 Bubbles.propTypes = {
   bubbles: PropTypes.number.isRequired
 };
+
+Bubbles.defaultProps = {};
+
+export default Bubbles;

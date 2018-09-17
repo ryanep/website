@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import TextInput from '@components/text-input';
 import EmailInput from '@components/email-input';
 import Textarea from '@components/textarea';
-import SubmitButton from '@components/submit-button';
+import Button from '@components/button';
 import Wrap from '@components/wrap';
 import styles from './style.scss';
 
@@ -18,8 +18,12 @@ const ContactForm = ({
 }) => (
   <div id="contact" className={styles.contact}>
     <Wrap width="84rem">
-      <h2 className={styles.heading}>{title}</h2>
-      <p className={styles.desc}>{desc}</p>
+      <h2 className={styles.heading}>
+        {title}
+      </h2>
+      <p className={styles.desc}>
+        {desc}
+      </p>
 
       <form className={styles.form} onSubmit={onSubmit}>
         <div className={styles.sections}>
@@ -57,7 +61,7 @@ const ContactForm = ({
           </div>
         </div>
         <div className={styles.buttons}>
-          <SubmitButton name={buttonText} isLoading={isLoading} />
+          <Button name={buttonText} type="submit" isLoading={isLoading} />
         </div>
       </form>
     </Wrap>

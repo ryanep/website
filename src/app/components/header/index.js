@@ -8,8 +8,12 @@ const Header = ({ isBanner, heading, description, children }) => (
 
     {isBanner && (
       <div className={styles.heading}>
-        <h1 className={styles.title}>{heading}</h1>
-        <p className={styles.desc}>{description}</p>
+        <h1 className={styles.title}>
+          {heading}
+        </h1>
+        <p className={styles.desc}>
+          {description}
+        </p>
       </div>
     )}
   </header>

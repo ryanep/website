@@ -18,7 +18,6 @@ export const base = injectGlobal`
 
   body {
     font-family: Montserrat, Helvetica, Arial, sans-serif;
-    background-color: #fbfbfb;
     font-display: fallback;
     font-size: 1.4rem;
     line-height: 1.5;
@@ -27,7 +26,7 @@ export const base = injectGlobal`
     -webkit-font-smoothing: antialiased;
   }
 
-  input, textarea {
+  button, input, textarea {
     font-family: inherit;
   }
 

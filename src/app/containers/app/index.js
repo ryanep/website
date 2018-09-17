@@ -14,6 +14,11 @@ import Navigation from '@components/navigation';
 import Bubbles from '@components/bubbles';
 
 const theme = {
+  breakpoints: {
+    mobile: '32rem',
+    tablet: '76.8rem',
+    desktop: '102.4rem'
+  },
   colours: {
     primary: '#a25656'
   }
@@ -36,13 +41,10 @@ export class App extends Component {
   };
 
   render() {
-    // const navLinks = [
-    //   { to: '/', title: 'Home' },
-    //   { to: '/about', title: 'About' },
-    //   { to: '/work', title: 'Work' },
-    //   // { to: '/blog', title: 'Blog' },
-    //   { to: '/contact', title: 'Contact' }
-    // ];
+    const navLinks = [
+      { to: '/', title: 'Home' },
+      { to: '/contact', title: 'Contact' }
+    ];
 
     return (
       <ThemeProvider theme={theme}>
@@ -52,12 +54,12 @@ export class App extends Component {
             heading="Ryan Elliott-Potter"
             description="Web Developer"
           >
-            {/* <Navigation
+            <Navigation
               links={navLinks}
               isOpen={this.state.isNavigationOpen}
               onBurgerClick={this.handleBurgerClick}
               onNavigationLinkClick={this.handleNavigationLinkClick}
-            /> */}
+            />
             <Bubbles bubbles={20} />
           </Header>
           <Switch>
