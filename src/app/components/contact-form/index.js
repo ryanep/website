@@ -5,7 +5,7 @@ import EmailInput from '@components/email-input';
 import Textarea from '@components/textarea';
 import Button from '@components/button';
 import Wrap from '@components/wrap';
-import styles from './style.scss';
+import * as styled from './styled';
 
 const ContactForm = ({
   title,
@@ -16,18 +16,14 @@ const ContactForm = ({
   onSubmit,
   inputs
 }) => (
-  <div id="contact" className={styles.contact}>
+  <styled.Contact id="contact">
     <Wrap width="84rem">
-      <h2 className={styles.heading}>
-        {title}
-      </h2>
-      <p className={styles.desc}>
-        {desc}
-      </p>
+      <styled.Heading>{title}</styled.Heading>
+      <styled.Description>{desc}</styled.Description>
 
-      <form className={styles.form} onSubmit={onSubmit}>
-        <div className={styles.sections}>
-          <div className={styles.left}>
+      <styled.Form onSubmit={onSubmit}>
+        <styled.Sections>
+          <styled.Section>
             <TextInput
               label="Name"
               name="name"
@@ -49,8 +45,8 @@ const ContactForm = ({
               onChange={onInputChange}
               required
             />
-          </div>
-          <div className={styles.right}>
+          </styled.Section>
+          <styled.Section>
             <Textarea
               label="Message"
               name="message"
@@ -58,14 +54,14 @@ const ContactForm = ({
               onChange={onInputChange}
               required
             />
-          </div>
-        </div>
-        <div className={styles.buttons}>
+          </styled.Section>
+        </styled.Sections>
+        <styled.Buttons>
           <Button name={buttonText} type="submit" isLoading={isLoading} />
-        </div>
-      </form>
+        </styled.Buttons>
+      </styled.Form>
     </Wrap>
-  </div>
+  </styled.Contact>
 );
 
 ContactForm.propTypes = {

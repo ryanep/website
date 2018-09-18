@@ -1,22 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from './style.scss';
+import * as styled from './styled';
 
 const Header = ({ isBanner, heading, description, children }) => (
-  <header className={isBanner ? styles.banner : styles.header}>
+  <styled.Header isBanner={isBanner}>
     {children}
 
     {isBanner && (
-      <div className={styles.heading}>
-        <h1 className={styles.title}>
-          {heading}
-        </h1>
-        <p className={styles.desc}>
-          {description}
-        </p>
-      </div>
+      <styled.Heading>
+        <styled.Title>{heading}</styled.Title>
+        <styled.Description>{description}</styled.Description>
+      </styled.Heading>
     )}
-  </header>
+  </styled.Header>
 );
 
 Header.propTypes = {

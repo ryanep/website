@@ -35,9 +35,4 @@ const config = {
   ]
 };
 
-baseConfig.module.rules[1].loader = [
-  'style-loader',
-  ...baseConfig.module.rules[1].loader
-];
-
 export default merge(baseConfig, config);

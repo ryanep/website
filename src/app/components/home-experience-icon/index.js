@@ -1,23 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from './style.scss';
+import * as styled from './styled';
 
 const HomeExperienceIcon = ({ colour, name, image }) => (
-  <li className={styles.item}>
-    <div
-      className={styles.icon}
-      style={{ backgroundColor: colour }}
-      title={name}
-    >
-      <img
-        src={image}
-        width="50"
-        height="50"
-        className={styles.image}
-        alt={name}
-      />
-    </div>
-  </li>
+  <styled.Item>
+    <styled.Icon backgroundColor={colour} title={name}>
+      <styled.Image src={image} width="50" height="50" alt={name} />
+    </styled.Icon>
+  </styled.Item>
 );
 
 HomeExperienceIcon.propTypes = {

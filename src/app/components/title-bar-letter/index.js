@@ -5,9 +5,7 @@ import * as styled from './styled';
 const TITLE_LETTER_ANIMATION_DELAY = 20;
 
 const TitleBarLetter = ({ index, letter }) => (
-  <styled.TitleBarLetter
-    delay={index / TITLE_LETTER_ANIMATION_DELAY}
-  >
+  <styled.TitleBarLetter delay={index / TITLE_LETTER_ANIMATION_DELAY}>
     {letter}
   </styled.TitleBarLetter>
 );

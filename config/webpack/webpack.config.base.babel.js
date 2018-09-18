@@ -10,29 +10,6 @@ const config = {
         loader: ['babel-loader']
       },
       {
-        test: /\.scss$/,
-        include: path.resolve(__dirname, '../../src'),
-        loader: [
-          'css-loader?modules&minimize&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]',
-          'sass-loader',
-          {
-            loader: 'sass-resources-loader',
-            options: {
-              resources: [
-                path.resolve(
-                  __dirname,
-                  '../../src/app/resources/scss/variables/*.scss'
-                ),
-                path.resolve(
-                  __dirname,
-                  '../../src/app/resources/scss/mixins/*.scss'
-                )
-              ]
-            }
-          }
-        ]
-      },
-      {
         test: /\.svg$/,
         loader: 'raw-loader'
       }

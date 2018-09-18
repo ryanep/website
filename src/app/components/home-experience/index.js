@@ -2,24 +2,20 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Wrap from '@components/wrap';
 import HomeExperienceIcon from '@components/home-experience-icon';
-import styles from './style.scss';
+import * as styled from './styled';
 
 const HomeExperience = ({ title, desc, icons }) => (
-  <section id="experience" className={styles.experience}>
+  <styled.Experience id="experience">
     <Wrap>
-      <h2 className={styles.heading}>
-        {title}
-      </h2>
-      <p className={styles.desc}>
-        {desc}
-      </p>
-      <ul className={styles.icons}>
+      <styled.Heading>{title}</styled.Heading>
+      <styled.Description>{desc}</styled.Description>
+      <styled.Icons>
         {icons.map(icon => (
           <HomeExperienceIcon key={icon.id} {...icon} />
         ))}
-      </ul>
+      </styled.Icons>
     </Wrap>
-  </section>
+  </styled.Experience>
 );
 
 HomeExperience.propTypes = {

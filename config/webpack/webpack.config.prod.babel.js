@@ -1,7 +1,6 @@
 import path from 'path';
 import webpack from 'webpack';
 import merge from 'webpack-merge';
-import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import nodeExternals from 'webpack-node-externals';
 import baseConfig from './webpack.config.base.babel';
@@ -21,10 +20,6 @@ const configs = [
       publicPath: '//cdn.ryanep.com/'
     },
     plugins: [
-      new ExtractTextPlugin({
-        filename: 'style.[hash:8].min.css',
-        allChunks: true
-      }),
       new webpack.DefinePlugin({
         'process.env': {
           NODE_ENV: JSON.stringify('production'),
@@ -56,7 +51,6 @@ const configs = [
     },
     externals: nodeExternals(),
     plugins: [
-      new ExtractTextPlugin({ filename: 'style.min.css', allChunks: true }),
       new webpack.DefinePlugin({
         'process.env': {
           NODE_ENV: JSON.stringify('production'),
@@ -67,9 +61,4 @@ const configs = [
   }
 ];
 
-export default configs.map(config => {
-  const newConfig = merge(baseConfig, config);
-  const loaders = ExtractTextPlugin.extract(newConfig.module.rules[1].loader);
-  newConfig.module.rules[1].loader = loaders;
-  return newConfig;
-});
+export default configs.map(config => merge(baseConfig, config));

@@ -4,11 +4,7 @@ import Loader from '@components/loader';
 import * as styled from './styled';
 
 const Button = ({ name, type, isLoading }) => (
-  <styled.Button
-    type={type}
-    isLoading={isLoading}
-    disabled={isLoading}
-  >
+  <styled.Button type={type} isLoading={isLoading} disabled={isLoading}>
     {name}
     {isLoading && <Loader />}
   </styled.Button>

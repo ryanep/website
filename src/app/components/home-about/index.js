@@ -1,25 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Markdown from 'react-markdown';
 import Wrap from '@components/wrap';
-import styles from './style.scss';
+import * as styled from './styled';
 
 const HomeAbout = ({ image, imageAlt, title, desc }) => (
-  <div className={styles.about}>
+  <styled.About>
     <Wrap>
-      <img
-        src={image}
-        width="120"
-        height="120"
-        className={styles.photo}
-        alt={imageAlt}
-      />
-      <h2 className={styles.heading}>
-        {title}
-      </h2>
-      <Markdown source={desc} className={styles.info} />
+      <styled.Photo src={image} width="120" height="120" alt={imageAlt} />
+      <styled.Heading>{title}</styled.Heading>
+      <styled.Markdown source={desc} />
     </Wrap>
-  </div>
+  </styled.About>
 );
 
 HomeAbout.propTypes = {

@@ -3,11 +3,7 @@ import PropTypes from 'prop-types';
 import * as styled from './styled';
 
 const Bubble = ({ left, top, size }) => (
-  <styled.Bubble
-    left={left}
-    top={top}
-    size={size}
-  />
+  <styled.Bubble left={left} top={top} size={size} />
 );
 
 Bubble.propTypes = {

@@ -1,18 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import LazyLoad from 'react-lazyload';
-import styles from './style.scss';
+import * as styled from './styled';
 
 const HomeWorkItem = ({ url, desc, inProgress, image, imageAlt }) => (
-  <div className={styles.work}>
+  <styled.Work>
     <LazyLoad width={300} height={200}>
-      <a href={url} className={styles.link} target="_blank">
-        {inProgress && <div className={styles.progress}>In progress</div>}
-        <img src={image} alt={imageAlt} className={styles.image} />
-      </a>
+      <styled.Link href={url} target="_blank" rel="noopener noreferrer">
+        {inProgress && <styled.InProgress>In progress</styled.InProgress>}
+        <styled.Image src={image} alt={imageAlt} />
+      </styled.Link>
     </LazyLoad>
-    <p className={styles.desc}>{desc}</p>
-  </div>
+    <p>{desc}</p>
+  </styled.Work>
 );
 
 HomeWorkItem.propTypes = {
