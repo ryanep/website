@@ -12,17 +12,15 @@ export const Link = styled.div`
   text-decoration: none;
   box-shadow: 0 1px 2px #cccccc;
 
-  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
-    &::after {
-      position: absolute;
-      top: 100%;
-      left: 50%;
-      width: 0.4rem;
-      height: 2rem;
-      transform: translateX(-50%);
-      background-color: #cccccc;
-      content: '';
-    }
+  &::after {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    width: 0.4rem;
+    height: 2rem;
+    transform: translateX(-50%);
+    background-color: #cccccc;
+    content: '';
   }
 
   @media (min-width: ${props => props.theme.breakpoints.tablet}) {

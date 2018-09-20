@@ -32,7 +32,8 @@ const configs = [
         filename: '../../dist/server/views/index.ejs',
         inject: {
           body:
-            '<div id="app"><%- markup %></div><script>window.SERVER_STATE = <%- initialState %></script>'
+            '<div id="app"><%- markup %></div><script>window.SERVER_STATE = <%- initialState %></script>',
+          styles: '<%- styles %>'
         }
       })
     ]

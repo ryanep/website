@@ -29,7 +29,8 @@ const config = {
       template: path.resolve(__dirname, '../../src/client/index.html'),
       title: '',
       inject: {
-        body: '<div id="app"></div>'
+        body: '<div id="app"></div>',
+        styles: ''
       }
     })
   ]

@@ -6,6 +6,7 @@ import { renderToString } from 'react-dom/server';
 import { Provider } from 'react-redux';
 import { StaticRouter as Router } from 'react-router';
 import { Route } from 'react-router-dom';
+import { ServerStyleSheet, StyleSheetManager } from 'styled-components';
 import configureStore from '@store/configure-store';
 import sagas from '@sagas';
 import App from '@containers/app';
@@ -21,12 +22,15 @@ app.set('view engine', 'ejs');
 app.get('*', (req, res) => {
   const store = configureStore();
   const context = {};
+  const sheet = new ServerStyleSheet();
 
   const rootComponent = (
     <Provider store={store}>
-      <Router location={req.url} context={context}>
-        <Route path="/" component={App} />
-      </Router>
+      <StyleSheetManager sheet={sheet.instance}>
+        <Router location={req.url} context={context}>
+          <Route path="/" component={App} />
+        </Router>
+      </StyleSheetManager>
     </Provider>
   );
 
@@ -36,7 +40,8 @@ app.get('*', (req, res) => {
       const head = Helmet.rewind();
       const initialState = JSON.stringify(store.getState());
       const markup = renderToString(rootComponent);
-      res.render('index', { head, markup, initialState });
+      const styles = sheet.getStyleTags();
+      res.render('index', { head, markup, styles, initialState });
     })
     .catch(error => {
       res.status(500).send(error);
