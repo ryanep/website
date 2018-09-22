@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { ThemeProvider } from 'styled-components';
 import { connect } from 'react-redux';
 import { Route, Switch } from 'react-router-dom';
+import ReactGA from 'react-ga';
 import Root from '@components/root';
 import Header from '@components/header';
 import Footer from '@components/footer';
@@ -40,7 +41,14 @@ export class App extends Component {
     this.setState({ isNavigationOpen: false });
   };
 
+  initAnalytics() {
+    const { location: { pathname } } = this.props;
+    ReactGA.initialize('UA-33167346-1');
+    ReactGA.pageview(pathname);
+  }
+
   render() {
+    this.initAnalytics();
     const navLinks = [
       { to: '/', title: 'Home' },
       { to: '/contact', title: 'Contact' }
