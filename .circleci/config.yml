@@ -9,7 +9,7 @@ dependencies:
 jobs:
   build:
     docker:
-      - image: circleci/node:9.0.0
+      - image: circleci/node:8.12.0
     working_directory: ~/app
     steps:
       - setup_remote_docker
