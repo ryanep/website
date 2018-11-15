@@ -43,7 +43,8 @@ const Footer = () => (
     <Wrap>
       <styled.Content>
         <styled.Copyright>
-          © Ryan Elliott-Potter {new Date().getFullYear()}. All rights reserved.
+          © Ryan Elliott-Potter
+          {new Date().getFullYear()}. All rights reserved.
         </styled.Copyright>
         <styled.Icons>
           {footerLinks.map(link => (

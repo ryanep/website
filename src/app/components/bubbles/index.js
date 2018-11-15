@@ -6,7 +6,8 @@ import * as styled from './styled';
 class Bubbles extends Component {
   constructor(props) {
     super(props);
-    const bubbles = [...Array(this.props.bubbles)].map((item, index) => ({
+    const { bubbles: bubbleCount } = this.props;
+    const bubbles = [...Array(bubbleCount)].map((item, index) => ({
       id: index,
       ...this.generatePosition()
     }));
@@ -38,9 +39,10 @@ class Bubbles extends Component {
   }
 
   render() {
+    const { bubbles } = this.state;
     return (
       <styled.Bubbles>
-        {this.state.bubbles.map(({ id, ...position }) => (
+        {bubbles.map(({ id, ...position }) => (
           <Bubble key={id} {...position} />
         ))}
       </styled.Bubbles>

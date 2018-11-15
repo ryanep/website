@@ -31,12 +31,12 @@ export class Contact extends Component {
     const input = event.target;
     const { name } = input;
 
-    this.setState({
+    this.setState(prevState => ({
       contactFormInputs: {
-        ...this.state.contactFormInputs,
+        ...prevState.contactFormInputs,
         [name]: input.value
       }
-    });
+    }));
   };
 
   handleFormSubmit = event => {

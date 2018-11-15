@@ -12,7 +12,7 @@ export const Link = styled.div`
   text-decoration: none;
   box-shadow: 0 1px 2px #cccccc;
 
-  &::after {
+  /* &::after {
     position: absolute;
     top: 100%;
     left: 50%;
@@ -21,7 +21,7 @@ export const Link = styled.div`
     transform: translateX(-50%);
     background-color: #cccccc;
     content: '';
-  }
+  } */
 
   @media (min-width: ${props => props.theme.breakpoints.tablet}) {
     width: calc(50% - 2rem);

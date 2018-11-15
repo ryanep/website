@@ -1,5 +1,4 @@
-FROM node:9.10.0-alpine
-EXPOSE 3000
+FROM node:10.13.0-alpine
 
 RUN mkdir /app
 WORKDIR /app
@@ -8,4 +7,5 @@ RUN cd /app
 COPY . .
 
 RUN yarn
+EXPOSE 3000
 CMD yarn start

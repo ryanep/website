@@ -33,6 +33,21 @@ export class App extends Component {
     };
   }
 
+  componentDidMount() {
+    const {
+      location: { pathname }
+    } = this.props;
+    ReactGA.initialize('UA-33167346-1');
+    ReactGA.pageview(pathname);
+  }
+
+  componentDidUpdate() {
+    const {
+      location: { pathname }
+    } = this.props;
+    ReactGA.pageview(pathname);
+  }
+
   handleBurgerClick = () => {
     this.setState({ isNavigationOpen: true });
   };
@@ -41,14 +56,7 @@ export class App extends Component {
     this.setState({ isNavigationOpen: false });
   };
 
-  initAnalytics() {
-    const { location: { pathname } } = this.props;
-    ReactGA.initialize('UA-33167346-1');
-    ReactGA.pageview(pathname);
-  }
-
   render() {
-    this.initAnalytics();
     const navLinks = [
       { to: '/', title: 'Home' },
       { to: '/contact', title: 'Contact' }
@@ -76,7 +84,7 @@ export class App extends Component {
             <Route component={Error} status={404} />
           </Switch>
           <Footer />
-          {/* {this.props.isLoading && <Loader />} */}
+          {this.props.isLoading && <Loader />}
         </Root>
       </ThemeProvider>
     );

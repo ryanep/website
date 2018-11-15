@@ -42,9 +42,9 @@ deploy-static: #// deploy-static: deploy static files
 deploy: #// deploy: deploy app
 	${TASK_STARTED}
 	docker save ${DOCKER_IMAGE}:${COMMIT} -o image.tar && gzip image.tar
-	scp -o StrictHostKeyChecking=no ./image.tar.gz ${SERVER_USER}@${SERVER_IP}:~/
-	ssh -o StrictHostKeyChecking=no ${SERVER_USER}@${SERVER_IP} "gunzip ~/image.tar.gz && docker load -i ~/image.tar"
-	ssh -o StrictHostKeyChecking=no ${SERVER_USER}@${SERVER_IP} "dokku tags:create ${APP_NAME} previous; dokku tags:deploy ${APP_NAME} ${COMMIT} && dokku tags:create ${APP_NAME} latest && dokku cleanup && rm ~/image.tar && docker image prune -a -f --filter "label=${APP_NAME}""
+	scp -o StrictHostKeyChecking=no ./image.tar.gz ${DO_USER}@${DO_IP}:~/
+	ssh -o StrictHostKeyChecking=no ${DO_USER}@${DO_IP} "gunzip ~/image.tar.gz && docker load -i ~/image.tar"
+	ssh -o StrictHostKeyChecking=no ${DO_USER}@${DO_IP} "dokku tags:create ${APP_NAME} previous; dokku tags:deploy ${APP_NAME} ${COMMIT} && dokku tags:create ${APP_NAME} latest && dokku cleanup && rm ~/image.tar && docker image prune -a -f --filter "label=${APP_NAME}""
 	${TASK_DONE}
 release: clean build build-docker deploy-static deploy clean #// release: release app
 lint: #// lint: lint code
