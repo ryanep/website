@@ -16,7 +16,9 @@
     "lint:js": "eslint .",
     "fmt:js": "prettier --write --single-quote 'src/**/*.js'",
     "fmt": "npm run fmt:js",
-    "precommit": "lint-staged"
+    "precommit": "lint-staged",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "dependencies": {
     "babel-polyfill": "6.26.0",
@@ -40,7 +42,8 @@
     "redux": "4.0.1",
     "redux-saga": "0.16.2",
     "styled-components": "^4.1.1",
-    "styled-reset": "^1.6.0"
+    "styled-reset": "^1.6.0",
+    "snyk": "^1.189.0"
   },
   "devDependencies": {
     "babel-cli": "6.26.0",
@@ -117,5 +120,6 @@
       "eslint",
       "git add"
     ]
-  }
+  },
+  "snyk": true
 }
