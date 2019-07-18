@@ -2,16 +2,16 @@ import styled, { keyframes } from 'styled-components';
 
 const animate = keyframes`
   from {
-		top: 2rem;
-		opacity: 0;
-		visibility: hidden;
-	}
+    top: 2rem;
+    opacity: 0;
+    visibility: hidden;
+  }
 
-	to {
-		top: 0;
-		opacity: 1;
-		visibility: visible;
-	}
+  to {
+    top: 0;
+    opacity: 1;
+    visibility: visible;
+  }
 `;
 
 export const TitleBarLetter = styled.span`

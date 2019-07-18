@@ -44,7 +44,7 @@ export const Icon = styled.div`
     padding: 0.5rem;
     transform: translate(-50%, -90%);
     transition: all 0.25s ease;
-    border-radius: 2px;
+    border-radius: 0.2rem;
     background-color: #ffffff;
     color: #000000;
     font-size: 1.4rem;

@@ -19,7 +19,7 @@ app.use(...middleware);
 app.set('views', path.resolve('./views/'));
 app.set('view engine', 'ejs');
 
-app.get('*', (req, res) => {
+app.get('*', async (req, res) => {
   const store = configureStore();
   const context = {};
   const sheet = new ServerStyleSheet();
@@ -34,18 +34,16 @@ app.get('*', (req, res) => {
     </Provider>
   );
 
-  store
-    .runSaga(sagas)
-    .done.then(() => {
-      const head = Helmet.rewind();
-      const initialState = JSON.stringify(store.getState());
-      const markup = renderToString(rootComponent);
-      const styles = sheet.getStyleTags();
-      res.render('index', { head, markup, styles, initialState });
-    })
-    .catch(error => {
-      res.status(500).send(error);
-    });
+  try {
+    await store.runSaga(sagas);
+    const head = Helmet.rewind();
+    const initialState = JSON.stringify(store.getState());
+    const markup = renderToString(rootComponent);
+    const styles = sheet.getStyleTags();
+    res.render('index', { head, markup, styles, initialState });
+  } catch (error) {
+    res.status(500).send(error);
+  }
 
   renderToString(rootComponent);
   store.close();

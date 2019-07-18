@@ -1,5 +1,5 @@
-import path from 'path';
-import webpack from 'webpack';
+const path = require('path');
+const webpack = require('webpack');
 
 const config = {
   module: {
@@ -7,7 +7,7 @@ const config = {
       {
         test: /.js$/,
         include: path.resolve(__dirname, '../../src'),
-        loader: ['babel-loader']
+        loader: ['ts-loader']
       },
       {
         test: /\.svg$/,
@@ -31,4 +31,4 @@ const config = {
   plugins: [new webpack.optimize.OccurrenceOrderPlugin()]
 };
 
-export default config;
+module.exports = config;

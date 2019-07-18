@@ -7,31 +7,86 @@ dependencies:
   cache_directories:
     - node_modules
 jobs:
-  build:
+  test:
     docker:
-      - image: circleci/node:8.12.0
-    working_directory: ~/app
+      - image: circleci/node:10.15.0
     steps:
-      - setup_remote_docker
       - checkout
       - run:
           name: Install node modules
           command: yarn
       - run:
+          name: Test code
+          command: echo "Run tests"
+      - run:
           name: Lint code
-          command: make lint
+          command: yarn lint
+  build:
+    docker:
+      - image: circleci/node:10.15.0
+    steps:
+      - checkout
+      - run:
+          name: Install node modules
+          command: yarn
       - run:
           name: Test code
-          command: make test
+          command: yarn build
+      - persist_to_workspace:
+          root: .
+          paths:
+            - ./dist
+  deploy-static:
+    docker:
+      - image: circleci/python:3.6.8-jessie
+    working_directory: ~/repo
+    steps:
+      - attach_workspace:
+          at: .
       - run:
-          name: Build code
-          command: make build
+          name: Install awscli
+          command: sudo pip install awscli
       - run:
-          name: Build docker image
-          command: make build-docker
+          name: Deploy to S3
+          command: |
+            aws s3 sync ./dist/client/ s3://cdn.ryanep.com --delete --acl public-read
+  deploy:
+    docker:
+      - image: circleci/node:10.15.0
+    steps:
+      - setup_remote_docker
+      - checkout
+      - attach_workspace:
+          at: .
       - run:
-          name: Deploy static files
-          command: make deploy-static
-      - run:
-          name: Deploy docker image
-          command: make deploy
+          name: Build website
+          command: |
+            echo "[BUILDING] website"
+            docker build -t dokku/ryanep-frontend:latest .
+            docker save dokku/ryanep-frontend:latest -o ./ryanep-frontend.tar
+            gzip ./ryanep-frontend.tar
+            scp -o StrictHostKeyChecking=no ./ryanep-frontend.tar.gz ${SERVER_USER}@${SERVER_IP}:~/
+            ssh -o StrictHostKeyChecking=no ${SERVER_USER}@${SERVER_IP} " \
+              gunzip -f ~/ryanep-frontend.tar.gz; \
+              docker load -i ~/ryanep-frontend.tar; \
+              rm -f ryanep-frontend.tar; \
+            "
+            ssh -o StrictHostKeyChecking=no ${SERVER_USER}@${SERVER_IP} " \
+              dokku tags:create ryanep-frontend previous; \
+              dokku tags:deploy ryanep-frontend latest; \
+              dokku tags:create ryanep-frontend latest; \
+              dokku cleanup && rm ~/ryanep-frontend.tar; \
+              docker image prune -a -f --filter "label=ryanep-frontend" \
+            "
+workflows:
+  version: 2
+  test_build_plan_deploy:
+    jobs:
+      - test
+      - build
+      - deploy-static:
+          requires:
+            - build
+      - deploy:
+          requires:
+            - deploy-static

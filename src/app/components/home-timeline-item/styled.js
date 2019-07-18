@@ -5,7 +5,7 @@ export const Link = styled.div`
   position: relative;
   margin-bottom: 2rem;
   padding: 1.5rem;
-  border-radius: 3px;
+  border-radius: 0.3rem;
   background-color: #ffffff;
   color: #666666;
   text-align: left;

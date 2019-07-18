@@ -19,7 +19,7 @@ export const Image = styled.img`
   display: block;
   width: 100%;
   margin-bottom: 2rem;
-  border-radius: 4px;
+  border-radius: 0.4rem;
   transition: opacity 0.4s ease;
   will-change: opacity;
 
@@ -40,7 +40,7 @@ export const InProgress = styled.div`
   background-color: rgba(0, 0, 0, 0.2);
   color: #ffffff;
   padding: 0.2rem 0.5rem;
-  border-radius: 3px;
+  border-radius: 0.3rem;
   font-size: 1.2rem;
   z-index: 1;
 `;

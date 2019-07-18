@@ -1,19 +1,16 @@
-import path from 'path';
-import webpack from 'webpack';
-import merge from 'webpack-merge';
-import HtmlWebpackPlugin from 'html-webpack-plugin';
-import nodeExternals from 'webpack-node-externals';
-import baseConfig from './webpack.config.base.babel';
+const path = require('path');
+const webpack = require('webpack');
+const merge = require('webpack-merge');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const nodeExternals = require('webpack-node-externals');
+const baseConfig = require('./webpack.config.base');
 
 const configs = [
   {
     name: 'browser',
     mode: 'production',
     target: 'web',
-    entry: [
-      'babel-polyfill',
-      path.join(__dirname, '../../src/client/index.js')
-    ],
+    entry: [path.join(__dirname, '../../src/client/index.js')],
     output: {
       path: path.join(__dirname, '../../dist/client/'),
       filename: 'build.[hash:8].min.js',
@@ -62,4 +59,4 @@ const configs = [
   }
 ];
 
-export default configs.map(config => merge(baseConfig, config));
+module.exports = configs.map(config => merge(baseConfig, config));

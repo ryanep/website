@@ -1,8 +1,8 @@
-import styled, { injectGlobal } from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
 import reset from 'styled-reset';
 import fonts from './fonts';
 
-export const base = injectGlobal`
+export const GlobalStyles = createGlobalStyle`
   ${reset}
   ${fonts}
 

@@ -28,7 +28,7 @@ clean:
 	${TASK_DONE}
 build: #// build: build website
 	${TASK_STARTED}
-	npm run build
+	yarn build
 	${TASK_DONE}
 build-docker: #// build-docker: build docker image
 	${TASK_STARTED}
@@ -49,9 +49,9 @@ deploy: #// deploy: deploy app
 release: clean build build-docker deploy-static deploy clean #// release: release app
 lint: #// lint: lint code
 	${TASK_STARTED}
-	npm run lint
+	yarn lint
 	${TASK_DONE}
 test: #// test: test code
 	${TASK_STARTED}
-	npm test
+	yarn test
 	${TASK_DONE}
