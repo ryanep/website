@@ -1,5 +1,5 @@
 import React from 'react';
-import { graphql } from 'gatsby';
+import { graphql, PageRendererProps } from 'gatsby';
 import { Root } from '~/components/root';
 import { TimelineBanner } from '~/components/timeline-banner';
 import { HeadingBanner } from '~/components/heading-banner';
@@ -7,7 +7,11 @@ import { AboutBanner } from '~/components/about-banner';
 import { IconBanner } from '~/components/icon-banner';
 import { PersonalWorkBanner } from '~/components/personal-work-banner';
 import { ContactBanner } from '~/components/contact-banner';
-import { HomePageProps } from './types';
+import { HomeQuery } from '../../../types/graphql-types';
+
+type HomePageProps = PageRendererProps & {
+  data: HomeQuery;
+};
 
 export const HomePage: React.FC<HomePageProps> = ({ data }) => {
   const { work, projects, technology } = data;
