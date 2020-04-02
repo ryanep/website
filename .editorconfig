@@ -6,17 +6,6 @@ insert_final_newline = true
 indent_style = space
 indent_size = 2
 
-[Makefile]
+[makefile]
+insert_final_newline = false
 indent_style = tab
-indent_size = 4
-
-[*.scss]
-indent_style = tab
-indent_size = 4
-
-[*.md]
-trim_trailing_whitespace = false
-
-[**.{html,svg}]
-indent_style = tab
-indent_size = 4

@@ -1,101 +1,48 @@
 {
-  "name": "ryanep.com-frontend",
-  "description": "Portfolio website",
-  "version": "1.1.0",
-  "author": "Ryan Elliott-Potter <ryan@ryanep.com>",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ryanep/ryanep.com-frontend.git"
-  },
+  "name": "@ryanep/website",
+  "version": "1.0.0",
+  "license": "MIT",
   "scripts": {
-    "build": "rm -rf ./dist && webpack --config ./config/webpack/webpack.config.prod.js",
-    "dev": "webpack-dev-server ./src/client --hot --inline --config ./config/webpack/webpack.config.dev.js",
-    "test": "jest",
-    "test:coverage": "jest --coverage",
-    "lint:js": "tslint './src/**/*.{ts,tsx}'",
-    "lint:css": "stylelint './src/**/styled.js'",
-    "lint": "yarn lint:js",
-    "fmt": "prettier --write 'src/**/*.js'"
+    "build": "NODE_ENV=production rm -rf ./dist && gatsby build",
+    "dev": "NODE_ENV=development gatsby develop -p 3000 -H 0.0.0.0",
+    "start": "gatsby serve -p 3000",
+    "clean": "gatsby clean",
+    "fmt": "prettier --write './src/**/*.{ts,tsx}'",
+    "lint": "eslint './**/*.{ts,tsx}'"
   },
   "dependencies": {
-    "compression": "1.7.4",
-    "ejs": "2.6.2",
-    "express": "4.17.1",
-    "helmet": "^3.19.0",
-    "isomorphic-fetch": "2.2.1",
-    "polished": "^3.4.1",
-    "prop-types": "15.7.2",
-    "react": "16.8.6",
-    "react-dom": "16.8.6",
-    "react-ga": "^2.6.0",
-    "react-helmet": "5.2.1",
-    "react-lazyload": "2.6.2",
-    "react-markdown": "4.1.0",
-    "react-redux": "7.1.0",
-    "react-router": "5.0.1",
-    "react-router-dom": "5.0.1",
-    "react-svg-inline": "2.1.1",
-    "redux": "4.0.4",
-    "redux-saga": "1.0.5",
-    "styled-components": "^4.3.2",
-    "styled-reset": "^3.0.0"
+    "dotenv": "^8.2.0",
+    "gatsby": "^2.20.5",
+    "gatsby-link": "^2.3.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-helmet": "^5.2.1",
+    "react-markdown": "^4.3.1",
+    "styled-components": "^5.0.1",
+    "styled-reset": "^4.1.2"
   },
   "devDependencies": {
-    "@testing-library/react": "^8.0.5",
-    "@testing-library/react-hooks": "^1.1.0",
-    "copy-webpack-plugin": "^5.0.3",
-    "html-webpack-plugin": "^3.2.0",
-    "husky": "3.0.0",
-    "jest": "24.8.0",
-    "lint-staged": "9.2.0",
-    "nodemon": "1.19.1",
-    "prettier": "1.18.2",
-    "raw-loader": "3.0.0",
-    "react-test-renderer": "^16.8.6",
-    "stylelint": "10.1.0",
-    "stylelint-config-standard": "18.3.0",
-    "stylelint-config-styled-components": "^0.1.1",
-    "ts-jest": "^24.0.2",
-    "ts-loader": "^6.0.4",
-    "tslint": "^5.18.0",
-    "typescript": "^3.5.3",
-    "webpack": "4.36.1",
-    "webpack-cli": "^3.3.6",
-    "webpack-dev-server": "3.7.2",
-    "webpack-merge": "^4.2.1",
-    "webpack-node-externals": "^1.7.2"
-  },
-  "standard": {
-    "env": [
-      "jest"
-    ]
-  },
-  "jest": {
-    "setupFiles": [
-      "./config/jest/"
-    ],
-    "moduleNameMapper": {
-      "^@actions(.*)$": "<rootDir>/src/app/actions$1",
-      "^@adapters(.*)$": "<rootDir>/src/app/adapters$1",
-      "^@components(.*)$": "<rootDir>/src/app/components$1",
-      "^@constants(.*)$": "<rootDir>/src/app/constants$1",
-      "^@containers(.*)$": "<rootDir>/src/app/containers$1",
-      "^@helpers(.*)$": "<rootDir>/src/app/helpers$1",
-      "^@models(.*)$": "<rootDir>/src/app/models$1",
-      "^@reducers(.*)$": "<rootDir>/src/app/reducers$1",
-      "^@sagas(.*)$": "<rootDir>/src/app/sagas$1",
-      "^@services(.*)$": "<rootDir>/src/app/services$1",
-      "^@store(.*)$": "<rootDir>/src/app/store$1"
-    },
-    "collectCoverageFrom": [
-      "src/**/*.js"
-    ]
-  },
-  "lint-staged": {
-    "*.js": [
-      "prettier --write --single-quote",
-      "tslint",
-      "git add"
-    ]
+    "@types/styled-components": "^5.0.1",
+    "@typescript-eslint/eslint-plugin": "^2.26.0",
+    "@typescript-eslint/parser": "^2.26.0",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-typescript": "^7.2.0",
+    "eslint-config-prettier": "^6.10.1",
+    "eslint-import-resolver-typescript": "^2.0.0",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.19.0",
+    "eslint-plugin-react-hooks": "^3.0.0",
+    "gatsby-plugin-alias-imports": "^1.0.5",
+    "gatsby-plugin-google-analytics": "^2.2.2",
+    "gatsby-plugin-graphql-codegen": "^2.7.0",
+    "gatsby-plugin-react-helmet": "^3.2.1",
+    "gatsby-plugin-styled-components": "^3.2.1",
+    "gatsby-plugin-typescript": "^2.3.1",
+    "gatsby-plugin-typescript-checker": "^1.1.1",
+    "gatsby-source-contentful": "^2.2.5",
+    "prettier": "^2.0.2",
+    "prettier-eslint": "^9.0.1",
+    "typescript": "^3.8.3"
   }
 }

@@ -3,14 +3,18 @@
     "esModuleInterop": true,
     "module": "commonjs",
     "moduleResolution": "node",
-    "noImplicitAny": false,
+    "noImplicitAny": true,
     "noUnusedLocals": true,
     "skipLibCheck": true,
     "outDir": "dist",
     "sourceMap": true,
-    "allowJs": true,
     "target": "es2017",
-    "jsx": "react"
+    "jsx": "react",
+    "baseUrl": "./src",
+    "paths": {
+      "~/*": ["./*"]
+    },
+    "resolveJsonModule": true
   },
   "exclude": ["node_modules", "**/*.spec.ts"]
 }

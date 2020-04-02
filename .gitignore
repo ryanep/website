@@ -1,8 +1,6 @@
-.DS_Store
-*.tar.gz
-*.map
-*.log
-.env
 node_modules
-dist
-coverage
+.cache
+*.log
+public
+.env.development
+.env.production
