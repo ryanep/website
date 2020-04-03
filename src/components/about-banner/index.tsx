@@ -21,5 +21,3 @@ export const AboutBanner: React.FC<AboutBannerProps> = ({
     </styled.Banner>
   );
 };
-
-export default AboutBanner;

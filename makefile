@@ -15,6 +15,7 @@ DOCKER_TAG = latest
 
 build-website:
 	rm -rf ./public ./.cache && \
+	yarn && \
 	yarn build && \
 	docker build -t ${DOCKER_IMAGE_NAME}:${DOCKER_TAG} . && \
 	docker save ${DOCKER_IMAGE_NAME}:${DOCKER_TAG} -o ./${PROJECT_NAME}.tar && \

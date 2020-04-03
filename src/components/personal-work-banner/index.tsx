@@ -35,5 +35,3 @@ export const PersonalWorkBanner: React.FC<PersonalWorkBannerProps> = ({
     </styled.Banner>
   );
 };
-
-export default PersonalWorkBanner;

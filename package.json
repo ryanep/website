@@ -8,7 +8,8 @@
     "start": "gatsby serve -p 3000",
     "clean": "gatsby clean",
     "fmt": "prettier --write './src/**/*.{ts,tsx}'",
-    "lint": "eslint './**/*.{ts,tsx}'"
+    "lint:css": "stylelint --custom-syntax postcss-jsx './src/**/styles.ts'",
+    "lint:ts": "eslint './**/*.{ts,tsx}'"
   },
   "dependencies": {
     "dotenv": "^8.2.0",
@@ -42,8 +43,14 @@
     "gatsby-plugin-typescript": "^2.3.1",
     "gatsby-plugin-typescript-checker": "^1.1.1",
     "gatsby-source-contentful": "^2.2.5",
+    "postcss-jsx": "^0.36.4",
     "prettier": "^2.0.2",
     "prettier-eslint": "^9.0.1",
+    "stylelint": "^13.2.1",
+    "stylelint-config-prettier": "^8.0.1",
+    "stylelint-config-property-sort-order-smacss": "^6.0.0",
+    "stylelint-config-standard": "^20.0.0",
+    "stylelint-config-styled-components": "^0.1.1",
     "typescript": "^3.8.3"
   }
 }
