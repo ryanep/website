@@ -17,8 +17,7 @@ export const ContactBanner: React.FC<ContactBannerProps> = React.memo(({
   const [formData, setFormData] = useState<ContactFormData>({
     name: '',
     subject: '',
-    emailAddress: '',
-    message: ''
+    body: ''
   });
 
   const handleInputChange = (
@@ -44,7 +43,7 @@ export const ContactBanner: React.FC<ContactBannerProps> = React.memo(({
         <Spacer size="small" />
         <styled.Description>{description}</styled.Description>
         <Spacer size="large" />
-        <styled.Form onSubmit={handleFormSubmit}>
+        <styled.Form onSubmit={handleFormSubmit} action="mailto:ryan@ryanep.com" method="get">
           <Input
             id="contact-form-name"
             title={t('contactForm:nameLabel')}
@@ -66,7 +65,7 @@ export const ContactBanner: React.FC<ContactBannerProps> = React.memo(({
           <Textarea
             id="contact-form-message"
             title={t('contactForm:messageLabel')}
-            name="message"
+            name="body"
             onChange={handleInputChange}
             required
           />

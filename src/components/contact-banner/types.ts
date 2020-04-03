@@ -6,6 +6,5 @@ export interface ContactBannerProps {
 export interface ContactFormData {
   name: string;
   subject: string;
-  emailAddress: string;
-  message: string;
+  body: string;
 }
