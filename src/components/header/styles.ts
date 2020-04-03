@@ -5,9 +5,9 @@ import { colours } from '~/constants/colours';
 
 export const Header = styled.header`
   position: fixed;
-  width: 100%;
-  top: 0;
   z-index: 2;
+  top: 0;
+  width: 100%;
   box-shadow: inset 0 5rem 3rem ${colours.red};
 `;
 

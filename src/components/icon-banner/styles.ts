@@ -4,14 +4,14 @@ import { colours } from '~/constants/colours';
 
 export const Banner = styled.section`
   padding: 4rem 0;
-  text-align: center;
   background-color: #f7f7f7;
+  text-align: center;
 `;
 
 export const Description = styled.p`
-  font-size: 1.4rem;
   max-width: 82rem;
   margin: 0 auto;
+  font-size: 1.4rem;
 `;
 
 export const Icons = styled.ul`
@@ -25,39 +25,39 @@ export const Icons = styled.ul`
 export const Icon = styled.li<IconStyleProps>`
   display: flex;
   position: relative;
+  flex-shrink: 0;
   align-items: center;
   justify-content: center;
   width: 6rem;
   height: 6rem;
   border-radius: 50%;
   background-color: ${({ colour }) => colour};
-  flex-shrink: 0;
 
   &::before {
+    content: attr(name);
+    visibility: hidden;
     position: absolute;
+    bottom: 100%;
     left: 50%;
     padding: 0.5rem;
     transform: translateX(-50%);
     transition: all 0.25s ease;
     border-radius: 0.2rem;
+    opacity: 0;
     background-color: ${colours.white};
+    box-shadow: 0 0.1rem 0.2rem rgba(0, 0, 0, 0.1);
     color: ${colours.black};
     font-size: 1.4rem;
     font-weight: normal;
     line-height: 1;
-    box-shadow: 0 0.1rem 0.2rem rgba(0, 0, 0, 0.1);
-    content: attr(name);
-    opacity: 0;
-    visibility: hidden;
-    bottom: 100%;
     will-change: opacity, visibility, transform;
   }
 
   &:hover {
     &::before {
+      visibility: visible;
       transform: translate(-50%, -0.5rem);
       opacity: 1;
-      visibility: visible;
     }
   }
 `;

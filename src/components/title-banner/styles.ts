@@ -4,15 +4,15 @@ import { colours } from '~/constants/colours';
 
 export const Banner = styled.div`
   position: sticky;
+  z-index: 1;
   padding-top: 6rem;
   background-color: ${colours.red};
   color: ${colours.white};
-  z-index: 1;
 `;
 
 export const Bar = styled.div`
-  background-color: ${colours.copperRust};
   padding: 1rem 0;
+  background-color: ${colours.copperRust};
 `;
 
 export const Container = styled(Wrap)``;

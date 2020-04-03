@@ -3,8 +3,8 @@ import { Wrap } from '~/components/wrap';
 import { fromTablet } from '~/styles/breakpoints';
 
 export const Banner = styled.section`
-  text-align: center;
   padding: 4rem 0;
+  text-align: center;
 `;
 
 export const Container = styled(Wrap)`
@@ -12,21 +12,21 @@ export const Container = styled(Wrap)`
 `;
 
 export const Description = styled.p`
-  font-size: 1.4rem;
   max-width: 82rem;
   margin: 0 auto;
+  font-size: 1.4rem;
 `;
 
 export const Projects = styled.div`
   display: flex;
-  justify-content: space-between;
   flex-direction: row;
   flex-wrap: wrap;
+  justify-content: space-between;
 `;
 
 export const Link = styled.a`
-  font-size: 1.4rem;
   color: inherit;
+  font-size: 1.4rem;
   text-decoration: inherit;
 `;
 
@@ -34,8 +34,8 @@ export const ProjectImage = styled.img`
   display: block;
   width: 100%;
   margin-bottom: 1rem;
-  border-radius: 0.4rem;
   transition: opacity 0.2s ease;
+  border-radius: 0.4rem;
 `;
 
 export const Project = styled.article`

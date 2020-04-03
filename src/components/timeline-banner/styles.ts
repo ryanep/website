@@ -4,9 +4,9 @@ import { fromTablet } from '~/styles/breakpoints';
 import { Wrap } from '~/components/wrap';
 
 export const Banner = styled.section`
-  text-align: center;
   padding: 4rem 0;
   background-color: #f7f7f7;
+  text-align: center;
 `;
 
 export const Container = styled(Wrap)`
@@ -14,23 +14,22 @@ export const Container = styled(Wrap)`
 `;
 
 export const Description = styled.p`
-  font-size: 1.4rem;
-  font-size: 1.4rem;
   max-width: 82rem;
   margin: 0 auto;
+  font-size: 1.4rem;
 `;
 
 export const Item = styled.article`
-  position: relative;
   display: block;
+  position: relative;
+  margin-bottom: 1rem;
   padding: 1.5rem;
   border-radius: 0.3rem;
   background-color: ${colours.white};
+  box-shadow: 0 0.1rem 0.2rem ${colours.grey};
   color: ${colours.doveGrey};
   text-align: left;
   text-decoration: none;
-  box-shadow: 0 0.1rem 0.2rem ${colours.grey};
-  margin-bottom: 1rem;
 
   &:hover {
     &::after {
@@ -48,11 +47,11 @@ export const Item = styled.article`
     &::before {
       content: '';
       position: absolute;
-      background-color: ${colours.grey};
+      top: 50%;
       width: 0.4rem;
       height: calc(100% + 2rem);
-      top: 50%;
       transform: translateY(-50%);
+      background-color: ${colours.grey};
     }
 
     &::after {
@@ -61,10 +60,10 @@ export const Item = styled.article`
       top: 50%;
       width: 1rem;
       height: 1rem;
-      background-color: ${colours.silverChalice};
-      border-radius: 50%;
       transform: translateY(-50%);
       transition: background-color 0.2s ease;
+      border-radius: 50%;
+      background-color: ${colours.silverChalice};
     }
 
     &:nth-child(odd) {
@@ -97,8 +96,8 @@ export const ItemHeader = styled.header`
   flex-wrap: wrap;
 
   @media ${fromTablet} {
-    margin-bottom: 1rem;
     flex-wrap: nowrap;
+    margin-bottom: 1rem;
   }
 `;
 
@@ -107,10 +106,10 @@ export const ItemIcon = styled.img`
 `;
 
 export const ItemHeading = styled.h3`
-  font-size: 2rem;
-  font-weight: 500;
   flex-grow: 1;
   margin-bottom: 0.5rem;
+  font-size: 2rem;
+  font-weight: 500;
 
   @media ${fromTablet} {
     margin-bottom: 0;
@@ -122,11 +121,11 @@ export const ItemRole = styled.p`
 `;
 
 export const ItemDate = styled.p`
+  flex-shrink: 0;
   width: 100%;
+  margin-bottom: 1rem;
   font-size: 1.2rem;
   font-weight: 500;
-  margin-bottom: 1rem;
-  flex-shrink: 0;
 
   @media ${fromTablet} {
     width: auto;

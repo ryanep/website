@@ -7,17 +7,17 @@ export const Bubbles = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  pointer-events: none;
   overflow: hidden;
+  pointer-events: none;
 `;
 
 export const Bubble = styled.div<BubbleStyleProps>`
   position: absolute;
-  background-color: rgba(0, 0, 0, 0.1);
-  border-radius: 0.2rem;
+  top: ${({ top }) => `${top}px`};
+  left: ${({ left }) => `${left}px`};
   width: 1rem;
   height: 1rem;
-  left: ${({ left }) => `${left}px`};
-  top: ${({ top }) => `${top}px`};
-  transform: ${({ size }) => `scale(${size})`};
+  transform: ${({ size }) => `scale(${size}) `};
+  border-radius: 0.2rem;
+  background-color: rgba(0, 0, 0, 0.1);
 `;

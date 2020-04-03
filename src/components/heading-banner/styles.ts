@@ -3,21 +3,21 @@ import { Wrap } from '~/components/wrap';
 import { colours } from '~/constants/colours';
 
 export const Banner = styled.div`
+  display: flex;
   position: sticky;
+  z-index: 1;
   top: calc(-40rem + 6rem);
+  flex-direction: row;
+  align-items: center;
   height: 40rem;
   background-color: ${colours.red};
   color: ${colours.white};
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  z-index: 1;
 `;
 
 export const Container = styled(Wrap)`
   display: flex;
-  align-items: center;
   flex-direction: column;
+  align-items: center;
 `;
 
 export const Description = styled.p`
