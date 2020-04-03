@@ -6,6 +6,7 @@ export const Textarea: React.FC<InputProps> = ({
   id,
   name,
   title,
+  rows = 5,
   onChange,
   required
 }) => {
@@ -17,6 +18,7 @@ export const Textarea: React.FC<InputProps> = ({
         name={name}
         onChange={onChange}
         required={required}
+        rows={rows}
       />
     </label>
   );

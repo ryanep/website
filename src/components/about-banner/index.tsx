@@ -7,12 +7,13 @@ import * as styled from './styles';
 
 export const AboutBanner: React.FC<AboutBannerProps> = ({
   heading,
-  description
+  description,
+  image
 }) => {
   return (
     <styled.Banner>
       <Wrap>
-        <styled.Image src="https://cdn.ryanep.com/images/me.jpg" />
+        <styled.Image src={image.url} alt={image.title} />
         <Spacer size="small" />
         <Heading type="h2" text={heading} />
         <Spacer size="small" />

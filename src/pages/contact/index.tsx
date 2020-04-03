@@ -1,13 +1,15 @@
 import React from 'react';
 import Helmet from 'react-helmet';
+import { useTranslation } from 'react-i18next';
 import { Root } from '~/components/root';
 import { TitleBanner } from '~/components/title-banner';
 
 export const ContactPage: React.FC = () => {
+  const { t } = useTranslation();
   return (
     <Root>
-      <Helmet title="Full-stack JavaScript Developer - Ryan Elliott-Potter" />
-      <TitleBanner heading="Contact" />
+      <Helmet title={t('contact:pageTitle')} />
+      <TitleBanner heading={t('contact:titleBanner.heading')} />
     </Root>
   );
 };

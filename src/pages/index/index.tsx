@@ -1,6 +1,7 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import { graphql, PageRendererProps } from 'gatsby';
+import { useTranslation } from 'react-i18next';
 import { Root } from '~/components/root';
 import { TimelineBanner } from '~/components/timeline-banner';
 import { HeadingBanner } from '~/components/heading-banner';
@@ -15,36 +16,41 @@ type HomePageProps = PageRendererProps & {
 };
 
 export const HomePage: React.FC<HomePageProps> = ({ data }) => {
+  const { t } = useTranslation();
   const { work, projects, technology } = data;
   return (
     <Root>
-      <Helmet title="Full-stack JavaScript Developer - Ryan Elliott-Potter" />
+      <Helmet title={t('home:pageTitle')} />
       <HeadingBanner
-        heading="Ryan Elliott-Potter"
-        description="Full-stack JavaScript Developer"
+        heading={t('home:headingBanner.heading')}
+        description={t('home:headingBanner.description')}
       />
       <AboutBanner
-        heading="About me"
-        description="I'm **Ryan Elliott-Potter**; a full-stack developer from the United Kingdom. I have a passion for all types of development but with a current focus on full stack JavaScript."
+        heading={t('home:aboutBanner.heading')}
+        description={t('home:aboutBanner.description')}
+        image={{
+          url: t('home:aboutBanner.imageUrl'),
+          title: t('home:aboutBanner.imageTitle')
+        }}
       />
       <IconBanner
-        heading="Technology"
-        description="I have experience in a number of different techologies. I specialise in the technologies listed below:"
+        heading={t('home:iconBanner.heading')}
+        description={t('home:iconBanner.description')}
         items={technology.edges}
       />
       <PersonalWorkBanner
-        heading="Personal work"
-        description="Below is a selection of some of my personal projects"
+        heading={t('home:personalWorkBanner.heading')}
+        description={t('home:personalWorkBanner.description')}
         projects={projects.edges}
       />
       <TimelineBanner
-        heading="Work Experience"
-        description="Below is a timeline of my most recent professional work experience:"
+        heading={t('home:workExperienceBanner.heading')}
+        description={t('home:workExperienceBanner.description')}
         items={work.edges}
       />
       <ContactBanner
-        heading="Contact me"
-        description="Feel free to contact me using the form below:"
+        heading={t('home:contactBanner.heading')}
+        description={t('home:contactBanner.description')}
       />
     </Root>
   );

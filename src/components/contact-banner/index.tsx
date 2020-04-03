@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Heading } from '~/components/heading';
 import { Spacer } from '~/components/spacer';
 import { Wrap } from '~/components/wrap';
@@ -12,6 +13,7 @@ export const ContactBanner: React.FC<ContactBannerProps> = ({
   heading,
   description
 }) => {
+  const { t } = useTranslation();
   const [formData, setFormData] = useState<ContactFormData>({
     name: '',
     subject: '',
@@ -44,33 +46,33 @@ export const ContactBanner: React.FC<ContactBannerProps> = ({
         <Spacer size="large" />
         <styled.Form onSubmit={handleFormSubmit}>
           <Input
-            id="contact-subject"
-            title="Subject"
-            type="text"
-            name="name"
-            onChange={handleInputChange}
-            required
-          />
-          <Spacer size="small" />
-          <Input
             id="contact-form-name"
-            title="Name"
+            title={t('contactForm:nameLabel')}
             type="text"
             name="subject"
             onChange={handleInputChange}
             required
           />
           <Spacer size="small" />
+          <Input
+            id="contact-form-subject"
+            title={t('contactForm:subjectLabel')}
+            type="text"
+            name="name"
+            onChange={handleInputChange}
+            required
+          />
+          <Spacer size="small" />
           <Textarea
-            id="contact-form-name"
-            title="Message"
+            id="contact-form-message"
+            title={t('contactForm:messageLabel')}
             name="message"
             onChange={handleInputChange}
             required
           />
           <Spacer size="large" />
           <styled.Button>
-            <Button type="submit" text="Send message" />
+            <Button type="submit" text={t('contactForm:buttonTitle')} />
           </styled.Button>
         </styled.Form>
       </Wrap>
