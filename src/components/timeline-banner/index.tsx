@@ -4,7 +4,7 @@ import { Spacer } from '~/components/spacer';
 import { TimelineBannerProps } from './types';
 import * as styled from './styles';
 
-export const TimelineBanner: React.FC<TimelineBannerProps> = ({
+export const TimelineBanner: React.FC<TimelineBannerProps> = React.memo(({
   heading,
   description,
   items
@@ -48,4 +48,4 @@ export const TimelineBanner: React.FC<TimelineBannerProps> = ({
       </styled.Container>
     </styled.Banner>
   );
-};
+});

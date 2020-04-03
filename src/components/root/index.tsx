@@ -16,7 +16,7 @@ const navLinks = [
   }
 ];
 
-export const Root: React.FC<RootProps> = ({ children }) => {
+export const Root: React.FC<RootProps> = React.memo(({ children }) => {
   return (
     <div>
       <Helmet>
@@ -28,4 +28,4 @@ export const Root: React.FC<RootProps> = ({ children }) => {
       <Footer />
     </div>
   );
-};
+});

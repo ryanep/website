@@ -2,7 +2,7 @@ import React from 'react';
 import { InputProps } from './types';
 import * as styled from './styles';
 
-export const Textarea: React.FC<InputProps> = ({
+export const Textarea: React.FC<InputProps> = React.memo(({
   id,
   name,
   title,
@@ -22,4 +22,4 @@ export const Textarea: React.FC<InputProps> = ({
       />
     </label>
   );
-};
+});

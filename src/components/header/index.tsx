@@ -4,7 +4,7 @@ import { Navigation } from '~/components/navigation';
 import { HeaderProps } from './types';
 import * as styled from './styles';
 
-export const Header: React.FC<HeaderProps> = ({ showNav, navLinks }) => {
+export const Header: React.FC<HeaderProps> = React.memo(({ showNav, navLinks }) => {
   return (
     <styled.Header data-testid="header">
       <styled.Container>
@@ -15,4 +15,4 @@ export const Header: React.FC<HeaderProps> = ({ showNav, navLinks }) => {
       </styled.Container>
     </styled.Header>
   );
-};
+});

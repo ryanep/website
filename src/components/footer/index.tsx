@@ -5,7 +5,7 @@ import { FooterProps } from './types';
 import * as styled from './styles';
 import { getCurrentYear } from '~/utils/date';
 
-export const Footer: React.FC<FooterProps> = () => {
+export const Footer: React.FC<FooterProps> = React.memo(() => {
   const { t } = useTranslation();
   const year = getCurrentYear();
   return (
@@ -13,4 +13,4 @@ export const Footer: React.FC<FooterProps> = () => {
       <Wrap>{t('footer:copyright', { year })}</Wrap>
     </styled.Footer>
   );
-};
+});

@@ -2,7 +2,7 @@ import React from 'react';
 import { InputProps } from './types';
 import * as styled from './styles';
 
-export const Input: React.FC<InputProps> = ({
+export const Input: React.FC<InputProps> = React.memo(({
   id,
   type,
   name,
@@ -22,4 +22,4 @@ export const Input: React.FC<InputProps> = ({
       />
     </label>
   );
-};
+});

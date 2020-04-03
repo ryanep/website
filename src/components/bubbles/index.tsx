@@ -3,7 +3,7 @@ import { generateBubbles } from '~/utils/bubbles';
 import { BubblesProps } from './types';
 import * as styled from './styles';
 
-export const Bubbles: React.FC<BubblesProps> = ({ bubbleCount }) => {
+export const Bubbles: React.FC<BubblesProps> = React.memo(({ bubbleCount }) => {
   const bubbles = generateBubbles(bubbleCount);
   return (
     <styled.Bubbles>
@@ -17,4 +17,4 @@ export const Bubbles: React.FC<BubblesProps> = ({ bubbleCount }) => {
       ))}
     </styled.Bubbles>
   );
-};
+});

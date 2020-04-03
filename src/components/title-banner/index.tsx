@@ -3,7 +3,7 @@ import { Heading } from '~/components/heading';
 import { TitleBannerProps } from './types';
 import * as styled from './styles';
 
-export const TitleBanner: React.FC<TitleBannerProps> = ({ heading }) => {
+export const TitleBanner: React.FC<TitleBannerProps> = React.memo(({ heading }) => {
   return (
     <styled.Banner>
       <styled.Bar>
@@ -13,4 +13,4 @@ export const TitleBanner: React.FC<TitleBannerProps> = ({ heading }) => {
       </styled.Bar>
     </styled.Banner>
   );
-};
+});

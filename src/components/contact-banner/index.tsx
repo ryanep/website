@@ -9,7 +9,7 @@ import { Button } from '~/components/button';
 import { ContactBannerProps, ContactFormData } from './types';
 import * as styled from './styles';
 
-export const ContactBanner: React.FC<ContactBannerProps> = ({
+export const ContactBanner: React.FC<ContactBannerProps> = React.memo(({
   heading,
   description
 }) => {
@@ -78,4 +78,4 @@ export const ContactBanner: React.FC<ContactBannerProps> = ({
       </Wrap>
     </styled.Banner>
   );
-};
+});
