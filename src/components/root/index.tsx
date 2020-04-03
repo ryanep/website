@@ -1,4 +1,5 @@
 import React from 'react';
+import Helmet from 'react-helmet';
 import { Header } from '~/components/header';
 import { Footer } from '~/components/footer';
 import { RootProps } from './types';
@@ -18,6 +19,9 @@ const navLinks = [
 export const Root: React.FC<RootProps> = ({ children }) => {
   return (
     <div>
+      <Helmet>
+        <link rel="icon" href="//cdn.ryanep.com/favicon.ico" />
+      </Helmet>
       <styled.Global />
       <Header showNav={false} navLinks={navLinks} />
       {children}

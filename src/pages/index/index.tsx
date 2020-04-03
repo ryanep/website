@@ -1,4 +1,5 @@
 import React from 'react';
+import Helmet from 'react-helmet';
 import { graphql, PageRendererProps } from 'gatsby';
 import { Root } from '~/components/root';
 import { TimelineBanner } from '~/components/timeline-banner';
@@ -17,6 +18,7 @@ export const HomePage: React.FC<HomePageProps> = ({ data }) => {
   const { work, projects, technology } = data;
   return (
     <Root>
+      <Helmet title="Full-stack JavaScript Developer - Ryan Elliott-Potter" />
       <HeadingBanner
         heading="Ryan Elliott-Potter"
         description="Full-stack JavaScript Developer"
