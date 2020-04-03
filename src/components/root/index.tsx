@@ -20,6 +20,7 @@ export const Root: React.FC<RootProps> = React.memo(({ children }) => {
   return (
     <div>
       <Helmet>
+        <html lang="en" />
         <link rel="icon" href="//cdn.ryanep.com/favicon.ico" />
       </Helmet>
       <styled.Global />
