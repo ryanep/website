@@ -32,7 +32,7 @@ export const ContactBanner: React.FC<ContactBannerProps> = React.memo(({
 
   const handleFormSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const mailToLink = `mailto:ryan@ryanep.com?subject=${formData.subject}&body=${formData.message}`;
+    const mailToLink = `mailto:ryan@ryanep.com?subject=${formData.subject}&body=${formData.body}`;
     window.location.href = mailToLink;
   };
 

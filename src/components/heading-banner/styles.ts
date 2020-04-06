@@ -12,6 +12,7 @@ export const Banner = styled.div`
   height: 40rem;
   background-color: ${colours.red};
   color: ${colours.white};
+  overflow: hidden;
 `;
 
 export const Container = styled(Wrap)`
