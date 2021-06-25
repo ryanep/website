@@ -12,8 +12,8 @@ export interface TimelineBannerProps {
         title?: string;
         file?: {
           url?: string;
-        }
-      }
+        };
+      };
     };
   }[];
 }

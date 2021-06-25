@@ -4,5 +4,5 @@ export interface AboutBannerProps {
   image: {
     url: string;
     title: string;
-  }
+  };
 }

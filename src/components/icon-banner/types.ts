@@ -10,10 +10,10 @@ export interface LogoBannerProps {
         title?: string;
         file?: {
           url?: string;
-        }
-      }
-    }
-  }[]
+        };
+      };
+    };
+  }[];
 }
 
 export interface IconStyleProps {

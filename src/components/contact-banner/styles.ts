@@ -6,7 +6,8 @@ export const Banner = styled.section`
 `;
 
 export const Description = styled.p`
-  font-size: 1.4rem;
+  max-width: 82rem;
+  margin: 0 auto;
 `;
 
 export const Form = styled.form`

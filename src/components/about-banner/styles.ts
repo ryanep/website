@@ -15,5 +15,4 @@ export const Image = styled.img`
 export const Description = styled(Markdown)`
   max-width: 82rem;
   margin: 0 auto;
-  font-size: 1.4rem;
 `;

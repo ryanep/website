@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 import { HeadingStyleProps } from './types';
 
 export const Heading = styled.h1<HeadingStyleProps>`
-  font-weight: 500;
+  font-weight: 900;
 
   ${({ type }) =>
     type === 'h1' &&
@@ -17,26 +17,26 @@ export const Heading = styled.h1<HeadingStyleProps>`
     `}
 
     ${({ type }) =>
-      type === 'h3' &&
-      css`
-        font-size: 2.4rem;
-      `}
+    type === 'h3' &&
+    css`
+      font-size: 2.4rem;
+    `}
 
     ${({ type }) =>
-      type === 'h4' &&
-      css`
-        font-size: 2rem;
-      `}
+    type === 'h4' &&
+    css`
+      font-size: 2rem;
+    `}
 
     ${({ type }) =>
-      type === 'h5' &&
-      css`
-        font-size: 1.6rem;
-      `}
+    type === 'h5' &&
+    css`
+      font-size: 1.6rem;
+    `}
 
     ${({ type }) =>
-      type === 'h6' &&
-      css`
-        font-size: 1.4rem;
-      `}
+    type === 'h6' &&
+    css`
+      font-size: 1.4rem;
+    `}
 `;

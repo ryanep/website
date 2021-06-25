@@ -30,7 +30,8 @@
     },
     "workExperienceBanner": {
       "heading": "Work experience",
-      "description": "Below is a timeline of my most recent professional work experience:"
+      "description": "Below is a timeline of my most recent professional work experience:",
+      "present": "Present"
     },
     "contactBanner": {
       "heading": "Contact me",

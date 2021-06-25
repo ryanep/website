@@ -14,7 +14,6 @@ export const Container = styled(Wrap)`
 export const Description = styled.p`
   max-width: 82rem;
   margin: 0 auto;
-  font-size: 1.4rem;
 `;
 
 export const Projects = styled.div`

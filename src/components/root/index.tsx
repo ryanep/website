@@ -8,12 +8,12 @@ import * as styled from './styles';
 const navLinks = [
   {
     url: '/',
-    title: 'Home'
+    title: 'Home',
   },
   {
     url: '/contact',
-    title: 'Contact'
-  }
+    title: 'Contact',
+  },
 ];
 
 export const Root: React.FC<RootProps> = React.memo(({ children }) => {

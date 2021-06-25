@@ -11,7 +11,6 @@ export const Banner = styled.section`
 export const Description = styled.p`
   max-width: 82rem;
   margin: 0 auto;
-  font-size: 1.4rem;
 `;
 
 export const Icons = styled.ul`
@@ -30,7 +29,8 @@ export const Icon = styled.li<IconStyleProps>`
   justify-content: center;
   width: 6rem;
   height: 6rem;
-  border-radius: 50%;
+  /* border-radius: 50%; */
+  border-radius: 0.8rem;
   background-color: ${({ colour }) => colour};
 
   &::before {

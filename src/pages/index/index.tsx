@@ -30,7 +30,7 @@ export const HomePage: React.FC<HomePageProps> = ({ data }) => {
         description={t('home:aboutBanner.description')}
         image={{
           url: t('home:aboutBanner.imageUrl'),
-          title: t('home:aboutBanner.imageTitle')
+          title: t('home:aboutBanner.imageTitle'),
         }}
       />
       <IconBanner
