@@ -3,7 +3,7 @@ import { Wrap } from '~/components/wrap';
 import { fromTablet } from '~/styles/breakpoints';
 
 export const Banner = styled.section`
-  padding: 4rem 0;
+  padding: 6rem 0;
   text-align: center;
 `;
 
@@ -17,10 +17,14 @@ export const Description = styled.p`
 `;
 
 export const Projects = styled.div`
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
   justify-content: space-between;
+
+  @media ${fromTablet} {
+    grid-template-columns: repeat(4, 1fr);
+  }
 `;
 
 export const Link = styled.a`
@@ -34,25 +38,13 @@ export const ProjectImage = styled.img`
   width: 100%;
   margin-bottom: 1rem;
   transition: opacity 0.2s ease;
-  border-radius: 0.4rem;
+  border-radius: 0.8rem;
 `;
 
 export const Project = styled.article`
-  width: 48%;
-  margin-top: 2rem;
-
   &:hover {
     ${ProjectImage} {
       opacity: 0.9;
     }
-  }
-
-  &:nth-child(-n + 2) {
-    margin-top: 0;
-  }
-
-  @media ${fromTablet} {
-    width: 24%;
-    margin-top: 0;
   }
 `;

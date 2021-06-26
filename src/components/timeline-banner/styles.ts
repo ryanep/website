@@ -4,23 +4,38 @@ import { fromTablet } from '~/styles/breakpoints';
 import { Wrap } from '~/components/wrap';
 
 export const Banner = styled.section`
-  padding: 4rem 0;
+  padding: 6rem 0;
   background-color: #f7f7f7;
   text-align: center;
 `;
 
-export const Container = styled(Wrap)`
-  max-width: 82rem;
-`;
+export const Container = styled(Wrap)``;
 
 export const Description = styled.p`
   max-width: 82rem;
   margin: 0 auto;
 `;
 
-export const Item = styled.article`
-  display: block;
+export const Timeline = styled.div`
   position: relative;
+`;
+
+export const TimelineItems = styled.div``;
+
+export const Line = styled.div`
+  position: absolute;
+  top: -2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: ${colours.grey};
+  width: 0.4rem;
+  height: calc(100% + 4rem);
+  border-radius: 0.4rem;
+`;
+
+export const Item = styled.article`
+  position: relative;
+  display: block;
   margin-bottom: 1rem;
   padding: 1.5rem;
   border-radius: 0.3rem;
@@ -43,47 +58,30 @@ export const Item = styled.article`
   @media ${fromTablet} {
     width: 48%;
 
-    &::before {
-      content: '';
-      position: absolute;
-      top: 50%;
-      width: 0.4rem;
-      height: calc(100% + 2rem);
-      transform: translateY(-50%);
-      background-color: ${colours.grey};
-    }
-
     &::after {
       content: '';
       position: absolute;
-      top: 50%;
       width: 1rem;
       height: 1rem;
-      transform: translateY(-50%);
+      top: 50%;
       transition: background-color 0.2s ease;
       border-radius: 50%;
       background-color: ${colours.silverChalice};
     }
 
     &:nth-child(odd) {
-      &::before {
-        right: -1.8rem;
-      }
-
       &::after {
-        right: -2.1rem;
+        left: calc(100% + 2rem);
+        transform: translate(-50%, -50%);
       }
     }
 
     &:nth-child(even) {
       margin-left: auto;
 
-      &::before {
-        left: -1.8rem;
-      }
-
       &::after {
-        left: -2.1rem;
+        right: calc(100% + 2rem);
+        transform: translate(50%, -50%);
       }
     }
   }
@@ -108,7 +106,7 @@ export const ItemHeading = styled.h3`
   flex-grow: 1;
   margin-bottom: 0.5rem;
   font-size: 2rem;
-  font-weight: 500;
+  font-weight: 700;
 
   @media ${fromTablet} {
     margin-bottom: 0;

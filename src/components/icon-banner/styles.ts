@@ -1,9 +1,10 @@
 import styled from 'styled-components';
 import { IconStyleProps } from './types';
 import { colours } from '~/constants/colours';
+import { fromTablet } from '~/styles/breakpoints';
 
 export const Banner = styled.section`
-  padding: 4rem 0;
+  padding: 6rem 0;
   background-color: #f7f7f7;
   text-align: center;
 `;
@@ -14,11 +15,15 @@ export const Description = styled.p`
 `;
 
 export const Icons = styled.ul`
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 2rem;
   justify-content: space-around;
-  max-width: 82rem;
   margin: 0 auto;
+
+  @media ${fromTablet} {
+    grid-template-columns: repeat(12, 1fr);
+  }
 `;
 
 export const Icon = styled.li<IconStyleProps>`
@@ -27,11 +32,11 @@ export const Icon = styled.li<IconStyleProps>`
   flex-shrink: 0;
   align-items: center;
   justify-content: center;
-  width: 6rem;
-  height: 6rem;
-  /* border-radius: 50%; */
-  border-radius: 0.8rem;
+  width: 100%;
+  min-height: 6rem;
+  border-radius: 1rem;
   background-color: ${({ colour }) => colour};
+  aspect-ratio: 1/1;
 
   &::before {
     content: attr(name);

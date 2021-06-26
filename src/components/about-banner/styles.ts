@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { Markdown } from '~/components/markdown';
 
 export const Banner = styled.section`
-  padding: 4rem 0;
+  padding: 6rem 0;
   text-align: center;
 `;
 

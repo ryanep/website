@@ -16,6 +16,8 @@ export type Scalars = {
   Float: number;
   /** A date string, such as 2007-12-03, compliant with the ISO 8601 standard for representation of dates and times using the Gregorian calendar. */
   Date: any;
+  /** The `JSON` scalar type represents JSON values as specified by [ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf). */
+  JSON: any;
 };
 
 
@@ -245,8 +247,6 @@ export type DirectoryCtimeArgs = {
 export type Site = Node & {
   buildTime?: Maybe<Scalars['Date']>;
   siteMetadata?: Maybe<SiteSiteMetadata>;
-  port?: Maybe<Scalars['Int']>;
-  host?: Maybe<Scalars['String']>;
   polyfill?: Maybe<Scalars['Boolean']>;
   pathPrefix?: Maybe<Scalars['String']>;
   id: Scalars['ID'];
@@ -323,6 +323,10 @@ export type ContentfulAsset = ContentfulReference & Node & {
   node_locale?: Maybe<Scalars['String']>;
   sys?: Maybe<ContentfulAssetSys>;
   localFile?: Maybe<File>;
+  fixed?: Maybe<ContentfulFixed>;
+  fluid?: Maybe<ContentfulFluid>;
+  gatsbyImageData?: Maybe<Scalars['JSON']>;
+  resize?: Maybe<ContentfulResize>;
   parent?: Maybe<Node>;
   children: Array<Node>;
   internal: Internal;
@@ -342,6 +346,59 @@ export type ContentfulAssetUpdatedAtArgs = {
   fromNow?: Maybe<Scalars['Boolean']>;
   difference?: Maybe<Scalars['String']>;
   locale?: Maybe<Scalars['String']>;
+};
+
+
+export type ContentfulAssetFixedArgs = {
+  width?: Maybe<Scalars['Int']>;
+  height?: Maybe<Scalars['Int']>;
+  quality?: Maybe<Scalars['Int']>;
+  toFormat?: Maybe<ContentfulImageFormat>;
+  resizingBehavior?: Maybe<ImageResizingBehavior>;
+  cropFocus?: Maybe<ContentfulImageCropFocus>;
+  background?: Maybe<Scalars['String']>;
+};
+
+
+export type ContentfulAssetFluidArgs = {
+  maxWidth?: Maybe<Scalars['Int']>;
+  maxHeight?: Maybe<Scalars['Int']>;
+  quality?: Maybe<Scalars['Int']>;
+  toFormat?: Maybe<ContentfulImageFormat>;
+  resizingBehavior?: Maybe<ImageResizingBehavior>;
+  cropFocus?: Maybe<ContentfulImageCropFocus>;
+  background?: Maybe<Scalars['String']>;
+  sizes?: Maybe<Scalars['String']>;
+};
+
+
+export type ContentfulAssetGatsbyImageDataArgs = {
+  layout?: Maybe<ContentfulImageLayout>;
+  width?: Maybe<Scalars['Int']>;
+  height?: Maybe<Scalars['Int']>;
+  aspectRatio?: Maybe<Scalars['Float']>;
+  placeholder?: Maybe<ContentfulImagePlaceholder>;
+  formats?: Maybe<Array<Maybe<ContentfulImageFormat>>>;
+  outputPixelDensities?: Maybe<Array<Maybe<Scalars['Float']>>>;
+  breakpoints?: Maybe<Array<Maybe<Scalars['Int']>>>;
+  sizes?: Maybe<Scalars['String']>;
+  backgroundColor?: Maybe<Scalars['String']>;
+  jpegProgressive?: Maybe<Scalars['Boolean']>;
+  resizingBehavior?: Maybe<ImageResizingBehavior>;
+  cropFocus?: Maybe<ContentfulImageCropFocus>;
+  quality?: Maybe<Scalars['Int']>;
+};
+
+
+export type ContentfulAssetResizeArgs = {
+  width?: Maybe<Scalars['Int']>;
+  height?: Maybe<Scalars['Int']>;
+  quality?: Maybe<Scalars['Int']>;
+  jpegProgressive?: Maybe<Scalars['Boolean']>;
+  resizingBehavior?: Maybe<ImageResizingBehavior>;
+  toFormat?: Maybe<ContentfulImageFormat>;
+  cropFocus?: Maybe<ContentfulImageCropFocus>;
+  background?: Maybe<Scalars['String']>;
 };
 
 export type ContentfulAssetFile = {
@@ -364,6 +421,83 @@ export type ContentfulAssetFileDetailsImage = {
 export type ContentfulAssetSys = {
   type?: Maybe<Scalars['String']>;
   revision?: Maybe<Scalars['Int']>;
+};
+
+export type ContentfulFixed = {
+  base64?: Maybe<Scalars['String']>;
+  tracedSVG?: Maybe<Scalars['String']>;
+  aspectRatio?: Maybe<Scalars['Float']>;
+  width: Scalars['Float'];
+  height: Scalars['Float'];
+  src: Scalars['String'];
+  srcSet: Scalars['String'];
+  srcWebp?: Maybe<Scalars['String']>;
+  srcSetWebp?: Maybe<Scalars['String']>;
+};
+
+export type ContentfulImageFormat =
+  | 'NO_CHANGE'
+  | 'AUTO'
+  | 'JPG'
+  | 'PNG'
+  | 'WEBP';
+
+export type ImageResizingBehavior =
+  | 'NO_CHANGE'
+  /** Same as the default resizing, but adds padding so that the generated image has the specified dimensions. */
+  | 'PAD'
+  /** Crop a part of the original image to match the specified size. */
+  | 'CROP'
+  /** Crop the image to the specified dimensions, if the original image is smaller than these dimensions, then the image will be upscaled. */
+  | 'FILL'
+  /** When used in association with the f parameter below, creates a thumbnail from the image based on a focus area. */
+  | 'THUMB'
+  /** Scale the image regardless of the original aspect ratio. */
+  | 'SCALE';
+
+export type ContentfulImageCropFocus =
+  | 'TOP'
+  | 'TOP_LEFT'
+  | 'TOP_RIGHT'
+  | 'BOTTOM'
+  | 'BOTTOM_RIGHT'
+  | 'BOTTOM_LEFT'
+  | 'RIGHT'
+  | 'LEFT'
+  | 'FACE'
+  | 'FACES'
+  | 'CENTER';
+
+export type ContentfulFluid = {
+  base64?: Maybe<Scalars['String']>;
+  tracedSVG?: Maybe<Scalars['String']>;
+  aspectRatio: Scalars['Float'];
+  src: Scalars['String'];
+  srcSet: Scalars['String'];
+  srcWebp?: Maybe<Scalars['String']>;
+  srcSetWebp?: Maybe<Scalars['String']>;
+  sizes: Scalars['String'];
+};
+
+
+export type ContentfulImageLayout =
+  | 'FIXED'
+  | 'FULL_WIDTH'
+  | 'CONSTRAINED';
+
+export type ContentfulImagePlaceholder =
+  | 'DOMINANT_COLOR'
+  | 'TRACED_SVG'
+  | 'BLURRED'
+  | 'NONE';
+
+export type ContentfulResize = {
+  base64?: Maybe<Scalars['String']>;
+  tracedSVG?: Maybe<Scalars['String']>;
+  src?: Maybe<Scalars['String']>;
+  width?: Maybe<Scalars['Int']>;
+  height?: Maybe<Scalars['Int']>;
+  aspectRatio?: Maybe<Scalars['Float']>;
 };
 
 export type ContentfulTechnology = ContentfulReference & ContentfulEntry & Node & {
@@ -787,8 +921,6 @@ export type QueryAllDirectoryArgs = {
 export type QuerySiteArgs = {
   buildTime?: Maybe<DateQueryOperatorInput>;
   siteMetadata?: Maybe<SiteSiteMetadataFilterInput>;
-  port?: Maybe<IntQueryOperatorInput>;
-  host?: Maybe<StringQueryOperatorInput>;
   polyfill?: Maybe<BooleanQueryOperatorInput>;
   pathPrefix?: Maybe<StringQueryOperatorInput>;
   id?: Maybe<StringQueryOperatorInput>;
@@ -883,6 +1015,10 @@ export type QueryContentfulAssetArgs = {
   node_locale?: Maybe<StringQueryOperatorInput>;
   sys?: Maybe<ContentfulAssetSysFilterInput>;
   localFile?: Maybe<FileFilterInput>;
+  fixed?: Maybe<ContentfulFixedFilterInput>;
+  fluid?: Maybe<ContentfulFluidFilterInput>;
+  gatsbyImageData?: Maybe<JsonQueryOperatorInput>;
+  resize?: Maybe<ContentfulResizeFilterInput>;
   parent?: Maybe<NodeFilterInput>;
   children?: Maybe<NodeFilterListInput>;
   internal?: Maybe<InternalFilterInput>;
@@ -1614,8 +1750,6 @@ export type SiteFieldsEnum =
   | 'buildTime'
   | 'siteMetadata___title'
   | 'siteMetadata___description'
-  | 'port'
-  | 'host'
   | 'polyfill'
   | 'pathPrefix'
   | 'id'
@@ -1717,8 +1851,6 @@ export type SiteGroupConnection = {
 export type SiteFilterInput = {
   buildTime?: Maybe<DateQueryOperatorInput>;
   siteMetadata?: Maybe<SiteSiteMetadataFilterInput>;
-  port?: Maybe<IntQueryOperatorInput>;
-  host?: Maybe<StringQueryOperatorInput>;
   polyfill?: Maybe<BooleanQueryOperatorInput>;
   pathPrefix?: Maybe<StringQueryOperatorInput>;
   id?: Maybe<StringQueryOperatorInput>;
@@ -2458,6 +2590,47 @@ export type ContentfulAssetSysFilterInput = {
   revision?: Maybe<IntQueryOperatorInput>;
 };
 
+export type ContentfulFixedFilterInput = {
+  base64?: Maybe<StringQueryOperatorInput>;
+  tracedSVG?: Maybe<StringQueryOperatorInput>;
+  aspectRatio?: Maybe<FloatQueryOperatorInput>;
+  width?: Maybe<FloatQueryOperatorInput>;
+  height?: Maybe<FloatQueryOperatorInput>;
+  src?: Maybe<StringQueryOperatorInput>;
+  srcSet?: Maybe<StringQueryOperatorInput>;
+  srcWebp?: Maybe<StringQueryOperatorInput>;
+  srcSetWebp?: Maybe<StringQueryOperatorInput>;
+};
+
+export type ContentfulFluidFilterInput = {
+  base64?: Maybe<StringQueryOperatorInput>;
+  tracedSVG?: Maybe<StringQueryOperatorInput>;
+  aspectRatio?: Maybe<FloatQueryOperatorInput>;
+  src?: Maybe<StringQueryOperatorInput>;
+  srcSet?: Maybe<StringQueryOperatorInput>;
+  srcWebp?: Maybe<StringQueryOperatorInput>;
+  srcSetWebp?: Maybe<StringQueryOperatorInput>;
+  sizes?: Maybe<StringQueryOperatorInput>;
+};
+
+export type JsonQueryOperatorInput = {
+  eq?: Maybe<Scalars['JSON']>;
+  ne?: Maybe<Scalars['JSON']>;
+  in?: Maybe<Array<Maybe<Scalars['JSON']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['JSON']>>>;
+  regex?: Maybe<Scalars['JSON']>;
+  glob?: Maybe<Scalars['JSON']>;
+};
+
+export type ContentfulResizeFilterInput = {
+  base64?: Maybe<StringQueryOperatorInput>;
+  tracedSVG?: Maybe<StringQueryOperatorInput>;
+  src?: Maybe<StringQueryOperatorInput>;
+  width?: Maybe<IntQueryOperatorInput>;
+  height?: Maybe<IntQueryOperatorInput>;
+  aspectRatio?: Maybe<FloatQueryOperatorInput>;
+};
+
 export type ContentfulAssetConnection = {
   totalCount: Scalars['Int'];
   edges: Array<ContentfulAssetEdge>;
@@ -2592,6 +2765,30 @@ export type ContentfulAssetFieldsEnum =
   | 'localFile___internal___mediaType'
   | 'localFile___internal___owner'
   | 'localFile___internal___type'
+  | 'fixed___base64'
+  | 'fixed___tracedSVG'
+  | 'fixed___aspectRatio'
+  | 'fixed___width'
+  | 'fixed___height'
+  | 'fixed___src'
+  | 'fixed___srcSet'
+  | 'fixed___srcWebp'
+  | 'fixed___srcSetWebp'
+  | 'fluid___base64'
+  | 'fluid___tracedSVG'
+  | 'fluid___aspectRatio'
+  | 'fluid___src'
+  | 'fluid___srcSet'
+  | 'fluid___srcWebp'
+  | 'fluid___srcSetWebp'
+  | 'fluid___sizes'
+  | 'gatsbyImageData'
+  | 'resize___base64'
+  | 'resize___tracedSVG'
+  | 'resize___src'
+  | 'resize___width'
+  | 'resize___height'
+  | 'resize___aspectRatio'
   | 'parent___id'
   | 'parent___parent___id'
   | 'parent___parent___parent___id'
@@ -2699,6 +2896,10 @@ export type ContentfulAssetFilterInput = {
   node_locale?: Maybe<StringQueryOperatorInput>;
   sys?: Maybe<ContentfulAssetSysFilterInput>;
   localFile?: Maybe<FileFilterInput>;
+  fixed?: Maybe<ContentfulFixedFilterInput>;
+  fluid?: Maybe<ContentfulFluidFilterInput>;
+  gatsbyImageData?: Maybe<JsonQueryOperatorInput>;
+  resize?: Maybe<ContentfulResizeFilterInput>;
   parent?: Maybe<NodeFilterInput>;
   children?: Maybe<NodeFilterListInput>;
   internal?: Maybe<InternalFilterInput>;
@@ -2838,6 +3039,30 @@ export type ContentfulTechnologyFieldsEnum =
   | 'icon___localFile___internal___mediaType'
   | 'icon___localFile___internal___owner'
   | 'icon___localFile___internal___type'
+  | 'icon___fixed___base64'
+  | 'icon___fixed___tracedSVG'
+  | 'icon___fixed___aspectRatio'
+  | 'icon___fixed___width'
+  | 'icon___fixed___height'
+  | 'icon___fixed___src'
+  | 'icon___fixed___srcSet'
+  | 'icon___fixed___srcWebp'
+  | 'icon___fixed___srcSetWebp'
+  | 'icon___fluid___base64'
+  | 'icon___fluid___tracedSVG'
+  | 'icon___fluid___aspectRatio'
+  | 'icon___fluid___src'
+  | 'icon___fluid___srcSet'
+  | 'icon___fluid___srcWebp'
+  | 'icon___fluid___srcSetWebp'
+  | 'icon___fluid___sizes'
+  | 'icon___gatsbyImageData'
+  | 'icon___resize___base64'
+  | 'icon___resize___tracedSVG'
+  | 'icon___resize___src'
+  | 'icon___resize___width'
+  | 'icon___resize___height'
+  | 'icon___resize___aspectRatio'
   | 'icon___parent___id'
   | 'icon___parent___parent___id'
   | 'icon___parent___parent___children'
@@ -3131,6 +3356,30 @@ export type ContentfulWorkFieldsEnum =
   | 'icon___localFile___internal___mediaType'
   | 'icon___localFile___internal___owner'
   | 'icon___localFile___internal___type'
+  | 'icon___fixed___base64'
+  | 'icon___fixed___tracedSVG'
+  | 'icon___fixed___aspectRatio'
+  | 'icon___fixed___width'
+  | 'icon___fixed___height'
+  | 'icon___fixed___src'
+  | 'icon___fixed___srcSet'
+  | 'icon___fixed___srcWebp'
+  | 'icon___fixed___srcSetWebp'
+  | 'icon___fluid___base64'
+  | 'icon___fluid___tracedSVG'
+  | 'icon___fluid___aspectRatio'
+  | 'icon___fluid___src'
+  | 'icon___fluid___srcSet'
+  | 'icon___fluid___srcWebp'
+  | 'icon___fluid___srcSetWebp'
+  | 'icon___fluid___sizes'
+  | 'icon___gatsbyImageData'
+  | 'icon___resize___base64'
+  | 'icon___resize___tracedSVG'
+  | 'icon___resize___src'
+  | 'icon___resize___width'
+  | 'icon___resize___height'
+  | 'icon___resize___aspectRatio'
   | 'icon___parent___id'
   | 'icon___parent___parent___id'
   | 'icon___parent___parent___children'
@@ -3425,6 +3674,30 @@ export type ContentfulProjectFieldsEnum =
   | 'image___localFile___internal___mediaType'
   | 'image___localFile___internal___owner'
   | 'image___localFile___internal___type'
+  | 'image___fixed___base64'
+  | 'image___fixed___tracedSVG'
+  | 'image___fixed___aspectRatio'
+  | 'image___fixed___width'
+  | 'image___fixed___height'
+  | 'image___fixed___src'
+  | 'image___fixed___srcSet'
+  | 'image___fixed___srcWebp'
+  | 'image___fixed___srcSetWebp'
+  | 'image___fluid___base64'
+  | 'image___fluid___tracedSVG'
+  | 'image___fluid___aspectRatio'
+  | 'image___fluid___src'
+  | 'image___fluid___srcSet'
+  | 'image___fluid___srcWebp'
+  | 'image___fluid___srcSetWebp'
+  | 'image___fluid___sizes'
+  | 'image___gatsbyImageData'
+  | 'image___resize___base64'
+  | 'image___resize___tracedSVG'
+  | 'image___resize___src'
+  | 'image___resize___width'
+  | 'image___resize___height'
+  | 'image___resize___aspectRatio'
   | 'image___parent___id'
   | 'image___parent___parent___id'
   | 'image___parent___parent___children'

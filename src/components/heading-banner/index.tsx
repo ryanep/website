@@ -13,6 +13,7 @@ export const HeadingBanner: React.FC<HeadingBannerProps> = React.memo(
         <styled.Container>
           <Heading type="h1" text={heading} />
           <Spacer size="small" />
+
           <styled.Description>{description}</styled.Description>
         </styled.Container>
       </styled.Banner>
