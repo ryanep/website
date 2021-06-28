@@ -1,7 +1,7 @@
 import React from 'react';
-import { Heading } from '~/components/heading';
-import { Spacer } from '~/components/spacer';
-import { Bubbles } from '~/components/bubbles';
+import { Heading } from '#/components/heading';
+import { Spacer } from '#/components/spacer';
+import { Bubbles } from '#/components/bubbles';
 import { HeadingBannerProps } from './types';
 import * as styled from './styles';
 

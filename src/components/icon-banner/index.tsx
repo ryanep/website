@@ -1,7 +1,7 @@
 import React from 'react';
-import { Wrap } from '~/components/wrap';
-import { Spacer } from '~/components/spacer';
-import { Heading } from '~/components/heading';
+import { Wrap } from '#/components/wrap';
+import { Spacer } from '#/components/spacer';
+import { Heading } from '#/components/heading';
 import { LogoBannerProps } from './types';
 import * as styled from './styles';
 

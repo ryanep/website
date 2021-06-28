@@ -12,7 +12,7 @@
     "jsx": "react",
     "baseUrl": "./src",
     "paths": {
-      "~/*": ["./*"]
+      "#/*": ["./*"]
     },
     "resolveJsonModule": true
   },

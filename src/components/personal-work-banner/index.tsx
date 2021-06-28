@@ -1,6 +1,6 @@
 import React from 'react';
-import { Heading } from '~/components/heading';
-import { Spacer } from '~/components/spacer';
+import { Heading } from '#/components/heading';
+import { Spacer } from '#/components/spacer';
 import { PersonalWorkBannerProps } from './types';
 import * as styled from './styles';
 

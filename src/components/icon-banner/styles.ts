@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { IconStyleProps } from './types';
-import { colours } from '~/constants/colours';
-import { fromTablet } from '~/styles/breakpoints';
+import { colours } from '#/constants/colours';
+import { fromTablet } from '#/styles/breakpoints';
 
 export const Banner = styled.section`
   padding: 6rem 0;

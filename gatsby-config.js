@@ -2,7 +2,7 @@ const path = require('path');
 const { config } = require('dotenv');
 
 config({
-  path: `.env.${process.env.NODE_ENV}`
+  path: `.env.${process.env.NODE_ENV}`,
 });
 
 module.exports = {
@@ -16,29 +16,29 @@ module.exports = {
       resolve: 'gatsby-plugin-alias-imports',
       options: {
         alias: {
-          '~/components': path.resolve(__dirname, 'src/components'),
-          '~/constants': path.resolve(__dirname, 'src/constants'),
-          '~/context': path.resolve(__dirname, 'src/context'),
-          '~/hooks': path.resolve(__dirname, 'src/hooks'),
-          '~/pages': path.resolve(__dirname, 'src/pages'),
-          '~/styles': path.resolve(__dirname, 'src/styles'),
-          '~/utils': path.resolve(__dirname, 'src/utils')
-        }
-      }
+          '#/components': path.resolve(__dirname, 'src/components'),
+          '#/constants': path.resolve(__dirname, 'src/constants'),
+          '#/context': path.resolve(__dirname, 'src/context'),
+          '#/hooks': path.resolve(__dirname, 'src/hooks'),
+          '#/pages': path.resolve(__dirname, 'src/pages'),
+          '#/styles': path.resolve(__dirname, 'src/styles'),
+          '#/utils': path.resolve(__dirname, 'src/utils'),
+        },
+      },
     },
     {
       resolve: 'gatsby-plugin-google-analytics',
       options: {
-        trackingId: process.env.GOOGLE_ANALYTICS_TRACKING_ID
-      }
+        trackingId: process.env.GOOGLE_ANALYTICS_TRACKING_ID,
+      },
     },
     {
       resolve: 'gatsby-source-contentful',
       options: {
         spaceId: process.env.CONTENTFUL_SPACE_ID,
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
-        downloadLocal: true
-      }
+        downloadLocal: true,
+      },
     },
     {
       resolve: 'gatsby-plugin-graphql-codegen',
@@ -46,14 +46,14 @@ module.exports = {
         fileName: 'types/graphql-types.ts',
         documentPaths: [
           './src/**/*.{ts,tsx}',
-          './node_modules/gatsby-*/**/*.js'
+          './node_modules/gatsby-*/**/*.js',
         ],
         codegenDelay: 200,
         pluckConfig: {
           globalGqlIdentifierName: 'graphql',
-          modules: [{ name: 'gatsby', identifier: 'graphql' }]
-        }
-      }
-    }
-  ]
+          modules: [{ name: 'gatsby', identifier: 'graphql' }],
+        },
+      },
+    },
+  ],
 };

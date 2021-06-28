@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import GatsbyLink from 'gatsby-link';
-import { Wrap } from '~/components/wrap';
-import { colours } from '~/constants/colours';
+import { Wrap } from '#/components/wrap';
+import { colours } from '#/constants/colours';
 
 export const Header = styled.header`
   position: fixed;

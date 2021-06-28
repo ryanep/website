@@ -2,13 +2,13 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import { graphql, PageRendererProps } from 'gatsby';
 import { useTranslation } from 'react-i18next';
-import { Root } from '~/components/root';
-import { TimelineBanner } from '~/components/timeline-banner';
-import { HeadingBanner } from '~/components/heading-banner';
-import { AboutBanner } from '~/components/about-banner';
-import { IconBanner } from '~/components/icon-banner';
-import { PersonalWorkBanner } from '~/components/personal-work-banner';
-import { ContactBanner } from '~/components/contact-banner';
+import { Root } from '#/components/root';
+import { TimelineBanner } from '#/components/timeline-banner';
+import { HeadingBanner } from '#/components/heading-banner';
+import { AboutBanner } from '#/components/about-banner';
+import { IconBanner } from '#/components/icon-banner';
+import { PersonalWorkBanner } from '#/components/personal-work-banner';
+import { ContactBanner } from '#/components/contact-banner';
 import { HomeQuery } from '../../../types/graphql-types';
 
 type HomePageProps = PageRendererProps & {

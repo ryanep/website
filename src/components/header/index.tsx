@@ -1,6 +1,6 @@
 import React from 'react';
-import { Logo } from '~/components/logo';
-import { Navigation } from '~/components/navigation';
+import { Logo } from '#/components/logo';
+import { Navigation } from '#/components/navigation';
 import { HeaderProps } from './types';
 import * as styled from './styles';
 

@@ -1,7 +1,7 @@
 import React from 'react';
-import { Heading } from '~/components/heading';
-import { Spacer } from '~/components/spacer';
-import { Wrap } from '~/components/wrap';
+import { Heading } from '#/components/heading';
+import { Spacer } from '#/components/spacer';
+import { Wrap } from '#/components/wrap';
 import { AboutBannerProps } from './types';
 import * as styled from './styles';
 

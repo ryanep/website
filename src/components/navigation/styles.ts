@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import GatsbyLink from 'gatsby-link';
-import { colours } from '~/constants/colours';
+import { colours } from '#/constants/colours';
 
 export const List = styled.ul`
   display: flex;

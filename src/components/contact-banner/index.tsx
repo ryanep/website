@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Heading } from '~/components/heading';
-import { Spacer } from '~/components/spacer';
-import { Wrap } from '~/components/wrap';
-import { Input } from '~/components/input';
-import { Textarea } from '~/components/textarea';
-import { Button } from '~/components/button';
+import { Heading } from '#/components/heading';
+import { Spacer } from '#/components/spacer';
+import { Wrap } from '#/components/wrap';
+import { Input } from '#/components/input';
+import { Textarea } from '#/components/textarea';
+import { Button } from '#/components/button';
 import { ContactBannerProps, ContactFormData } from './types';
 import * as styled from './styles';
 

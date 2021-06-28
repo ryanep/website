@@ -1,7 +1,7 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-import { Header } from '~/components/header';
-import { Footer } from '~/components/footer';
+import { Header } from '#/components/header';
+import { Footer } from '#/components/footer';
 import { RootProps } from './types';
 import * as styled from './styles';
 

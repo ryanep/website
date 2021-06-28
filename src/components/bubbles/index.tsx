@@ -1,5 +1,5 @@
 import React from 'react';
-import { generateBubbles } from '~/utils/bubbles';
+import { generateBubbles } from '#/utils/bubbles';
 import { BubblesProps } from './types';
 import * as styled from './styles';
 

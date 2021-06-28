@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { Heading } from '~/components/heading';
-import { Spacer } from '~/components/spacer';
+import { Heading } from '#/components/heading';
+import { Spacer } from '#/components/spacer';
 import { TimelineBannerProps } from './types';
 import { Wrap } from '../wrap';
 import * as styled from './styles';

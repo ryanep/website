@@ -1,8 +1,8 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import { useTranslation } from 'react-i18next';
-import { Root } from '~/components/root';
-import { TitleBanner } from '~/components/title-banner';
+import { Root } from '#/components/root';
+import { TitleBanner } from '#/components/title-banner';
 
 export const ContactPage: React.FC = () => {
   const { t } = useTranslation();

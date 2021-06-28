@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Markdown } from '~/components/markdown';
+import { Markdown } from '#/components/markdown';
 
 export const Banner = styled.section`
   padding: 6rem 0;

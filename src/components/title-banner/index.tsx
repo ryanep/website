@@ -1,5 +1,5 @@
 import React from 'react';
-import { Heading } from '~/components/heading';
+import { Heading } from '#/components/heading';
 import { TitleBannerProps } from './types';
 import * as styled from './styles';
 

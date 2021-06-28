@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { Wrap } from '~/components/wrap';
-import { fromTablet } from '~/styles/breakpoints';
+import { Wrap } from '#/components/wrap';
+import { fromTablet } from '#/styles/breakpoints';
 
 export const Banner = styled.section`
   padding: 6rem 0;
