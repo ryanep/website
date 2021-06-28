@@ -44,9 +44,7 @@ export const TimelineBanner: React.FC<TimelineBannerProps> = React.memo(
                       <styled.ItemHeading>{node.name}</styled.ItemHeading>
                       <styled.ItemDate>
                         {startDate} -{' '}
-                        {endDate
-                          ? endDate
-                          : t('home:workExperienceBanner.present')}
+                        {endDate || t('home:workExperienceBanner.present')}
                       </styled.ItemDate>
                     </styled.ItemHeader>
                     <styled.ItemRole>{node.role}</styled.ItemRole>
