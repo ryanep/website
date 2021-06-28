@@ -1,9 +1,8 @@
-import React from 'react';
 import { Heading } from '#/components/heading';
 import { TitleBannerProps } from './types';
 import * as styled from './styles';
 
-export const TitleBanner = React.memo(({ heading }: TitleBannerProps) => {
+export const TitleBanner = ({ heading }: TitleBannerProps) => {
   return (
     <styled.Banner>
       <styled.Bar>
@@ -13,4 +12,4 @@ export const TitleBanner = React.memo(({ heading }: TitleBannerProps) => {
       </styled.Bar>
     </styled.Banner>
   );
-});
+};

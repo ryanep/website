@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { ChangeEvent, FormEvent, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Heading } from '#/components/heading';
 import { Spacer } from '#/components/spacer';
@@ -9,86 +9,84 @@ import { Button } from '#/components/button';
 import { ContactBannerProps, ContactFormData } from './types';
 import * as styled from './styles';
 
-export const ContactBanner = React.memo(
-  ({ heading, description }: ContactBannerProps) => {
-    const { t } = useTranslation();
-    const [formData, setFormData] = useState<ContactFormData>({
-      name: '',
-      subject: '',
-      body: '',
+export const ContactBanner = ({ heading, description }: ContactBannerProps) => {
+  const { t } = useTranslation();
+  const [formData, setFormData] = useState<ContactFormData>({
+    name: '',
+    subject: '',
+    body: '',
+  });
+
+  const handleInputChange = (
+    event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = event.target;
+
+    setFormData({
+      ...formData,
+      [name]: value,
     });
+  };
 
-    const handleInputChange = (
-      event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-    ) => {
-      const { name, value } = event.target;
+  const handleFormSubmit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const mailToLink = `mailto:ryan@ryanep.com?subject=${formData.subject}&body=${formData.body}`;
+    window.location.href = mailToLink;
+  };
 
-      setFormData({
-        ...formData,
-        [name]: value,
-      });
-    };
+  return (
+    <styled.Banner>
+      <Wrap>
+        <Heading type="h2" text={heading} />
+        <Spacer size="medium" />
 
-    const handleFormSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-      event.preventDefault();
-      const mailToLink = `mailto:ryan@ryanep.com?subject=${formData.subject}&body=${formData.body}`;
-      window.location.href = mailToLink;
-    };
+        <styled.Description>{description}</styled.Description>
+        <Spacer size="large" />
 
-    return (
-      <styled.Banner>
-        <Wrap>
-          <Heading type="h2" text={heading} />
-          <Spacer size="medium" />
+        <styled.Form
+          onSubmit={handleFormSubmit}
+          action="mailto:ryan@ryanep.com"
+          method="get"
+        >
+          <styled.Groups>
+            <styled.Group>
+              <Input
+                id="contact-form-name"
+                title={t('contactForm:nameLabel')}
+                type="text"
+                name="subject"
+                onChange={handleInputChange}
+                required
+              />
+              <Spacer size="small" />
+              <Input
+                id="contact-form-subject"
+                title={t('contactForm:subjectLabel')}
+                type="text"
+                name="name"
+                onChange={handleInputChange}
+                required
+              />
+            </styled.Group>
 
-          <styled.Description>{description}</styled.Description>
+            <styled.Group>
+              <Textarea
+                id="contact-form-message"
+                title={t('contactForm:messageLabel')}
+                name="body"
+                onChange={handleInputChange}
+                required
+              />
+            </styled.Group>
+          </styled.Groups>
+
           <Spacer size="large" />
 
-          <styled.Form
-            onSubmit={handleFormSubmit}
-            action="mailto:ryan@ryanep.com"
-            method="get"
-          >
-            <styled.Groups>
-              <styled.Group>
-                <Input
-                  id="contact-form-name"
-                  title={t('contactForm:nameLabel')}
-                  type="text"
-                  name="subject"
-                  onChange={handleInputChange}
-                  required
-                />
-                <Spacer size="small" />
-                <Input
-                  id="contact-form-subject"
-                  title={t('contactForm:subjectLabel')}
-                  type="text"
-                  name="name"
-                  onChange={handleInputChange}
-                  required
-                />
-              </styled.Group>
-
-              <styled.Group>
-                <Textarea
-                  id="contact-form-message"
-                  title={t('contactForm:messageLabel')}
-                  name="body"
-                  onChange={handleInputChange}
-                  required
-                />
-              </styled.Group>
-            </styled.Groups>
-
-            <Spacer size="large" />
-
-            <styled.Button>
-              <Button type="submit" text={t('contactForm:buttonTitle')} />
-            </styled.Button>
-          </styled.Form>
-        </Wrap>
-      </styled.Banner>
-    );
-  }
-);
+          <styled.Button>
+            <Button type="submit" text={t('contactForm:buttonTitle')} />
+          </styled.Button>
+        </styled.Form>
+      </Wrap>
+    </styled.Banner>
+  );
+};

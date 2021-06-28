@@ -8,7 +8,14 @@ config({
 module.exports = {
   plugins: [
     'gatsby-plugin-react-helmet',
-    'gatsby-plugin-typescript',
+    {
+      resolve: `gatsby-plugin-typescript`,
+      options: {
+        isTSX: true,
+        jsxPragma: 'react-jsx',
+        allExtensions: true,
+      },
+    },
     'gatsby-plugin-typescript-checker',
     'gatsby-plugin-styled-components',
     'gatsby-plugin-no-javascript',

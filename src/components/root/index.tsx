@@ -1,4 +1,3 @@
-import React from 'react';
 import Helmet from 'react-helmet';
 import { Header } from '#/components/header';
 import { Footer } from '#/components/footer';
@@ -16,7 +15,7 @@ const navLinks = [
   },
 ];
 
-export const Root = React.memo(({ children }: RootProps) => {
+export const Root = ({ children }: RootProps) => {
   return (
     <div>
       <Helmet>
@@ -29,4 +28,4 @@ export const Root = React.memo(({ children }: RootProps) => {
       <Footer />
     </div>
   );
-});
+};

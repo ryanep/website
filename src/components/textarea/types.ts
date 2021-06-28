@@ -1,8 +1,10 @@
+import { ChangeEvent } from 'react';
+
 export interface TextareaProps {
   id: string;
   name: string;
   title: string;
   rows?: number;
-  onChange: (event: React.ChangeEvent<HTMLTextAreaElement>) => void;
+  onChange: (event: ChangeEvent<HTMLTextAreaElement>) => void;
   required?: boolean;
 }

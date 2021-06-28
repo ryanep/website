@@ -9,8 +9,9 @@
     "outDir": "dist",
     "sourceMap": true,
     "target": "es2017",
-    "jsx": "react",
+    "jsx": "react-jsx",
     "baseUrl": "./src",
+    "noEmit": true,
     "paths": {
       "#/*": ["./*"]
     },

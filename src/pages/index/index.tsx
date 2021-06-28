@@ -1,4 +1,3 @@
-import React from 'react';
 import Helmet from 'react-helmet';
 import { graphql, PageRendererProps } from 'gatsby';
 import { useTranslation } from 'react-i18next';

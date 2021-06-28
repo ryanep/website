@@ -1,9 +1,8 @@
-import React from 'react';
 import { generateBubbles } from '#/utils/bubbles';
 import { BubblesProps } from './types';
 import * as styled from './styles';
 
-export const Bubbles = React.memo(({ bubbleCount }: BubblesProps) => {
+export const Bubbles = ({ bubbleCount }: BubblesProps) => {
   const bubbles = generateBubbles(bubbleCount);
 
   return (
@@ -18,4 +17,4 @@ export const Bubbles = React.memo(({ bubbleCount }: BubblesProps) => {
       ))}
     </styled.Bubbles>
   );
-});
+};

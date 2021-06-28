@@ -1,10 +1,9 @@
-import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Wrap } from '#/components/wrap';
 import * as styled from './styles';
 import { getCurrentYear } from '#/utils/date';
 
-export const Footer = React.memo(() => {
+export const Footer = () => {
   const { t } = useTranslation();
   const year = getCurrentYear();
   return (
@@ -12,4 +11,4 @@ export const Footer = React.memo(() => {
       <Wrap>{t('footer:copyright', { year })}</Wrap>
     </styled.Footer>
   );
-});
+};

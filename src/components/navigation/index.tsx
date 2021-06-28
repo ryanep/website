@@ -1,8 +1,7 @@
-import React from 'react';
 import { NavigationProps } from './types';
 import * as styled from './styles';
 
-export const Navigation = React.memo(({ links }: NavigationProps) => {
+export const Navigation = ({ links }: NavigationProps) => {
   return (
     <nav data-testid="navigation">
       <styled.List>
@@ -15,4 +14,4 @@ export const Navigation = React.memo(({ links }: NavigationProps) => {
       </styled.List>
     </nav>
   );
-});
+};
