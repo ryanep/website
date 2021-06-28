@@ -13,7 +13,7 @@ export const Button = styled.button`
   background-color: transparent;
   color: ${colours.red};
   font-size: 1.4rem;
-  font-weight: 500;
+  font-weight: 700;
   line-height: 1.5;
   text-decoration: none;
   cursor: pointer;
