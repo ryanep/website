@@ -10,9 +10,9 @@ export const Banner = styled.div`
   flex-direction: row;
   align-items: center;
   height: 40rem;
+  overflow: hidden;
   background-color: ${colours.red};
   color: ${colours.white};
-  overflow: hidden;
 `;
 
 export const Container = styled(Wrap)`

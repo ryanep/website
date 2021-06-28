@@ -8,7 +8,7 @@
     "start": "gatsby serve -p 3000",
     "clean": "gatsby clean",
     "fmt": "prettier --write './src/**/*.{ts,tsx}'",
-    "lint:css": "stylelint --custom-syntax postcss-jsx './src/**/styles.ts'",
+    "lint:css": "stylelint './src/**/styles.ts'",
     "lint:ts": "eslint './**/*.{ts,tsx}'"
   },
   "dependencies": {

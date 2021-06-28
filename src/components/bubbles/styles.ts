@@ -7,8 +7,8 @@ export const Bubbles = styled.div`
   left: 50%;
   width: 192rem;
   height: 100%;
-  transform: translateX(-50%);
   overflow: hidden;
+  transform: translateX(-50%);
   pointer-events: none;
 `;
 

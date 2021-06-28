@@ -26,16 +26,16 @@ export const Line = styled.div`
   position: absolute;
   top: -2rem;
   left: 50%;
-  transform: translateX(-50%);
-  background-color: ${colours.grey};
   width: 0.4rem;
   height: calc(100% + 4rem);
+  transform: translateX(-50%);
   border-radius: 0.4rem;
+  background-color: ${colours.grey};
 `;
 
 export const Item = styled.article`
-  position: relative;
   display: block;
+  position: relative;
   margin-bottom: 1rem;
   padding: 1.5rem;
   border-radius: 0.3rem;
@@ -61,9 +61,9 @@ export const Item = styled.article`
     &::after {
       content: '';
       position: absolute;
+      top: 50%;
       width: 1rem;
       height: 1rem;
-      top: 50%;
       transition: background-color 0.2s ease;
       border-radius: 50%;
       background-color: ${colours.silverChalice};

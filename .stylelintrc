@@ -10,7 +10,7 @@
     "selector-list-comma-space-after": "always",
     "declaration-empty-line-before": "never",
     "color-hex-length": "long",
-    "function-name-case": "lower",
+    "function-name-case": null,
     "property-no-unknown": [
       true,
       {
