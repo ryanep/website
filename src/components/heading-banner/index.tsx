@@ -5,8 +5,8 @@ import { Bubbles } from '#/components/bubbles';
 import { HeadingBannerProps } from './types';
 import * as styled from './styles';
 
-export const HeadingBanner: React.FC<HeadingBannerProps> = React.memo(
-  ({ heading, description }) => {
+export const HeadingBanner = React.memo(
+  ({ heading, description }: HeadingBannerProps) => {
     return (
       <styled.Banner>
         <Bubbles bubbleCount={20} />

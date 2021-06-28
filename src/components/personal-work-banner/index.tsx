@@ -4,8 +4,8 @@ import { Spacer } from '#/components/spacer';
 import { PersonalWorkBannerProps } from './types';
 import * as styled from './styles';
 
-export const PersonalWorkBanner: React.FC<PersonalWorkBannerProps> = React.memo(
-  ({ heading, description, projects }) => {
+export const PersonalWorkBanner = React.memo(
+  ({ heading, description, projects }: PersonalWorkBannerProps) => {
     return (
       <styled.Banner>
         <styled.Container>

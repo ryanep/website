@@ -15,9 +15,10 @@ type HomePageProps = PageRendererProps & {
   data: HomeQuery;
 };
 
-export const HomePage: React.FC<HomePageProps> = ({ data }) => {
+export const HomePage = ({ data }: HomePageProps) => {
   const { t } = useTranslation();
   const { work, projects, technology } = data;
+
   return (
     <Root>
       <Helmet title={t('home:pageTitle')} />

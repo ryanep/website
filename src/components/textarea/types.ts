@@ -1,4 +1,4 @@
-export interface InputProps {
+export interface TextareaProps {
   id: string;
   name: string;
   title: string;

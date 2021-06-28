@@ -5,8 +5,8 @@ import { Wrap } from '#/components/wrap';
 import { AboutBannerProps } from './types';
 import * as styled from './styles';
 
-export const AboutBanner: React.FC<AboutBannerProps> = React.memo(
-  ({ heading, description, image }) => {
+export const AboutBanner = React.memo(
+  ({ heading, description, image }: AboutBannerProps) => {
     return (
       <styled.Banner>
         <Wrap>

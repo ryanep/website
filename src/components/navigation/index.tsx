@@ -2,7 +2,7 @@ import React from 'react';
 import { NavigationProps } from './types';
 import * as styled from './styles';
 
-export const Navigation: React.FC<NavigationProps> = React.memo(({ links }) => {
+export const Navigation = React.memo(({ links }: NavigationProps) => {
   return (
     <nav data-testid="navigation">
       <styled.List>

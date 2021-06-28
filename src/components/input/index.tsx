@@ -2,8 +2,8 @@ import React from 'react';
 import { InputProps } from './types';
 import * as styled from './styles';
 
-export const Input: React.FC<InputProps> = React.memo(
-  ({ id, type, name, title, onChange, required }) => {
+export const Input = React.memo(
+  ({ id, type, name, title, onChange, required }: InputProps) => {
     return (
       <label htmlFor={id}>
         <styled.Label>{title}</styled.Label>

@@ -1,10 +1,9 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { colours } from '#/constants/colours';
-import { LogoProps } from './types';
 import * as styled from './styles';
 
-export const Logo: React.FC<LogoProps> = React.memo(() => {
+export const Logo = React.memo(() => {
   const { t } = useTranslation();
   return (
     <styled.Logo

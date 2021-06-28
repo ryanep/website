@@ -4,8 +4,9 @@ import { useTranslation } from 'react-i18next';
 import { Root } from '#/components/root';
 import { TitleBanner } from '#/components/title-banner';
 
-export const ContactPage: React.FC = () => {
+export const ContactPage = () => {
   const { t } = useTranslation();
+
   return (
     <Root>
       <Helmet title={t('contact:pageTitle')} />

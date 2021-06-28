@@ -6,8 +6,8 @@ import { TimelineBannerProps } from './types';
 import { Wrap } from '../wrap';
 import * as styled from './styles';
 
-export const TimelineBanner: React.FC<TimelineBannerProps> = React.memo(
-  ({ heading, description, items }) => {
+export const TimelineBanner = React.memo(
+  ({ heading, description, items }: TimelineBannerProps) => {
     const { t } = useTranslation();
 
     return (
