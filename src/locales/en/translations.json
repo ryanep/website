@@ -5,6 +5,7 @@
   "contactForm": {
     "nameLabel": "Name",
     "subjectLabel": "Subject",
+    "emailAddressLabel": "Email address",
     "messageLabel": "Message",
     "buttonTitle": "Send message"
   },

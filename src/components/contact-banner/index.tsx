@@ -22,6 +22,7 @@ export const ContactBanner: React.FC<ContactBannerProps> = React.memo(
       event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
     ) => {
       const { name, value } = event.target;
+
       setFormData({
         ...formData,
         [name]: value,
@@ -48,32 +49,40 @@ export const ContactBanner: React.FC<ContactBannerProps> = React.memo(
             action="mailto:ryan@ryanep.com"
             method="get"
           >
-            <Input
-              id="contact-form-name"
-              title={t('contactForm:nameLabel')}
-              type="text"
-              name="subject"
-              onChange={handleInputChange}
-              required
-            />
-            <Spacer size="small" />
-            <Input
-              id="contact-form-subject"
-              title={t('contactForm:subjectLabel')}
-              type="text"
-              name="name"
-              onChange={handleInputChange}
-              required
-            />
-            <Spacer size="small" />
-            <Textarea
-              id="contact-form-message"
-              title={t('contactForm:messageLabel')}
-              name="body"
-              onChange={handleInputChange}
-              required
-            />
+            <styled.Groups>
+              <styled.Group>
+                <Input
+                  id="contact-form-name"
+                  title={t('contactForm:nameLabel')}
+                  type="text"
+                  name="subject"
+                  onChange={handleInputChange}
+                  required
+                />
+                <Spacer size="small" />
+                <Input
+                  id="contact-form-subject"
+                  title={t('contactForm:subjectLabel')}
+                  type="text"
+                  name="name"
+                  onChange={handleInputChange}
+                  required
+                />
+              </styled.Group>
+
+              <styled.Group>
+                <Textarea
+                  id="contact-form-message"
+                  title={t('contactForm:messageLabel')}
+                  name="body"
+                  onChange={handleInputChange}
+                  required
+                />
+              </styled.Group>
+            </styled.Groups>
+
             <Spacer size="large" />
+
             <styled.Button>
               <Button type="submit" text={t('contactForm:buttonTitle')} />
             </styled.Button>

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { fromTablet } from '~/styles/breakpoints';
 
 export const Banner = styled.section`
   padding: 6rem 0;
@@ -11,11 +12,26 @@ export const Description = styled.p`
 `;
 
 export const Form = styled.form`
-  max-width: 80rem;
-  margin: 0 auto;
   text-align: left;
 `;
 
 export const Button = styled.div`
   text-align: center;
+`;
+
+export const Groups = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  @media ${fromTablet} {
+    flex-direction: row;
+    gap: 2rem;
+  }
+`;
+
+export const Group = styled.div`
+  @media ${fromTablet} {
+    width: 50%;
+  }
 `;
