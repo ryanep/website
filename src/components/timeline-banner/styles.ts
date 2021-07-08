@@ -5,7 +5,8 @@ import { Wrap } from '#/components/wrap';
 
 export const Banner = styled.section`
   padding: 6rem 0;
-  background-color: #f7f7f7;
+  transition: background-color 0.3s;
+  background-color: ${({ theme }) => theme.colors.altBackgroundColor};
   text-align: center;
 `;
 
@@ -38,10 +39,11 @@ export const Item = styled.article`
   position: relative;
   margin-bottom: 1rem;
   padding: 1.5rem;
+  transition: background-color 0.3s;
   border-radius: 0.3rem;
-  background-color: ${colours.white};
-  box-shadow: 0 0.1rem 0.2rem ${colours.grey};
-  color: ${colours.doveGrey};
+  background-color: ${({ theme }) => theme.colors.highlightBackgroundColor};
+  box-shadow: 0 0.1rem 0.3rem rgba(0, 0, 0, 0.1);
+  color: ${({ theme }) => theme.colors.highlightColor};
   text-align: left;
   text-decoration: none;
 
@@ -57,6 +59,7 @@ export const Item = styled.article`
 
   @media ${fromTablet} {
     width: 48%;
+    margin-top: -3rem;
 
     &::after {
       content: '';
@@ -64,7 +67,7 @@ export const Item = styled.article`
       top: 50%;
       width: 1rem;
       height: 1rem;
-      transition: background-color 0.2s ease;
+      transition: background-color 0.2s;
       border-radius: 50%;
       background-color: ${colours.silverChalice};
     }
@@ -106,7 +109,7 @@ export const ItemHeading = styled.h3`
   flex-grow: 1;
   margin-bottom: 0.5rem;
   font-size: 2rem;
-  font-weight: 700;
+  font-weight: ${({ theme }) => theme.fontWeight.normal};
 
   @media ${fromTablet} {
     margin-bottom: 0;
@@ -122,7 +125,7 @@ export const ItemDate = styled.p`
   width: 100%;
   margin-bottom: 1rem;
   font-size: 1.2rem;
-  font-weight: 500;
+  font-weight: ${({ theme }) => theme.fontWeight.medium};
 
   @media ${fromTablet} {
     width: auto;

@@ -2,11 +2,6 @@ import styled from 'styled-components';
 import { Wrap } from '#/components/wrap';
 import { fromTablet } from '#/styles/breakpoints';
 
-export const Banner = styled.section`
-  padding: 6rem 0;
-  text-align: center;
-`;
-
 export const Container = styled(Wrap)`
   max-width: 102.4rem;
 `;
@@ -37,7 +32,7 @@ export const ProjectImage = styled.img`
   display: block;
   width: 100%;
   margin-bottom: 1rem;
-  transition: opacity 0.2s ease;
+  transition: opacity 0.3s ease;
   border-radius: 0.8rem;
 `;
 

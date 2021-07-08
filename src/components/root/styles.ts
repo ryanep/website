@@ -1,6 +1,5 @@
 import reset from 'styled-reset';
 import { createGlobalStyle } from 'styled-components';
-import { colours } from '#/constants/colours';
 
 export const Global = createGlobalStyle`
   ${reset}
@@ -14,12 +13,14 @@ export const Global = createGlobalStyle`
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     font-size: 62.5%;
     -webkit-font-smoothing: antialiased;
+    text-size-adjust: 100%;
   }
 
   body {
     min-width: 32rem;
-    background-color: ${colours.alabaster};
-    color: ${colours.tundora};
+    transition: background-color 0.3s, color 0.3s;
+    background-color: ${({ theme }) => theme.colors.bodyBackgroundColor};
+    color: ${({ theme }) => theme.colors.bodyColor};
     font-size: 1.6rem;
     line-height: 1.5;
   }

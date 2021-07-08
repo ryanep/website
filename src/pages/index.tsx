@@ -8,7 +8,7 @@ import { AboutBanner } from '#/components/about-banner';
 import { IconBanner } from '#/components/icon-banner';
 import { PersonalWorkBanner } from '#/components/personal-work-banner';
 import { ContactBanner } from '#/components/contact-banner';
-import { HomeQuery } from '../../../types/graphql-types';
+import { HomeQuery } from '../../types/graphql-types';
 
 type HomePageProps = PageRendererProps & {
   data: HomeQuery;

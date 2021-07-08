@@ -1,5 +1,6 @@
 import { Heading } from '#/components/heading';
 import { Spacer } from '#/components/spacer';
+import { Section } from '#/components/section';
 import { PersonalWorkBannerProps } from './types';
 import * as styled from './styles';
 
@@ -9,7 +10,7 @@ export const PersonalWorkBanner = ({
   projects,
 }: PersonalWorkBannerProps) => {
   return (
-    <styled.Banner>
+    <Section>
       <styled.Container>
         <Heading type="h2" text={heading} />
         <Spacer size="medium" />
@@ -37,6 +38,6 @@ export const PersonalWorkBanner = ({
           })}
         </styled.Projects>
       </styled.Container>
-    </styled.Banner>
+    </Section>
   );
 };

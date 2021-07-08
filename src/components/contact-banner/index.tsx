@@ -6,6 +6,7 @@ import { Wrap } from '#/components/wrap';
 import { Input } from '#/components/input';
 import { Textarea } from '#/components/textarea';
 import { Button } from '#/components/button';
+import { Section } from '#/components/section';
 import { ContactBannerProps, ContactFormData } from './types';
 import * as styled from './styles';
 
@@ -35,7 +36,7 @@ export const ContactBanner = ({ heading, description }: ContactBannerProps) => {
   };
 
   return (
-    <styled.Banner>
+    <Section>
       <Wrap>
         <Heading type="h2" text={heading} />
         <Spacer size="medium" />
@@ -87,6 +88,6 @@ export const ContactBanner = ({ heading, description }: ContactBannerProps) => {
           </styled.Button>
         </styled.Form>
       </Wrap>
-    </styled.Banner>
+    </Section>
   );
 };

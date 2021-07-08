@@ -11,7 +11,8 @@ export const Banner = styled.div`
   align-items: center;
   height: 40rem;
   overflow: hidden;
-  background-color: ${colours.red};
+  transition: all 0.3s;
+  background-color: ${({ theme }) => theme.colors.primary};
   color: ${colours.white};
 `;
 

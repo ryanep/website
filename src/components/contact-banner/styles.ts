@@ -1,11 +1,6 @@
 import styled from 'styled-components';
 import { fromTablet } from '#/styles/breakpoints';
 
-export const Banner = styled.section`
-  padding: 6rem 0;
-  text-align: center;
-`;
-
 export const Description = styled.p`
   max-width: 82rem;
   margin: 0 auto;

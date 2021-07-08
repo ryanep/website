@@ -3,6 +3,6 @@ import ReactMarkdown from 'react-markdown';
 
 export const Markdown = styled(ReactMarkdown)`
   strong {
-    font-weight: 600;
+    font-weight: ${({ theme }) => theme.fontWeight.semiBold};
   }
 `;

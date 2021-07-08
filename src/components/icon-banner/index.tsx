@@ -1,6 +1,7 @@
 import { Wrap } from '#/components/wrap';
 import { Spacer } from '#/components/spacer';
 import { Heading } from '#/components/heading';
+import { Section } from '#/components/section';
 import { LogoBannerProps } from './types';
 import * as styled from './styles';
 
@@ -10,7 +11,7 @@ export const IconBanner = ({
   items,
 }: LogoBannerProps) => {
   return (
-    <styled.Banner>
+    <Section>
       <Wrap>
         <Heading type="h2" text={heading} />
         <Spacer size="medium" />
@@ -30,6 +31,6 @@ export const IconBanner = ({
           ))}
         </styled.Icons>
       </Wrap>
-    </styled.Banner>
+    </Section>
   );
 };

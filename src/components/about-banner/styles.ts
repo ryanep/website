@@ -1,11 +1,6 @@
 import styled from 'styled-components';
 import { Markdown } from '#/components/markdown';
 
-export const Banner = styled.section`
-  padding: 6rem 0;
-  text-align: center;
-`;
-
 export const Image = styled.img`
   width: 12rem;
   height: 12rem;

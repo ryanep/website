@@ -3,12 +3,6 @@ import { IconStyleProps } from './types';
 import { colours } from '#/constants/colours';
 import { fromTablet } from '#/styles/breakpoints';
 
-export const Banner = styled.section`
-  padding: 6rem 0;
-  background-color: #f7f7f7;
-  text-align: center;
-`;
-
 export const Description = styled.p`
   max-width: 82rem;
   margin: 0 auto;
@@ -16,7 +10,7 @@ export const Description = styled.p`
 
 export const Icons = styled.ul`
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
   justify-content: space-around;
   margin: 0 auto;
@@ -33,7 +27,7 @@ export const Icon = styled.li<IconStyleProps>`
   align-items: center;
   justify-content: center;
   width: 100%;
-  min-height: 6rem;
+  min-height: 4rem;
   border-radius: 1rem;
   background-color: ${({ colour }) => colour};
   aspect-ratio: 1/1;
@@ -46,14 +40,14 @@ export const Icon = styled.li<IconStyleProps>`
     left: 50%;
     padding: 0.5rem;
     transform: translateX(-50%);
-    transition: all 0.25s ease;
+    transition: all 0.3s ease;
     border-radius: 0.2rem;
     opacity: 0;
     background-color: ${colours.white};
     box-shadow: 0 0.1rem 0.2rem rgba(0, 0, 0, 0.1);
     color: ${colours.black};
     font-size: 1.4rem;
-    font-weight: normal;
+    font-weight: ${({ theme }) => theme.fontWeight.normal};
     line-height: 1;
     will-change: opacity, visibility, transform;
   }

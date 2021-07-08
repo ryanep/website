@@ -17,7 +17,7 @@ export const ListItem = styled.li`
 export const Link = styled(GatsbyLink)`
   color: ${colours.white};
   font-size: 1.4rem;
-  font-weight: 600;
+  font-weight: ${({ theme }) => theme.fontWeight.semiBold};
   text-decoration: none;
 
   &:hover {

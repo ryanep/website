@@ -1,6 +1,7 @@
 import { Heading } from '#/components/heading';
 import { Spacer } from '#/components/spacer';
 import { Wrap } from '#/components/wrap';
+import { Section } from '#/components/section';
 import { AboutBannerProps } from './types';
 import * as styled from './styles';
 
@@ -10,7 +11,7 @@ export const AboutBanner = ({
   image,
 }: AboutBannerProps) => {
   return (
-    <styled.Banner>
+    <Section>
       <Wrap>
         <styled.Image src={image.url} alt={image.title} />
         <Spacer size="small" />
@@ -20,6 +21,6 @@ export const AboutBanner = ({
 
         <styled.Description source={description} />
       </Wrap>
-    </styled.Banner>
+    </Section>
   );
 };

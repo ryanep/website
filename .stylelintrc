@@ -11,6 +11,8 @@
     "declaration-empty-line-before": "never",
     "color-hex-length": "long",
     "function-name-case": null,
+    "value-keyword-case": null,
+    "unit-no-unknown": null,
     "property-no-unknown": [
       true,
       {
