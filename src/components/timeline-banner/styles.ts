@@ -109,7 +109,7 @@ export const ItemHeading = styled.h3`
   flex-grow: 1;
   margin-bottom: 0.5rem;
   font-size: 2rem;
-  font-weight: ${({ theme }) => theme.fontWeight.normal};
+  font-weight: ${({ theme }) => theme.fontWeight.semiBold};
 
   @media ${fromTablet} {
     margin-bottom: 0;
