@@ -4,4 +4,4 @@ node_modules
 public
 .env.development
 .env.production
-*.tar.gz
+.terraform
