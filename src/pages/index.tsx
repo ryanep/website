@@ -66,6 +66,7 @@ export const query = graphql`
           role
           startDate
           endDate
+          colour
           icon {
             title
             file {

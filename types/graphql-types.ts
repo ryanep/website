@@ -557,6 +557,7 @@ export type ContentfulWork = ContentfulReference & ContentfulEntry & Node & {
   startDate?: Maybe<Scalars['Date']>;
   endDate?: Maybe<Scalars['Date']>;
   role?: Maybe<Scalars['String']>;
+  colour?: Maybe<Scalars['String']>;
   icon?: Maybe<ContentfulAsset>;
   spaceId?: Maybe<Scalars['String']>;
   createdAt?: Maybe<Scalars['Date']>;
@@ -1067,6 +1068,7 @@ export type QueryContentfulWorkArgs = {
   startDate?: Maybe<DateQueryOperatorInput>;
   endDate?: Maybe<DateQueryOperatorInput>;
   role?: Maybe<StringQueryOperatorInput>;
+  colour?: Maybe<StringQueryOperatorInput>;
   icon?: Maybe<ContentfulAssetFilterInput>;
   spaceId?: Maybe<StringQueryOperatorInput>;
   createdAt?: Maybe<DateQueryOperatorInput>;
@@ -3294,6 +3296,7 @@ export type ContentfulWorkFieldsEnum =
   | 'startDate'
   | 'endDate'
   | 'role'
+  | 'colour'
   | 'icon___contentful_id'
   | 'icon___id'
   | 'icon___spaceId'
@@ -3529,6 +3532,7 @@ export type ContentfulWorkFilterInput = {
   startDate?: Maybe<DateQueryOperatorInput>;
   endDate?: Maybe<DateQueryOperatorInput>;
   role?: Maybe<StringQueryOperatorInput>;
+  colour?: Maybe<StringQueryOperatorInput>;
   icon?: Maybe<ContentfulAssetFilterInput>;
   spaceId?: Maybe<StringQueryOperatorInput>;
   createdAt?: Maybe<DateQueryOperatorInput>;
@@ -4394,7 +4398,7 @@ export type HomeQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 export type HomeQuery = { work: { edges: Array<{ node: (
-        Pick<ContentfulWork, 'id' | 'name' | 'role' | 'startDate' | 'endDate'>
+        Pick<ContentfulWork, 'id' | 'name' | 'role' | 'startDate' | 'endDate' | 'colour'>
         & { icon?: Maybe<(
           Pick<ContentfulAsset, 'title'>
           & { file?: Maybe<Pick<ContentfulAssetFile, 'url'>> }

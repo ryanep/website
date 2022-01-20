@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { colours } from '#/constants/colours';
 import { fromTablet } from '#/styles/breakpoints';
 import { Wrap } from '#/components/wrap';
+import { IconStyleProps } from './types';
 
 export const Banner = styled.section`
   padding: 6rem 0;
@@ -94,6 +95,7 @@ export const ItemHeader = styled.header`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  align-items: center;
 
   @media ${fromTablet} {
     flex-wrap: nowrap;
@@ -101,8 +103,25 @@ export const ItemHeader = styled.header`
   }
 `;
 
-export const ItemIcon = styled.img`
+export const Icon = styled.div<IconStyleProps>`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.8rem;
+  aspect-ratio: 1/1;
   margin-right: 1rem;
+  border-radius: 0.4rem;
+  background-color: ${({ colour }) => `${colour}`};
+`;
+
+export const ItemIcon = styled.img`
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 2rem;
+  max-height: 1.6rem;
+  filter: brightness(100);
+  opacity: 80%;
 `;
 
 export const ItemHeading = styled.h3`

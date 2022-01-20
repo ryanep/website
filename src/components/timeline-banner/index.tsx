@@ -38,12 +38,15 @@ export const TimelineBanner = ({
               return (
                 <styled.Item key={node.id}>
                   <styled.ItemHeader>
-                    <styled.ItemIcon
-                      src={node.icon.file.url}
-                      alt={node.icon.title}
-                      width="20"
-                      height="20"
-                    />
+                    <styled.Icon colour={node.colour}>
+                      <styled.ItemIcon
+                        src={node.icon.file.url}
+                        alt={node.icon.title}
+                        width="20"
+                        height="20"
+                      />
+                    </styled.Icon>
+
                     <styled.ItemHeading>{node.name}</styled.ItemHeading>
                     <styled.ItemDate>
                       {startDate} -{' '}

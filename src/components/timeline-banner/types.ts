@@ -8,6 +8,7 @@ export interface TimelineBannerProps {
       role?: string;
       startDate?: string;
       endDate?: string;
+      colour?: string;
       icon?: {
         title?: string;
         file?: {
@@ -16,4 +17,8 @@ export interface TimelineBannerProps {
       };
     };
   }[];
+}
+
+export interface IconStyleProps {
+  colour?: string;
 }
