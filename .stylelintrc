@@ -5,6 +5,7 @@
     "stylelint-config-property-sort-order-smacss",
     "stylelint-config-prettier"
   ],
+  "customSyntax": "@stylelint/postcss-css-in-js",
   "rules": {
     "selector-list-comma-newline-after": "never-multi-line",
     "selector-list-comma-space-after": "always",
@@ -16,9 +17,7 @@
     "property-no-unknown": [
       true,
       {
-        "ignoreProperties": [
-          "font-smoothing"
-        ]
+        "ignoreProperties": ["font-smoothing"]
       }
     ]
   }

@@ -1,6 +1,6 @@
 {
   "parser": "@typescript-eslint/parser",
-  "plugins": ["react", "@typescript-eslint"],
+  "plugins": ["react", "@typescript-eslint", "import"],
   "extends": ["airbnb-typescript", "prettier"],
   "parserOptions": {
     "project": "./tsconfig.json"

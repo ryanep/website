@@ -16,7 +16,6 @@ i18n
     defaultNS: 'translations',
     debug: process.env.NODE_ENV === 'development',
     react: {
-      wait: true,
       useSuspense: false,
     },
   });

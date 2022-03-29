@@ -7,6 +7,7 @@ config({
 
 module.exports = {
   plugins: [
+    'gatsby-plugin-image',
     'gatsby-plugin-react-helmet',
     {
       resolve: `gatsby-plugin-typescript`,
@@ -18,7 +19,6 @@ module.exports = {
     },
     'gatsby-plugin-typescript-checker',
     'gatsby-plugin-styled-components',
-    // 'gatsby-plugin-no-javascript',
     {
       resolve: 'gatsby-plugin-alias-imports',
       options: {
