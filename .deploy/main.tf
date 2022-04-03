@@ -1,11 +1,15 @@
 variable "name" {}
 variable "aws_region" {}
 variable "cdn_bucket_name" {}
+variable "domain" {}
 
-variable "digital_ocean_token" {}
+variable "namecheap_user_name" {}
+variable "namecheap_api_user" {}
+variable "namecheap_api_key" {}
+variable "namecheap_client_ip" {}
 
 provider "aws" {
-  region = "${var.aws_region}"
+  region = var.aws_region
 }
 
 terraform {
@@ -18,7 +22,7 @@ terraform {
 }
 
 resource "aws_s3_bucket" "cdn" {
-  bucket = "${var.cdn_bucket_name}"
+  bucket = var.cdn_bucket_name
   acl    = "public-read"
 
   website {
@@ -37,11 +41,11 @@ resource "aws_cloudfront_origin_access_identity" "origin_access_identity" {
 
 resource "aws_cloudfront_distribution" "cdn_s3_distribution" {
   origin {
-    domain_name = "${aws_s3_bucket.cdn.bucket_regional_domain_name}"
-    origin_id   = "${local.s3_origin_id}"
+    domain_name = aws_s3_bucket.cdn.bucket_regional_domain_name
+    origin_id   = local.s3_origin_id
 
     s3_origin_config {
-      origin_access_identity = "${aws_cloudfront_origin_access_identity.origin_access_identity.cloudfront_access_identity_path}"
+      origin_access_identity = aws_cloudfront_origin_access_identity.origin_access_identity.cloudfront_access_identity_path
     }
   }
 
@@ -54,7 +58,7 @@ resource "aws_cloudfront_distribution" "cdn_s3_distribution" {
     path_pattern     = "*"
     allowed_methods  = ["GET", "HEAD", "OPTIONS"]
     cached_methods   = ["GET", "HEAD", "OPTIONS"]
-    target_origin_id = "${local.s3_origin_id}"
+    target_origin_id = local.s3_origin_id
 
     forwarded_values {
       query_string = false
@@ -75,7 +79,7 @@ resource "aws_cloudfront_distribution" "cdn_s3_distribution" {
   default_cache_behavior {
     allowed_methods  = ["DELETE", "GET", "HEAD", "OPTIONS", "PATCH", "POST", "PUT"]
     cached_methods   = ["GET", "HEAD"]
-    target_origin_id = "${local.s3_origin_id}"
+    target_origin_id = local.s3_origin_id
 
     forwarded_values {
       query_string = false
@@ -103,13 +107,28 @@ resource "aws_cloudfront_distribution" "cdn_s3_distribution" {
   }
 }
 
-provider "digitalocean" {
-  token = "${var.digital_ocean_token}"
+provider "namecheap" {
+  user_name   = var.namecheap_user_name
+  api_user    = var.namecheap_api_user
+  api_key     = var.namecheap_api_key
+  client_ip   = var.namecheap_client_ip
+  use_sandbox = false
 }
 
-resource "digitalocean_record" "cdn_record" {
-  domain = "ryanep.com"
-  type   = "CNAME"
-  name   = "www."
-  value  = "${aws_cloudfront_distribution.cdn_s3_distribution.domain_name}."
+resource "namecheap_domain_records" "domain-com" {
+  domain = var.domain
+  mode   = "MERGE"
+
+  record {
+    hostname = "www"
+    type     = "CNAME"
+    address  = "${aws_cloudfront_distribution.cdn_s3_distribution.domain_name}."
+  }
+
+
+  record {
+    hostname = "@"
+    type     = "URL301"
+    address  = "https://www.${var.domain}"
+  }
 }

@@ -3,8 +3,9 @@ terraform {
     aws = {
       source = "hashicorp/aws"
     }
-    digitalocean = {
-      source = "terraform-providers/digitalocean"
+    namecheap = {
+      source  = "namecheap/namecheap"
+      version = ">= 2.0.0"
     }
   }
   required_version = ">= 0.13"

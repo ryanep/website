@@ -7,9 +7,20 @@ TASK_STARTED = @echo ${COLOUR_YELLOW} - Task started: $@ ${COLOUR_END}
 TASK_DONE = @echo ${COLOUR_GREEN} âœ“ Task succeeded: $@ ${COLOUR_END}
 TASK_FAILED = @echo ${COLOUR_RED} âœ˜ Task failed: $@ ${COLOUR_END}
 
+.PHONY=build deloy-infra deploy clean release
+
 build:
 	${TASK_STARTED}
 	NODE_ENV=production yarn build
+	${TASK_DONE}
+deploy-infra:
+	${TASK_STARTED}
+		export TF_VAR_namecheap_user_name=$$NAMECHEAP_USER_NAME && \
+		export TF_VAR_namecheap_api_user=$$NAMECHEAP_API_USER && \
+		export TF_VAR_namecheap_api_key=$$NAMECHEAP_API_KEY && \
+		export TF_VAR_namecheap_client_ip=$$NAMECHEAP_CLIENT_IP && \
+		cd ./.deploy && \
+		terraform apply -auto-approve
 	${TASK_DONE}
 deploy:
 	${TASK_STARTED}
@@ -20,4 +31,4 @@ clean:
 	${TASK_STARTED}
 	rm -rf ./public
 	${TASK_DONE}
-release: clean build deploy
+release: clean build deploy-infra deploy
