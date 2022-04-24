@@ -39,11 +39,6 @@ export const Item = styled.article`
   display: block;
   position: relative;
   margin-bottom: 1rem;
-  padding: 1.5rem;
-  transition: background-color 0.3s;
-  border-radius: 0.3rem;
-  background-color: ${({ theme }) => theme.colors.highlightBackgroundColor};
-  box-shadow: 0 0.1rem 0.3rem rgba(0, 0, 0, 0.1);
   color: ${({ theme }) => theme.colors.highlightColor};
   text-align: left;
   text-decoration: none;
@@ -59,8 +54,9 @@ export const Item = styled.article`
   }
 
   @media ${fromTablet} {
-    width: 48%;
-    margin-top: -3rem;
+    width: 50%;
+    margin-top: -4.5rem;
+    margin-bottom: 0;
 
     &::after {
       content: '';
@@ -74,21 +70,32 @@ export const Item = styled.article`
     }
 
     &:nth-child(odd) {
+      padding-right: 2rem;
+
       &::after {
-        left: calc(100% + 2rem);
+        left: 100%;
         transform: translate(-50%, -50%);
       }
     }
 
     &:nth-child(even) {
       margin-left: auto;
+      padding-left: 2rem;
 
       &::after {
-        right: calc(100% + 2rem);
+        right: 100%;
         transform: translate(50%, -50%);
       }
     }
   }
+`;
+
+export const ItemContent = styled.div`
+  background-color: ${({ theme }) => theme.colors.highlightBackgroundColor};
+  box-shadow: 0 0.1rem 0.3rem rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s;
+  padding: 1.5rem;
+  border-radius: 0.3rem;
 `;
 
 export const ItemHeader = styled.header`
@@ -96,10 +103,10 @@ export const ItemHeader = styled.header`
   flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
+  margin-bottom: 1rem;
 
   @media ${fromTablet} {
     flex-wrap: nowrap;
-    margin-bottom: 1rem;
   }
 `;
 
@@ -107,7 +114,7 @@ export const Icon = styled.div<IconStyleProps>`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 2.8rem;
+  width: 3.8rem;
   aspect-ratio: 1/1;
   margin-right: 1rem;
   border-radius: 0.4rem;
@@ -118,8 +125,9 @@ export const ItemIcon = styled.img`
   display: block;
   width: auto;
   height: auto;
-  max-width: 2rem;
-  max-height: 1.6rem;
+  max-width: 2.4rem;
+  max-height: 2rem;
+
   filter: brightness(100);
   opacity: 80%;
 `;
@@ -129,10 +137,6 @@ export const ItemHeading = styled.h3`
   margin-bottom: 0.5rem;
   font-size: 2rem;
   font-weight: ${({ theme }) => theme.fontWeight.semiBold};
-
-  @media ${fromTablet} {
-    margin-bottom: 0;
-  }
 `;
 
 export const ItemRole = styled.p`
@@ -142,12 +146,10 @@ export const ItemRole = styled.p`
 export const ItemDate = styled.p`
   flex-shrink: 0;
   width: 100%;
-  margin-bottom: 1rem;
   font-size: 1.2rem;
   font-weight: ${({ theme }) => theme.fontWeight.medium};
 
   @media ${fromTablet} {
     width: auto;
-    margin-bottom: 0;
   }
 `;

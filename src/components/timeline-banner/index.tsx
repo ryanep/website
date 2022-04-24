@@ -37,23 +37,27 @@ export const TimelineBanner = ({
               const endDate = node.endDate ? dtf.format(ed) : undefined;
               return (
                 <styled.Item key={node.id}>
-                  <styled.ItemHeader>
-                    <styled.Icon colour={node.colour}>
-                      <styled.ItemIcon
-                        src={node.icon.file.url}
-                        alt={node.icon.title}
-                        width="20"
-                        height="20"
-                      />
-                    </styled.Icon>
+                  <styled.ItemContent>
+                    <styled.ItemHeader>
+                      <styled.Icon colour={node.colour}>
+                        <styled.ItemIcon
+                          src={node.icon.file.url}
+                          alt={node.icon.title}
+                          width="20"
+                          height="20"
+                        />
+                      </styled.Icon>
 
-                    <styled.ItemHeading>{node.name}</styled.ItemHeading>
-                    <styled.ItemDate>
-                      {startDate} -{' '}
-                      {endDate || t('home:workExperienceBanner.present')}
-                    </styled.ItemDate>
-                  </styled.ItemHeader>
-                  <styled.ItemRole>{node.role}</styled.ItemRole>
+                      <div>
+                        <styled.ItemHeading>{node.name}</styled.ItemHeading>
+                        <styled.ItemDate>
+                          {startDate} -{' '}
+                          {endDate || t('home:workExperienceBanner.present')}
+                        </styled.ItemDate>
+                      </div>
+                    </styled.ItemHeader>
+                    <styled.ItemRole>{node.role}</styled.ItemRole>
+                  </styled.ItemContent>
                 </styled.Item>
               );
             })}
