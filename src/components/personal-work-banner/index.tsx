@@ -31,6 +31,8 @@ export const PersonalWorkBanner = ({
                     src={project.node.image.file.url}
                     alt={project.node.image.title}
                   />
+
+                  <styled.ProjectHeading>{project.node.name}</styled.ProjectHeading>
                   <p>{project.node.description}</p>
                 </styled.Link>
               </styled.Project>
