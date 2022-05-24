@@ -5,6 +5,7 @@ export interface TimelineBannerProps {
     node: {
       id: string;
       name?: string;
+      companyName?: string;
       role?: string;
       startDate?: string;
       endDate?: string;

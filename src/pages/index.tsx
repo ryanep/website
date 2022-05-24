@@ -63,6 +63,7 @@ export const query = graphql`
         node {
           id
           name
+          companyName
           role
           startDate
           endDate

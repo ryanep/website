@@ -49,7 +49,9 @@ export const TimelineBanner = ({
                       </styled.Icon>
 
                       <div>
-                        <styled.ItemHeading>{node.name}</styled.ItemHeading>
+                        <styled.ItemHeading>
+                          {node.companyName}
+                        </styled.ItemHeading>
                         <styled.ItemDate>
                           {startDate} -{' '}
                           {endDate || t('home:workExperienceBanner.present')}
