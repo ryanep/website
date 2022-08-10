@@ -1,8 +1,8 @@
 node_modules
+/types
 .cache
 *.log
 public
-src/types/graphql-types.ts
 .env.development
 .env.production
 .terraform

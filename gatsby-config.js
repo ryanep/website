@@ -5,7 +5,7 @@ config({
   path: `.env.${process.env.NODE_ENV}`,
 });
 
-module.exports = {
+const gatsbyConfig = {
   plugins: [
     'gatsby-plugin-image',
     'gatsby-plugin-react-helmet',
@@ -27,6 +27,7 @@ module.exports = {
           '#/constants': path.resolve(__dirname, 'src/constants'),
           '#/context': path.resolve(__dirname, 'src/context'),
           '#/hooks': path.resolve(__dirname, 'src/hooks'),
+          '#/locales': path.resolve(__dirname, 'src/locales'),
           '#/pages': path.resolve(__dirname, 'src/pages'),
           '#/styles': path.resolve(__dirname, 'src/styles'),
           '#/utils': path.resolve(__dirname, 'src/utils'),
@@ -50,9 +51,9 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-graphql-codegen',
       options: {
-        fileName: 'src/types/graphql-types.ts',
+        fileName: './types/graphql-types.ts',
         documentPaths: [
-          './src/**/*.{ts,tsx}',
+          './src/pages/*.{ts,tsx}',
           './node_modules/gatsby-*/**/*.js',
         ],
         codegenDelay: 200,
@@ -64,3 +65,5 @@ module.exports = {
     },
   ],
 };
+
+module.exports = gatsbyConfig;
