@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import { IconStyleProps } from './types';
 import { colours } from '#/constants/colours';
-import { fromTablet } from '#/styles/breakpoints';
 
 export const Description = styled.p`
   max-width: 82rem;
@@ -9,24 +8,19 @@ export const Description = styled.p`
 `;
 
 export const Icons = styled.ul`
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  display: flex;
+  flex-wrap: wrap;
   gap: 2rem;
-  justify-content: space-around;
-  margin: 0 auto;
-
-  @media ${fromTablet} {
-    grid-template-columns: repeat(12, 1fr);
-  }
+  justify-content: center;
 `;
 
 export const Icon = styled.li<IconStyleProps>`
   display: flex;
   position: relative;
+  width: 7rem;
   flex-shrink: 0;
   align-items: center;
   justify-content: center;
-  width: 100%;
   min-height: 4rem;
   border-radius: 1rem;
   background-color: ${({ colour }) => colour};
@@ -48,7 +42,7 @@ export const Icon = styled.li<IconStyleProps>`
     color: ${colours.black};
     font-size: 1.4rem;
     font-weight: ${({ theme }) => theme.fontWeight.normal};
-    line-height: 1;
+    line-height: 1.2;
     will-change: opacity, visibility, transform;
   }
 
@@ -62,6 +56,8 @@ export const Icon = styled.li<IconStyleProps>`
 `;
 
 export const IconImage = styled.img`
-  max-width: 4rem;
+  width: auto;
+  height: auto;
+  max-width: 2.4rem;
   max-height: 3rem;
 `;
