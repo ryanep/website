@@ -3,7 +3,25 @@
 </p>
 <div align="center">
   <h1>Website</h1>
-  <p>A static personal portfolio website.</p>
+  <p>My static personal portfolio website.</p>
 </div>
 
 ## Introduction
+
+This project is a personal portfolio built using Gatsby with data from Contentful.
+
+## Features
+
+- Content managed via CMS using Contentful.
+- Use of i18n for localisation.
+- Fully typed, including generated GraphQL types.
+- Components styling using styled-components.
+- Terraform for infrastructure.
+
+## Screenshot
+
+![Ryanep Website Screenshot](docs/screenshot.png)
+
+## License
+
+Licensed under the MIT license.
