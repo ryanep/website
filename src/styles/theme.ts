@@ -32,6 +32,7 @@ const baseTheme = {
 
 export const lightTheme = {
   ...baseTheme,
+  scheme: 'light',
   colors: {
     bodyBackgroundColor: palette.white,
     altBackgroundColor: palette.alabaster,
@@ -46,6 +47,7 @@ export const lightTheme = {
 
 export const darkTheme = {
   ...baseTheme,
+  scheme: 'dark',
   colors: {
     bodyBackgroundColor: palette.black,
     altBackgroundColor: palette.codGray,

@@ -1,7 +1,10 @@
 import { createContext, useEffect, useState } from 'react';
 import type { ConfigContextProviderProps, ConfigContextValues } from './types';
 
-export const ConfigContext = createContext<ConfigContextValues>(undefined);
+export const ConfigContext = createContext<ConfigContextValues>({
+  theme: 'light',
+  setTheme: () => {},
+});
 
 export const ConfigContextProvider = ({
   children,
