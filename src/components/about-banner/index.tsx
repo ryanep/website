@@ -1,9 +1,9 @@
-import { Heading } from '#/components/heading';
-import { Spacer } from '#/components/spacer';
-import { Wrap } from '#/components/wrap';
-import { Section } from '#/components/section';
-import { AboutBannerProps } from './types';
-import * as styled from './styles';
+import { Heading } from "#/components/heading";
+import { Spacer } from "#/components/spacer";
+import { Wrap } from "#/components/wrap";
+import { Section } from "#/components/section";
+import { AboutBannerProps } from "./types";
+import * as styled from "./styles";
 
 export const AboutBanner = ({
   heading,

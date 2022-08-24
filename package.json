@@ -27,6 +27,7 @@
     "styled-reset": "^4.3.4"
   },
   "devDependencies": {
+    "@ryanep/prettier-config": "^1.0.2",
     "@stylelint/postcss-css-in-js": "^0.37.2",
     "@types/react": "^17.0.43",
     "@types/react-dom": "^17.0.14",

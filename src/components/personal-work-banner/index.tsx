@@ -1,8 +1,8 @@
-import { Heading } from '#/components/heading';
-import { Spacer } from '#/components/spacer';
-import { Section } from '#/components/section';
-import { PersonalWorkBannerProps } from './types';
-import * as styled from './styles';
+import { Heading } from "#/components/heading";
+import { Spacer } from "#/components/spacer";
+import { Section } from "#/components/section";
+import { PersonalWorkBannerProps } from "./types";
+import * as styled from "./styles";
 
 export const PersonalWorkBanner = ({
   heading,

@@ -1,10 +1,10 @@
-import { useTranslation } from 'react-i18next';
-import { Heading } from '#/components/heading';
-import { Spacer } from '#/components/spacer';
-import { Section } from '#/components/section';
-import { TimelineBannerProps } from './types';
-import { Wrap } from '../wrap';
-import * as styled from './styles';
+import { useTranslation } from "react-i18next";
+import { Heading } from "#/components/heading";
+import { Spacer } from "#/components/spacer";
+import { Section } from "#/components/section";
+import { TimelineBannerProps } from "./types";
+import { Wrap } from "../wrap";
+import * as styled from "./styles";
 
 export const TimelineBanner = ({
   heading,
@@ -29,9 +29,9 @@ export const TimelineBanner = ({
             {items.map(({ node }) => {
               const sd = new Date(node.startDate);
               const ed = new Date(node.endDate);
-              const dtf = new Intl.DateTimeFormat('en', {
-                year: 'numeric',
-                month: 'short',
+              const dtf = new Intl.DateTimeFormat("en", {
+                year: "numeric",
+                month: "short",
               });
               const startDate = dtf.format(sd);
               const endDate = node.endDate ? dtf.format(ed) : undefined;
@@ -53,8 +53,8 @@ export const TimelineBanner = ({
                           {node.companyName}
                         </styled.ItemHeading>
                         <styled.ItemDate>
-                          {startDate} -{' '}
-                          {endDate || t('home:workExperienceBanner.present')}
+                          {startDate} -{" "}
+                          {endDate || t("home:workExperienceBanner.present")}
                         </styled.ItemDate>
                       </div>
                     </styled.ItemHeader>

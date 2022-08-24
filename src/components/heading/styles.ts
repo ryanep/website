@@ -1,36 +1,36 @@
-import styled, { css } from 'styled-components';
-import { HeadingStyleProps } from './types';
+import styled, { css } from "styled-components";
+import { HeadingStyleProps } from "./types";
 
 export const Heading = styled.h1<HeadingStyleProps>`
   font-weight: ${({ theme }) => theme.fontWeight.black};
 
   ${({ type }) =>
-    type === 'h1' &&
+    type === "h1" &&
     css`
       font-size: 3.6rem;
     `}
   ${({ type }) =>
-    type === 'h2' &&
+    type === "h2" &&
     css`
       font-size: 2.8rem;
     `}
     ${({ type }) =>
-    type === 'h3' &&
+    type === "h3" &&
     css`
       font-size: 2.4rem;
     `}
     ${({ type }) =>
-    type === 'h4' &&
+    type === "h4" &&
     css`
       font-size: 2rem;
     `}
     ${({ type }) =>
-    type === 'h5' &&
+    type === "h5" &&
     css`
       font-size: 1.6rem;
     `}
     ${({ type }) =>
-    type === 'h6' &&
+    type === "h6" &&
     css`
       font-size: 1.4rem;
     `};

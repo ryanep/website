@@ -1,6 +1,6 @@
-import styled from 'styled-components';
-import GatsbyLink from 'gatsby-link';
-import { Wrap } from '#/components/wrap';
+import styled from "styled-components";
+import GatsbyLink from "gatsby-link";
+import { Wrap } from "#/components/wrap";
 
 export const Header = styled.header`
   position: fixed;

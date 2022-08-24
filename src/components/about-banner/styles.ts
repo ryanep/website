@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import { Markdown } from '#/components/markdown';
+import styled from "styled-components";
+import { Markdown } from "#/components/markdown";
 
 export const Image = styled.img`
   width: 12rem;

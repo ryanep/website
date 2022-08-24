@@ -1,5 +1,5 @@
-import { HeadingProps } from './types';
-import * as styled from './styles';
+import { HeadingProps } from "./types";
+import * as styled from "./styles";
 
 export const Heading = ({ as, type, text }: HeadingProps) => {
   return (

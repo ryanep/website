@@ -1,6 +1,6 @@
-import { generateBubbles } from '#/utils/bubbles';
-import { BubblesProps } from './types';
-import * as styled from './styles';
+import { generateBubbles } from "#/utils/bubbles";
+import { BubblesProps } from "./types";
+import * as styled from "./styles";
 
 export const Bubbles = ({ bubbleCount }: BubblesProps) => {
   const bubbles = generateBubbles(bubbleCount);

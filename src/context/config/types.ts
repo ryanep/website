@@ -1,10 +1,10 @@
-import { ReactNode } from 'react';
+import { ReactNode } from "react";
 
 export interface ConfigContextProviderProps {
   children: ReactNode;
 }
 
-export type Theme = 'light' | 'dark';
+export type Theme = "light" | "dark";
 
 export interface ConfigContextValues {
   theme: Theme;

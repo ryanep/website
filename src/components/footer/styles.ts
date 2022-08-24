@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import { colours } from '#/constants/colours';
+import styled from "styled-components";
+import { colours } from "#/constants/colours";
 
 export const Footer = styled.footer`
   padding: 2rem;

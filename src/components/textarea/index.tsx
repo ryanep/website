@@ -1,5 +1,5 @@
-import { TextareaProps } from './types';
-import * as styled from './styles';
+import { TextareaProps } from "./types";
+import * as styled from "./styles";
 
 export const Textarea = ({
   id,

@@ -1,8 +1,8 @@
-import styled from 'styled-components';
-import { colours } from '#/constants/colours';
-import { fromTablet } from '#/styles/breakpoints';
-import { Wrap } from '#/components/wrap';
-import { IconStyleProps } from './types';
+import styled from "styled-components";
+import { colours } from "#/constants/colours";
+import { fromTablet } from "#/styles/breakpoints";
+import { Wrap } from "#/components/wrap";
+import { IconStyleProps } from "./types";
 
 export const Banner = styled.section`
   padding: 6rem 0;
@@ -59,7 +59,7 @@ export const Item = styled.article`
     margin-bottom: 0;
 
     &::after {
-      content: '';
+      content: "";
       position: absolute;
       top: 50%;
       width: 1rem;

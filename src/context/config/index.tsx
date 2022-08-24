@@ -1,30 +1,30 @@
-import { createContext, useEffect, useState } from 'react';
-import type { ConfigContextProviderProps, ConfigContextValues } from './types';
+import { createContext, useEffect, useState } from "react";
+import type { ConfigContextProviderProps, ConfigContextValues } from "./types";
 
 export const ConfigContext = createContext<ConfigContextValues>({
-  theme: 'light',
+  theme: "light",
   setTheme: () => {},
 });
 
 export const ConfigContextProvider = ({
   children,
 }: ConfigContextProviderProps) => {
-  const [theme, setTheme] = useState<ConfigContextValues['theme']>('light');
+  const [theme, setTheme] = useState<ConfigContextValues["theme"]>("light");
 
   useEffect(() => {
-    if (typeof window === 'undefined') {
+    if (typeof window === "undefined") {
       return;
     }
 
-    const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)');
+    const prefersDarkMode = window.matchMedia("(prefers-color-scheme: dark)");
 
-    prefersDarkMode.addEventListener('change', (event) => {
-      const mode = event.matches ? 'dark' : 'light';
+    prefersDarkMode.addEventListener("change", (event) => {
+      const mode = event.matches ? "dark" : "light";
       setTheme(mode);
     });
 
     if (prefersDarkMode.matches) {
-      setTheme('dark');
+      setTheme("dark");
     }
   }, []);
 

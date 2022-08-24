@@ -1,5 +1,5 @@
-import { InputProps } from './types';
-import * as styled from './styles';
+import { InputProps } from "./types";
+import * as styled from "./styles";
 
 export const Input = ({
   id,

@@ -1,6 +1,6 @@
-import styled from 'styled-components';
-import { Wrap } from '#/components/wrap';
-import { colours } from '#/constants/colours';
+import styled from "styled-components";
+import { Wrap } from "#/components/wrap";
+import { colours } from "#/constants/colours";
 
 export const Banner = styled.div`
   position: sticky;

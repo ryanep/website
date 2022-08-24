@@ -1,21 +1,21 @@
-import { ChangeEvent, FormEvent, useState } from 'react';
-import { useTranslation } from 'react-i18next';
-import { Heading } from '#/components/heading';
-import { Spacer } from '#/components/spacer';
-import { Wrap } from '#/components/wrap';
-import { Input } from '#/components/input';
-import { Textarea } from '#/components/textarea';
-import { Button } from '#/components/button';
-import { Section } from '#/components/section';
-import { ContactBannerProps, ContactFormData } from './types';
-import * as styled from './styles';
+import { ChangeEvent, FormEvent, useState } from "react";
+import { useTranslation } from "react-i18next";
+import { Heading } from "#/components/heading";
+import { Spacer } from "#/components/spacer";
+import { Wrap } from "#/components/wrap";
+import { Input } from "#/components/input";
+import { Textarea } from "#/components/textarea";
+import { Button } from "#/components/button";
+import { Section } from "#/components/section";
+import { ContactBannerProps, ContactFormData } from "./types";
+import * as styled from "./styles";
 
 export const ContactBanner = ({ heading, description }: ContactBannerProps) => {
   const { t } = useTranslation();
   const [formData, setFormData] = useState<ContactFormData>({
-    name: '',
-    subject: '',
-    body: '',
+    name: "",
+    subject: "",
+    body: "",
   });
 
   const handleInputChange = (
@@ -53,7 +53,7 @@ export const ContactBanner = ({ heading, description }: ContactBannerProps) => {
             <styled.Group>
               <Input
                 id="contact-form-name"
-                title={t('contactForm:nameLabel')}
+                title={t("contactForm:nameLabel")}
                 type="text"
                 name="subject"
                 onChange={handleInputChange}
@@ -62,7 +62,7 @@ export const ContactBanner = ({ heading, description }: ContactBannerProps) => {
               <Spacer size="small" />
               <Input
                 id="contact-form-subject"
-                title={t('contactForm:subjectLabel')}
+                title={t("contactForm:subjectLabel")}
                 type="text"
                 name="name"
                 onChange={handleInputChange}
@@ -73,7 +73,7 @@ export const ContactBanner = ({ heading, description }: ContactBannerProps) => {
             <styled.Group>
               <Textarea
                 id="contact-form-message"
-                title={t('contactForm:messageLabel')}
+                title={t("contactForm:messageLabel")}
                 name="body"
                 onChange={handleInputChange}
                 required
@@ -84,7 +84,7 @@ export const ContactBanner = ({ heading, description }: ContactBannerProps) => {
           <Spacer size="large" />
 
           <styled.Button>
-            <Button type="submit" text={t('contactForm:buttonTitle')} />
+            <Button type="submit" text={t("contactForm:buttonTitle")} />
           </styled.Button>
         </styled.Form>
       </Wrap>

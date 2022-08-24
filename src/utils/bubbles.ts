@@ -1,4 +1,4 @@
-import { getRandomNumber } from '#/utils/number';
+import { getRandomNumber } from "#/utils/number";
 
 export const generateBubbles = (bubblesCount: number) => {
   const bubbles = Array.from(Array(bubblesCount));

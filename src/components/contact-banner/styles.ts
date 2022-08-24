@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import { fromTablet } from '#/styles/breakpoints';
+import styled from "styled-components";
+import { fromTablet } from "#/styles/breakpoints";
 
 export const Description = styled.p`
   max-width: 82rem;

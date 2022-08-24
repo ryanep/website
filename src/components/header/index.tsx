@@ -1,14 +1,14 @@
-import { Logo } from '#/components/logo';
-import { Navigation } from '#/components/navigation';
-import { HeaderProps } from './types';
-import * as styled from './styles';
-import { useConfigContext } from '#/hooks/context/config';
+import { Logo } from "#/components/logo";
+import { Navigation } from "#/components/navigation";
+import { HeaderProps } from "./types";
+import * as styled from "./styles";
+import { useConfigContext } from "#/hooks/context/config";
 
 export const Header = ({ showNav, navLinks }: HeaderProps) => {
   const { theme, setTheme } = useConfigContext();
 
   const handleThemeToggle = () => {
-    const newTheme = theme === 'light' ? 'dark' : 'light';
+    const newTheme = theme === "light" ? "dark" : "light";
     setTheme(newTheme);
   };
 
@@ -20,7 +20,7 @@ export const Header = ({ showNav, navLinks }: HeaderProps) => {
         </styled.Logo>
         {showNav && <Navigation links={navLinks} />}
         <styled.DarkModeToggle type="button" onClick={handleThemeToggle}>
-          {theme === 'light' ? (
+          {theme === "light" ? (
             <svg
               version="1.1"
               xmlns="http://www.w3.org/2000/svg"

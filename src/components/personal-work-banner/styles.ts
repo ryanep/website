@@ -1,6 +1,6 @@
-import styled from 'styled-components';
-import { Wrap } from '#/components/wrap';
-import { fromTablet } from '#/styles/breakpoints';
+import styled from "styled-components";
+import { Wrap } from "#/components/wrap";
+import { fromTablet } from "#/styles/breakpoints";
 
 export const Container = styled(Wrap)`
   max-width: 102.4rem;
@@ -58,7 +58,7 @@ export const Project = styled.article`
   box-shadow: 0 0.1rem 0.3rem rgba(0, 0, 0, 0.1);
   transition: background-color 0.3s;
   background-color: ${({ theme }) =>
-    theme.scheme === 'light'
+    theme.scheme === "light"
       ? theme.colors.altBackgroundColor
       : theme.colors.highlightBackgroundColor};
 

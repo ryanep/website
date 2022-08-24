@@ -1,7 +1,7 @@
-import i18n from 'i18next';
-import { initReactI18next } from 'react-i18next';
-import i18nXhr from 'i18next-xhr-backend';
-import translations from '#/locales/en/translations.json';
+import i18n from "i18next";
+import { initReactI18next } from "react-i18next";
+import i18nXhr from "i18next-xhr-backend";
+import translations from "#/locales/en/translations.json";
 
 export const initI18n = () => {
   return i18n
@@ -11,11 +11,11 @@ export const initI18n = () => {
       resources: {
         en: translations,
       },
-      lng: 'en',
-      fallbackLng: 'en',
-      ns: ['translations'],
-      defaultNS: 'translations',
-      debug: process.env.NODE_ENV === 'development',
+      lng: "en",
+      fallbackLng: "en",
+      ns: ["translations"],
+      defaultNS: "translations",
+      debug: process.env.NODE_ENV === "development",
       react: {
         useSuspense: false,
       },

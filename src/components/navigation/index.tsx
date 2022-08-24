@@ -1,5 +1,5 @@
-import { NavigationProps } from './types';
-import * as styled from './styles';
+import { NavigationProps } from "./types";
+import * as styled from "./styles";
 
 export const Navigation = ({ links }: NavigationProps) => {
   return (

@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import { BubbleStyleProps } from './types';
+import styled from "styled-components";
+import { BubbleStyleProps } from "./types";
 
 export const Bubbles = styled.div`
   position: absolute;

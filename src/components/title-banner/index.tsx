@@ -1,6 +1,6 @@
-import { Heading } from '#/components/heading';
-import { TitleBannerProps } from './types';
-import * as styled from './styles';
+import { Heading } from "#/components/heading";
+import { TitleBannerProps } from "./types";
+import * as styled from "./styles";
 
 export const TitleBanner = ({ heading }: TitleBannerProps) => {
   return (

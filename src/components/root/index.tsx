@@ -1,17 +1,17 @@
-import { Helmet } from 'react-helmet';
-import { Header } from '#/components/header';
-import { Footer } from '#/components/footer';
-import { RootProps } from './types';
-import * as styled from './styles';
+import { Helmet } from "react-helmet";
+import { Header } from "#/components/header";
+import { Footer } from "#/components/footer";
+import { RootProps } from "./types";
+import * as styled from "./styles";
 
 const navLinks = [
   {
-    url: '/',
-    title: 'Home',
+    url: "/",
+    title: "Home",
   },
   {
-    url: '/contact',
-    title: 'Contact',
+    url: "/contact",
+    title: "Contact",
   },
 ];
 
