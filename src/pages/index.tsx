@@ -1,13 +1,13 @@
-import { Helmet } from "react-helmet";
 import { graphql, PageRendererProps } from "gatsby";
+import { Helmet } from "react-helmet";
 import { useTranslation } from "react-i18next";
-import { Root } from "#/components/root";
-import { TimelineBanner } from "#/components/timeline-banner";
-import { HeadingBanner } from "#/components/heading-banner";
 import { AboutBanner } from "#/components/about-banner";
+import { ContactBanner } from "#/components/contact-banner";
+import { HeadingBanner } from "#/components/heading-banner";
 import { IconBanner } from "#/components/icon-banner";
 import { PersonalWorkBanner } from "#/components/personal-work-banner";
-import { ContactBanner } from "#/components/contact-banner";
+import { Root } from "#/components/root";
+import { TimelineBanner } from "#/components/timeline-banner";
 import { HomeQuery } from "../../types/graphql-types";
 
 type HomePageProps = PageRendererProps & {
@@ -22,35 +22,35 @@ export const HomePage = ({ data }: HomePageProps) => {
     <Root>
       <Helmet title={t("home:pageTitle")} />
       <HeadingBanner
-        heading={t("home:headingBanner.heading")}
         description={t("home:headingBanner.description")}
+        heading={t("home:headingBanner.heading")}
       />
       <AboutBanner
-        heading={t("home:aboutBanner.heading")}
         description={t("home:aboutBanner.description")}
+        heading={t("home:aboutBanner.heading")}
         image={{
           url: t("home:aboutBanner.imageUrl"),
           title: t("home:aboutBanner.imageTitle"),
         }}
       />
       <IconBanner
-        heading={t("home:iconBanner.heading")}
         description={t("home:iconBanner.description")}
+        heading={t("home:iconBanner.heading")}
         items={technology.edges}
       />
       <PersonalWorkBanner
-        heading={t("home:personalWorkBanner.heading")}
         description={t("home:personalWorkBanner.description")}
+        heading={t("home:personalWorkBanner.heading")}
         projects={projects.edges}
       />
       <TimelineBanner
-        heading={t("home:workExperienceBanner.heading")}
         description={t("home:workExperienceBanner.description")}
+        heading={t("home:workExperienceBanner.heading")}
         items={work.edges}
       />
       <ContactBanner
-        heading={t("home:contactBanner.heading")}
         description={t("home:contactBanner.description")}
+        heading={t("home:contactBanner.heading")}
       />
     </Root>
   );

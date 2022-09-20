@@ -10,7 +10,7 @@ const getSpacerSize = (size: SpacerStyleProps["size"]) => {
     case "large":
       return "4rem";
     default:
-      return null;
+      return;
   }
 };
 

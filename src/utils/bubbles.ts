@@ -1,7 +1,7 @@
 import { getRandomNumber } from "#/utils/number";
 
 export const generateBubbles = (bubblesCount: number) => {
-  const bubbles = Array.from(Array(bubblesCount));
+  const bubbles = [...(new Array(bubblesCount) as [undefined])];
 
   return bubbles.map((element, index) => {
     return {

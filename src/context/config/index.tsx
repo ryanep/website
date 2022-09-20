@@ -1,9 +1,11 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useMemo, useEffect, useState } from "react";
 import type { ConfigContextProviderProps, ConfigContextValues } from "./types";
 
 export const ConfigContext = createContext<ConfigContextValues>({
   theme: "light",
-  setTheme: () => {},
+  setTheme: () => {
+    // Mock setTheme
+  },
 });
 
 export const ConfigContextProvider = ({
@@ -28,12 +30,16 @@ export const ConfigContextProvider = ({
     }
   }, []);
 
-  const value = {
-    theme,
-    setTheme,
-  };
+  const contextValue = useMemo(() => {
+    return {
+      theme,
+      setTheme,
+    };
+  }, [theme]);
 
   return (
-    <ConfigContext.Provider value={value}>{children}</ConfigContext.Provider>
+    <ConfigContext.Provider value={contextValue}>
+      {children}
+    </ConfigContext.Provider>
   );
 };

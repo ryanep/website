@@ -1,8 +1,8 @@
 import { Heading } from "#/components/heading";
-import { Spacer } from "#/components/spacer";
 import { Section } from "#/components/section";
-import { PersonalWorkBannerProps } from "./types";
+import { Spacer } from "#/components/spacer";
 import * as styled from "./styles";
+import { PersonalWorkBannerProps } from "./types";
 
 export const PersonalWorkBanner = ({
   heading,
@@ -12,7 +12,7 @@ export const PersonalWorkBanner = ({
   return (
     <Section>
       <styled.Container>
-        <Heading type="h2" text={heading} />
+        <Heading text={heading} type="h2" />
         <Spacer size="medium" />
 
         <styled.Description>{description}</styled.Description>
@@ -24,12 +24,12 @@ export const PersonalWorkBanner = ({
               <styled.Project key={project.node.id}>
                 <styled.Link
                   href={project.node.url}
-                  target="_blank"
                   rel="noopener"
+                  target="_blank"
                 >
                   <styled.ProjectImage
-                    src={project.node.image.file.url}
                     alt={project.node.image.title}
+                    src={project.node.image.file.url}
                   />
 
                   <div>

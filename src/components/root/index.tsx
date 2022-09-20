@@ -1,8 +1,8 @@
 import { Helmet } from "react-helmet";
-import { Header } from "#/components/header";
 import { Footer } from "#/components/footer";
-import { RootProps } from "./types";
+import { Header } from "#/components/header";
 import * as styled from "./styles";
+import { RootProps } from "./types";
 
 const navLinks = [
   {
@@ -20,10 +20,10 @@ export const Root = ({ children }: RootProps) => {
     <div>
       <Helmet>
         <html lang="en" />
-        <link rel="icon" href="//cdn.ryanep.com/favicon.ico" />
+        <link href="//cdn.ryanep.com/favicon.ico" rel="icon" />
       </Helmet>
       <styled.Global />
-      <Header showNav={false} navLinks={navLinks} />
+      <Header navLinks={navLinks} showNav={false} />
       {children}
       <Footer />
     </div>

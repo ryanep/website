@@ -1,5 +1,5 @@
-import { InputProps } from "./types";
 import * as styled from "./styles";
+import { InputProps } from "./types";
 
 export const Input = ({
   id,
@@ -14,10 +14,10 @@ export const Input = ({
       <styled.Label>{title}</styled.Label>
       <styled.Input
         id={id}
-        type={type}
         name={name}
         onChange={onChange}
         required={required}
+        type={type}
       />
     </label>
   );

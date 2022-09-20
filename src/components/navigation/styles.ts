@@ -1,5 +1,5 @@
-import styled from "styled-components";
 import GatsbyLink from "gatsby-link";
+import styled from "styled-components";
 import { colours } from "#/constants/colours";
 
 export const List = styled.ul`

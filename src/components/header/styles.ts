@@ -1,5 +1,5 @@
-import styled from "styled-components";
 import GatsbyLink from "gatsby-link";
+import styled from "styled-components";
 import { Wrap } from "#/components/wrap";
 
 export const Header = styled.header`

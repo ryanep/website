@@ -11,7 +11,7 @@ TASK_FAILED = @echo ${COLOUR_RED} âœ˜ Task failed: $@ ${COLOUR_END}
 
 build:
 	${TASK_STARTED}
-	NODE_ENV=production yarn build
+	NODE_ENV=production npm run build
 	${TASK_DONE}
 deploy-infra:
 	${TASK_STARTED}

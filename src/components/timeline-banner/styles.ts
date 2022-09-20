@@ -1,7 +1,7 @@
 import styled from "styled-components";
+import { Wrap } from "#/components/wrap";
 import { colours } from "#/constants/colours";
 import { fromTablet } from "#/styles/breakpoints";
-import { Wrap } from "#/components/wrap";
 import { IconStyleProps } from "./types";
 
 export const Banner = styled.section`

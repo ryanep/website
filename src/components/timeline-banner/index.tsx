@@ -1,10 +1,10 @@
 import { useTranslation } from "react-i18next";
 import { Heading } from "#/components/heading";
-import { Spacer } from "#/components/spacer";
 import { Section } from "#/components/section";
-import { TimelineBannerProps } from "./types";
+import { Spacer } from "#/components/spacer";
 import { Wrap } from "../wrap";
 import * as styled from "./styles";
+import { TimelineBannerProps } from "./types";
 
 export const TimelineBanner = ({
   heading,
@@ -16,7 +16,7 @@ export const TimelineBanner = ({
   return (
     <Section>
       <Wrap>
-        <Heading type="h2" text={heading} />
+        <Heading text={heading} type="h2" />
         <Spacer size="medium" />
 
         <styled.Description>{description}</styled.Description>
@@ -41,10 +41,10 @@ export const TimelineBanner = ({
                     <styled.ItemHeader>
                       <styled.Icon colour={node.colour}>
                         <styled.ItemIcon
-                          src={node.icon.file.url}
                           alt={node.icon.title}
-                          width="20"
                           height="20"
+                          src={node.icon.file.url}
+                          width="20"
                         />
                       </styled.Icon>
 
@@ -53,7 +53,7 @@ export const TimelineBanner = ({
                           {node.companyName}
                         </styled.ItemHeading>
                         <styled.ItemDate>
-                          {startDate} -{" "}
+                          {`${startDate} - `}
                           {endDate || t("home:workExperienceBanner.present")}
                         </styled.ItemDate>
                       </div>

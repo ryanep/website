@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
 import { Wrap } from "#/components/wrap";
-import * as styled from "./styles";
 import { getCurrentYear } from "#/utils/date";
+import * as styled from "./styles";
 
 export const Footer = () => {
   const { t } = useTranslation();

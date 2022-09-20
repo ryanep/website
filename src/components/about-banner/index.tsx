@@ -1,9 +1,9 @@
 import { Heading } from "#/components/heading";
+import { Section } from "#/components/section";
 import { Spacer } from "#/components/spacer";
 import { Wrap } from "#/components/wrap";
-import { Section } from "#/components/section";
-import { AboutBannerProps } from "./types";
 import * as styled from "./styles";
+import { AboutBannerProps } from "./types";
 
 export const AboutBanner = ({
   heading,
@@ -13,10 +13,10 @@ export const AboutBanner = ({
   return (
     <Section>
       <Wrap>
-        <styled.Image src={image.url} alt={image.title} />
+        <styled.Image alt={image.title} src={image.url} />
         <Spacer size="small" />
 
-        <Heading type="h2" text={heading} />
+        <Heading text={heading} type="h2" />
         <Spacer size="medium" />
 
         <styled.Description source={description} />

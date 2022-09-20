@@ -1,6 +1,6 @@
 import { generateBubbles } from "#/utils/bubbles";
-import { BubblesProps } from "./types";
 import * as styled from "./styles";
+import { BubblesProps } from "./types";
 
 export const Bubbles = ({ bubbleCount }: BubblesProps) => {
   const bubbles = generateBubbles(bubbleCount);
@@ -11,8 +11,8 @@ export const Bubbles = ({ bubbleCount }: BubblesProps) => {
         <styled.Bubble
           key={bubble.id}
           left={bubble.left}
-          top={bubble.top}
           size={bubble.size}
+          top={bubble.top}
         />
       ))}
     </styled.Bubbles>

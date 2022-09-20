@@ -1,5 +1,5 @@
-import { NavigationProps } from "./types";
 import * as styled from "./styles";
+import { NavigationProps } from "./types";
 
 export const Navigation = ({ links }: NavigationProps) => {
   return (
@@ -7,7 +7,7 @@ export const Navigation = ({ links }: NavigationProps) => {
       <styled.List>
         {links &&
           links.map((link) => (
-            <styled.ListItem>
+            <styled.ListItem key={link.url}>
               <styled.Link to={link.url}>{link.title}</styled.Link>
             </styled.ListItem>
           ))}

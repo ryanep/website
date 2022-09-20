@@ -1,11 +1,11 @@
 import { ReactNode } from "react";
 import { ThemeProvider } from "styled-components";
-import { lightTheme, darkTheme } from "#/styles/theme";
 import { ConfigContextProvider } from "#/context/config";
-import type { ProvidersProps } from "./types";
 import { useConfigContext } from "#/hooks/context/config";
+import { lightTheme, darkTheme } from "#/styles/theme";
+import type { ProvidersProps } from "./types";
 
-const Test = ({ children }: { children: ReactNode }) => {
+const StyledProvider = ({ children }: { children: ReactNode }) => {
   const { theme } = useConfigContext();
 
   return (
@@ -18,7 +18,7 @@ const Test = ({ children }: { children: ReactNode }) => {
 export const Providers = ({ children }: ProvidersProps) => {
   return (
     <ConfigContextProvider>
-      <Test>{children}</Test>
+      <StyledProvider>{children}</StyledProvider>
     </ConfigContextProvider>
   );
 };

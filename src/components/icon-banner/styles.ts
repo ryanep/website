@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { IconStyleProps } from "./types";
 import { colours } from "#/constants/colours";
+import { IconStyleProps } from "./types";
 
 export const Description = styled.p`
   max-width: 82rem;

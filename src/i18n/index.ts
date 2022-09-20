@@ -1,6 +1,6 @@
 import i18n from "i18next";
-import { initReactI18next } from "react-i18next";
 import i18nXhr from "i18next-xhr-backend";
+import { initReactI18next } from "react-i18next";
 import translations from "#/locales/en/translations.json";
 
 export const initI18n = () => {
