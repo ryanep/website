@@ -1,4 +1,10 @@
-import { createContext, useMemo, useEffect, useState } from "react";
+import {
+  createContext,
+  useMemo,
+  useEffect,
+  useState,
+  useCallback,
+} from "react";
 import type { ConfigContextProviderProps, ConfigContextValues } from "./types";
 
 export const ConfigContext = createContext<ConfigContextValues>({
@@ -13,6 +19,16 @@ export const ConfigContextProvider = ({
 }: ConfigContextProviderProps) => {
   const [theme, setTheme] = useState<ConfigContextValues["theme"]>("light");
 
+  const changeTheme = useCallback((theme: "light" | "dark") => {
+    if (theme === "dark") {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+
+    setTheme(theme);
+  }, []);
+
   useEffect(() => {
     if (typeof window === "undefined") {
       return;
@@ -22,20 +38,21 @@ export const ConfigContextProvider = ({
 
     prefersDarkMode.addEventListener("change", (event) => {
       const mode = event.matches ? "dark" : "light";
-      setTheme(mode);
+
+      changeTheme(mode);
     });
 
     if (prefersDarkMode.matches) {
-      setTheme("dark");
+      changeTheme("dark");
     }
-  }, []);
+  }, [changeTheme]);
 
   const contextValue = useMemo(() => {
     return {
       theme,
-      setTheme,
+      setTheme: changeTheme,
     };
-  }, [theme]);
+  }, [theme, changeTheme]);
 
   return (
     <ConfigContext.Provider value={contextValue}>

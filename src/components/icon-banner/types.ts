@@ -15,8 +15,3 @@ export interface LogoBannerProps {
     };
   }[];
 }
-
-export interface IconStyleProps {
-  colour: string;
-  name: string;
-}

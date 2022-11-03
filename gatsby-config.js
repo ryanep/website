@@ -7,6 +7,7 @@ config({
 
 const gatsbyConfig = {
   plugins: [
+    "gatsby-plugin-postcss",
     "gatsby-plugin-image",
     "gatsby-plugin-react-helmet",
     {
@@ -18,7 +19,6 @@ const gatsbyConfig = {
       },
     },
     "gatsby-plugin-typescript-checker",
-    "gatsby-plugin-styled-components",
     {
       resolve: "gatsby-plugin-alias-imports",
       options: {

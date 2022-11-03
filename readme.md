@@ -15,7 +15,7 @@ This project is a personal portfolio built using Gatsby with data from Contentfu
 - Content managed via CMS using Contentful.
 - Use of i18n for localisation.
 - Fully typed, including generated GraphQL types.
-- Components styling using styled-components.
+- Components styling using Tailwind CSS.
 - Terraform for infrastructure.
 
 ## Screenshot

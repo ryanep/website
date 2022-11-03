@@ -10,4 +10,7 @@ module.exports = {
     "@ryanep/eslint-config/json",
     "@ryanep/eslint-config/prettier",
   ],
+  rules: {
+    "react/forbid-component-props": 0,
+  },
 };
