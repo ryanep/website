@@ -21,10 +21,12 @@ export const HomePage = ({ data }: HomePageProps) => {
   return (
     <Root>
       <Helmet title={t("home:pageTitle")} />
+
       <HeadingBanner
         description={t("home:headingBanner.description")}
         heading={t("home:headingBanner.heading")}
       />
+
       <AboutBanner
         description={t("home:aboutBanner.description")}
         heading={t("home:aboutBanner.heading")}
@@ -33,21 +35,25 @@ export const HomePage = ({ data }: HomePageProps) => {
           title: t("home:aboutBanner.imageTitle"),
         }}
       />
+
       <IconBanner
         description={t("home:iconBanner.description")}
         heading={t("home:iconBanner.heading")}
         items={technology.edges}
       />
+
       <PersonalWorkBanner
         description={t("home:personalWorkBanner.description")}
         heading={t("home:personalWorkBanner.heading")}
         projects={projects.edges}
       />
+
       <TimelineBanner
         description={t("home:workExperienceBanner.description")}
         heading={t("home:workExperienceBanner.heading")}
         items={work.edges}
       />
+
       <ContactBanner
         description={t("home:contactBanner.description")}
         heading={t("home:contactBanner.heading")}
@@ -63,6 +69,9 @@ export const query = graphql`
         node {
           id
           name
+          description {
+            description
+          }
           companyName
           role
           startDate

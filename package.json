@@ -14,6 +14,7 @@
   "dependencies": {
     "clsx": "^1.2.1",
     "dotenv": "^16.0.2",
+    "framer-motion": "^7.6.4",
     "gatsby": "^4.23.0",
     "gatsby-link": "^4.23.0",
     "i18next": "^21.9.2",
