@@ -9,7 +9,7 @@ export const Navigation = ({ links }: NavigationProps) => {
           ? links.map((link) => (
               <li className="ml-10 first:ml-0" key={link.url}>
                 <GatsbyLink
-                  className="text-white text-sm font-semibold no-underline hover:underline"
+                  className="text-sm font-semibold text-white no-underline hover:underline"
                   to={link.url}
                 >
                   {link.title}

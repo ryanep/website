@@ -5,10 +5,10 @@ export const Bubbles = ({ bubbleCount }: BubblesProps) => {
   const bubbles = generateBubbles(bubbleCount);
 
   return (
-    <div className="absolute top-0 left-1/2 w-[1920px] h-full overflow-hidden pointer-events-none -translate-x-1/2">
+    <div className="pointer-events-none absolute top-0 left-1/2 mx-auto h-full w-full -translate-x-1/2 overflow-hidden">
       {bubbles.map((bubble) => (
         <div
-          className="absolute w-16 h-16 rounded-sm bg-black opacity-10"
+          className="absolute h-16 w-16 rounded-sm bg-black opacity-10"
           key={bubble.id}
           style={{ left: bubble.left, top: bubble.top }}
         />

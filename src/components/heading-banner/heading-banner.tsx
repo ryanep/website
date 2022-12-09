@@ -12,8 +12,9 @@ export const HeadingBanner = ({ heading, description }: HeadingBannerProps) => {
   const opacity = useTransform(scrollYProgress, [0, 0.04], [1, 0]);
 
   return (
-    <div className="flex sticky z-20 flex-row items-center h-[400px] overflow-hidden bg-primary dark:bg-primary-dark text-white top-[calc(-400px+64px)] transition-colors">
-      <Bubbles bubbleCount={20} />
+    // eslint-disable-next-line tailwindcss/no-arbitrary-value
+    <div className="sticky top-[calc(-400px+64px)] z-20 flex h-[400px] flex-row items-center overflow-hidden bg-primary text-white transition-colors dark:bg-primary-dark">
+      <Bubbles bubbleCount={14} />
 
       <Wrap className="flex flex-col items-center">
         <motion.div

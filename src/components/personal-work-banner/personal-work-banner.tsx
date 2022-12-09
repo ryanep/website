@@ -18,27 +18,27 @@ export const PersonalWorkBanner = ({
         <p className="mx-auto max-w-4xl">{description}</p>
         <Spacer size="large" />
 
-        <div className="flex flex-col gap-5 justify-between text-left md:grid md:grid-cols-2">
+        <div className="flex flex-col justify-between gap-5 text-left md:grid md:grid-cols-2">
           {projects.map((project) => {
             return (
               <article
-                className="flex items-center rounded-md w-full mx-auto shadow-md bg-neutral-100 dark:bg-neutral-900 hover:opacity-90 transition-colors"
+                className="mx-auto flex w-full items-center rounded-md bg-neutral-100 shadow-md transition-colors hover:opacity-90 dark:bg-neutral-900"
                 key={project.node.id}
               >
                 <a
-                  className="flex items-center gap-3 p-4 w-full"
+                  className="flex w-full items-center gap-3 p-4"
                   href={project.node.url}
                   rel="noopener noreferrer"
                   target="_blank"
                 >
                   <img
                     alt={project.node.image.title}
-                    className="shrink-0 block w-16 aspect-square rounded-xl"
+                    className="block aspect-square w-16 shrink-0 rounded-xl"
                     src={project.node.image.file.url}
                   />
 
                   <div>
-                    <h3 className="font-bold text-xl mb-1">
+                    <h3 className="mb-1 text-xl font-bold">
                       {project.node.name}
                     </h3>
                     <p className="text-sm">{project.node.description}</p>

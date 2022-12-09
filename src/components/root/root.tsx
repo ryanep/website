@@ -19,7 +19,7 @@ export const Root = ({ children }: RootProps) => {
     <>
       <Helmet>
         <html lang="en" />
-        <body className="antialiased bg-primary dark:bg-primary-dark text-neutral-800" />
+        <body className="bg-primary text-neutral-800 antialiased dark:bg-primary-dark" />
         <link href="//cdn.ryanep.com/favicon.ico" rel="icon" />
       </Helmet>
 

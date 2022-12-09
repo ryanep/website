@@ -5,6 +5,7 @@ module.exports = {
     "@ryanep/eslint-config/base",
     "@ryanep/eslint-config/typescript",
     "@ryanep/eslint-config/react",
+    "@ryanep/eslint-config/tailwind",
     "@ryanep/eslint-config/jest",
     "@ryanep/eslint-config/testing-library",
     "@ryanep/eslint-config/json",

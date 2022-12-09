@@ -22,7 +22,7 @@ export const TimelineBanner = ({
         <Spacer size="large" />
 
         <div className="relative">
-          <div className="absolute left-1/2 w-1 h-full -translate-x-1/2 rounded bg-neutral-300 dark:bg-neutral-400" />
+          <div className="absolute left-1/2 h-full w-1 -translate-x-1/2 rounded bg-neutral-300 dark:bg-neutral-400" />
 
           <div className="flex flex-col gap-4">
             {items.map(({ node }) => {
@@ -39,18 +39,19 @@ export const TimelineBanner = ({
 
               return (
                 <article
-                  className="text-left z-10 md:w-1/2 odd:md:pr-4 even:md:pl-4 even:md:ml-auto md:-mt-16 first:md:mt-0 relative group"
+                  className="group relative z-10 text-left md:-mt-16 md:w-1/2 first:md:mt-0 odd:md:pr-4 even:md:ml-auto even:md:pl-4"
                   key={node.id}
                 >
-                  <div className="bg-white dark:bg-neutral-800 shadow-md p-4 rounded-md transition-colors">
-                    <header className="flex flex-row flex-wrap items-center mb-3 md:flex-nowrap">
+                  <div className="rounded-md bg-white p-4 shadow-md transition-colors dark:bg-neutral-800">
+                    <header className="mb-3 flex flex-row flex-wrap items-center md:flex-nowrap">
                       <div
-                        className="flex items-center justify-center w-10 h-10 aspect-square mr-3 rounded-md"
+                        className="mr-3 flex aspect-square h-10 w-10 items-center justify-center rounded-md"
                         style={{ backgroundColor: node.colour }}
                       >
                         <img
                           alt={node.icon.title}
-                          className="block w-auto h-auto max-w-[24px] max-h-5 opacity-80 brightness-[1000] filter"
+                          // eslint-disable-next-line tailwindcss/no-arbitrary-value
+                          className="block h-auto max-h-5 w-auto max-w-[24px] opacity-80 brightness-200"
                           height="20"
                           src={node.icon.file.url}
                           width="20"
@@ -62,7 +63,7 @@ export const TimelineBanner = ({
                           {node.companyName}
                         </h3>
 
-                        <p className="shrink-0 w-full md:w-auto text-xs font-medium">
+                        <p className="w-full shrink-0 text-xs font-medium md:w-auto">
                           {`${formattedStartDate} - ${
                             formattedEndDate ||
                             t("home:workExperienceBanner.present")
@@ -73,7 +74,7 @@ export const TimelineBanner = ({
 
                     <p className="text-sm">{node.role}</p>
 
-                    <div className="md:absolute md:h-3 md:w-3 md:rounded-full md:bg-neutral-400 md:dark:bg-neutral-500 md:top-1/2 md:group-even:left-0 md:group-even:-translate-x-1/2 md:group-odd:right-0 md:group-odd:translate-x-1/2" />
+                    <div className="md:absolute md:top-1/2 md:h-3 md:w-3 md:rounded-full md:bg-neutral-400 md:group-odd:right-0 md:group-odd:translate-x-1/2 md:group-even:left-0 md:group-even:-translate-x-1/2 md:dark:bg-neutral-500" />
                   </div>
                 </article>
               );

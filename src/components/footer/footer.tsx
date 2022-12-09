@@ -7,7 +7,7 @@ export const Footer = () => {
   const year = getCurrentYear();
 
   return (
-    <footer className="p-5 bg-primary dark:bg-primary-dark text-center text-xs text-white transition-colors">
+    <footer className="bg-primary p-5 text-center text-xs text-white transition-colors dark:bg-primary-dark">
       <Wrap>{t("footer:copyright", { year })}</Wrap>
     </footer>
   );

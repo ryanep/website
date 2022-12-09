@@ -13,7 +13,7 @@ export const Input = ({
       <div className="mb-1 text-sm font-medium">{title}</div>
 
       <input
-        className="block font-medium rounded-md w-full p-3 bg-neutral-100 dark:bg-neutral-800 dark:text-neutral-300 transition-colors"
+        className="block w-full rounded-md bg-neutral-100 p-3 font-medium transition-colors dark:bg-neutral-800 dark:text-neutral-300"
         id={id}
         name={name}
         onChange={onChange}

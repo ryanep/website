@@ -4,8 +4,8 @@ import { TitleBannerProps } from "./types";
 
 export const TitleBanner = ({ heading }: TitleBannerProps) => {
   return (
-    <div className="sticky pt-16 z-10 bg-primary text-white">
-      <div className="py-3 bg-neutral-900">
+    <div className="sticky z-10 bg-primary pt-16 text-white">
+      <div className="bg-neutral-900 py-3">
         <Wrap>
           <Heading text={heading} type="h1" />
         </Wrap>

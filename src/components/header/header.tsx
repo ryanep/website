@@ -16,7 +16,7 @@ export const Header = ({ showNav, navLinks }: HeaderProps) => {
 
   return (
     <header className="fixed top-0 z-30 w-full">
-      <Wrap className="flex items-center h-16">
+      <Wrap className="flex h-16 items-center">
         <GatsbyLink className="mr-auto" to="/">
           <Logo />
         </GatsbyLink>
