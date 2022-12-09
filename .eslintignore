@@ -1,1 +1,4 @@
 .eslintrc.js
+gatsby-browser.tsx
+gatsby-config.js
+gatsby-ssr.tsx
