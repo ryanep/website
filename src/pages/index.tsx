@@ -62,62 +62,60 @@ export const HomePage = ({ data }: HomePageProps) => {
   );
 };
 
-export const query = graphql`
-  query Home {
-    work: allContentfulWork(sort: { fields: endDate, order: DESC }) {
-      edges {
-        node {
-          id
-          name
-          description {
-            description
-          }
-          companyName
-          role
-          startDate
-          endDate
-          colour
-          icon {
-            title
-            file {
-              url
-            }
-          }
-        }
-      }
-    }
-    projects: allContentfulProject(sort: { fields: name, order: ASC }) {
-      edges {
-        node {
-          id
-          name
+export const query = graphql`query Home {
+  work: allContentfulWork(sort: {endDate: DESC}) {
+    edges {
+      node {
+        id
+        name
+        description {
           description
-          url
-          image {
-            title
-            file {
-              url
-            }
-          }
         }
-      }
-    }
-    technology: allContentfulTechnology(sort: { fields: name, order: ASC }) {
-      edges {
-        node {
-          id
-          name
-          colour
-          icon {
-            title
-            file {
-              url
-            }
+        companyName
+        role
+        startDate
+        endDate
+        colour
+        icon {
+          title
+          file {
+            url
           }
         }
       }
     }
   }
-`;
+  projects: allContentfulProject(sort: {name: ASC}) {
+    edges {
+      node {
+        id
+        name
+        description
+        url
+        image {
+          title
+          file {
+            url
+          }
+        }
+      }
+    }
+  }
+  technology: allContentfulTechnology(sort: {name: ASC}) {
+    edges {
+      node {
+        id
+        name
+        colour
+        icon {
+          title
+          file {
+            url
+          }
+        }
+      }
+    }
+  }
+}`;
 
 export default HomePage;

@@ -1,4 +1,4 @@
-import GatsbyLink from "gatsby-link";
+import { Link as GatsbyLink } from "gatsby";
 import { NavigationProps } from "./types";
 
 export const Navigation = ({ links }: NavigationProps) => {

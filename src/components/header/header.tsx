@@ -1,4 +1,4 @@
-import GatsbyLink from "gatsby-link";
+import { Link as GatsbyLink } from "gatsby";
 import { Logo } from "#/components/logo";
 import { Navigation } from "#/components/navigation";
 import { Wrap } from "#/components/wrap";
