@@ -20,7 +20,7 @@ export const Header = ({ showNav, navLinks }: HeaderProps) => {
         <GatsbyLink className="mr-auto" to="/">
           <Logo />
         </GatsbyLink>
-        {showNav && <Navigation links={navLinks} />}
+        {showNav ? <Navigation links={navLinks} /> : null}
         <button
           className="cursor-pointer"
           onClick={handleThemeToggle}

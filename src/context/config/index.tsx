@@ -7,12 +7,7 @@ import {
 } from "react";
 import type { ConfigContextProviderProps, ConfigContextValues } from "./types";
 
-export const ConfigContext = createContext<ConfigContextValues>({
-  theme: "light",
-  setTheme: () => {
-    // Mock setTheme
-  },
-});
+export const ConfigContext = createContext<ConfigContextValues | null>(null);
 
 export const ConfigContextProvider = ({
   children,
