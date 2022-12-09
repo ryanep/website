@@ -2,7 +2,7 @@ import { Heading } from "#/components/heading";
 import { Section } from "#/components/section";
 import { Spacer } from "#/components/spacer";
 import { Wrap } from "#/components/wrap";
-import { LogoBannerProps } from "./types";
+import type { LogoBannerProps } from "./types";
 
 export const IconBanner = ({
   heading,

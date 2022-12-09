@@ -1,4 +1,4 @@
-import { ChangeEvent, FormEvent, useState } from "react";
+import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Button } from "#/components/button";
 import { Heading } from "#/components/heading";
@@ -7,14 +7,15 @@ import { Section } from "#/components/section";
 import { Spacer } from "#/components/spacer";
 import { Textarea } from "#/components/textarea";
 import { Wrap } from "#/components/wrap";
-import { ContactBannerProps, ContactFormData } from "./types";
+import type { ContactBannerProps, ContactFormData } from "./types";
+import type { ChangeEvent, FormEvent} from "react";
 
 export const ContactBanner = ({ heading, description }: ContactBannerProps) => {
   const { t } = useTranslation();
   const [formData, setFormData] = useState<ContactFormData>({
+    body: "",
     name: "",
     subject: "",
-    body: "",
   });
 
   const handleInputChange = (

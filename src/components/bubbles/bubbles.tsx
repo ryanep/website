@@ -1,5 +1,5 @@
 import { generateBubbles } from "#/utils/bubbles";
-import { BubblesProps } from "./types";
+import type { BubblesProps } from "./types";
 
 export const Bubbles = ({ bubbleCount }: BubblesProps) => {
   const bubbles = generateBubbles(bubbleCount);

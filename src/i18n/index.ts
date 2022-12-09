@@ -8,16 +8,16 @@ export const initI18n = () => {
     .use(i18nXhr)
     .use(initReactI18next)
     .init({
-      resources: {
-        en: translations,
-      },
-      lng: "en",
-      fallbackLng: "en",
-      ns: ["translations"],
-      defaultNS: "translations",
       debug: process.env.NODE_ENV === "development",
+      defaultNS: "translations",
+      fallbackLng: "en",
+      lng: "en",
+      ns: ["translations"],
       react: {
         useSuspense: false,
+      },
+      resources: {
+        en: translations,
       },
     });
 };

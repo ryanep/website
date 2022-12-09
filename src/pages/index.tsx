@@ -1,4 +1,4 @@
-import { graphql, PageRendererProps } from "gatsby";
+import { graphql } from "gatsby";
 import { Helmet } from "react-helmet";
 import { useTranslation } from "react-i18next";
 import { AboutBanner } from "#/components/about-banner";
@@ -8,7 +8,8 @@ import { IconBanner } from "#/components/icon-banner";
 import { PersonalWorkBanner } from "#/components/personal-work-banner";
 import { Root } from "#/components/root";
 import { TimelineBanner } from "#/components/timeline-banner";
-import { HomeQuery } from "../../types/graphql-types";
+import type { HomeQuery } from "../../types/graphql-types";
+import type { PageRendererProps } from "gatsby";
 
 type HomePageProps = PageRendererProps & {
   data: HomeQuery;
@@ -31,8 +32,8 @@ export const HomePage = ({ data }: HomePageProps) => {
         description={t("home:aboutBanner.description")}
         heading={t("home:aboutBanner.heading")}
         image={{
-          url: t("home:aboutBanner.imageUrl"),
           title: t("home:aboutBanner.imageTitle"),
+          url: t("home:aboutBanner.imageUrl"),
         }}
       />
 

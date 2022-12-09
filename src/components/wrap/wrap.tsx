@@ -1,5 +1,5 @@
 import { clsx } from "clsx";
-import { WrapProps } from "./types";
+import type { WrapProps } from "./types";
 
 export const Wrap = ({ className, children }: WrapProps) => {
   return (

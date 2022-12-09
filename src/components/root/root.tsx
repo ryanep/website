@@ -1,16 +1,16 @@
 import { Helmet } from "react-helmet";
 import { Footer } from "#/components/footer";
 import { Header } from "#/components/header";
-import { RootProps } from "./types";
+import type { RootProps } from "./types";
 
 const navLinks = [
   {
-    url: "/",
     title: "Home",
+    url: "/",
   },
   {
-    url: "/contact",
     title: "Contact",
+    url: "/contact",
   },
 ];
 

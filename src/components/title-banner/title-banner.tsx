@@ -1,6 +1,6 @@
 import { Heading } from "#/components/heading";
 import { Wrap } from "#/components/wrap";
-import { TitleBannerProps } from "./types";
+import type { TitleBannerProps } from "./types";
 
 export const TitleBanner = ({ heading }: TitleBannerProps) => {
   return (

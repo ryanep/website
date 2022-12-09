@@ -3,7 +3,7 @@ import { Heading } from "#/components/heading";
 import { Section } from "#/components/section";
 import { Spacer } from "#/components/spacer";
 import { Wrap } from "../wrap/wrap";
-import { TimelineBannerProps } from "./types";
+import type { TimelineBannerProps } from "./types";
 
 export const TimelineBanner = ({
   heading,
@@ -29,8 +29,8 @@ export const TimelineBanner = ({
               const startDate = new Date(node.startDate);
               const endDate = new Date(node.endDate);
               const dateFormatter = new Intl.DateTimeFormat("en", {
-                year: "numeric",
                 month: "short",
+                year: "numeric",
               });
               const formattedStartDate = dateFormatter.format(startDate);
               const formattedEndDate = node.endDate

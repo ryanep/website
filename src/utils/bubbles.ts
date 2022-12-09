@@ -7,8 +7,8 @@ export const generateBubbles = (bubblesCount: number) => {
     return {
       id: index,
       left: getRandomNumber(1, 1920),
-      top: getRandomNumber(1, 350),
       size: getRandomNumber(1, 6),
+      top: getRandomNumber(1, 350),
     };
   });
 };

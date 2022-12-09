@@ -44,8 +44,8 @@ export const ConfigContextProvider = ({
 
   const contextValue = useMemo(() => {
     return {
-      theme,
       setTheme: changeTheme,
+      theme,
     };
   }, [theme, changeTheme]);
 

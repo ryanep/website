@@ -3,7 +3,7 @@ import { Markdown } from "#/components/markdown";
 import { Section } from "#/components/section";
 import { Spacer } from "#/components/spacer";
 import { Wrap } from "#/components/wrap";
-import { AboutBannerProps } from "./types";
+import type { AboutBannerProps } from "./types";
 
 export const AboutBanner = ({
   heading,

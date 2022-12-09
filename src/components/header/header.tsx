@@ -3,7 +3,7 @@ import { Logo } from "#/components/logo";
 import { Navigation } from "#/components/navigation";
 import { Wrap } from "#/components/wrap";
 import { useConfigContext } from "#/hooks/context/config";
-import { HeaderProps } from "./types";
+import type { HeaderProps } from "./types";
 
 export const Header = ({ showNav, navLinks }: HeaderProps) => {
   const { theme, setTheme } = useConfigContext();

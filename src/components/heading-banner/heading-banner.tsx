@@ -3,7 +3,7 @@ import { Bubbles } from "#/components/bubbles/bubbles";
 import { Heading } from "#/components/heading";
 import { Spacer } from "#/components/spacer";
 import { Wrap } from "#/components/wrap";
-import { HeadingBannerProps } from "./types";
+import type { HeadingBannerProps } from "./types";
 
 export const HeadingBanner = ({ heading, description }: HeadingBannerProps) => {
   const { scrollYProgress } = useScroll();
@@ -19,7 +19,7 @@ export const HeadingBanner = ({ heading, description }: HeadingBannerProps) => {
       <Wrap className="flex flex-col items-center">
         <motion.div
           className="text-center"
-          style={{ translateY: headingY, opacity }}
+          style={{ opacity, translateY: headingY }}
         >
           <Heading text={heading} type="h1" />
         </motion.div>
@@ -28,7 +28,7 @@ export const HeadingBanner = ({ heading, description }: HeadingBannerProps) => {
 
         <motion.div
           className="text-center"
-          style={{ translateY: descriptionY, opacity }}
+          style={{ opacity, translateY: descriptionY }}
         >
           <p className="text-lg">{description}</p>
         </motion.div>
