@@ -1,4 +1,4 @@
-import { Link as GatsbyLink } from "gatsby";
+import { Link } from "#/components/link";
 import { Logo } from "#/components/logo";
 import { Navigation } from "#/components/navigation";
 import { Wrap } from "#/components/wrap";
@@ -17,9 +17,9 @@ export const Header = ({ showNav, navLinks }: HeaderProps) => {
   return (
     <header className="fixed top-0 z-30 w-full">
       <Wrap className="flex h-16 items-center">
-        <GatsbyLink className="mr-auto" to="/">
+        <Link className="mr-auto" to="/">
           <Logo />
-        </GatsbyLink>
+        </Link>
         {showNav ? <Navigation links={navLinks} /> : null}
         <button
           className="cursor-pointer"

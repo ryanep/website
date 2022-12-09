@@ -1,4 +1,4 @@
-import { Link as GatsbyLink } from "gatsby";
+import { Link } from "#/components/link";
 import { NavigationProps } from "./types";
 
 export const Navigation = ({ links }: NavigationProps) => {
@@ -8,12 +8,12 @@ export const Navigation = ({ links }: NavigationProps) => {
         {links
           ? links.map((link) => (
               <li className="ml-10 first:ml-0" key={link.url}>
-                <GatsbyLink
+                <Link
                   className="text-sm font-semibold text-white no-underline hover:underline"
                   to={link.url}
                 >
                   {link.title}
-                </GatsbyLink>
+                </Link>
               </li>
             ))
           : null}
