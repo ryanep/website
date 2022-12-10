@@ -6,8 +6,8 @@ import { Wrap } from "#/components/wrap";
 import type { AboutBannerProps } from "./types";
 
 export const AboutBanner = ({
-  heading,
   description,
+  heading,
   image,
 }: AboutBannerProps) => {
   return (

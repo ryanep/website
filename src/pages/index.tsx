@@ -17,7 +17,7 @@ type HomePageProps = PageRendererProps & {
 
 export const HomePage = ({ data }: HomePageProps) => {
   const { t } = useTranslation();
-  const { work, projects, technology } = data;
+  const { projects, technology, work } = data;
 
   return (
     <Root>

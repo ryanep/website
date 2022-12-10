@@ -5,8 +5,8 @@ import { Wrap } from "#/components/wrap";
 import type { LogoBannerProps } from "./types";
 
 export const IconBanner = ({
-  heading,
   description,
+  heading,
   items,
 }: LogoBannerProps) => {
   return (

@@ -5,8 +5,8 @@ import { Wrap } from "#/components/wrap";
 import type { PersonalWorkBannerProps } from "./types";
 
 export const PersonalWorkBanner = ({
-  heading,
   description,
+  heading,
   projects,
 }: PersonalWorkBannerProps) => {
   return (

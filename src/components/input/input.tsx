@@ -2,11 +2,11 @@ import type { InputProps } from "./types";
 
 export const Input = ({
   id,
-  type,
   name,
-  title,
   onChange,
   required,
+  title,
+  type,
 }: InputProps) => {
   return (
     <label htmlFor={id}>

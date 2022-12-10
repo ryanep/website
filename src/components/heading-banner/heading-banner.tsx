@@ -5,7 +5,7 @@ import { Spacer } from "#/components/spacer";
 import { Wrap } from "#/components/wrap";
 import type { HeadingBannerProps } from "./types";
 
-export const HeadingBanner = ({ heading, description }: HeadingBannerProps) => {
+export const HeadingBanner = ({ description, heading }: HeadingBannerProps) => {
   const { scrollYProgress } = useScroll();
   const headingY = useTransform(scrollYProgress, [0, 1], [0, -1000]);
   const descriptionY = useTransform(scrollYProgress, [0, 1], [0, -1400]);

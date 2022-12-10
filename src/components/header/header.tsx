@@ -5,8 +5,8 @@ import { Wrap } from "#/components/wrap";
 import { useConfigContext } from "#/hooks/context/config";
 import type { HeaderProps } from "./types";
 
-export const Header = ({ showNav, navLinks }: HeaderProps) => {
-  const { theme, setTheme } = useConfigContext();
+export const Header = ({ navLinks, showNav }: HeaderProps) => {
+  const { setTheme, theme } = useConfigContext();
 
   const handleThemeToggle = () => {
     const newTheme = theme === "light" ? "dark" : "light";

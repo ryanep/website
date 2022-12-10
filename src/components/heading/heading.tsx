@@ -1,6 +1,6 @@
 import type { HeadingProps } from "./types";
 
-export const Heading = ({ type, text }: HeadingProps) => {
+export const Heading = ({ text, type }: HeadingProps) => {
   return (
     <>
       {type === "h1" && <h1 className="text-4xl font-black">{text}</h1>}

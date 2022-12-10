@@ -10,7 +10,7 @@ import { Wrap } from "#/components/wrap";
 import type { ContactBannerProps, ContactFormData } from "./types";
 import type { ChangeEvent, FormEvent} from "react";
 
-export const ContactBanner = ({ heading, description }: ContactBannerProps) => {
+export const ContactBanner = ({ description, heading }: ContactBannerProps) => {
   const { t } = useTranslation();
   const [formData, setFormData] = useState<ContactFormData>({
     body: "",

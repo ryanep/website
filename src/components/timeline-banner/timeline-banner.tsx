@@ -6,8 +6,8 @@ import { Wrap } from "../wrap/wrap";
 import type { TimelineBannerProps } from "./types";
 
 export const TimelineBanner = ({
-  heading,
   description,
+  heading,
   items,
 }: TimelineBannerProps) => {
   const { t } = useTranslation();

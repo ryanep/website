@@ -3,10 +3,10 @@ import type { TextareaProps } from "./types";
 export const Textarea = ({
   id,
   name,
-  title,
-  rows = 5,
   onChange,
   required,
+  rows = 5,
+  title,
 }: TextareaProps) => {
   return (
     <label htmlFor={id}>
