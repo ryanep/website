@@ -1,5 +1,5 @@
 import { motion, useScroll, useTransform } from "framer-motion";
-import { Bubbles } from "#/components/bubbles/bubbles";
+import { Bubbles } from "#/components/bubbles";
 import { Heading } from "#/components/heading";
 import { Spacer } from "#/components/spacer";
 import { Wrap } from "#/components/wrap";

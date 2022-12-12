@@ -2,7 +2,7 @@ import { useTranslation } from "react-i18next";
 import { Heading } from "#/components/heading";
 import { Section } from "#/components/section";
 import { Spacer } from "#/components/spacer";
-import { Wrap } from "../wrap/wrap";
+import { Wrap } from "#/components/wrap";
 import type { TimelineBannerProps } from "./types";
 
 export const TimelineBanner = ({
