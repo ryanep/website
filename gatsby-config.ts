@@ -1,26 +1,29 @@
-const path = require("path");
-const { config } = require("dotenv");
+import path from "node:path";
+import { config } from "dotenv";
+import type { GatsbyConfig } from "gatsby";
 
 config({
   path: `.env.${process.env.NODE_ENV}`,
 });
 
-const gatsbyConfig = {
+const gatsbyConfig: GatsbyConfig = {
+  graphqlTypegen: {
+    typesOutputPath: "./src/types/graphql-types.d.ts",
+  },
   plugins: [
     "gatsby-plugin-postcss",
     "gatsby-plugin-image",
     "gatsby-plugin-react-helmet",
     {
-      resolve: `gatsby-plugin-typescript`,
       options: {
+        allExtensions: true,
         isTSX: true,
         jsxPragma: "react-jsx",
-        allExtensions: true,
       },
+      resolve: `gatsby-plugin-typescript`,
     },
     "gatsby-plugin-typescript-checker",
     {
-      resolve: "gatsby-plugin-alias-imports",
       options: {
         alias: {
           "#/components": path.resolve(__dirname, "src/components"),
@@ -33,22 +36,23 @@ const gatsbyConfig = {
           "#/utils": path.resolve(__dirname, "src/utils"),
         },
       },
+      resolve: "gatsby-plugin-alias-imports",
     },
     {
-      resolve: "gatsby-plugin-google-analytics",
       options: {
         trackingId: process.env.GOOGLE_ANALYTICS_TRACKING_ID,
       },
+      resolve: "gatsby-plugin-google-analytics",
     },
     {
-      resolve: "gatsby-source-contentful",
       options: {
-        spaceId: process.env.CONTENTFUL_SPACE_ID,
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
         downloadLocal: true,
+        spaceId: process.env.CONTENTFUL_SPACE_ID,
       },
+      resolve: "gatsby-source-contentful",
     },
   ],
 };
 
-module.exports = gatsbyConfig;
+export default gatsbyConfig;

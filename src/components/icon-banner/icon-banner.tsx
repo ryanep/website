@@ -19,20 +19,20 @@ export const IconBanner = ({
         <Spacer size="large" />
 
         <ul className="flex flex-wrap justify-center gap-5">
-          {items.map(({ node }) => (
+          {items.map((item) => (
             <li
               className="group relative flex aspect-square w-16 shrink-0 items-center justify-center rounded-lg"
-              key={node.id}
-              style={{ backgroundColor: node.colour }}
+              key={item.id}
+              style={{ backgroundColor: item.colour }}
             >
               <img
-                alt={node.icon.title}
+                alt={item.icon.alt}
                 className="h-auto max-h-6 w-auto"
-                src={node.icon.file.url}
+                src={item.icon.url}
                 width="20"
               />
               <div className="invisible absolute bottom-full left-1/2 -translate-x-1/2 rounded-sm bg-white p-1 px-2 text-sm text-black opacity-0 shadow-md transition-all group-hover:visible group-hover:mb-1 group-hover:opacity-100 dark:bg-neutral-800 dark:text-white">
-                {node.name}
+                {item.name}
               </div>
             </li>
           ))}

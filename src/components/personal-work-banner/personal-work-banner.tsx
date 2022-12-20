@@ -23,25 +23,23 @@ export const PersonalWorkBanner = ({
             return (
               <article
                 className="mx-auto flex w-full items-center rounded-md bg-neutral-100 shadow-md transition-colors hover:opacity-90 dark:bg-neutral-900"
-                key={project.node.id}
+                key={project.id}
               >
                 <a
                   className="flex w-full items-center gap-3 p-4"
-                  href={project.node.url}
+                  href={project.url}
                   rel="noopener noreferrer"
                   target="_blank"
                 >
                   <img
-                    alt={project.node.image.title}
+                    alt={project.image.alt}
                     className="block aspect-square w-16 shrink-0 rounded-xl"
-                    src={project.node.image.file.url}
+                    src={project.image.url}
                   />
 
                   <div>
-                    <h3 className="mb-1 text-xl font-bold">
-                      {project.node.name}
-                    </h3>
-                    <p className="text-sm">{project.node.description}</p>
+                    <h3 className="mb-1 text-xl font-bold">{project.name}</h3>
+                    <p className="text-sm">{project.description}</p>
                   </div>
                 </a>
               </article>

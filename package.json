@@ -15,14 +15,15 @@
     "clsx": "^1.2.1",
     "dotenv": "^16.0.3",
     "framer-motion": "^7.6.19",
-    "gatsby": "^5.2.0",
+    "gatsby": "^5.3.3",
     "i18next": "^22.1.5",
     "i18next-xhr-backend": "^3.2.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-helmet": "^6.1.0",
     "react-i18next": "^12.1.1",
-    "react-markdown": "^8.0.4"
+    "react-markdown": "^8.0.4",
+    "source-map": "^0.8.0-beta.0"
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.2.0",
@@ -36,9 +37,7 @@
     "eslint": "^8.29.0",
     "gatsby-plugin-alias-imports": "^1.0.5",
     "gatsby-plugin-google-analytics": "^5.2.0",
-    "gatsby-plugin-graphql-codegen": "^3.1.1",
     "gatsby-plugin-image": "^3.2.0",
-    "gatsby-plugin-no-javascript": "^2.0.5",
     "gatsby-plugin-postcss": "^6.2.0",
     "gatsby-plugin-react-helmet": "^6.2.0",
     "gatsby-plugin-sharp": "^5.2.0",
@@ -51,5 +50,11 @@
     "prettier-eslint": "^15.0.1",
     "tailwindcss": "^3.2.4",
     "typescript": "^4.9.4"
+  },
+  "resolutions": {
+    "graphql": "^16.6.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "source-map": "^0.8.0-beta.0"
   }
 }

@@ -8,16 +8,16 @@ import { IconBanner } from "#/components/icon-banner";
 import { PersonalWorkBanner } from "#/components/personal-work-banner";
 import { Root } from "#/components/root";
 import { TimelineBanner } from "#/components/timeline-banner";
-import type { HomeQuery } from "../../types/graphql-types";
+import { parseHomePageData } from "#/utils/parsers/home";
 import type { PageRendererProps } from "gatsby";
 
 type HomePageProps = PageRendererProps & {
-  data: HomeQuery;
+  data: Queries.HomeQuery;
 };
 
 export const HomePage = ({ data }: HomePageProps) => {
   const { t } = useTranslation();
-  const { projects, technology, work } = data;
+  const { projects, technology, work } = parseHomePageData(data);
 
   return (
     <Root>
@@ -40,19 +40,19 @@ export const HomePage = ({ data }: HomePageProps) => {
       <IconBanner
         description={t("home:iconBanner.description")}
         heading={t("home:iconBanner.heading")}
-        items={technology.edges}
+        items={technology}
       />
 
       <PersonalWorkBanner
         description={t("home:personalWorkBanner.description")}
         heading={t("home:personalWorkBanner.heading")}
-        projects={projects.edges}
+        projects={projects}
       />
 
       <TimelineBanner
         description={t("home:workExperienceBanner.description")}
         heading={t("home:workExperienceBanner.heading")}
-        items={work.edges}
+        items={work}
       />
 
       <ContactBanner

@@ -1,4 +1,4 @@
 .eslintrc.js
 gatsby-browser.tsx
-gatsby-config.js
+gatsby-config.ts
 gatsby-ssr.tsx
