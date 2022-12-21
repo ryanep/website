@@ -8,7 +8,9 @@ export const ContactPage = () => {
 
   return (
     <Root>
-      <Helmet title={t("contact:pageTitle")} />
+      <Helmet>
+        <title>{t("contact:pageTitle")}</title>
+      </Helmet>
       <TitleBanner heading={t("contact:titleBanner.heading")} />
     </Root>
   );

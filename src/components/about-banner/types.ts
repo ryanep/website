@@ -1,8 +1,8 @@
 export interface AboutBannerProps {
-  heading: string;
   description: string;
+  heading: string;
   image: {
-    url: string;
     title: string;
+    url: string;
   };
 }

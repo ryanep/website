@@ -1,3 +1,3 @@
 export interface SpacerProps {
-  size: "small" | "medium" | "large";
+  size: "large" | "medium" | "small";
 }

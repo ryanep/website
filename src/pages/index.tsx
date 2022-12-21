@@ -21,7 +21,9 @@ export const HomePage = ({ data }: HomePageProps) => {
 
   return (
     <Root>
-      <Helmet title={t("home:pageTitle")} />
+      <Helmet>
+        <title>{t("home:pageTitle")}</title>
+      </Helmet>
 
       <HeadingBanner
         description={t("home:headingBanner.description")}

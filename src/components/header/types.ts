@@ -1,7 +1,7 @@
 export interface HeaderProps {
   navLinks: {
-    url: string;
     title: string;
+    url: string;
   }[];
   showNav: boolean;
 }

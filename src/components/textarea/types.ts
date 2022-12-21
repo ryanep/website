@@ -3,8 +3,8 @@ import type { ChangeEvent } from "react";
 export interface TextareaProps {
   id: string;
   name: string;
-  title: string;
-  rows?: number;
   onChange: (event: ChangeEvent<HTMLTextAreaElement>) => void;
   required?: boolean;
+  rows?: number;
+  title: string;
 }

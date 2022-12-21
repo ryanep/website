@@ -1,14 +1,14 @@
 export interface PersonalWorkBannerProps {
-  heading: string;
   description: string;
+  heading: string;
   projects: {
-    id: string;
-    name: string;
     description: string;
-    url: string;
+    id: string;
     image: {
-      url: string;
       alt: string;
+      url: string;
     };
+    name: string;
+    url: string;
   }[];
 }

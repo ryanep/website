@@ -14,14 +14,14 @@ export const ConfigContextProvider = ({
 }: ConfigContextProviderProps) => {
   const [theme, setTheme] = useState<ConfigContextValues["theme"]>("light");
 
-  const changeTheme = useCallback((theme: "light" | "dark") => {
-    if (theme === "dark") {
+  const changeTheme = useCallback((updatedTheme: "dark" | "light") => {
+    if (updatedTheme === "dark") {
       document.documentElement.classList.add("dark");
     } else {
       document.documentElement.classList.remove("dark");
     }
 
-    setTheme(theme);
+    setTheme(updatedTheme);
   }, []);
 
   useEffect(() => {

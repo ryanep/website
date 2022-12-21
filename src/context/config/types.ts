@@ -4,9 +4,9 @@ export interface ConfigContextProviderProps {
   children: ReactNode;
 }
 
-export type Theme = "light" | "dark";
+export type Theme = "dark" | "light";
 
 export interface ConfigContextValues {
-  theme: Theme;
   setTheme: (theme: Theme) => void;
+  theme: Theme;
 }

@@ -1,18 +1,18 @@
 export interface TimelineBannerProps {
-  heading: string;
   description: string;
+  heading: string;
   items: {
-    id: string;
-    name: string;
-    companyName: string;
-    role: string;
-    startDate: string;
-    endDate: string;
     colour: string;
+    companyName: string;
+    endDate: string;
     icon: {
       alt: string;
       url: string;
     };
+    id: string;
+    name: string;
+    role: string;
+    startDate: string;
   }[];
 }
 

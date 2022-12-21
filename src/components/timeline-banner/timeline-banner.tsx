@@ -64,10 +64,9 @@ export const TimelineBanner = ({
                         </h3>
 
                         <p className="w-full shrink-0 text-xs font-medium md:w-auto">
-                          {`${formattedStartDate} - ${
-                            formattedEndDate ||
-                            t("home:workExperienceBanner.present")
-                          }`}
+                          {formattedStartDate} -{" "}
+                          {formattedEndDate ??
+                            t("home:workExperienceBanner.present")}
                         </p>
                       </div>
                     </header>

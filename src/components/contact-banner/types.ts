@@ -1,10 +1,10 @@
 export interface ContactBannerProps {
-  heading: string;
   description: string;
+  heading: string;
 }
 
 export interface ContactFormData {
+  body: string;
   name: string;
   subject: string;
-  body: string;
 }
