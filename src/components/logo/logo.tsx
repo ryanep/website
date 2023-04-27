@@ -6,9 +6,9 @@ export const Logo = () => {
   return (
     <svg
       className="overflow-visible fill-white"
-      height="32"
+      height="40"
       viewBox="0 0 50 12"
-      width="80"
+      width="88"
       xmlns="http://www.w3.org/2000/svg"
     >
       <title>{t("logo:title")}</title>

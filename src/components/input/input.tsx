@@ -10,7 +10,7 @@ export const Input = ({
 }: InputProps) => {
   return (
     <label htmlFor={id}>
-      <div className="mb-1 text-sm font-medium">{title}</div>
+      <div className="mb-1 text-base font-medium">{title}</div>
 
       <input
         className="block w-full rounded-md bg-neutral-100 p-3 font-medium transition-colors dark:bg-neutral-800 dark:text-neutral-300"

@@ -21,9 +21,9 @@ export const AboutBanner = ({
         <Spacer size="small" />
 
         <Heading text={heading} type="h2" />
-        <Spacer size="medium" />
+        <Spacer size="small" />
 
-        <div className="mx-auto max-w-4xl">
+        <div className="mx-auto max-w-4xl text-lg font-medium">
           <Markdown source={description} />
         </div>
       </Wrap>

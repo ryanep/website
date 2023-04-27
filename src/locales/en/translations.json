@@ -17,16 +17,16 @@
     },
     "aboutBanner": {
       "heading": "About me",
-      "description": "I'm **Ryan Elliott-Potter**; a full-stack developer from the United Kingdom. I have a passion for all types of development but with a current focus on full stack JavaScript.",
+      "description": "I'm **Ryan Elliott-Potter**; a full-stack developer from the United Kingdom. I have an interest in all types of development but with a current focus on Node, React and TypeScript.",
       "imageUrl": "//cdn.ryanep.com/images/me.jpg",
       "imageTitle": "Me"
     },
     "iconBanner": {
       "heading": "Technology",
-      "description": "I have experience in a number of different technologies. I specialise in the technologies listed below:"
+      "description": "I have experience in a number of different technologies. I specialise the following:"
     },
     "personalWorkBanner": {
-      "heading": "Personal work",
+      "heading": "Personal projects",
       "description": "Below is a selection of some of my personal projects:"
     },
     "workExperienceBanner": {

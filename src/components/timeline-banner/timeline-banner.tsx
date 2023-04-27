@@ -16,9 +16,9 @@ export const TimelineBanner = ({
     <Section>
       <Wrap>
         <Heading text={heading} type="h2" />
-        <Spacer size="medium" />
+        <Spacer size="small" />
 
-        <p className="mx-auto max-w-4xl">{description}</p>
+        <p className="mx-auto max-w-4xl text-lg font-medium">{description}</p>
         <Spacer size="large" />
 
         <div className="relative">
@@ -39,7 +39,7 @@ export const TimelineBanner = ({
 
               return (
                 <article
-                  className="group relative z-10 text-left md:-mt-16 md:w-1/2 first:md:mt-0 odd:md:pr-4 even:md:ml-auto even:md:pl-4"
+                  className="group relative z-10 rounded-xl text-left md:-mt-16 md:w-1/2 first:md:mt-0 odd:md:pr-4 even:md:ml-auto even:md:pl-4"
                   key={work.id}
                 >
                   <div className="rounded-md bg-white p-4 shadow-md transition-colors dark:bg-neutral-800">
@@ -59,11 +59,11 @@ export const TimelineBanner = ({
                       </div>
 
                       <div>
-                        <h3 className="grow text-xl font-semibold">
+                        <h3 className="grow text-xl font-bold">
                           {work.companyName}
                         </h3>
 
-                        <p className="w-full shrink-0 text-xs font-medium md:w-auto">
+                        <p className="w-full shrink-0 text-sm font-medium md:w-auto">
                           {formattedStartDate} -{" "}
                           {formattedEndDate ??
                             t("home:workExperienceBanner.present")}
@@ -71,7 +71,7 @@ export const TimelineBanner = ({
                       </div>
                     </header>
 
-                    <p className="text-sm">{work.role}</p>
+                    <p className="text-base font-medium">{work.role}</p>
 
                     <div className="md:absolute md:top-1/2 md:h-3 md:w-3 md:rounded-full md:bg-neutral-400 md:group-odd:right-0 md:group-odd:translate-x-1/2 md:group-even:left-0 md:group-even:-translate-x-1/2 md:dark:bg-neutral-500" />
                   </div>

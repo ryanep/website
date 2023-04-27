@@ -8,7 +8,7 @@ import { Spacer } from "#/components/spacer";
 import { Textarea } from "#/components/textarea";
 import { Wrap } from "#/components/wrap";
 import type { ContactBannerProps, ContactFormData } from "./types";
-import type { ChangeEvent, FormEvent} from "react";
+import type { ChangeEvent, FormEvent } from "react";
 
 export const ContactBanner = ({ description, heading }: ContactBannerProps) => {
   const { t } = useTranslation();
@@ -39,9 +39,9 @@ export const ContactBanner = ({ description, heading }: ContactBannerProps) => {
     <Section>
       <Wrap>
         <Heading text={heading} type="h2" />
-        <Spacer size="medium" />
+        <Spacer size="small" />
 
-        <p className="mx-auto max-w-4xl">{description}</p>
+        <p className="mx-auto max-w-4xl text-lg font-medium">{description}</p>
         <Spacer size="large" />
 
         <form
@@ -60,7 +60,9 @@ export const ContactBanner = ({ description, heading }: ContactBannerProps) => {
                 title={t("contactForm:nameLabel")}
                 type="text"
               />
+
               <Spacer size="small" />
+
               <Input
                 id="contact-form-subject"
                 name="name"

@@ -30,7 +30,7 @@ export const HeadingBanner = ({ description, heading }: HeadingBannerProps) => {
           className="text-center"
           style={{ opacity, translateY: descriptionY }}
         >
-          <p className="text-lg">{description}</p>
+          <p className="text-xl font-medium">{description}</p>
         </motion.div>
       </Wrap>
     </div>
