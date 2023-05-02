@@ -1,5 +1,8 @@
 .eslintrc.js
+postcss.config.js
 gatsby-browser.tsx
 gatsby-config.ts
 gatsby-ssr.tsx
 src/types/graphql-types.d.ts
+/.cache
+/public

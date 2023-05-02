@@ -5,7 +5,7 @@ export const Bubbles = ({ bubbleCount }: BubblesProps) => {
   const bubbles = generateBubbles(bubbleCount);
 
   return (
-    <div className="pointer-events-none absolute top-0 left-1/2 mx-auto h-full w-full -translate-x-1/2 overflow-hidden">
+    <div className="pointer-events-none absolute left-1/2 top-0 mx-auto h-full w-full -translate-x-1/2 overflow-hidden">
       {bubbles.map((bubble) => (
         <div
           className="absolute h-16 w-16 rounded-sm bg-black opacity-10"

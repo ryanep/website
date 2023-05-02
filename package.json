@@ -8,7 +8,7 @@
     "start": "gatsby serve -p 3000",
     "clean": "gatsby clean",
     "fmt": "prettier --write './src/**/*.{ts,tsx}'",
-    "lint": "eslint './src/**/*.{ts,tsx}'",
+    "lint": "eslint .",
     "typecheck": "tsc"
   },
   "dependencies": {
