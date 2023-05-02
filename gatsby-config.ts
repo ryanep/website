@@ -13,7 +13,6 @@ const gatsbyConfig: GatsbyConfig = {
   plugins: [
     "gatsby-plugin-postcss",
     "gatsby-plugin-image",
-    "gatsby-plugin-react-helmet",
     {
       options: {
         allExtensions: true,
@@ -22,7 +21,6 @@ const gatsbyConfig: GatsbyConfig = {
       },
       resolve: `gatsby-plugin-typescript`,
     },
-    "gatsby-plugin-typescript-checker",
     {
       options: {
         alias: {

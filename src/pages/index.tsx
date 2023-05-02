@@ -1,5 +1,4 @@
 import { graphql } from "gatsby";
-import { Helmet } from "react-helmet";
 import { useTranslation } from "react-i18next";
 import { AboutBanner } from "#/components/about-banner";
 import { ContactBanner } from "#/components/contact-banner";
@@ -15,16 +14,25 @@ type HomePageProps = PageRendererProps & {
   data: Queries.HomeQuery;
 };
 
+export const Head = () => {
+  const { t } = useTranslation();
+
+  return (
+    <>
+      <html lang="en" />
+      <body className="bg-primary text-neutral-800 antialiased dark:bg-primary-dark" />
+      <link href="//cdn.ryanep.com/favicon.ico" rel="icon" />
+      <title>{t("home:pageTitle")}</title>
+    </>
+  );
+};
+
 export const HomePage = ({ data }: HomePageProps) => {
   const { t } = useTranslation();
   const { projects, technology, work } = parseHomePageData(data);
 
   return (
     <Root>
-      <Helmet>
-        <title>{t("home:pageTitle")}</title>
-      </Helmet>
-
       <HeadingBanner
         description={t("home:headingBanner.description")}
         heading={t("home:headingBanner.heading")}
