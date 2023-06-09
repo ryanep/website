@@ -1,5 +1,11 @@
 import { Link } from "#/components/link";
-import type { NavigationProps } from "./types";
+
+interface NavigationProps {
+  links: {
+    title: string;
+    url: string;
+  }[];
+}
 
 export const Navigation = ({ links }: NavigationProps) => {
   return (

@@ -7,8 +7,18 @@ import { Section } from "#/components/section";
 import { Spacer } from "#/components/spacer";
 import { Textarea } from "#/components/textarea";
 import { Wrap } from "#/components/wrap";
-import type { ContactBannerProps, ContactFormData } from "./types";
 import type { ChangeEvent, FormEvent } from "react";
+
+interface ContactBannerProps {
+  description: string;
+  heading: string;
+}
+
+interface ContactFormData {
+  body: string;
+  name: string;
+  subject: string;
+}
 
 export const ContactBanner = ({ description, heading }: ContactBannerProps) => {
   const { t } = useTranslation();

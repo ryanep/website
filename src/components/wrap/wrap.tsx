@@ -1,5 +1,10 @@
 import { clsx } from "clsx";
-import type { WrapProps } from "./types";
+import type { ReactNode } from "react";
+
+interface WrapProps {
+  children: ReactNode;
+  className?: string;
+}
 
 export const Wrap = ({ children, className }: WrapProps) => {
   return (

@@ -2,7 +2,21 @@ import { Heading } from "#/components/heading";
 import { Section } from "#/components/section";
 import { Spacer } from "#/components/spacer";
 import { Wrap } from "#/components/wrap";
-import type { PersonalWorkBannerProps } from "./types";
+
+interface PersonalWorkBannerProps {
+  description: string;
+  heading: string;
+  projects: {
+    description: string;
+    id: string;
+    image: {
+      alt: string;
+      url: string;
+    };
+    name: string;
+    url: string;
+  }[];
+}
 
 export const PersonalWorkBanner = ({
   description,

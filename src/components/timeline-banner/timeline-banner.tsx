@@ -3,7 +3,24 @@ import { Heading } from "#/components/heading";
 import { Section } from "#/components/section";
 import { Spacer } from "#/components/spacer";
 import { Wrap } from "#/components/wrap";
-import type { TimelineBannerProps } from "./types";
+
+interface TimelineBannerProps {
+  description: string;
+  heading: string;
+  items: {
+    colour: string;
+    companyName: string;
+    endDate: string;
+    icon: {
+      alt: string;
+      url: string;
+    };
+    id: string;
+    name: string;
+    role: string;
+    startDate: string;
+  }[];
+}
 
 export const TimelineBanner = ({
   description,

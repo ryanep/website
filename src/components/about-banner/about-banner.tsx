@@ -3,7 +3,15 @@ import { Markdown } from "#/components/markdown";
 import { Section } from "#/components/section";
 import { Spacer } from "#/components/spacer";
 import { Wrap } from "#/components/wrap";
-import type { AboutBannerProps } from "./types";
+
+interface AboutBannerProps {
+  description: string;
+  heading: string;
+  image: {
+    title: string;
+    url: string;
+  };
+}
 
 export const AboutBanner = ({
   description,

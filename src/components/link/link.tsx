@@ -1,5 +1,11 @@
 import { Link as GatsbyLink } from "gatsby";
-import type { LinkProps } from "./types";
+import type { ReactNode } from "react";
+
+interface LinkProps {
+  children: ReactNode;
+  className?: string;
+  to: string;
+}
 
 export const Link = ({ children, className, to }: LinkProps) => {
   return (

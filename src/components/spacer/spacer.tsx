@@ -1,4 +1,6 @@
-import type { SpacerProps } from "./types";
+interface SpacerProps {
+  size: "large" | "medium" | "small";
+}
 
 export const Spacer = ({ size }: SpacerProps) => {
   return (

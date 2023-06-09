@@ -1,4 +1,13 @@
-import type { TextareaProps } from "./types";
+import type { ChangeEvent } from "react";
+
+interface TextareaProps {
+  id: string;
+  name: string;
+  onChange: (event: ChangeEvent<HTMLTextAreaElement>) => void;
+  required?: boolean;
+  rows?: number;
+  title: string;
+}
 
 export const Textarea = ({
   id,

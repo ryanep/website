@@ -3,7 +3,11 @@ import { Bubbles } from "#/components/bubbles";
 import { Heading } from "#/components/heading";
 import { Spacer } from "#/components/spacer";
 import { Wrap } from "#/components/wrap";
-import type { HeadingBannerProps } from "./types";
+
+interface HeadingBannerProps {
+  description: string;
+  heading: string;
+}
 
 export const HeadingBanner = ({ description, heading }: HeadingBannerProps) => {
   const { scrollYProgress } = useScroll();

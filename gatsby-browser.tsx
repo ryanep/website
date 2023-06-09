@@ -1,6 +1,6 @@
 import "#/styles/global.css";
 import { WrapRootElementBrowserArgs } from "gatsby";
-import { Providers } from "#/components/providers/providers";
+import { Providers } from "#/components/providers";
 import { initI18n } from "./src/i18n";
 
 initI18n();

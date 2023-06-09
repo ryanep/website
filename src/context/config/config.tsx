@@ -5,14 +5,25 @@ import {
   useState,
   useCallback,
 } from "react";
-import type { ConfigContextProviderProps, ConfigContextValues } from "./types";
+import type { ReactNode } from "react";
 
-export const ConfigContext = createContext<ConfigContextValues | null>(null);
+interface ConfigContextProviderProps {
+  children: ReactNode;
+}
+
+interface ConfigContextValue {
+  setTheme: (theme: Theme) => void;
+  theme: Theme;
+}
+
+type Theme = "dark" | "light";
+
+export const ConfigContext = createContext<ConfigContextValue | null>(null);
 
 export const ConfigContextProvider = ({
   children,
 }: ConfigContextProviderProps) => {
-  const [theme, setTheme] = useState<ConfigContextValues["theme"]>("light");
+  const [theme, setTheme] = useState<ConfigContextValue["theme"]>("light");
 
   const changeTheme = useCallback((updatedTheme: "dark" | "light") => {
     if (updatedTheme === "dark") {

@@ -1,6 +1,10 @@
 import { Footer } from "#/components/footer";
 import { Header } from "#/components/header";
-import type { RootProps } from "./types";
+import type { ReactNode } from "react";
+
+interface RootProps {
+  children: ReactNode;
+}
 
 const navLinks = [
   {

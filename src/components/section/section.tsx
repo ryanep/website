@@ -1,4 +1,8 @@
-import type { SectionProps } from "./types";
+import type { ReactNode } from "react";
+
+interface SectionProps {
+  children: ReactNode;
+}
 
 export const Section = ({ children }: SectionProps) => {
   return (

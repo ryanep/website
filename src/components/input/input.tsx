@@ -1,4 +1,13 @@
-import type { InputProps } from "./types";
+import type { ChangeEvent } from "react";
+
+interface InputProps {
+  id: string;
+  name: string;
+  onChange: (event: ChangeEvent<HTMLInputElement>) => void;
+  required?: boolean;
+  title: string;
+  type: "email" | "text";
+}
 
 export const Input = ({
   id,
