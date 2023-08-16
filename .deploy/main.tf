@@ -1,6 +1,7 @@
 variable "name" {}
 variable "aws_region" {}
 variable "cdn_bucket_name" {}
+variable "subdomain" {}
 variable "domain" {}
 
 variable "namecheap_user_name" {}
@@ -23,7 +24,6 @@ terraform {
 
 resource "aws_s3_bucket" "cdn" {
   bucket = var.cdn_bucket_name
-  acl    = "public-read"
 
   website {
     index_document = "index.html"
@@ -32,7 +32,7 @@ resource "aws_s3_bucket" "cdn" {
 }
 
 locals {
-  s3_origin_id = "S3-website"
+  s3_origin_id = "S3-${var.cdn_bucket_name}"
 }
 
 resource "aws_cloudfront_origin_access_identity" "origin_access_identity" {
@@ -41,15 +41,18 @@ resource "aws_cloudfront_origin_access_identity" "origin_access_identity" {
 
 resource "aws_cloudfront_distribution" "cdn_s3_distribution" {
   origin {
-    domain_name = aws_s3_bucket.cdn.bucket_regional_domain_name
+    domain_name = aws_s3_bucket.cdn.bucket_domain_name
     origin_id   = local.s3_origin_id
 
-    s3_origin_config {
-      origin_access_identity = aws_cloudfront_origin_access_identity.origin_access_identity.cloudfront_access_identity_path
+    custom_origin_config {
+      http_port              = "80"
+      https_port             = "443"
+      origin_protocol_policy = "http-only"
+      origin_ssl_protocols   = ["TLSv1", "TLSv1.1", "TLSv1.2"]
     }
   }
 
-  aliases             = ["www.ryanep.com"]
+  aliases             = ["${var.subdomain}.${var.domain}"]
   enabled             = true
   is_ipv6_enabled     = true
   default_root_object = "index.html"
@@ -120,15 +123,15 @@ resource "namecheap_domain_records" "domain-com" {
   mode   = "MERGE"
 
   record {
-    hostname = "www"
-    type     = "CNAME"
-    address  = "${aws_cloudfront_distribution.cdn_s3_distribution.domain_name}."
+    hostname = "@"
+    type     = "ALIAS"
+    address  = "${var.subdomain}.${var.domain}"
+    ttl      = 300
   }
 
-
   record {
-    hostname = "@"
-    type     = "URL301"
-    address  = "https://www.${var.domain}"
+    hostname = var.subdomain
+    type     = "CNAME"
+    address  = "${aws_cloudfront_distribution.cdn_s3_distribution.domain_name}."
   }
 }

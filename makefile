@@ -20,11 +20,11 @@ deploy-infra:
 		export TF_VAR_namecheap_api_key=$$NAMECHEAP_API_KEY && \
 		export TF_VAR_namecheap_client_ip=$$NAMECHEAP_CLIENT_IP && \
 		cd ./.deploy && \
-		terraform apply -auto-approve
+		terraform apply
 	${TASK_DONE}
 deploy:
 	${TASK_STARTED}
-	aws s3 sync ./public/ s3://ryanep-website --delete --acl public-read && \
+	aws s3 sync ./public/ s3://www.ryanep.com --delete && \
 	aws cloudfront create-invalidation --distribution-id E1HLTN9EVBOIN8 --paths "/*"
 	${TASK_DONE}
 clean:

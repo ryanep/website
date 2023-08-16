@@ -1,4 +1,5 @@
 name            = "website"
 aws_region      = "eu-west-2"
-cdn_bucket_name = "ryanep-website"
+cdn_bucket_name = "www.ryanep.com"
+subdomain       = "www"
 domain          = "ryanep.com"
