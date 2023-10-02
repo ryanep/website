@@ -1,5 +1,6 @@
-name            = "website"
 aws_region      = "eu-west-2"
 cdn_bucket_name = "www.ryanep.com"
-subdomain       = "www"
+certificate_arn = "arn:aws:acm:us-east-1:992080571933:certificate/a881ed23-c6fe-4ee1-8a2f-2b7769412ee3"
 domain          = "ryanep.com"
+name            = "website"
+subdomain       = "www"

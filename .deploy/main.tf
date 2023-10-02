@@ -3,15 +3,12 @@ variable "aws_region" {}
 variable "cdn_bucket_name" {}
 variable "subdomain" {}
 variable "domain" {}
+variable "certificate_arn" {}
 
 variable "namecheap_user_name" {}
 variable "namecheap_api_user" {}
 variable "namecheap_api_key" {}
 variable "namecheap_client_ip" {}
-
-provider "aws" {
-  region = var.aws_region
-}
 
 terraform {
   backend "s3" {
@@ -22,17 +19,33 @@ terraform {
   }
 }
 
+provider "aws" {
+  region = var.aws_region
+}
+
 resource "aws_s3_bucket" "cdn" {
   bucket = var.cdn_bucket_name
-
-  website {
-    index_document = "index.html"
-    error_document = "404.html"
-  }
 }
 
 locals {
   s3_origin_id = "S3-${var.cdn_bucket_name}"
+}
+
+resource "aws_s3_bucket_acl" "cdn_bucket_acl" {
+  bucket = aws_s3_bucket.cdn.id
+  acl    = "public-read"
+}
+
+resource "aws_s3_bucket_website_configuration" "cdn" {
+  bucket = aws_s3_bucket.cdn.id
+
+  index_document {
+    suffix = "index.html"
+  }
+
+  error_document {
+    key = "404.html"
+  }
 }
 
 resource "aws_cloudfront_origin_access_identity" "origin_access_identity" {
@@ -41,7 +54,7 @@ resource "aws_cloudfront_origin_access_identity" "origin_access_identity" {
 
 resource "aws_cloudfront_distribution" "cdn_s3_distribution" {
   origin {
-    domain_name = aws_s3_bucket.cdn.bucket_domain_name
+    domain_name = aws_s3_bucket_website_configuration.cdn.website_endpoint
     origin_id   = local.s3_origin_id
 
     custom_origin_config {
@@ -99,7 +112,7 @@ resource "aws_cloudfront_distribution" "cdn_s3_distribution" {
   }
 
   viewer_certificate {
-    acm_certificate_arn = "arn:aws:acm:us-east-1:992080571933:certificate/a881ed23-c6fe-4ee1-8a2f-2b7769412ee3"
+    acm_certificate_arn = var.certificate_arn
     ssl_support_method  = "sni-only"
   }
 
