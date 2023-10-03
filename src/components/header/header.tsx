@@ -5,11 +5,11 @@ import { Wrap } from "#/components/wrap";
 import { useConfigContext } from "#/hooks/context/config";
 
 interface HeaderProps {
-  navLinks: {
+  readonly navLinks: {
     title: string;
     url: string;
   }[];
-  showNav: boolean;
+  readonly showNav: boolean;
 }
 
 export const Header = ({ navLinks, showNav }: HeaderProps) => {

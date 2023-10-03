@@ -5,9 +5,9 @@ import { Spacer } from "#/components/spacer";
 import { Wrap } from "#/components/wrap";
 
 interface TimelineBannerProps {
-  description: string;
-  heading: string;
-  items: {
+  readonly description: string;
+  readonly heading: string;
+  readonly items: {
     colour: string;
     companyName: string;
     endDate: string;

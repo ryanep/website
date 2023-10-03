@@ -1,7 +1,7 @@
 interface ButtonProps {
-  onClick?: () => void;
-  text: string;
-  type: "button" | "submit";
+  readonly onClick?: () => void;
+  readonly text: string;
+  readonly type: "button" | "submit";
 }
 
 export const Button = ({ onClick, text, type }: ButtonProps) => {

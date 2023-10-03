@@ -4,9 +4,9 @@ import { Spacer } from "#/components/spacer";
 import { Wrap } from "#/components/wrap";
 
 interface PersonalWorkBannerProps {
-  description: string;
-  heading: string;
-  projects: {
+  readonly description: string;
+  readonly heading: string;
+  readonly projects: {
     description: string;
     id: string;
     image: {

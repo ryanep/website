@@ -5,9 +5,9 @@ import { Spacer } from "#/components/spacer";
 import { Wrap } from "#/components/wrap";
 
 interface AboutBannerProps {
-  description: string;
-  heading: string;
-  image: {
+  readonly description: string;
+  readonly heading: string;
+  readonly image: {
     title: string;
     url: string;
   };

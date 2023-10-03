@@ -1,7 +1,7 @@
 import ReactMarkdown from "react-markdown";
 
 interface MarkdownProps {
-  source: string;
+  readonly source: string;
 }
 
 export const Markdown = ({ source }: MarkdownProps) => {

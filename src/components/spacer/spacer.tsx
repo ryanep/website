@@ -1,5 +1,5 @@
 interface SpacerProps {
-  size: "large" | "medium" | "small";
+  readonly size: "large" | "medium" | "small";
 }
 
 export const Spacer = ({ size }: SpacerProps) => {

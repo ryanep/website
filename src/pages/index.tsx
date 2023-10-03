@@ -11,7 +11,7 @@ import { parseHomePageData } from "#/utils/parsers/home";
 import type { PageRendererProps } from "gatsby";
 
 type HomePageProps = PageRendererProps & {
-  data: Queries.HomeQuery;
+  readonly data: Queries.HomeQuery;
 };
 
 export const Head = () => {

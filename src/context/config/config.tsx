@@ -8,7 +8,7 @@ import {
 import type { ReactNode } from "react";
 
 interface ConfigContextProviderProps {
-  children: ReactNode;
+  readonly children: ReactNode;
 }
 
 interface ConfigContextValue {

@@ -1,7 +1,7 @@
 import { Link } from "#/components/link";
 
 interface NavigationProps {
-  links: {
+  readonly links: {
     title: string;
     url: string;
   }[];

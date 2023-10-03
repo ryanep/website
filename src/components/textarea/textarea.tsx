@@ -1,12 +1,12 @@
 import type { ChangeEvent } from "react";
 
 interface TextareaProps {
-  id: string;
-  name: string;
-  onChange: (event: ChangeEvent<HTMLTextAreaElement>) => void;
-  required?: boolean;
-  rows?: number;
-  title: string;
+  readonly id: string;
+  readonly name: string;
+  readonly onChange: (event: ChangeEvent<HTMLTextAreaElement>) => void;
+  readonly required?: boolean;
+  readonly rows?: number;
+  readonly title: string;
 }
 
 export const Textarea = ({

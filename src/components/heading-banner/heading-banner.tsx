@@ -5,8 +5,8 @@ import { Spacer } from "#/components/spacer";
 import { Wrap } from "#/components/wrap";
 
 interface HeadingBannerProps {
-  description: string;
-  heading: string;
+  readonly description: string;
+  readonly heading: string;
 }
 
 export const HeadingBanner = ({ description, heading }: HeadingBannerProps) => {

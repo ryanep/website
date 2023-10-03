@@ -2,8 +2,8 @@ import { clsx } from "clsx";
 import type { ReactNode } from "react";
 
 interface WrapProps {
-  children: ReactNode;
-  className?: string;
+  readonly children: ReactNode;
+  readonly className?: string;
 }
 
 export const Wrap = ({ children, className }: WrapProps) => {

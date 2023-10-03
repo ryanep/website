@@ -4,9 +4,9 @@ import { Spacer } from "#/components/spacer";
 import { Wrap } from "#/components/wrap";
 
 interface LogoBannerProps {
-  description: string;
-  heading: string;
-  items: {
+  readonly description: string;
+  readonly heading: string;
+  readonly items: {
     colour: string;
     icon: {
       alt: string;

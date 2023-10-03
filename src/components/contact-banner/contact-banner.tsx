@@ -10,8 +10,8 @@ import { Wrap } from "#/components/wrap";
 import type { ChangeEvent, FormEvent } from "react";
 
 interface ContactBannerProps {
-  description: string;
-  heading: string;
+  readonly description: string;
+  readonly heading: string;
 }
 
 interface ContactFormData {

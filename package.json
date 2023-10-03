@@ -8,7 +8,7 @@
     "start": "gatsby serve -p 3000",
     "clean": "gatsby clean",
     "fmt": "prettier --write './src/**/*.{ts,tsx}'",
-    "lint": "eslint .",
+    "lint": "eslint './**/*.{ts,tsx,json}'",
     "typecheck": "tsc"
   },
   "dependencies": {
@@ -24,19 +24,18 @@
     "react-markdown": "^8.0.7"
   },
   "devDependencies": {
-    "@rushstack/eslint-patch": "^1.2.0",
-    "@ryanep/eslint-config": "^0.0.18",
+    "@ryanep/eslint-config": "^0.3.1",
     "@ryanep/prettier-config": "^1.0.2",
     "@types/react": "^18.2.0",
     "@types/react-dom": "^18.2.1",
     "autoprefixer": "^10.4.14",
     "babel-preset-gatsby": "^3.9.0",
-    "eslint": "^8.39.0",
-    "gatsby-plugin-alias-imports": "^1.0.5",
+    "eslint": "^8.50.0",
     "gatsby-plugin-google-analytics": "^5.9.0",
     "gatsby-plugin-image": "^3.9.0",
     "gatsby-plugin-postcss": "^6.9.0",
     "gatsby-plugin-sharp": "^5.9.0",
+    "gatsby-plugin-tsconfig-paths": "^1.0.6",
     "gatsby-plugin-typescript": "^5.9.0",
     "gatsby-source-contentful": "^8.9.1",
     "graphql": "^16.6.0",

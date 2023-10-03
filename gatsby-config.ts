@@ -23,18 +23,11 @@ const gatsbyConfig: GatsbyConfig = {
     },
     {
       options: {
-        alias: {
-          "#/components": path.resolve(__dirname, "src/components"),
-          "#/constants": path.resolve(__dirname, "src/constants"),
-          "#/context": path.resolve(__dirname, "src/context"),
-          "#/hooks": path.resolve(__dirname, "src/hooks"),
-          "#/locales": path.resolve(__dirname, "src/locales"),
-          "#/pages": path.resolve(__dirname, "src/pages"),
-          "#/styles": path.resolve(__dirname, "src/styles"),
-          "#/utils": path.resolve(__dirname, "src/utils"),
-        },
+        // eslint-disable-next-line unicorn/prefer-module
+        configFile: `${__dirname}/tsconfig.json`,
+        silent: true,
       },
-      resolve: "gatsby-plugin-alias-imports",
+      resolve: `gatsby-plugin-tsconfig-paths`,
     },
     {
       options: {

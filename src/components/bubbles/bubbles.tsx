@@ -1,7 +1,7 @@
 import { generateBubbles } from "#/utils/bubbles";
 
 interface BubblesProps {
-  bubbleCount: number;
+  readonly bubbleCount: number;
 }
 
 export const Bubbles = ({ bubbleCount }: BubblesProps) => {
