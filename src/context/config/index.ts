@@ -1,1 +1,1 @@
-export { ConfigContextProvider, ConfigContext } from "./config";
+export { ConfigContext, ConfigContextProvider } from "./config";

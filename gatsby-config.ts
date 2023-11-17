@@ -1,4 +1,3 @@
-import path from "node:path";
 import { config } from "dotenv";
 import type { GatsbyConfig } from "gatsby";
 

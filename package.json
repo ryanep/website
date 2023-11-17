@@ -24,7 +24,7 @@
     "react-markdown": "^8.0.7"
   },
   "devDependencies": {
-    "@ryanep/eslint-config": "^0.3.1",
+    "@ryanep/eslint-config": "^0.7.0",
     "@ryanep/prettier-config": "^1.0.2",
     "@types/react": "^18.2.0",
     "@types/react-dom": "^18.2.1",

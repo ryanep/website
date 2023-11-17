@@ -1,16 +1,16 @@
 {
-	"name": "Node.js",
-	"build": {
-		"dockerfile": "Dockerfile",
-		"args": { "VARIANT": "16" }
-	},
-	"settings": {},
-	"extensions": [
-		"dbaeumer.vscode-eslint"
-	],
-	"remoteUser": "node",
-	"features": {
-		"terraform": "latest",
-		"git": "os-provided"
-	}
+  "name": "Node.js",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "args": {"VARIANT": "16"}
+  },
+  "settings": {},
+  "extensions": [
+    "dbaeumer.vscode-eslint"
+  ],
+  "remoteUser": "node",
+  "features": {
+    "terraform": "latest",
+    "git": "os-provided"
+  }
 }
