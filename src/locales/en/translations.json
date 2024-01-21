@@ -2,15 +2,9 @@
   "logo": {
     "title": "Ryanep Logo"
   },
-  "contactForm": {
-    "nameLabel": "Name",
-    "subjectLabel": "Subject",
-    "emailAddressLabel": "Email address",
-    "messageLabel": "Message",
-    "buttonTitle": "Send message"
-  },
   "home": {
     "pageTitle": "Full-stack JavaScript Developer - Ryan Elliott-Potter",
+    "metaDescription": "A full-stack developer from the United Kingdom.",
     "headingBanner": {
       "heading": "Ryan Elliott-Potter",
       "description": "Full-stack JavaScript Developer"
@@ -36,7 +30,8 @@
     },
     "contactBanner": {
       "heading": "Contact me",
-      "description": "Feel free to contact me using the form below:"
+      "description": "Have any questions? Feel free to drop me an email.",
+      "buttonTitle": "Get in touch"
     }
   },
   "contact": {

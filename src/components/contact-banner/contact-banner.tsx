@@ -1,49 +1,16 @@
-import { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { Button } from "#/components/button";
 import { Heading } from "#/components/heading";
-import { Input } from "#/components/input";
 import { Section } from "#/components/section";
 import { Spacer } from "#/components/spacer";
-import { Textarea } from "#/components/textarea";
 import { Wrap } from "#/components/wrap";
-import type { ChangeEvent, FormEvent } from "react";
 
 interface ContactBannerProps {
   readonly description: string;
   readonly heading: string;
 }
 
-interface ContactFormData {
-  body: string;
-  name: string;
-  subject: string;
-}
-
 export const ContactBanner = ({ description, heading }: ContactBannerProps) => {
   const { t } = useTranslation();
-  const [formData, setFormData] = useState<ContactFormData>({
-    body: "",
-    name: "",
-    subject: "",
-  });
-
-  const handleInputChange = (
-    event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    const { name, value } = event.target;
-
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
-  };
-
-  const handleFormSubmit = (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    const mailToLink = `mailto:ryan@ryanep.com?subject=${formData.subject}&body=${formData.body}`;
-    window.location.href = mailToLink;
-  };
 
   return (
     <Section>
@@ -51,55 +18,16 @@ export const ContactBanner = ({ description, heading }: ContactBannerProps) => {
         <Heading text={heading} type="h2" />
         <Spacer size="small" />
 
-        <p className="mx-auto max-w-4xl text-lg font-medium">{description}</p>
-        <Spacer size="large" />
+        <p className="mx-auto mb-8 max-w-4xl text-lg font-medium">
+          {description}
+        </p>
 
-        <form
-          action="mailto:ryan@ryanep.com"
-          className="text-left"
-          method="get"
-          onSubmit={handleFormSubmit}
+        <a
+          className="relative inline-block cursor-pointer rounded-full border-2 border-primary bg-transparent px-6 py-2 text-base font-bold text-primary transition-all hover:bg-primary hover:text-white disabled:text-transparent dark:border-primary-dark dark:bg-transparent dark:text-neutral-300 dark:hover:bg-primary-dark"
+          href="mailto:ryan@ryanep.com"
         >
-          <div className="flex flex-col gap-3 md:flex-row md:gap-5">
-            <div className="md:w-1/2">
-              <Input
-                id="contact-form-name"
-                name="subject"
-                onChange={handleInputChange}
-                required
-                title={t("contactForm:nameLabel")}
-                type="text"
-              />
-
-              <Spacer size="small" />
-
-              <Input
-                id="contact-form-subject"
-                name="name"
-                onChange={handleInputChange}
-                required
-                title={t("contactForm:subjectLabel")}
-                type="text"
-              />
-            </div>
-
-            <div className="md:w-1/2">
-              <Textarea
-                id="contact-form-message"
-                name="body"
-                onChange={handleInputChange}
-                required
-                title={t("contactForm:messageLabel")}
-              />
-            </div>
-          </div>
-
-          <Spacer size="large" />
-
-          <div className="text-center">
-            <Button text={t("contactForm:buttonTitle")} type="submit" />
-          </div>
-        </form>
+          {t("home:contactBanner:buttonTitle")}
+        </a>
       </Wrap>
     </Section>
   );

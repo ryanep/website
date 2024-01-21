@@ -23,6 +23,7 @@ export const Head = () => {
       <body className="bg-primary text-neutral-800 antialiased dark:bg-primary-dark" />
       <link href="//cdn.ryanep.com/favicon.ico" rel="icon" />
       <title>{t("home:pageTitle")}</title>
+      <meta content={t("home:metaDescription")} name="description" />
     </>
   );
 };
