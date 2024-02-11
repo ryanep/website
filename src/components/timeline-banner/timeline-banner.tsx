@@ -62,13 +62,13 @@ export const TimelineBanner = ({
                   <div className="rounded-md bg-white p-4 shadow-md transition-colors dark:bg-neutral-800">
                     <header className="mb-3 flex flex-row flex-wrap items-center md:flex-nowrap">
                       <div
-                        className="mr-3 flex aspect-square h-10 w-10 items-center justify-center rounded-md"
+                        className="mr-3 flex aspect-square size-10 items-center justify-center rounded-md"
                         style={{ backgroundColor: work.colour }}
                       >
                         <img
                           alt={work.icon.alt}
                           // eslint-disable-next-line tailwindcss/no-arbitrary-value
-                          className="block h-auto max-h-5 w-auto max-w-[24px] opacity-80 brightness-200"
+                          className="block size-auto max-h-5 max-w-[24px] opacity-80 brightness-200"
                           height="20"
                           src={work.icon.url}
                           width="20"
@@ -90,7 +90,7 @@ export const TimelineBanner = ({
 
                     <p className="text-base font-medium">{work.role}</p>
 
-                    <div className="md:absolute md:top-1/2 md:h-3 md:w-3 md:rounded-full md:bg-neutral-400 md:group-odd:right-0 md:group-odd:translate-x-1/2 md:group-even:left-0 md:group-even:-translate-x-1/2 md:dark:bg-neutral-500" />
+                    <div className="md:absolute md:top-1/2 md:size-3 md:rounded-full md:bg-neutral-400 md:group-odd:right-0 md:group-odd:translate-x-1/2 md:group-even:left-0 md:group-even:-translate-x-1/2 md:dark:bg-neutral-500" />
                   </div>
                 </article>
               );

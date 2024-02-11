@@ -42,7 +42,7 @@ export const IconBanner = ({
             >
               <img
                 alt={item.icon.alt}
-                className="h-auto max-h-6 w-auto"
+                className="size-auto max-h-6"
                 src={item.icon.url}
                 width="20"
               />

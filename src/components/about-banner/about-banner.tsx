@@ -23,7 +23,7 @@ export const AboutBanner = ({
       <Wrap>
         <img
           alt={image.title}
-          className="inline-block h-32 w-32 rounded-full"
+          className="inline-block size-32 rounded-full"
           src={image.url}
         />
         <Spacer size="small" />
