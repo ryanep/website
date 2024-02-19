@@ -8,10 +8,11 @@
 
 ## Introduction
 
-This project is a personal portfolio built using Gatsby with data from Contentful.
+This project is a personal portfolio built using React, Next.js and Tailwind CSS.
 
 ## Features
 
+- Using Next.js App Router static export.
 - Content managed via CMS using Contentful.
 - Use of i18n for localisation.
 - Fully typed, including generated GraphQL types.

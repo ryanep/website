@@ -1,7 +1,7 @@
-import { useTranslation } from "react-i18next";
+import { getTranslation } from "#/i18n/server";
 
-export const Logo = () => {
-  const { t } = useTranslation();
+export const Logo = async () => {
+  const { t } = await getTranslation();
 
   return (
     <svg

@@ -1,4 +1,9 @@
 /* eslint-disable unicorn/prefer-module */
 const { createConfig } = require("@ryanep/eslint-config");
 
-module.exports = createConfig();
+module.exports = [
+  ...createConfig(),
+  {
+    ignores: ["out, .next"],
+  },
+];

@@ -1,4 +1,4 @@
-import { Link as GatsbyLink } from "gatsby";
+import NextLink from "next/link";
 import type { ReactNode } from "react";
 
 interface LinkProps {
@@ -9,8 +9,8 @@ interface LinkProps {
 
 export const Link = ({ children, className, to }: LinkProps) => {
   return (
-    <GatsbyLink className={className} to={to}>
+    <NextLink className={className} href={to}>
       {children}
-    </GatsbyLink>
+    </NextLink>
   );
 };

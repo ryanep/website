@@ -1,12 +1,13 @@
-import { generateBubbles } from "#/utils/bubbles";
-
 interface BubblesProps {
-  readonly bubbleCount: number;
+  readonly bubbles: {
+    id: number;
+    left: number;
+    size: number;
+    top: number;
+  }[];
 }
 
-export const Bubbles = ({ bubbleCount }: BubblesProps) => {
-  const bubbles = generateBubbles(bubbleCount);
-
+export const Bubbles = ({ bubbles }: BubblesProps) => {
   return (
     <div className="pointer-events-none absolute left-1/2 top-0 mx-auto size-full -translate-x-1/2 overflow-hidden">
       {bubbles.map((bubble) => (

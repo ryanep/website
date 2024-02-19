@@ -11,13 +11,23 @@
     "strictNullChecks": true,
     "sourceMap": true,
     "target": "es2017",
-    "jsx": "react-jsx",
+    "jsx": "preserve",
     "baseUrl": "./src",
     "noEmit": true,
     "paths": {
       "#/*": ["./*"]
     },
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "incremental": true,
+    "isolatedModules": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
   },
-  "exclude": ["node_modules", "public"]
+  "exclude": ["node_modules", "public"],
+  "include": [ "**/*.ts", "**/*.tsx", ".next/types/**/*.ts","next-env.d.ts"]
 }

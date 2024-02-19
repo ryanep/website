@@ -1,8 +1,8 @@
-import { useTranslation } from "react-i18next";
 import { Heading } from "#/components/heading";
 import { Section } from "#/components/section";
 import { Spacer } from "#/components/spacer";
 import { Wrap } from "#/components/wrap";
+import { getTranslation } from "#/i18n/server";
 
 interface TimelineBannerProps {
   readonly description: string;
@@ -22,12 +22,12 @@ interface TimelineBannerProps {
   }[];
 }
 
-export const TimelineBanner = ({
+export const TimelineBanner = async ({
   description,
   heading,
   items,
 }: TimelineBannerProps) => {
-  const { t } = useTranslation();
+  const { t } = await getTranslation();
 
   return (
     <Section>
@@ -83,7 +83,7 @@ export const TimelineBanner = ({
                         <p className="w-full shrink-0 text-sm font-medium md:w-auto">
                           {formattedStartDate} -{" "}
                           {formattedEndDate ??
-                            t("home:workExperienceBanner.present")}
+                            t("home.workExperienceBanner.present")}
                         </p>
                       </div>
                     </header>

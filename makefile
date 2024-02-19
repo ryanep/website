@@ -24,7 +24,7 @@ deploy-infra:
 	${TASK_DONE}
 deploy:
 	${TASK_STARTED}
-	aws s3 sync ./public/ s3://www.ryanep.com --delete --acl public-read && \
+	aws s3 sync ./out/ s3://www.ryanep.com --delete --acl public-read && \
 	aws cloudfront create-invalidation --distribution-id E1HLTN9EVBOIN8 --paths "/*"
 	${TASK_DONE}
 clean:

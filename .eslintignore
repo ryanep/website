@@ -1,8 +1,7 @@
-.eslintrc.js
+.deploy
+.devcontainer
+out
+.next
+eslint.config.js
+node_modules
 postcss.config.js
-gatsby-browser.tsx
-gatsby-config.ts
-gatsby-ssr.tsx
-src/types/graphql-types.d.ts
-/.cache
-/public

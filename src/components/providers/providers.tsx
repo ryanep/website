@@ -1,4 +1,3 @@
-import { ConfigContextProvider } from "#/context/config";
 import type { ReactNode } from "react";
 
 interface ProvidersProps {
@@ -6,5 +5,5 @@ interface ProvidersProps {
 }
 
 export const Providers = ({ children }: ProvidersProps) => {
-  return <ConfigContextProvider>{children}</ConfigContextProvider>;
+  return children;
 };

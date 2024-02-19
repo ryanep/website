@@ -3,7 +3,7 @@ import { Section } from "#/components/section";
 import { Spacer } from "#/components/spacer";
 import { Wrap } from "#/components/wrap";
 
-interface LogoBannerProps {
+interface IconBannerProps {
   readonly description: string;
   readonly heading: string;
   readonly items: {
@@ -21,7 +21,7 @@ export const IconBanner = ({
   description,
   heading,
   items,
-}: LogoBannerProps) => {
+}: IconBannerProps) => {
   return (
     <Section>
       <Wrap>
@@ -46,7 +46,7 @@ export const IconBanner = ({
                 src={item.icon.url}
                 width="20"
               />
-              <div className="invisible absolute bottom-full left-1/2 -translate-x-1/2 rounded-sm bg-white p-1 px-2 text-sm text-black opacity-0 shadow-md transition-all group-focus-visible:visible group-focus-visible:mb-1 group-focus-visible:opacity-100 dark:bg-neutral-800 dark:text-white">
+              <div className="invisible absolute bottom-full left-1/2 -translate-x-1/2 rounded-sm bg-white p-1 px-2 text-sm text-black opacity-0 shadow-md transition-all group-hover:visible group-hover:mb-1 group-hover:opacity-100 group-focus-visible:visible group-focus-visible:mb-1 group-focus-visible:opacity-100 dark:bg-neutral-800 dark:text-white">
                 {item.name}
               </div>
             </li>

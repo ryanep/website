@@ -1,1 +1,0 @@
-export { useConfigContext } from "./config";

@@ -1,0 +1,49 @@
+query getHome {
+  work: workCollection(order: [endDate_DESC]) {
+    items {
+      sys {
+        id
+      }
+      name
+      description
+      companyName
+      role
+      startDate
+      endDate
+      colour
+      icon {
+        title
+        url
+      }
+    }
+  }
+
+  projects: projectCollection(order: [name_ASC]) {
+    items {
+      sys {
+        id
+      }
+      name
+      description
+      url
+      image {
+        title
+        url
+      }
+    }
+  }
+
+  technology: technologyCollection(order: [name_ASC]) {
+    items {
+      sys {
+        id
+      }
+      name
+      colour
+      icon {
+        title
+        url
+      }
+    }
+  }
+}

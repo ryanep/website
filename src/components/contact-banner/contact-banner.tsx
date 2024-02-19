@@ -1,16 +1,19 @@
-import { useTranslation } from "react-i18next";
 import { Heading } from "#/components/heading";
 import { Section } from "#/components/section";
 import { Spacer } from "#/components/spacer";
 import { Wrap } from "#/components/wrap";
+import { getTranslation } from "#/i18n/server";
 
 interface ContactBannerProps {
   readonly description: string;
   readonly heading: string;
 }
 
-export const ContactBanner = ({ description, heading }: ContactBannerProps) => {
-  const { t } = useTranslation();
+export const ContactBanner = async ({
+  description,
+  heading,
+}: ContactBannerProps) => {
+  const { t } = await getTranslation();
 
   return (
     <Section>
@@ -26,7 +29,7 @@ export const ContactBanner = ({ description, heading }: ContactBannerProps) => {
           className="relative inline-block cursor-pointer rounded-full border-2 border-primary bg-transparent px-6 py-2 text-base font-bold text-primary transition-all hover:bg-primary hover:text-white disabled:text-transparent dark:border-primary-dark dark:bg-transparent dark:text-neutral-300 dark:hover:bg-primary-dark"
           href="mailto:ryan@ryanep.com"
         >
-          {t("home:contactBanner:buttonTitle")}
+          {t("home.contactBanner.buttonTitle")}
         </a>
       </Wrap>
     </Section>
