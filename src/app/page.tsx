@@ -12,6 +12,15 @@ import { generateBubbles } from "#/utils/bubbles";
 import { parseHomePageData } from "#/utils/parsers/home";
 import { getSdk } from "#/utils/sdk";
 
+const generateMetadata = async () => {
+  const { t } = await getTranslation();
+
+  return {
+    description: t("home.metaDescription"),
+    title: t("home.pageTitle"),
+  };
+};
+
 const getPageData = async () => {
   const graphqlClient = new GraphQLClient(config.CONTENTFUL_GRAPHQL_ENDPOINT);
   const sdk = getSdk(graphqlClient);
@@ -75,3 +84,4 @@ const HomePage = async () => {
 };
 
 export default HomePage;
+export { generateMetadata };

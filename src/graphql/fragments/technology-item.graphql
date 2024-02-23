@@ -1,0 +1,11 @@
+fragment TechnologyItem on Technology {
+  sys {
+    id
+  }
+  name
+  colour
+  icon {
+    title
+    url
+  }
+}

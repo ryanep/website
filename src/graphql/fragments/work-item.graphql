@@ -1,0 +1,16 @@
+fragment WorkItem on Work {
+  sys {
+    id
+  }
+  name
+  description
+  companyName
+  role
+  startDate
+  endDate
+  colour
+  icon {
+    title
+    url
+  }
+}

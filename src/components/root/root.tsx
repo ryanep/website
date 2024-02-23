@@ -12,6 +12,10 @@ const navLinks = [
     url: "/",
   },
   {
+    title: "Now",
+    url: "/now",
+  },
+  {
     title: "Contact",
     url: "/contact",
   },
@@ -20,7 +24,7 @@ const navLinks = [
 export const Root = ({ children }: RootProps) => {
   return (
     <>
-      <Header navLinks={navLinks} showNav={false} />
+      <Header isNavEnabled={false} navLinks={navLinks} />
 
       {children}
 

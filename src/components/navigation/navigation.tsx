@@ -14,7 +14,7 @@ export const Navigation = ({ links }: NavigationProps) => {
         {links.map((link) => (
           <li className="ml-10 first:ml-0" key={link.url}>
             <Link
-              className="text-sm font-semibold text-white no-underline hover:underline"
+              className="block text-sm font-semibold text-white no-underline hover:underline"
               to={link.url}
             >
               {link.title}

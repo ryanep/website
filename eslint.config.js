@@ -4,6 +4,6 @@ const { createConfig } = require("@ryanep/eslint-config");
 module.exports = [
   ...createConfig(),
   {
-    ignores: ["out, .next"],
+    ignores: ["out, .next", "src/utils/sdk.ts"],
   },
 ];

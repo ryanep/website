@@ -1,6 +1,9 @@
+import { parseWorkItem } from "#/utils/parsers/work-item";
 import type { GetHomeQuery } from "../sdk";
 
 export const parseHomePageData = (homeData: GetHomeQuery) => {
+  const workItems = homeData.work?.items ?? [];
+
   return {
     projects:
       homeData.projects?.items.map((project) => {
@@ -29,22 +32,6 @@ export const parseHomePageData = (homeData: GetHomeQuery) => {
         };
       }) ?? [],
 
-    work:
-      homeData.work?.items.map((work) => {
-        return {
-          colour: work?.colour ?? "",
-          companyName: work?.companyName ?? "",
-          description: work?.description ?? "",
-          endDate: work?.endDate ?? "",
-          icon: {
-            alt: work?.icon?.title ?? "",
-            url: work?.icon?.url ?? "",
-          },
-          id: work?.sys.id ?? "",
-          name: work?.name ?? "",
-          role: work?.role ?? "",
-          startDate: work?.startDate ?? "",
-        };
-      }) ?? [],
+    work: workItems.map((workItem) => parseWorkItem(workItem)).filter(Boolean),
   };
 };

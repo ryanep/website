@@ -7,8 +7,25 @@ export const Footer = async () => {
   const year = getCurrentYear();
 
   return (
-    <footer className="bg-primary p-5 text-center text-sm font-medium text-white transition-colors dark:bg-primary-dark">
-      <Wrap>{t("footer.copyright", { year })}</Wrap>
+    <footer className="bg-primary p-5 text-sm font-medium text-white transition-colors dark:bg-primary-dark">
+      <Wrap>
+        <div className="flex">
+          {t("footer.copyright", { year })}
+
+          <ul className="ml-auto flex gap-4">
+            <li>
+              <a className="hover:underline" href="//github.com/ryanep">
+                Github
+              </a>
+            </li>
+            <li>
+              <a className="hover:underline" href="//linkedin.com/in/ryanep">
+                LinkedIn
+              </a>
+            </li>
+          </ul>
+        </div>
+      </Wrap>
     </footer>
   );
 };

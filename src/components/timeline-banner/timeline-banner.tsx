@@ -10,7 +10,7 @@ interface TimelineBannerProps {
   readonly items: {
     colour: string;
     companyName: string;
-    endDate: string;
+    endDate: string | undefined;
     icon: {
       alt: string;
       url: string;
@@ -44,7 +44,7 @@ export const TimelineBanner = async ({
           <div className="flex flex-col gap-4">
             {items.map((work) => {
               const startDate = new Date(work.startDate);
-              const endDate = new Date(work.endDate);
+              const endDate = work.endDate ? new Date(work.endDate) : undefined;
               const dateFormatter = new Intl.DateTimeFormat("en", {
                 month: "short",
                 year: "numeric",

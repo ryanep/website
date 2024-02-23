@@ -16,7 +16,7 @@ const RootLayout = async ({ children }: RootLayoutProps) => {
         <meta content={t("home.metaDescription")} name="description" />
       </head>
 
-      <body className="bg-primary text-neutral-800 antialiased dark:bg-primary-dark">
+      <body className="bg-white text-neutral-800 antialiased dark:bg-black dark:text-neutral-300">
         {children}
       </body>
     </html>

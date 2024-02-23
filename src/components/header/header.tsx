@@ -4,14 +4,14 @@ import { Navigation } from "#/components/navigation";
 import { Wrap } from "#/components/wrap";
 
 interface HeaderProps {
+  readonly isNavEnabled: boolean;
   readonly navLinks: {
     title: string;
     url: string;
   }[];
-  readonly showNav: boolean;
 }
 
-export const Header = ({ navLinks, showNav }: HeaderProps) => {
+export const Header = ({ isNavEnabled, navLinks }: HeaderProps) => {
   return (
     <header className="fixed top-0 z-30 w-full">
       <Wrap className="flex h-16 items-center">
@@ -19,7 +19,7 @@ export const Header = ({ navLinks, showNav }: HeaderProps) => {
           <Logo />
         </Link>
 
-        {showNav ? <Navigation links={navLinks} /> : null}
+        {isNavEnabled ? <Navigation links={navLinks} /> : null}
       </Wrap>
     </header>
   );

@@ -29,5 +29,5 @@
     ]
   },
   "exclude": ["node_modules", "public"],
-  "include": [ "**/*.ts", "**/*.tsx", ".next/types/**/*.ts","next-env.d.ts"]
+  "include": ["**/*.ts", "**/*.tsx", ".next/types/**/*.ts"]
 }
