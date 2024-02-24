@@ -21,15 +21,16 @@ const initI18next = async (lang: string, ns: LocalisationNamespace) => {
 };
 
 export const getTranslation = async (
-  lng: Locale = "en",
+  language: Locale = "en-GB",
   ns: LocalisationNamespace = "translations"
 ) => {
-  const i18nextInstance = await initI18next(lng, ns);
+  const i18nextInstance = await initI18next(language, ns);
 
   return {
     i18n: i18nextInstance,
+    language,
     // TODO: Resolve temporary type cast
-    t: i18nextInstance.getFixedT(lng, ns) as (
+    t: i18nextInstance.getFixedT(language, ns) as (
       key: string,
       variables?: unknown
     ) => string,

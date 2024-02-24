@@ -1,0 +1,7 @@
+query getBlogPost($slug: String!) {
+  blogPostCollection(where: { slug: $slug }) {
+    items {
+      ...BlogPost
+    }
+  }
+}

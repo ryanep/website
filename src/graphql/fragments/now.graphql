@@ -1,0 +1,9 @@
+fragment NowFields on Now {
+  sys {
+    id
+    publishedAt
+  }
+  name
+  slug
+  content
+}

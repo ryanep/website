@@ -9,12 +9,12 @@ interface NavigationProps {
 
 export const Navigation = ({ links }: NavigationProps) => {
   return (
-    <nav>
-      <ul className="flex">
+    <nav className="h-full">
+      <ul className="flex h-full gap-8">
         {links.map((link) => (
-          <li className="ml-10 first:ml-0" key={link.url}>
+          <li key={link.url}>
             <Link
-              className="block text-sm font-semibold text-white no-underline hover:underline"
+              className="flex h-full items-center text-base font-bold text-white no-underline transition-colors hover:underline"
               to={link.url}
             >
               {link.title}

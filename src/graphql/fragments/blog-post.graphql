@@ -1,0 +1,13 @@
+fragment BlogPost on BlogPost {
+  sys {
+    id
+  }
+  name
+  slug
+  summary
+  content
+  thumbnail {
+    title
+    url
+  }
+}

@@ -1,0 +1,7 @@
+query getBlog {
+  blogPosts: blogPostCollection(order: [sys_firstPublishedAt_DESC]) {
+    items {
+      ...BlogPost
+    }
+  }
+}

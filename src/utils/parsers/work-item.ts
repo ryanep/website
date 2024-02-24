@@ -1,5 +1,5 @@
 import { z } from "zod";
-import type { WorkItemFragment } from "../sdk";
+import type { WorkItemFragment } from "#/generated/sdk";
 
 const workItemSchema = z.object({
   colour: z.string(),

@@ -7,15 +7,15 @@ export const Footer = async () => {
   const year = getCurrentYear();
 
   return (
-    <footer className="bg-primary p-5 text-sm font-medium text-white transition-colors dark:bg-primary-dark">
+    <footer className="bg-primary py-5 text-center text-sm font-medium text-white transition-colors md:text-left dark:bg-primary-dark">
       <Wrap>
-        <div className="flex">
+        <div className="flex flex-col gap-4 md:flex-row">
           {t("footer.copyright", { year })}
 
-          <ul className="ml-auto flex gap-4">
+          <ul className="mx-auto inline-flex gap-4 md:ml-auto md:mr-0">
             <li>
               <a className="hover:underline" href="//github.com/ryanep">
-                Github
+                GitHub
               </a>
             </li>
             <li>

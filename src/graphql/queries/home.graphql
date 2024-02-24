@@ -16,4 +16,10 @@ query getHome {
       ...TechnologyItem
     }
   }
+
+  blogPosts: blogPostCollection(order: [sys_firstPublishedAt_DESC], limit: 3) {
+    items {
+      ...BlogPost
+    }
+  }
 }

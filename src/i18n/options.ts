@@ -1,8 +1,8 @@
-export const fallbackLng = "en";
+export const fallbackLng = "en-GB";
 export const languages = [fallbackLng];
 export const defaultNS = "translation";
 
-export type Locale = "en";
+export type Locale = "en-GB";
 
 export type LocalisationNamespace = "translations";
 

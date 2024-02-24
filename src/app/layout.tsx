@@ -7,16 +7,11 @@ interface RootLayoutProps {
 }
 
 const RootLayout = async ({ children }: RootLayoutProps) => {
-  const { t } = await getTranslation();
+  const { language } = await getTranslation();
 
   return (
-    <html lang="en">
-      <head>
-        <link href="//cdn.ryanep.com/favicon.ico" rel="icon" />
-        <meta content={t("home.metaDescription")} name="description" />
-      </head>
-
-      <body className="bg-white text-neutral-800 antialiased dark:bg-black dark:text-neutral-300">
+    <html lang={language}>
+      <body className="flex min-h-dvh flex-col bg-white text-neutral-800 antialiased dark:bg-black dark:text-neutral-300">
         {children}
       </body>
     </html>

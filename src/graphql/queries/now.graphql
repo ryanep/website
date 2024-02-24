@@ -1,0 +1,7 @@
+query getNow {
+  now: nowCollection(order: [sys_firstPublishedAt_DESC]) {
+    items {
+      ...NowFields
+    }
+  }
+}
