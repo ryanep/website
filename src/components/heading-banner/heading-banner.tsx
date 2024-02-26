@@ -28,7 +28,7 @@ export const HeadingBanner = ({
 
   return (
     // eslint-disable-next-line tailwindcss/no-arbitrary-value
-    <div className="sticky top-[calc(-400px+64px)] z-20 flex h-[400px] flex-row items-center overflow-hidden bg-primary text-white transition-colors dark:bg-primary-dark">
+    <div className="sticky top-[calc(-400px+64px)] z-20 -mt-16 flex h-[400px] flex-row items-center overflow-hidden bg-primary text-white transition-colors dark:bg-primary-dark">
       <Bubbles bubbles={bubbles} />
 
       <Wrap className="flex flex-col items-center">

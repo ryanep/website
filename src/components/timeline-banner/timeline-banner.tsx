@@ -56,10 +56,10 @@ export const TimelineBanner = async ({
 
               return (
                 <article
-                  className="group relative z-10 rounded-xl text-left md:-mt-16 md:w-1/2 first:md:mt-0 odd:md:pr-4 even:md:ml-auto even:md:pl-4"
+                  className="group relative z-10 text-left md:-mt-16 md:w-1/2 first:md:mt-0 odd:md:pr-4 even:md:ml-auto even:md:pl-4"
                   key={work.id}
                 >
-                  <div className="rounded-md bg-white p-4 shadow-md transition-colors dark:bg-neutral-800">
+                  <div className="rounded-xl bg-white p-4 shadow transition-colors dark:bg-neutral-800">
                     <header className="mb-3 flex flex-row flex-wrap items-center md:flex-nowrap">
                       <div
                         className="mr-3 flex aspect-square size-10 items-center justify-center rounded-md"

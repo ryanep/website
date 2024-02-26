@@ -3,16 +3,16 @@ import type { CodegenConfig } from "@graphql-codegen/cli";
 const codegenConfig: CodegenConfig = {
   documents: "src/**/*.graphql",
   generates: {
-    "./generated/graphql.schema.json": {
+    "./src/generated/graphql.schema.json": {
       plugins: ["introspection"],
     },
-    "./generated/schema.graphql": {
+    "./src/generated/schema.graphql": {
       plugins: ["schema-ast"],
     },
-    "./src/utils/sdk.ts": {
+    "./src/generated/sdk.ts": {
       config: {
         scalars: {
-          DateTime: "string",
+          DateTime: "Date",
           JSONString: "string",
           UUID: "string",
         },

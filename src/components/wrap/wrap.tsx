@@ -1,4 +1,4 @@
-import { clsx } from "clsx";
+import { cx } from "classix";
 import type { ReactNode } from "react";
 
 interface WrapProps {
@@ -8,6 +8,6 @@ interface WrapProps {
 
 export const Wrap = ({ children, className }: WrapProps) => {
   return (
-    <div className={clsx("mx-auto max-w-5xl px-6", className)}>{children}</div>
+    <div className={cx("mx-auto max-w-5xl px-6", className)}>{children}</div>
   );
 };

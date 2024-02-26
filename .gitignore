@@ -4,9 +4,8 @@
 .next
 .terraform
 *.log
-/generated
-/generated
+/dist
 /out
+/src/generated
 node_modules
 public
-src/utils/sdk.ts

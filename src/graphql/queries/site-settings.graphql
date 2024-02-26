@@ -1,0 +1,12 @@
+query getSiteSettings {
+  siteSettings: siteSettingsCollection(limit: 1) {
+    items {
+      sys {
+        id
+      }
+      slug
+      isBlogPageEnabled
+      isNowPageEnabled
+    }
+  }
+}

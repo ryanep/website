@@ -36,7 +36,7 @@ export const PersonalWorkBanner = ({
           {projects.map((project) => {
             return (
               <article
-                className="mx-auto flex w-full items-center rounded-xl bg-neutral-100 shadow-md transition-opacity hover:opacity-90 dark:bg-neutral-900"
+                className="mx-auto flex w-full items-center rounded-xl bg-neutral-100 shadow transition-opacity hover:opacity-90 dark:bg-neutral-900"
                 key={project.id}
               >
                 <a

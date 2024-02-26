@@ -1,10 +1,16 @@
+import { parseBlogPost } from "#/utils/parsers/blog-post";
 import { parseWorkItem } from "#/utils/parsers/work-item";
-import type { GetHomeQuery } from "../sdk";
+import type { GetHomeQuery } from "#/generated/sdk";
 
 export const parseHomePageData = (homeData: GetHomeQuery) => {
   const workItems = homeData.work?.items ?? [];
+  const blogPosts = homeData.blogPosts?.items ?? [];
 
   return {
+    blogPosts: blogPosts
+      .map((blogPost) => parseBlogPost(blogPost))
+      .filter(Boolean),
+
     projects:
       homeData.projects?.items.map((project) => {
         return {
