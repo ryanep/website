@@ -1,0 +1,18 @@
+{
+  "tasks": [
+    {
+      "type": "npm",
+      "script": "dev",
+      "problemMatcher": [],
+      "label": "Run website (Development)",
+      "detail": "Run the website in development mode."
+    },
+    {
+      "type": "npm",
+      "script": "start",
+      "problemMatcher": [],
+      "label": "Run website (Production)",
+      "detail": "Build the website and serve files."
+    }
+  ]
+}
