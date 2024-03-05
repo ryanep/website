@@ -1,4 +1,7 @@
+import { loadEnvConfig } from "@next/env";
 import type { CodegenConfig } from "@graphql-codegen/cli";
+
+loadEnvConfig(process.cwd());
 
 const codegenConfig: CodegenConfig = {
   documents: "src/**/*.graphql",
