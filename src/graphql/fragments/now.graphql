@@ -1,9 +1,9 @@
 fragment NowFields on Now {
+  content
+  name
+  slug
   sys {
     id
     publishedAt
   }
-  name
-  slug
-  content
 }

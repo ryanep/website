@@ -1,3 +1,4 @@
+import { Image } from "#/components/image";
 import { Link } from "#/components/link";
 
 interface BlogPostCardProps {
@@ -22,7 +23,7 @@ export const BlogPostCard = ({
         className="block h-full rounded-xl bg-neutral-100 p-4 text-left shadow transition-opacity hover:opacity-90 dark:bg-neutral-900"
         to={url}
       >
-        <img
+        <Image
           alt={thumbnail.alt}
           className="mb-4 block aspect-video w-full rounded-md object-cover"
           src={thumbnail.url}

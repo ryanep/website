@@ -1,4 +1,5 @@
 import { Heading } from "#/components/heading";
+import { Image } from "#/components/image";
 import { Section } from "#/components/section";
 import { Spacer } from "#/components/spacer";
 import { Wrap } from "#/components/wrap";
@@ -45,10 +46,12 @@ export const PersonalWorkBanner = ({
                   rel="noopener noreferrer"
                   target="_blank"
                 >
-                  <img
+                  <Image
                     alt={project.image.alt}
                     className="block aspect-square w-16 shrink-0 rounded-md"
+                    height={64}
                     src={project.image.url}
+                    width={64}
                   />
 
                   <div>

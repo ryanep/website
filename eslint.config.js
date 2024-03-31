@@ -1,9 +1,5 @@
-/* eslint-disable unicorn/prefer-module */
-const { createConfig } = require("@ryanep/eslint-config");
+import { createConfig } from "@ryanep/eslint-config";
 
-module.exports = [
-  ...createConfig(),
-  {
-    ignores: ["out, .next", "src/utils/sdk.ts"],
-  },
-];
+const eslintConfig = createConfig();
+
+export default eslintConfig;

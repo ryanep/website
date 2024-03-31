@@ -1,8 +1,8 @@
-/* eslint-disable unicorn/prefer-module */
-
-module.exports = {
+const postcssConfig = {
   plugins: {
     autoprefixer: {},
     tailwindcss: {},
   },
 };
+
+module.exports = postcssConfig;

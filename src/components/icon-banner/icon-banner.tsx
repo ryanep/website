@@ -1,4 +1,5 @@
 import { Heading } from "#/components/heading";
+import { Image } from "#/components/image";
 import { Section } from "#/components/section";
 import { Spacer } from "#/components/spacer";
 import { Wrap } from "#/components/wrap";
@@ -10,7 +11,9 @@ interface IconBannerProps {
     colour: string;
     icon: {
       alt: string;
+      height: number;
       url: string;
+      width: number;
     };
     id: string;
     name: string;
@@ -40,11 +43,12 @@ export const IconBanner = ({
               // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
               tabIndex={0}
             >
-              <img
+              <Image
                 alt={item.icon.alt}
                 className="size-auto max-h-6"
+                height={item.icon.height}
                 src={item.icon.url}
-                width="20"
+                width={item.icon.width}
               />
               <div className="invisible absolute bottom-full left-1/2 -translate-x-1/2 rounded-sm bg-white p-1 px-2 text-sm text-black opacity-0 shadow transition-all group-hover:visible group-hover:mb-1 group-hover:opacity-100 group-focus-visible:visible group-focus-visible:mb-1 group-focus-visible:opacity-100 dark:bg-neutral-800 dark:text-white">
                 {item.name}

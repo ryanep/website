@@ -1,3 +1,5 @@
+# import NowFields from '../fragments/now.graphql'
+
 query getNow {
   now: nowCollection(order: [sys_firstPublishedAt_DESC]) {
     items {

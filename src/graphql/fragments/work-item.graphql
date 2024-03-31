@@ -1,16 +1,18 @@
 fragment WorkItem on Work {
-  sys {
-    id
-  }
-  name
-  description
-  companyName
-  role
-  startDate
-  endDate
   colour
+  companyName
+  description
+  endDate
   icon {
+    height
     title
     url
+    width
+  }
+  name
+  role
+  startDate
+  sys {
+    id
   }
 }

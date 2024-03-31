@@ -18,7 +18,7 @@ const getPageData = async (slug: string) => {
 };
 
 interface BlogPostPageProps {
-  params: {
+  readonly params: {
     slug: string;
   };
 }

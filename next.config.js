@@ -1,10 +1,12 @@
-/* eslint-disable unicorn/prefer-module */
-/**
- * @type {import('next').NextConfig}
- */
+// @ts-check
+
+/** @type {import('next').NextConfig} */
 const nextConfig = {
+  images: {
+    unoptimized: true,
+  },
   output: "export",
   trailingSlash: true,
 };
 
-module.exports = nextConfig;
+export default nextConfig;

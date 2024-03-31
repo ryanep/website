@@ -1,7 +1,12 @@
+# import BlogPost from '../fragments/blog-post.graphql'
+# import ProjectItem from '../fragments/project-item.graphql'
+# import TechnologyItem from '../fragments/technology-item.graphql'
+# import WorkItem from '../fragments/work-item.graphql'
+
 query getHome {
-  work: workCollection(order: [startDate_DESC]) {
+  blogPosts: blogPostCollection(limit: 3, order: [sys_firstPublishedAt_DESC]) {
     items {
-      ...WorkItem
+      ...BlogPost
     }
   }
 
@@ -17,9 +22,9 @@ query getHome {
     }
   }
 
-  blogPosts: blogPostCollection(order: [sys_firstPublishedAt_DESC], limit: 3) {
+  work: workCollection(order: [startDate_DESC]) {
     items {
-      ...BlogPost
+      ...WorkItem
     }
   }
 }

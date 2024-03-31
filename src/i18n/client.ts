@@ -17,7 +17,7 @@ i18next
     )
   )
   .init(getOptions())
-  .catch((error) => {
+  .catch((error: unknown) => {
     console.error(error);
   });
 

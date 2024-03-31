@@ -1,12 +1,12 @@
 fragment ProjectItem on Project {
-  sys {
-    id
-  }
-  name
   description
-  url
   image {
     title
     url
   }
+  name
+  sys {
+    id
+  }
+  url
 }

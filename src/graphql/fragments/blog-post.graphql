@@ -1,11 +1,11 @@
 fragment BlogPost on BlogPost {
-  sys {
-    id
-  }
+  content
   name
   slug
   summary
-  content
+  sys {
+    id
+  }
   thumbnail {
     title
     url

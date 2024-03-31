@@ -1,11 +1,13 @@
 fragment TechnologyItem on Technology {
-  sys {
-    id
-  }
-  name
   colour
   icon {
+    height
     title
     url
+    width
+  }
+  name
+  sys {
+    id
   }
 }

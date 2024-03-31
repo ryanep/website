@@ -7,8 +7,10 @@ const workItemSchema = z.object({
   description: z.string().nullable(),
   endDate: z.string().nullable(),
   icon: z.object({
+    height: z.number(),
     title: z.string(),
     url: z.string(),
+    width: z.number(),
   }),
   name: z.string(),
   role: z.string(),
@@ -22,7 +24,8 @@ export const parseWorkItem = (workItem: null | WorkItemFragment) => {
   const parsedWorkItem = workItemSchema.safeParse(workItem);
 
   if (!parsedWorkItem.success) {
-    return;
+    console.error(parsedWorkItem.error);
+    throw new Error("Failed to parse work item.");
   }
 
   return {
@@ -32,7 +35,9 @@ export const parseWorkItem = (workItem: null | WorkItemFragment) => {
     endDate: parsedWorkItem.data.endDate ?? undefined,
     icon: {
       alt: parsedWorkItem.data.icon.title,
+      height: parsedWorkItem.data.icon.height,
       url: parsedWorkItem.data.icon.url,
+      width: parsedWorkItem.data.icon.width,
     },
     id: parsedWorkItem.data.sys.id,
     name: parsedWorkItem.data.name,

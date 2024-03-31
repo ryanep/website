@@ -3,7 +3,7 @@
   "appPort": ["3000:3000"],
   "build": {
     "dockerfile": "../dockerfile.dev",
-    "args": { "VARIANT": "20" }
+    "args": {"VARIANT": "20"}
   },
   "remoteUser": "node",
   "features": {

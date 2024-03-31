@@ -1,4 +1,5 @@
 import { Heading } from "#/components/heading";
+import { Image } from "#/components/image";
 import { Section } from "#/components/section";
 import { Spacer } from "#/components/spacer";
 import { Wrap } from "#/components/wrap";
@@ -13,7 +14,9 @@ interface TimelineBannerProps {
     endDate: string | undefined;
     icon: {
       alt: string;
+      height: number;
       url: string;
+      width: number;
     };
     id: string;
     name: string;
@@ -65,13 +68,13 @@ export const TimelineBanner = async ({
                         className="mr-3 flex aspect-square size-10 items-center justify-center rounded-md"
                         style={{ backgroundColor: work.colour }}
                       >
-                        <img
+                        <Image
                           alt={work.icon.alt}
                           // eslint-disable-next-line tailwindcss/no-arbitrary-value
-                          className="block size-auto max-h-5 max-w-[24px] opacity-80 brightness-200"
-                          height="20"
+                          className="block max-h-5 max-w-[24px] opacity-80 brightness-200"
+                          height={work.icon.height}
                           src={work.icon.url}
-                          width="20"
+                          width={work.icon.width}
                         />
                       </div>
 

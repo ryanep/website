@@ -31,7 +31,9 @@ export const parseHomePageData = (homeData: GetHomeQuery) => {
           colour: technology?.colour ?? "",
           icon: {
             alt: technology?.icon?.title ?? "",
+            height: technology?.icon?.height ?? 20,
             url: technology?.icon?.url ?? "",
+            width: technology?.icon?.width ?? 20,
           },
           id: technology?.sys.id ?? "",
           name: technology?.name ?? "",

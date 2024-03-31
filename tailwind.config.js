@@ -1,7 +1,7 @@
-/* eslint-disable unicorn/prefer-module */
-/** @type {import('tailwindcss').Config} */
+// @ts-check
 
-module.exports = {
+/** @type {import('tailwindcss').Config} */
+const tailwindConfig = {
   content: ["./src/app/**/*.{ts,tsx}", "./src/components/**/*.{ts,tsx}"],
   darkMode: "media",
   plugins: [],
@@ -14,3 +14,5 @@ module.exports = {
     },
   },
 };
+
+export default tailwindConfig;
