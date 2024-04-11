@@ -5,11 +5,6 @@ variable "subdomain" {}
 variable "domain" {}
 variable "certificate_arn" {}
 
-variable "namecheap_user_name" {}
-variable "namecheap_api_user" {}
-variable "namecheap_api_key" {}
-variable "namecheap_client_ip" {}
-
 terraform {
   backend "s3" {
     bucket  = "ryanep-infrastructure"
@@ -65,7 +60,7 @@ resource "aws_cloudfront_distribution" "cdn_s3_distribution" {
     }
   }
 
-  aliases             = ["${var.subdomain}.${var.domain}"]
+  aliases             = [var.domain, "${var.subdomain}.${var.domain}"]
   enabled             = true
   is_ipv6_enabled     = true
   default_root_object = "index.html"
@@ -120,31 +115,5 @@ resource "aws_cloudfront_distribution" "cdn_s3_distribution" {
     geo_restriction {
       restriction_type = "none"
     }
-  }
-}
-
-provider "namecheap" {
-  user_name   = var.namecheap_user_name
-  api_user    = var.namecheap_api_user
-  api_key     = var.namecheap_api_key
-  client_ip   = var.namecheap_client_ip
-  use_sandbox = false
-}
-
-resource "namecheap_domain_records" "domain-com" {
-  domain = var.domain
-  mode   = "MERGE"
-
-  record {
-    hostname = "@"
-    type     = "ALIAS"
-    address  = "${var.subdomain}.${var.domain}"
-    ttl      = 300
-  }
-
-  record {
-    hostname = var.subdomain
-    type     = "CNAME"
-    address  = "${aws_cloudfront_distribution.cdn_s3_distribution.domain_name}."
   }
 }

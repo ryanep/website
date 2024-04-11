@@ -1,6 +1,7 @@
 {
   "name": "Website Dev",
   "appPort": ["3000:3000"],
+  "postCreateCommand": "npm install",
   "build": {
     "dockerfile": "../dockerfile.dev",
     "args": {"VARIANT": "20"}
