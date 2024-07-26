@@ -1,14 +1,27 @@
 {
   "name": "Website Dev",
   "appPort": ["3000:3000"],
+  "postStartCommand": "git config --global --add safe.directory ${containerWorkspaceFolder}",
   "postCreateCommand": "npm install",
   "build": {
-    "dockerfile": "../dockerfile.dev",
-    "args": {"VARIANT": "20"}
+    "dockerfile": "./dockerfile"
   },
   "remoteUser": "node",
   "features": {
-    "terraform": "latest",
+    "terraform": "1.9.0",
     "git": "latest"
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "bradlc.vscode-tailwindcss",
+        "dbaeumer.vscode-eslint",
+        "editorconfig.editorconfig",
+        "esbenp.prettier-vscode",
+        "hashicorp.terraform",
+        "mikestead.dotenv",
+        "waderyan.gitblame"
+      ]
+    }
   }
 }
