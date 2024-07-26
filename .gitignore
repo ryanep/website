@@ -3,10 +3,12 @@
 .env.local
 .env.production
 .next
-.terraform
 *.log
 /dist
 /out
 /src/generated
 node_modules
 public/icons
+.terraform
+.infrastructure/backend.conf
+.infrastructure/terraform.tfvars
