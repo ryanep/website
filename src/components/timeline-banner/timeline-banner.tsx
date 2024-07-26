@@ -38,7 +38,7 @@ export const TimelineBanner = async ({
         <Heading text={heading} type="h2" />
         <Spacer size="small" />
 
-        <p className="mx-auto max-w-4xl text-lg font-medium">{description}</p>
+        <p className="mx-auto max-w-xl text-lg font-medium">{description}</p>
         <Spacer size="large" />
 
         <div className="relative">

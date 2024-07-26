@@ -21,7 +21,7 @@ export const ContactBanner = async ({
         <Heading text={heading} type="h2" />
         <Spacer size="small" />
 
-        <p className="mx-auto mb-8 max-w-4xl text-lg font-medium">
+        <p className="mx-auto mb-8 max-w-xl text-lg font-medium">
           {description}
         </p>
 
