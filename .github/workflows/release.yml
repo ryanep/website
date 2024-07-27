@@ -17,7 +17,7 @@ jobs:
         env:
           CONTENTFUL_GRAPHQL_ENDPOINT: ${{ secrets.CONTENTFUL_GRAPHQL_ENDPOINT }}
       - run: npm run lint
-      - run: npm run build
+      - run: make app-build
         env:
           CONTENTFUL_GRAPHQL_ENDPOINT: ${{ secrets.CONTENTFUL_GRAPHQL_ENDPOINT }}
       - name: Terraform fmt
