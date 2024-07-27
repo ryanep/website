@@ -9,6 +9,7 @@
 /src/generated
 node_modules
 public/icons
+.devcontainer/devcontainer.env
 .terraform
 .infrastructure/backend.conf
 .infrastructure/terraform.tfvars

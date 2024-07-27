@@ -3,6 +3,7 @@
   "appPort": ["3000:3000"],
   "postStartCommand": "git config --global --add safe.directory ${containerWorkspaceFolder}",
   "postCreateCommand": "npm install",
+  "runArgs": ["--env-file",".devcontainer/devcontainer.env"],
   "build": {
     "dockerfile": "./dockerfile"
   },
