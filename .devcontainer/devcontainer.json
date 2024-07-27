@@ -10,7 +10,8 @@
   "remoteUser": "node",
   "features": {
     "terraform": "1.9.0",
-    "git": "latest"
+    "git": "latest",
+    "node": "22.3.0"
   },
   "customizations": {
     "vscode": {

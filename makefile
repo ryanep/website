@@ -1,3 +1,7 @@
+app-build:
+	npm run favicons && \
+	npm run build
+
 infrastructure-init:
 	cd .infrastructure && \
 	terraform init \
