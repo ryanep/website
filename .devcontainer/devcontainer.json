@@ -2,8 +2,8 @@
   "name": "Website Dev",
   "appPort": ["3000:3000"],
   "postStartCommand": "git config --global --add safe.directory ${containerWorkspaceFolder}",
-  "postCreateCommand": "npm install",
-  "runArgs": ["--env-file",".devcontainer/devcontainer.env"],
+  "postCreateCommand": "npm install && npx playwright install-deps",
+  "runArgs": ["--env-file", ".devcontainer/devcontainer.env"],
   "build": {
     "dockerfile": "./dockerfile"
   },
@@ -22,6 +22,7 @@
         "esbenp.prettier-vscode",
         "hashicorp.terraform",
         "mikestead.dotenv",
+        "ms-playwright.playwright",
         "waderyan.gitblame"
       ]
     }

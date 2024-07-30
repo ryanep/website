@@ -15,3 +15,7 @@ public/icons
 .terraform
 .infrastructure/backend.conf
 .infrastructure/terraform.tfvars
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
