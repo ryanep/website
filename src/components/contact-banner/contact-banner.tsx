@@ -27,7 +27,7 @@ export const ContactBanner = async ({
 
         <a
           className="relative inline-block cursor-pointer rounded-full border-2 border-primary bg-transparent px-6 py-2 text-base font-bold text-primary transition-all hover:bg-primary hover:text-white disabled:text-transparent dark:border-primary-dark dark:bg-transparent dark:text-neutral-300 dark:hover:bg-primary-dark"
-          href="mailto:ryan@ryanep.com"
+          href={t("home.contactBanner.buttonUrl")}
         >
           {t("home.contactBanner.buttonTitle")}
         </a>

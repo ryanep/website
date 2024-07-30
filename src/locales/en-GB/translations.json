@@ -25,6 +25,7 @@
     },
     "contactBanner": {
       "buttonTitle": "Get in touch",
+      "buttonUrl": "mailto:me@ryanep.com",
       "description": "Have any questions? Feel free to drop me an email.",
       "heading": "Contact me"
     },
