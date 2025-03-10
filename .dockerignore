@@ -1,2 +1,6 @@
 node_modules
-src
+/out
+/.devcontainer
+/.github
+/.infrastructure
+/.vscode
