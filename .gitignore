@@ -7,7 +7,6 @@
 /dist
 /out
 /src/generated
-/src/app/favicon.ico
 /src/app/manifest.webmanifest
 node_modules
 public/icons
