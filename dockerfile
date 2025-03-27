@@ -1,4 +1,4 @@
-FROM node:alpine3.21 as builder
+FROM node:alpine3.21 AS builder
 
 WORKDIR /app
 
@@ -6,7 +6,6 @@ ARG CONTENTFUL_GRAPHQL_ENDPOINT
 
 COPY . .
 
-RUN printenv
 RUN npm install
 RUN npm run codegen
 RUN npm run build
