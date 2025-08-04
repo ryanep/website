@@ -1,4 +1,5 @@
 import { loadEnvConfig } from "@next/env";
+import { config } from "./src/config";
 import type { CodegenConfig } from "@graphql-codegen/cli";
 
 loadEnvConfig(process.cwd());
@@ -29,7 +30,7 @@ const codegenConfig: CodegenConfig = {
   },
   overwrite: true,
   require: ["dotenv/config"],
-  schema: process.env.CONTENTFUL_GRAPHQL_ENDPOINT,
+  schema: config.CONTENTFUL_GRAPHQL_ENDPOINT,
 };
 
 export default codegenConfig;
