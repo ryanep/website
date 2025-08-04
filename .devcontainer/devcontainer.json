@@ -10,7 +10,7 @@
   "remoteUser": "node",
   "features": {
     "terraform": "1.9.0",
-    "git": "latest",
+    "git": "2.50.1",
     "node": "22.3.0",
     "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {}
   },
