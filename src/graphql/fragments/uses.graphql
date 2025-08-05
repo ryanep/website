@@ -1,0 +1,9 @@
+fragment UsesFields on Uses {
+  content
+  name
+  slug
+  sys {
+    id
+    publishedAt
+  }
+}

@@ -1,0 +1,9 @@
+# import UsesFields from '../fragments/uses.graphql'
+
+query getUses {
+  uses: usesCollection(order: [sys_firstPublishedAt_DESC]) {
+    items {
+      ...UsesFields
+    }
+  }
+}

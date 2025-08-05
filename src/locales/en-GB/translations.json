@@ -54,5 +54,8 @@
   },
   "now.lastPublished": "Last updated {{date, datetime}}.",
   "now.metaDescription": "What I'm currently up to",
-  "now.pageTitle": "Now - Ryan Elliott-Potter"
+  "now.pageTitle": "Now - Ryan Elliott-Potter",
+  "uses.lastPublished": "Last updated {{date, datetime}}.",
+  "uses.metaDescription": "What I use",
+  "uses.pageTitle": "Uses - Ryan Elliott-Potter"
 }
