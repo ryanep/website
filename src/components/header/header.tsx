@@ -18,6 +18,10 @@ const navLinks = [
     title: "Now",
     url: "/now",
   },
+  {
+    title: "Uses",
+    url: "/uses",
+  },
 ];
 
 export const Header = ({
