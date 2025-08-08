@@ -17,8 +17,8 @@ export const parseBlog = (blog: GetBlogQuery) => {
   }
 
   return {
-    blogPosts: parsedBlog.data.blogPosts.items
-      .map((blogPost) => parseBlogPost(blogPost))
-      .filter(Boolean),
+    blogPosts: parsedBlog.data.blogPosts.items.map((blogPost) =>
+      parseBlogPost(blogPost)
+    ),
   };
 };

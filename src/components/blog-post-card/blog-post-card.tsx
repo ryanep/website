@@ -26,7 +26,9 @@ export const BlogPostCard = ({
         <Image
           alt={thumbnail.alt}
           className="mb-4 block aspect-video w-full rounded-md object-cover"
+          height={320}
           src={thumbnail.url}
+          width={320}
         />
 
         <h3 className="mb-2 text-xl font-bold">{name}</h3>

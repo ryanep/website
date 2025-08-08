@@ -1,61 +1,41 @@
 {
-  "blog": {
-    "metaDescription": "Blog posts",
-    "pageTitle": "Blog - Ryan Elliott-Potter"
-  },
-  "contact": {
-    "pageTitle": "Contact - Ryan Elliott-Potter",
-    "titleBanner": {
-      "heading": "Contact"
-    }
-  },
-  "footer": {
-    "copyright": "© Ryan Elliott-Potter {{year}}. All rights reserved."
-  },
-  "home": {
-    "aboutBanner": {
-      "description": "I'm **Ryan Elliott-Potter**; a full-stack developer from the United Kingdom. I have an interest in all types of development but I am currently primarily focused on Node, React and TypeScript.",
-      "heading": "About me",
-      "imageTitle": "Me",
-      "imageUrl": "//images.ctfassets.net/360neg17xztl/3spxeFSZBvRRDmNiDHT1Xu/87ec3fbfe74e43f13f2ccbc7a502c773/me.jpg"
-    },
-    "blogPostBanner": {
-      "description": "Occasionally I write blog articles. Here are some of my most recent posts.",
-      "heading": "Latest posts"
-    },
-    "contactBanner": {
-      "buttonTitle": "Get in touch",
-      "buttonUrl": "mailto:me@ryanep.com",
-      "description": "Have any questions? Feel free to drop me an email.",
-      "heading": "Contact me"
-    },
-    "headingBanner": {
-      "description": "Full-stack JavaScript Developer",
-      "heading": "Ryan Elliott-Potter"
-    },
-    "iconBanner": {
-      "description": "I'm interested and have experience working with a number of different technologies. Below is a small selection of favourites.",
-      "heading": "Technology"
-    },
-    "metaDescription": "A full-stack developer from the United Kingdom.",
-    "pageTitle": "Full-stack JavaScript Developer - Ryan Elliott-Potter",
-    "personalWorkBanner": {
-      "description": "I've worked on a number of personal development projects. Check some of them out below.",
-      "heading": "Personal projects"
-    },
-    "workExperienceBanner": {
-      "description": "I've been working as a developer professionally for over ten years and had the opportunity to work for the following companies.",
-      "heading": "Work experience",
-      "present": "Present"
-    }
-  },
-  "logo": {
-    "title": "Ryanep Logo"
-  },
+  "blog.metaDescription": "Blog posts",
+  "blog.pageTitle": "Blog - Ryan Elliott-Potter",
+  "contact.pageTitle": "Contact - Ryan Elliott-Potter",
+  "contact.titleBanner.heading": "Contact",
+  "footer.copyright": "© Ryan Elliott-Potter {{year}}. All rights reserved.",
+  "home.aboutBanner.description": "I'm **Ryan Elliott-Potter**; a full-stack developer from the United Kingdom. I have an interest in all types of development but I am currently primarily focused on Node, React and TypeScript.",
+  "home.aboutBanner.heading": "About me",
+  "home.aboutBanner.imageTitle": "Me",
+  "home.aboutBanner.imageUrl": "//images.ctfassets.net/360neg17xztl/3spxeFSZBvRRDmNiDHT1Xu/87ec3fbfe74e43f13f2ccbc7a502c773/me.jpg",
+  "home.blogPostBanner.description": "Occasionally I write blog articles. Here are some of my most recent posts.",
+  "home.blogPostBanner.heading": "Latest posts",
+  "home.contactBanner.buttonTitle": "Get in touch",
+  "home.contactBanner.buttonUrl": "mailto:me@ryanep.com",
+  "home.contactBanner.description": "Have any questions? Feel free to drop me an email.",
+  "home.contactBanner.heading": "Contact me",
+  "home.headingBanner.description": "Full-stack JavaScript Developer",
+  "home.headingBanner.heading": "Ryan Elliott-Potter",
+  "home.iconBanner.description": "I'm interested and have experience working with a number of different technologies. Below is a small selection of favourites.",
+  "home.iconBanner.heading": "Technology",
+  "home.metaDescription": "A full-stack developer from the United Kingdom.",
+  "home.pageTitle": "Full-stack JavaScript Developer - Ryan Elliott-Potter",
+  "home.personalWorkBanner.description": "I've worked on a number of personal development projects. Check some of them out below.",
+  "home.personalWorkBanner.heading": "Personal projects",
+  "home.workExperienceBanner.description": "I've been working as a developer professionally for over ten years and had the opportunity to work for the following companies.",
+  "home.workExperienceBanner.heading": "Work experience",
+  "home.workExperienceBanner.present": "Present",
+  "logo.title": "Ryanep Logo",
   "now.lastPublished": "Last updated {{date, datetime}}.",
   "now.metaDescription": "What I'm currently up to",
   "now.pageTitle": "Now - Ryan Elliott-Potter",
   "uses.lastPublished": "Last updated {{date, datetime}}.",
   "uses.metaDescription": "What I use",
-  "uses.pageTitle": "Uses - Ryan Elliott-Potter"
+  "uses.pageTitle": "Uses - Ryan Elliott-Potter",
+  "rss.feed.id": "https://www.ryanep.com",
+  "rss.feed.copyright": "© Ryan Elliott-Potter 2025. All rights reserved.",
+  "rss.feed.description": "My personal blog feed",
+  "rss.feed.language": "en-GB",
+  "rss.feed.link": "https://www.ryanep.com/blog/rss.xml",
+  "rss.feed.title": "Blog - Ryan Elliott-Potter"
 }

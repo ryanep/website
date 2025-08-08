@@ -18,6 +18,7 @@
   "dependencies": {
     "classix": "^2.1.36",
     "dotenv": "^16.4.2",
+    "feed": "^5.1.0",
     "framer-motion": "^10.18.0",
     "graphql-request": "^6.1.0",
     "i18next": "^23.8.2",

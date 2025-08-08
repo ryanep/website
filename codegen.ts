@@ -16,7 +16,7 @@ const codegenConfig: CodegenConfig = {
     "./src/generated/sdk.ts": {
       config: {
         scalars: {
-          DateTime: "Date",
+          DateTime: "string",
           JSONString: "string",
           UUID: "string",
         },

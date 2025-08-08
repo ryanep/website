@@ -1,7 +1,7 @@
 # import BlogPost from '../fragments/blog-post.graphql'
 
 query getBlog {
-  blogPosts: blogPostCollection(order: [sys_firstPublishedAt_DESC]) {
+  blogPosts: blogPostCollection(order: [sys_publishedAt_DESC]) {
     items {
       ...BlogPost
     }
