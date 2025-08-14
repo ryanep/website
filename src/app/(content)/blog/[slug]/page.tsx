@@ -19,9 +19,9 @@ const getPageData = async (slug: string) => {
 };
 
 interface BlogPostPageProps {
-  readonly params: {
+  readonly params: Promise<{
     slug: string;
-  };
+  }>;
 }
 
 const getAverageReadTime = (content: string) => {
@@ -32,8 +32,9 @@ const getAverageReadTime = (content: string) => {
 };
 
 const BlogPostPage = async ({ params }: BlogPostPageProps) => {
+  const { slug } = await params;
   const { t } = await getTranslation();
-  const { content, name, publishedAt } = await getPageData(params.slug);
+  const { content, name, publishedAt } = await getPageData(slug);
 
   return (
     <main className="mx-auto max-w-3xl">

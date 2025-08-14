@@ -7,7 +7,7 @@ interface MarkdownProps {
 
 export const Markdown = ({ source }: MarkdownProps) => {
   return (
-    <ReactMarkdown
+    <div
       className={cx(
         "text-lg",
         "[&_*]:last:[&_*]:mb-0",
@@ -23,7 +23,7 @@ export const Markdown = ({ source }: MarkdownProps) => {
         "[&_blockquote]:border-l-4 [&_blockquote]:pl-4 [&_blockquote]:border-neutral-400"
       )}
     >
-      {source}
-    </ReactMarkdown>
+      <ReactMarkdown>{source}</ReactMarkdown>
+    </div>
   );
 };
