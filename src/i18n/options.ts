@@ -1,4 +1,4 @@
-import type translations from "../locales/en-GB/translations.json";
+import translations from "../locales/en-GB/translations.json";
 
 export const fallbackLng = "en-GB";
 export const languages = [fallbackLng];
@@ -10,6 +10,12 @@ export type LocalisationNamespace = "translations";
 
 export type TranslationKey = keyof typeof translations;
 
+export const resources = {
+  "en-GB": {
+    translations,
+  },
+} as const;
+
 export const getOptions = (lng = fallbackLng, ns = defaultNS) => {
   return {
     defaultNS,
@@ -17,6 +23,7 @@ export const getOptions = (lng = fallbackLng, ns = defaultNS) => {
     fallbackNS: defaultNS,
     lng,
     ns,
+    resources,
     supportedLngs: languages,
   };
 };

@@ -1,7 +1,0 @@
-.deploy
-.devcontainer
-out
-.next
-eslint.config.js
-node_modules
-postcss.config.js

@@ -70,7 +70,6 @@ export const TimelineBanner = async ({
                       >
                         <Image
                           alt={work.icon.alt}
-                          // eslint-disable-next-line tailwindcss/no-arbitrary-value
                           className="block max-h-5 max-w-[24px] opacity-80 brightness-200"
                           height={work.icon.height}
                           src={work.icon.url}

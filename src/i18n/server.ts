@@ -2,7 +2,7 @@ import { createInstance } from "i18next";
 import resourcesToBackend from "i18next-resources-to-backend";
 import { initReactI18next } from "react-i18next/initReactI18next";
 import { getOptions } from "./options";
-import type { Locale, LocalisationNamespace, TranslationKey } from "./options";
+import type { Locale, LocalisationNamespace } from "./options";
 
 const initI18next = async (lang: string, ns: LocalisationNamespace) => {
   const i18nInstance = createInstance();
@@ -29,10 +29,6 @@ export const getTranslation = async (
   return {
     i18n: i18nextInstance,
     language,
-    // TODO: Resolve temporary type cast
-    t: i18nextInstance.getFixedT(language, ns) as (
-      key: TranslationKey,
-      variables?: unknown
-    ) => string,
+    t: i18nextInstance.getFixedT(language, ns),
   };
 };
