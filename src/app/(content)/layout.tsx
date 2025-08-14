@@ -13,7 +13,7 @@ const RootLayout = ({ children }: RootLayoutProps) => {
     <>
       <Header isNavEnabled isWithBackground />
 
-      <Wrap className="w-full grow py-12">{children}</Wrap>
+      <Wrap className="w-full grow py-16">{children}</Wrap>
 
       <Footer />
     </>

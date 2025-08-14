@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import { Markdown } from "#/components/markdown";
+import { getTranslation } from "#/i18n/server";
 import { parseBlogPost } from "#/utils/parsers/blog-post";
 import { createGraphqlClient } from "#/utils/sdk";
 
@@ -23,16 +24,42 @@ interface BlogPostPageProps {
   };
 }
 
+const getAverageReadTime = (content: string) => {
+  const wordsPerMinute = 200;
+  const wordCount = content.split(" ").length;
+
+  return Math.ceil(wordCount / wordsPerMinute);
+};
+
 const BlogPostPage = async ({ params }: BlogPostPageProps) => {
-  const { content, name } = await getPageData(params.slug);
+  const { t } = await getTranslation();
+  const { content, name, publishedAt } = await getPageData(params.slug);
 
   return (
-    <main>
-      <h1 className="mb-8 text-4xl font-black">{name}</h1>
+    <main className="mx-auto max-w-3xl">
+      <div className="mb-12 text-center">
+        <h1 className="mb-4 text-6xl font-black">{name}</h1>
 
-      <div>
-        <Markdown source={content} />
+        <p className="font-medium">
+          {t("blog.header.published", {
+            date: publishedAt,
+            formatParams: {
+              date: {
+                day: "2-digit",
+                month: "2-digit",
+                year: "numeric",
+              },
+            },
+            interpolation: { escapeValue: false },
+          })}
+          -{" "}
+          {t("blog.header.averageReadTime", {
+            count: getAverageReadTime(content),
+          })}
+        </p>
       </div>
+
+      <Markdown source={content} />
     </main>
   );
 };
