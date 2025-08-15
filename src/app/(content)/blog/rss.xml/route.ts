@@ -29,7 +29,8 @@ export const GET = async () => {
 
   for (const blogPost of blogPosts) {
     feed.addItem({
-      date: blogPost.publishedAt,
+      // TODO: Populate
+      date: new Date(),
       description: blogPost.summary,
       link: `https://www.ryanep.com/blog/${blogPost.slug}`,
       title: blogPost.name,
@@ -42,3 +43,5 @@ export const GET = async () => {
     },
   });
 };
+
+export const dynamic = "force-static";

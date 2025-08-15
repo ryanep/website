@@ -8,7 +8,6 @@ export const blogPostSchema = z.object({
   summary: z.string(),
   sys: z.object({
     id: z.string(),
-    publishedAt: z.string().datetime(),
   }),
   thumbnail: z.object({
     title: z.string(),
@@ -28,7 +27,6 @@ export const parseBlogPost = (blogPost: BlogPostFragment | null) => {
     content: parsedBlogPost.data.content,
     id: parsedBlogPost.data.sys.id,
     name: parsedBlogPost.data.name,
-    publishedAt: new Date(parsedBlogPost.data.sys.publishedAt),
     slug: parsedBlogPost.data.slug,
     summary: parsedBlogPost.data.summary,
     thumbnail: {

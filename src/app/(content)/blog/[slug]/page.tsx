@@ -34,7 +34,7 @@ const getAverageReadTime = (content: string) => {
 const BlogPostPage = async ({ params }: BlogPostPageProps) => {
   const { slug } = await params;
   const { t } = await getTranslation();
-  const { content, name, publishedAt } = await getPageData(slug);
+  const { content, name } = await getPageData(slug);
 
   return (
     <main className="mx-auto max-w-3xl">
@@ -43,7 +43,8 @@ const BlogPostPage = async ({ params }: BlogPostPageProps) => {
 
         <p className="font-medium">
           {t("blog.header.published", {
-            date: publishedAt,
+            // TODO: Populate
+            date: new Date(),
             formatParams: {
               date: {
                 day: "2-digit",

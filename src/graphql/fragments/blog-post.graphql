@@ -5,7 +5,6 @@ fragment BlogPost on BlogPost {
   summary
   sys {
     id
-    publishedAt
   }
   thumbnail {
     title
