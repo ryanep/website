@@ -21,7 +21,7 @@ export const parseNow = (now: GetNowQuery | null) => {
   const parsedNow = nowSchema.safeParse(now);
 
   if (!parsedNow.success) {
-    console.error(parsedNow.error.errors[0]);
+    console.error(parsedNow.error.issues[0]);
     throw new Error("Failed to parse now.");
   }
 

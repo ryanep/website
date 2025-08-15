@@ -21,7 +21,7 @@ export const parseUses = (uses: GetUsesQuery | null) => {
   const parsedUses = usesSchema.safeParse(uses);
 
   if (!parsedUses.success) {
-    console.error(parsedUses.error.errors[0]);
+    console.error(parsedUses.error.issues[0]);
     throw new Error("Failed to parse uses.");
   }
 

@@ -36,7 +36,10 @@ const main = async () => {
    * Writes the main favicon .ico image file to the root of the app directory.
    */
   if (icoFile) {
-    await fs.writeFile(path.join(appRootPath, icoFile.name), icoFile.contents);
+    await fs.writeFile(
+      path.join(appRootPath, icoFile.name),
+      new Uint8Array(icoFile.contents)
+    );
   }
 
   /**
@@ -45,7 +48,10 @@ const main = async () => {
    */
   await Promise.all(
     images.map(async (image) => {
-      await fs.writeFile(path.join(iconOutputPath, image.name), image.contents);
+      await fs.writeFile(
+        path.join(iconOutputPath, image.name),
+        new Uint8Array(image.contents)
+      );
     })
   );
 

@@ -16,7 +16,7 @@
     "test:integration": "playwright test"
   },
   "dependencies": {
-    "classix": "^2.1.36",
+    "classix": "^2.2.2",
     "dotenv": "^17.2.1",
     "feed": "^5.1.0",
     "framer-motion": "^12.23.12",
@@ -29,10 +29,10 @@
     "react-dom": "^19.1.1",
     "react-i18next": "^15.6.1",
     "react-markdown": "^10.1.0",
-    "zod": "^3.22.4"
+    "zod": "^4.0.17"
   },
   "devDependencies": {
-    "@axe-core/playwright": "^4.9.1",
+    "@axe-core/playwright": "^4.10.2",
     "@graphql-codegen/add": "^5.0.3",
     "@graphql-codegen/cli": "^5.0.7",
     "@graphql-codegen/introspection": "^4.0.3",
@@ -45,22 +45,23 @@
     "@graphql-codegen/typescript-operations": "^4.6.1",
     "@graphql-codegen/typescript-react-apollo": "^4.3.3",
     "@graphql-codegen/typescript-resolvers": "^4.5.1",
-    "@playwright/test": "^1.45.3",
+    "@playwright/test": "^1.54.2",
     "@ryanep/eslint-config": "^1.11.0",
-    "@ryanep/prettier-config": "^1.1.0",
-    "@total-typescript/ts-reset": "^0.5.1",
+    "@ryanep/prettier-config": "^1.2.2",
+    "@tailwindcss/postcss": "^4.1.12",
+    "@total-typescript/ts-reset": "^0.6.1",
     "@types/node": "^22.0.0",
     "@types/react": "^19.1.10",
     "@types/react-dom": "^19.1.7",
-    "autoprefixer": "^10.4.17",
+    "autoprefixer": "^10.4.21",
     "eslint": "^9.33.0",
     "favicons": "^7.2.0",
     "graphql": "^16.11.0",
-    "postcss": "^8.4.35",
-    "prettier": "^3.2.5",
+    "postcss": "^8.5.6",
+    "prettier": "^3.6.2",
     "serve": "^14.2.4",
-    "tailwindcss": "^3.4.1",
-    "tsx": "^4.16.2",
-    "typescript": "^5.3.3"
+    "tailwindcss": "^4.1.12",
+    "tsx": "^4.20.4",
+    "typescript": "^5.9.2"
   }
 }

@@ -52,7 +52,7 @@ const BlogPostPage = async ({ params }: BlogPostPageProps) => {
               },
             },
             interpolation: { escapeValue: false },
-          })}
+          })}{" "}
           -{" "}
           {t("blog.header.averageReadTime", {
             count: getAverageReadTime(content),
