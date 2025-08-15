@@ -3,7 +3,7 @@ app-build:
 	npm run build
 
 container-build:
-	docker build -t ryanep/website:1.0.5 --progress=plain . \
+	docker build -t ryanep/website:1.0.6 --progress=plain . \
 	--build-arg CONTENTFUL_GRAPHQL_ENDPOINT=${CONTENTFUL_GRAPHQL_ENDPOINT}
 
 infrastructure-init:
