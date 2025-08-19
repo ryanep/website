@@ -16,7 +16,7 @@ export const Markdown = ({ source }: MarkdownProps) => {
         "[&_h3]:text-2xl [&_h3]:font-bold [&_h3]:mb-4",
         "[&_ul]:list-disc [&_ul]:pl-7 [&_ul]:mb-6",
         "[&_ol]:list-disc [&_ol]:pl-7 [&_ol]:mb-6",
-        "[&_hr]:mb-6 last:[&_hr]:mb-0 [&_hr]:border-neutral-800",
+        "[&_hr]:mb-6 [&_hr]:last:mb-0 [&_hr]:border-neutral-800",
         "[&_p]:mb-6",
         "[&_img]:mb-6 [&_img]:rounded-md",
         "[&_a]:underline",
