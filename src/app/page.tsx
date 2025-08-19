@@ -48,14 +48,18 @@ const HomePage = async () => {
 
   return (
     <>
-      <Header isNavEnabled />
-
       <main>
-        <HeadingBanner
-          bubbles={bubbles}
-          description={t("home.headingBanner.description")}
-          heading={t("home.headingBanner.heading")}
-        />
+        <div className="relative">
+          <div className="absolute z-10 w-full">
+            <Header isNavEnabled />
+          </div>
+
+          <HeadingBanner
+            bubbles={bubbles}
+            description={t("home.headingBanner.description")}
+            heading={t("home.headingBanner.heading")}
+          />
+        </div>
 
         <div>
           <AboutBanner

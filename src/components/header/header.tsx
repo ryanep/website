@@ -31,7 +31,7 @@ export const Header = ({
   return (
     <header
       className={cx(
-        "sticky top-0 z-30 w-full",
+        "w-full",
         isWithBackground && "bg-primary dark:bg-primary-dark"
       )}
     >

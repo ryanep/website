@@ -27,7 +27,7 @@ export const HeadingBanner = ({
   const opacity = useTransform(scrollYProgress, [0, 0.04], [1, 0]);
 
   return (
-    <div className="sticky top-[calc(-400px+64px)] z-20 -mt-16 flex h-[400px] flex-row items-center overflow-hidden bg-primary text-white transition-colors dark:bg-primary-dark">
+    <div className="sticky flex h-[400px] flex-row items-center overflow-hidden bg-primary text-white transition-colors dark:bg-primary-dark">
       <Bubbles bubbles={bubbles} />
 
       <Wrap className="flex flex-col items-center">

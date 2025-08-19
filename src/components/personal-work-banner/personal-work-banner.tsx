@@ -30,7 +30,7 @@ export const PersonalWorkBanner = ({
         <Heading text={heading} type="h2" />
         <Spacer size="small" />
 
-        <p className="mx-auto max-w-xl text-lg font-medium">{description}</p>
+        <p className="mx-auto max-w-3xl text-lg font-medium">{description}</p>
         <Spacer size="large" />
 
         <div className="flex flex-col justify-between gap-5 text-left md:grid md:grid-cols-2">
