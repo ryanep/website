@@ -39,5 +39,6 @@
   "rss.feed.link": "https://www.ryanep.com/blog/rss.xml",
   "rss.feed.title": "Blog - Ryan Elliott-Potter",
   "blog.header.published": "Published {{date, datetime}}",
-  "blog.header.averageReadTime": "{{count}} minute read"
+  "blog.header.averageReadTime": "{{count}} minute read",
+  "blogPost.meta.pageTitle": "{{title}} - Ryan Elliott-Potter"
 }

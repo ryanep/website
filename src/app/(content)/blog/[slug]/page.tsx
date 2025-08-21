@@ -1,8 +1,33 @@
 import { notFound } from "next/navigation";
+import { Image } from "#/components/image";
 import { Markdown } from "#/components/markdown";
 import { getTranslation } from "#/i18n/server";
 import { parseBlogPost } from "#/utils/parsers/blog-post";
 import { createGraphqlClient } from "#/utils/sdk";
+
+interface BlogPostPageProps {
+  readonly params: Promise<{
+    slug: string;
+  }>;
+}
+
+const generateMetadata = async ({ params }: BlogPostPageProps) => {
+  const { slug } = await params;
+  const { t } = await getTranslation();
+  const sdk = createGraphqlClient();
+  const response = await sdk.getBlogPost({ slug });
+
+  const [blogPost] = response.blogPostCollection?.items ?? [];
+
+  if (!blogPost) {
+    return notFound();
+  }
+
+  return {
+    description: blogPost.summary,
+    title: t("blogPost.meta.pageTitle", { title: blogPost.name }),
+  };
+};
 
 const getPageData = async (slug: string) => {
   const sdk = createGraphqlClient();
@@ -18,12 +43,6 @@ const getPageData = async (slug: string) => {
   return parseBlogPost(blogPost);
 };
 
-interface BlogPostPageProps {
-  readonly params: Promise<{
-    slug: string;
-  }>;
-}
-
 const getAverageReadTime = (content: string) => {
   const wordsPerMinute = 200;
   const wordCount = content.split(" ").length;
@@ -34,7 +53,7 @@ const getAverageReadTime = (content: string) => {
 const BlogPostPage = async ({ params }: BlogPostPageProps) => {
   const { slug } = await params;
   const { t } = await getTranslation();
-  const { content, name } = await getPageData(slug);
+  const { content, name, thumbnail } = await getPageData(slug);
 
   return (
     <main className="mx-auto max-w-3xl">
@@ -61,6 +80,14 @@ const BlogPostPage = async ({ params }: BlogPostPageProps) => {
         </p>
       </div>
 
+      <Image
+        alt={thumbnail.alt}
+        className="mb-12 block aspect-video w-full rounded-md object-cover lg:scale-105"
+        height={320}
+        src={thumbnail.url}
+        width={320}
+      />
+
       <Markdown source={content} />
     </main>
   );
@@ -84,3 +111,4 @@ const generateStaticParameters = async () => {
 
 export default BlogPostPage;
 export { generateStaticParameters as generateStaticParams };
+export { generateMetadata };
