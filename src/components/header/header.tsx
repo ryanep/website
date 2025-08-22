@@ -15,6 +15,10 @@ const navLinks = [
     url: "/",
   },
   {
+    title: "Blog",
+    url: "/blog",
+  },
+  {
     title: "Now",
     url: "/now",
   },

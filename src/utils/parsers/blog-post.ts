@@ -4,6 +4,7 @@ import type { BlogPostFragment } from "#/generated/sdk";
 export const blogPostSchema = z.object({
   content: z.string(),
   name: z.string(),
+  publishDate: z.string(),
   slug: z.string(),
   summary: z.string(),
   sys: z.object({
@@ -27,6 +28,7 @@ export const parseBlogPost = (blogPost: BlogPostFragment | null) => {
     content: parsedBlogPost.data.content,
     id: parsedBlogPost.data.sys.id,
     name: parsedBlogPost.data.name,
+    publishDate: new Date(parsedBlogPost.data.publishDate),
     slug: parsedBlogPost.data.slug,
     summary: parsedBlogPost.data.summary,
     thumbnail: {

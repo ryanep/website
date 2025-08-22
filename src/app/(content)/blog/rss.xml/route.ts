@@ -29,8 +29,7 @@ export const GET = async () => {
 
   for (const blogPost of blogPosts) {
     feed.addItem({
-      // TODO: Populate
-      date: new Date(),
+      date: blogPost.publishDate,
       description: blogPost.summary,
       link: `https://www.ryanep.com/blog/${blogPost.slug}`,
       title: blogPost.name,
