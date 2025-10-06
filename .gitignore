@@ -1,7 +1,6 @@
 .DS_Store
-.env.development
-.env.local
-.env.production
+.env
+.env.*
 .next
 *.log
 /dist
