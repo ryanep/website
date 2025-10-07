@@ -1,5 +1,6 @@
 import { AboutBanner } from "#/components/about-banner";
 import { BlogPostBanner } from "#/components/blog-post-banner";
+import { Chat } from "#/components/chat";
 import { ContactBanner } from "#/components/contact-banner";
 import { Footer } from "#/components/footer";
 import { Header } from "#/components/header";
@@ -49,6 +50,8 @@ const HomePage = async () => {
   return (
     <>
       <main>
+        <Chat />
+
         <div className="relative">
           <div className="absolute z-10 w-full">
             <Header isNavEnabled />
