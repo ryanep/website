@@ -25,7 +25,7 @@ export const Input = ({
 
       <input
         autoComplete={autoComplete}
-        className="block w-full rounded-md bg-neutral-100 p-3 font-medium transition-colors dark:bg-neutral-800 dark:text-neutral-300"
+        className="block w-full rounded-md bg-neutral-100 p-3 font-medium transition-colors dark:bg-neutral-700 dark:text-neutral-300"
         id={id}
         name={name}
         onChange={onChange}

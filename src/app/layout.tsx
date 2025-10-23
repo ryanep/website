@@ -11,7 +11,7 @@ const RootLayout = async ({ children }: RootLayoutProps) => {
 
   return (
     <html lang={language}>
-      <body className="flex min-h-dvh flex-col bg-white text-neutral-800 antialiased dark:bg-black dark:text-neutral-300">
+      <body className="flex min-h-dvh flex-col bg-white text-neutral-700 antialiased dark:bg-black dark:text-neutral-300">
         {children}
       </body>
     </html>

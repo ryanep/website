@@ -51,7 +51,7 @@ export const IconBanner = ({
                 width={item.icon.width}
               />
 
-              <div className="invisible absolute bottom-full left-1/2 -translate-x-1/2 rounded-sm bg-white p-1 px-2 text-sm text-black opacity-0 shadow transition-all group-hover:visible group-hover:mb-1 group-hover:opacity-100 group-focus-visible:visible group-focus-visible:mb-1 group-focus-visible:opacity-100 dark:bg-neutral-800 dark:text-white">
+              <div className="invisible absolute bottom-full left-1/2 -translate-x-1/2 rounded-sm bg-white p-1 px-2 text-sm text-black opacity-0 shadow transition-all group-hover:visible group-hover:mb-1 group-hover:opacity-100 group-focus-visible:visible group-focus-visible:mb-1 group-focus-visible:opacity-100 dark:bg-neutral-700 dark:text-white">
                 {item.name}
               </div>
             </li>

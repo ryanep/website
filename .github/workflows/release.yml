@@ -1,72 +1,53 @@
-# eslint-disable yml/sort-keys
-
-name: Production
+name: Release
 on: workflow_dispatch
+
 jobs:
-  build:
-    name: Build
-    runs-on: ubuntu-latest
+  release:
+    name: Release
+
+    permissions:
+      contents: write
+      id-token: write
+      issues: write
+      pull-requests: write
+
+    runs-on: ubuntu-22.04
+
+    strategy:
+      matrix:
+        node-version: [22.14.0]
+
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          cache: npm
-          node-version: 20
-      - uses: hashicorp/setup-terraform@v3
-      - run: npm ci
-      - run: npm run codegen
-        env:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Check formatting
+        run: npm run format:check
+
+      - env:
           CONTENTFUL_GRAPHQL_ENDPOINT: ${{ secrets.CONTENTFUL_GRAPHQL_ENDPOINT }}
-      - run: npm run lint
-      - run: make app-build
-        env:
+        name: Run codegen
+        run: npm run codegen
+
+      - name: Lint code
+        run: npm run lint
+
+      - env:
           CONTENTFUL_GRAPHQL_ENDPOINT: ${{ secrets.CONTENTFUL_GRAPHQL_ENDPOINT }}
-      - name: Terraform fmt
-        id: fmt
-        run: terraform fmt -check
-        working-directory: ./.infrastructure
-      - name: Terraform init
-        id: init
-        run: make infrastructure-init
-        env:
-          TF_BACKEND_BUCKET: ${{ secrets.TF_BACKEND_BUCKET }}
-          TF_BACKEND_KEY: ${{ secrets.TF_BACKEND_KEY }}
-          TF_BACKEND_REGION: ${{ secrets.TF_BACKEND_REGION }}
-          TF_BACKEND_ACCESS_KEY: ${{ secrets.TF_BACKEND_ACCESS_KEY }}
-          TF_BACKEND_SECRET_KEY: ${{ secrets.TF_BACKEND_SECRET_KEY }}
-      - name: Terraform Validate
-        id: validate
-        run: terraform validate -no-color
-      - name: Terraform Plan
-        id: plan
-        run: make infrastructure-plan
-        env:
-          AWS_ACCESS_KEY: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          CLOUDFLARE_ZONE_ID: ${{ secrets.CLOUDFLARE_ZONE_ID }}
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-      - name: Terraform apply
-        run: make infrastructure-apply
-        env:
-          AWS_ACCESS_KEY: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          CLOUDFLARE_ZONE_ID: ${{ secrets.CLOUDFLARE_ZONE_ID }}
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-      - name: sync s3
-        uses: jakejarvis/s3-sync-action@master
-        with:
-          args: --acl public-read --follow-symlinks --delete
-        env:
-          AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          AWS_REGION: ${{ secrets.AWS_REGION }}
-          SOURCE_DIR: out
-      - name: invalidate cloudfront cache
-        uses: chetan/invalidate-cloudfront-action@master
-        env:
-          DISTRIBUTION: ${{ secrets.AWS_CLOUDFRONT_DISTRIBUTION_ID }}
-          PATHS: /*
-          AWS_REGION: ${{ secrets.AWS_REGION }}
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        name: Build application
+        run: npm run build
+
+      - env:
+          CONTENTFUL_GRAPHQL_ENDPOINT: ${{ secrets.CONTENTFUL_GRAPHQL_ENDPOINT }}
+          DOCKER_REGISTRY: ${{ secrets.DOCKER_REGISTRY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        name: Release
+        run: npm run release
