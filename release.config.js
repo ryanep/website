@@ -11,7 +11,6 @@ const releaseConfig = {
           CONTENTFUL_GRAPHQL_ENDPOINT: true,
         },
         dockerFile: "dockerfile",
-        dockerLogin: false,
         dockerRegistry: process.env.DOCKER_REGISTRY,
       },
     ],

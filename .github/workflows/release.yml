@@ -48,6 +48,8 @@ jobs:
       - env:
           CONTENTFUL_GRAPHQL_ENDPOINT: ${{ secrets.CONTENTFUL_GRAPHQL_ENDPOINT }}
           DOCKER_REGISTRY: ${{ secrets.DOCKER_REGISTRY }}
+          DOCKER_REGISTRY_PASSWORD: ${{ secrets.DOCKER_REGISTRY_PASSWORD }}
+          DOCKER_REGISTRY_USER: ${{ secrets.DOCKER_REGISTRY_USER }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         name: Release
         run: npm run release
