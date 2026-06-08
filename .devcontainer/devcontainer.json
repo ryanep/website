@@ -1,16 +1,19 @@
 {
-  "name": "Website Dev",
-  "appPort": ["3000:3000"],
-  "postStartCommand": "git config --global --add safe.directory ${containerWorkspaceFolder}",
-  "postCreateCommand": "npm install",
-  "remoteUser": "node",
-  "image": "mcr.microsoft.com/devcontainers/javascript-node:22-bookworm",
+  "name": "@ryanep/website-devcontainer",
+  "updateRemoteUserUID": true,
+  "remoteUser": "vscode",
+  "image": "mcr.microsoft.com/devcontainers/base:bookworm",
   "features": {
-    "ghcr.io/devcontainers/features/node:1.6.3": { "version": "22.14.0" },
-    "ghcr.io/devcontainers/features/docker-outside-of-docker:1.6.3": {},
-    "ghcr.io/schlich/devcontainer-features/playwright:0.1.1": {},
+    "ghcr.io/devcontainers/features/node:2.0.0": { "version": "24.16.0" },
+    "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {},
+    "ghcr.io/schlich/devcontainer-features/playwright:0.2.1": {
+      "version": "latest"
+    },
     "ghcr.io/devcontainers-extra/features/act:1.0.15": {
       "version": "0.2.80"
+    },
+    "ghcr.io/devcontainers-extra/features/opencode:1.0.0": {
+      "version": "latest"
     }
   },
   "customizations": {
