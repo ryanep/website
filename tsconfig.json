@@ -10,7 +10,7 @@
     "strict": true,
     "sourceMap": true,
     "target": "esnext",
-    "jsx": "preserve",
+    "jsx": "react-jsx",
     "baseUrl": "./src",
     "noEmit": true,
     "paths": {
@@ -28,5 +28,10 @@
     ]
   },
   "exclude": [".next", "node_modules", "public"],
-  "include": ["**/*.ts", "**/*.tsx", ".next/types/**/*.ts"]
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/dev/types/**/*.ts",
+    ".next/types/**/*.ts"
+  ]
 }
