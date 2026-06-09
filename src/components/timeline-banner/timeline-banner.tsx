@@ -28,7 +28,7 @@ interface TimelineBannerProps {
   }[];
 }
 
-const MAX_ITEM_COUNT = 10;
+const MAX_ITEM_COUNT = 9;
 
 export const TimelineBanner = ({
   description,
