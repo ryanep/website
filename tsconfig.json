@@ -11,10 +11,9 @@
     "sourceMap": true,
     "target": "esnext",
     "jsx": "react-jsx",
-    "baseUrl": "./src",
     "noEmit": true,
     "paths": {
-      "#/*": ["./*"]
+      "#/*": ["./src/*"]
     },
     "resolveJsonModule": true,
     "lib": ["dom", "dom.iterable", "esnext"],
