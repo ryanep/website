@@ -2,5 +2,4 @@ node_modules
 /out
 /.devcontainer
 /.github
-/.infrastructure
 /.vscode
