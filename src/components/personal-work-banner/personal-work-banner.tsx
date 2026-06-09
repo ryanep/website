@@ -55,8 +55,10 @@ export const PersonalWorkBanner = ({
                   />
 
                   <div>
-                    <h3 className="text-xl font-bold">{project.name}</h3>
-                    <p className="text-base font-medium">
+                    <h3 className="text-xl font-bold leading-tight">
+                      {project.name}
+                    </h3>
+                    <p className="text-base font-medium leading-snug">
                       {project.description}
                     </p>
                   </div>
