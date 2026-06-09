@@ -6,7 +6,6 @@ const eslintConfig = defineConfig([
     features: ["testing-library", "tailwind", "react", "next"],
   }),
   {
-    // TODO: Disable rules due to avoid Tailwind v4 clash.
     rules: {
       "tailwindcss/classnames-order": "off",
       "tailwindcss/no-custom-classname": "off",
