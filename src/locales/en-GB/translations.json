@@ -38,6 +38,8 @@
   "rss.feed.language": "en-GB",
   "rss.feed.link": "https://www.ryanep.com/blog/rss.xml",
   "rss.feed.title": "Blog - Ryan Elliott-Potter",
+  "common.siteName": "Ryan Elliott-Potter",
+  "common.siteUrl": "https://www.ryanep.com",
   "uses.lastPublished": "Last updated {{date, datetime}}.",
   "uses.metaDescription": "What I use",
   "uses.pageTitle": "Uses - Ryan Elliott-Potter"
