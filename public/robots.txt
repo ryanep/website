@@ -1,2 +1,4 @@
 User-agent: *
 Disallow:
+
+Sitemap: https://www.ryanep.com/sitemap.xml
