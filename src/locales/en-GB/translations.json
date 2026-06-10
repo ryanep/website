@@ -2,8 +2,8 @@
   "blog.header.averageReadTime": "{{count}} minute read",
   "blog.header.published": "Published {{date, datetime}}",
   "blog.metaDescription": "Blog posts",
-  "blog.pageTitle": "Blog - Ryan Elliott-Potter",
-  "blogPost.meta.pageTitle": "{{title}} - Ryan Elliott-Potter",
+  "blog.pageTitle": "Blog",
+  "blogPost.meta.pageTitle": "{{title}}",
   "contact.pageTitle": "Contact - Ryan Elliott-Potter",
   "contact.titleBanner.heading": "Contact",
   "footer.copyright": "© Ryan Elliott-Potter {{year}}. All rights reserved.",
@@ -31,7 +31,7 @@
   "logo.title": "Ryanep Logo",
   "now.lastPublished": "Last updated {{date, datetime}}.",
   "now.metaDescription": "What I'm currently up to",
-  "now.pageTitle": "Now - Ryan Elliott-Potter",
+  "now.pageTitle": "Now",
   "rss.feed.copyright": "© Ryan Elliott-Potter 2025. All rights reserved.",
   "rss.feed.description": "My personal blog feed",
   "rss.feed.id": "https://www.ryanep.com",
@@ -42,5 +42,5 @@
   "common.siteUrl": "https://www.ryanep.com",
   "uses.lastPublished": "Last updated {{date, datetime}}.",
   "uses.metaDescription": "What I use",
-  "uses.pageTitle": "Uses - Ryan Elliott-Potter"
+  "uses.pageTitle": "Uses"
 }

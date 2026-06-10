@@ -26,7 +26,7 @@ const generateMetadata = async ({ params }: BlogPostPageProps) => {
     return notFound();
   }
 
-  const title = t("blogPost.meta.pageTitle", { title: blogPost.name });
+  const title = blogPost.name;
   const description = blogPost.summary ?? undefined;
   const imageUrl = normalizeProtocolRelativeUrl(blogPost.thumbnail?.url);
 
