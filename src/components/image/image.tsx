@@ -15,6 +15,7 @@ export const Image = ({ alt, className, height, src, width }: ImageProps) => {
       className={className}
       height={height}
       src={src}
+      unoptimized
       width={width}
     />
   );
