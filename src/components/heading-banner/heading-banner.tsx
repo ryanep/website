@@ -1,8 +1,14 @@
 "use client";
-import { Bubbles } from "#/components/bubbles";
+import dynamic from "next/dynamic";
 import { Heading } from "#/components/heading";
 import { Spacer } from "#/components/spacer";
 import { Wrap } from "#/components/wrap";
+
+const Bubbles = dynamic(
+  () =>
+    import("#/components/bubbles").then((bubbleModule) => bubbleModule.Bubbles),
+  { ssr: false }
+);
 
 interface HeadingBannerProps {
   readonly bubbles: {

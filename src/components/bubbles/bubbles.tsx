@@ -26,9 +26,12 @@ export const Bubbles = ({ bubbles }: BubblesProps) => {
   });
 
   return (
-    <div
+    <motion.div
+      animate={{ opacity: 1 }}
       aria-hidden="true"
       className="pointer-events-none absolute left-1/2 top-0 mx-auto size-full -translate-x-1/2 overflow-hidden"
+      initial={{ opacity: 0 }}
+      transition={{ duration: 0.6 }}
     >
       {bubbles.map((bubble) => {
         const drift = 8 + bubble.size * 2;
@@ -72,6 +75,6 @@ export const Bubbles = ({ bubbles }: BubblesProps) => {
           </motion.div>
         );
       })}
-    </div>
+    </motion.div>
   );
 };
