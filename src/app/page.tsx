@@ -126,6 +126,7 @@ const HomePage = async () => {
 
           <TimelineBanner
             description={t("home.workExperienceBanner.description")}
+            expandButtonText={t("common.showAll")}
             heading={t("home.workExperienceBanner.heading")}
             items={work}
           />
@@ -135,6 +136,7 @@ const HomePage = async () => {
               description={t("home.blogPostBanner.description")}
               heading={t("home.blogPostBanner.heading")}
               posts={blogPosts}
+              viewAllText={t("common.viewAllPosts")}
             />
           ) : null}
 

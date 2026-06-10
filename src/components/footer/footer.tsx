@@ -15,12 +15,12 @@ export const Footer = async () => {
           <ul className="mx-auto inline-flex gap-4 md:ml-auto md:mr-0">
             <li>
               <a className="hover:underline" href="//github.com/ryanep">
-                GitHub
+                {t("footer.gitHub")}
               </a>
             </li>
             <li>
               <a className="hover:underline" href="//linkedin.com/in/ryanep">
-                LinkedIn
+                {t("footer.linkedIn")}
               </a>
             </li>
           </ul>

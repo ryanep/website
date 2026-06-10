@@ -10,6 +10,7 @@ import { Wrap } from "#/components/wrap";
 
 interface TimelineBannerProps {
   readonly description: string;
+  readonly expandButtonText: string;
   readonly heading: string;
   readonly items: {
     colour: string;
@@ -32,6 +33,7 @@ const MAX_ITEM_COUNT = 9;
 
 export const TimelineBanner = ({
   description,
+  expandButtonText,
   heading,
   items,
 }: TimelineBannerProps) => {
@@ -119,7 +121,7 @@ export const TimelineBanner = ({
         {!isExpanded ? (
           <Button
             onClick={handleExpandButtonClick}
-            text="Show all"
+            text={expandButtonText}
             type="button"
           />
         ) : null}

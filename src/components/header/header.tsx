@@ -3,35 +3,37 @@ import { Link } from "#/components/link";
 import { Logo } from "#/components/logo";
 import { Navigation } from "#/components/navigation";
 import { Wrap } from "#/components/wrap";
+import { getTranslation } from "#/i18n/server";
 
 interface HeaderProps {
   readonly isNavEnabled?: boolean;
   readonly isWithBackground?: boolean;
 }
 
-const navLinks = [
-  {
-    title: "Home",
-    url: "/",
-  },
-  {
-    title: "Blog",
-    url: "/blog",
-  },
-  {
-    title: "Now",
-    url: "/now",
-  },
-  {
-    title: "Uses",
-    url: "/uses",
-  },
-];
-
-export const Header = ({
+export const Header = async ({
   isNavEnabled = false,
   isWithBackground = false,
 }: HeaderProps) => {
+  const { t } = await getTranslation();
+
+  const navLinks = [
+    {
+      title: t("navigation.home"),
+      url: "/",
+    },
+    {
+      title: t("navigation.blog"),
+      url: "/blog",
+    },
+    {
+      title: t("navigation.now"),
+      url: "/now",
+    },
+    {
+      title: t("navigation.uses"),
+      url: "/uses",
+    },
+  ];
   return (
     <header
       className={cx(
