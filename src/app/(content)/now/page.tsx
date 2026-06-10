@@ -6,9 +6,28 @@ import { createGraphqlClient } from "#/utils/sdk";
 const generateMetadata = async () => {
   const { t } = await getTranslation();
 
+  const title = t("now.pageTitle");
+  const description = t("now.metaDescription");
+
   return {
-    description: t("now.metaDescription"),
-    title: t("now.pageTitle"),
+    alternates: {
+      canonical: "/now",
+    },
+    description,
+    openGraph: {
+      description,
+      locale: "en_GB",
+      siteName: t("common.siteName"),
+      title,
+      type: "website",
+      url: "/now",
+    },
+    title,
+    twitter: {
+      card: "summary",
+      description,
+      title,
+    },
   };
 };
 

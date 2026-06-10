@@ -1,9 +1,12 @@
 import { notFound } from "next/navigation";
+import { JsonLd } from "react-schemaorg";
 import { Image } from "#/components/image";
 import { Markdown } from "#/components/markdown";
 import { getTranslation } from "#/i18n/server";
 import { parseBlogPost } from "#/utils/parsers/blog-post";
 import { createGraphqlClient } from "#/utils/sdk";
+import { normalizeProtocolRelativeUrl } from "#/utils/url";
+import type { BlogPosting, WithContext } from "schema-dts";
 
 interface BlogPostPageProps {
   readonly params: Promise<{
@@ -23,9 +26,33 @@ const generateMetadata = async ({ params }: BlogPostPageProps) => {
     return notFound();
   }
 
+  const title = t("blogPost.meta.pageTitle", { title: blogPost.name });
+  const description = blogPost.summary ?? undefined;
+  const imageUrl = normalizeProtocolRelativeUrl(blogPost.thumbnail?.url);
+
   return {
-    description: blogPost.summary,
-    title: t("blogPost.meta.pageTitle", { title: blogPost.name }),
+    alternates: {
+      canonical: `/blog/${slug}`,
+    },
+    description,
+    openGraph: {
+      description,
+      images: imageUrl
+        ? [{ alt: blogPost.thumbnail?.title ?? title, url: imageUrl }]
+        : undefined,
+      locale: "en_GB",
+      siteName: t("common.siteName"),
+      title,
+      type: "article",
+      url: `/blog/${slug}`,
+    },
+    title,
+    twitter: {
+      card: "summary",
+      description,
+      images: imageUrl ? [{ alt: title, url: imageUrl }] : undefined,
+      title,
+    },
   };
 };
 
@@ -55,8 +82,26 @@ const BlogPostPage = async ({ params }: BlogPostPageProps) => {
   const { t } = await getTranslation();
   const { content, name, publishDate, thumbnail } = await getPageData(slug);
 
+  const siteUrl = t("common.siteUrl");
+  const postUrl = `${siteUrl}/blog/${slug}`;
+  const jsonLd: WithContext<BlogPosting> = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "author": {
+      "@type": "Person",
+      "name": t("home.headingBanner.heading"),
+      "url": siteUrl,
+    },
+    "datePublished": publishDate.toISOString(),
+    "description": t("blog.metaDescription"),
+    "headline": name,
+    "image": thumbnail.url,
+    "url": postUrl,
+  };
+
   return (
     <main className="mx-auto max-w-3xl">
+      <JsonLd<BlogPosting> item={jsonLd} />
       <div className="mb-12 text-center">
         <h1 className="mb-4 text-6xl font-black">{name}</h1>
 
