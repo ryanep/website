@@ -4,3 +4,9 @@
   --color-primary: #a25656;
   --color-primary-dark: #3c1f1f;
 }
+
+@layer base {
+  *:focus-visible {
+    @apply outline-none ring-2 ring-primary ring-offset-2;
+  }
+}
