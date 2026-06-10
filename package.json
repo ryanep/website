@@ -4,6 +4,7 @@
   "license": "MIT",
   "type": "module",
   "scripts": {
+    "analyze": "next experimental-analyze",
     "build": "next build",
     "codegen": "graphql-codegen --config codegen.ts",
     "dev": "next dev",
