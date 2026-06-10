@@ -89,7 +89,7 @@ const HomePage = async () => {
   return (
     <>
       <JsonLd<Person> item={jsonLd} />
-      <main id="main">
+      <main id="main" tabIndex={-1}>
         <div className="relative">
           <div className="absolute z-10 w-full">
             <Header isNavEnabled />

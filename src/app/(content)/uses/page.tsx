@@ -45,7 +45,7 @@ const UsesPage = async () => {
   const { content, name, publishedAt } = await getPageData();
 
   return (
-    <main id="main">
+    <main id="main" tabIndex={-1}>
       <h1 className="mb-1 text-4xl font-black">{name}</h1>
       <div className="mb-8 font-medium">
         <Markdown

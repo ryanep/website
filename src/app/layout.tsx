@@ -35,7 +35,7 @@ const RootLayout = async ({ children }: RootLayoutProps) => {
     <html lang={language}>
       <body className="flex min-h-dvh flex-col bg-white text-neutral-700 antialiased dark:bg-black dark:text-neutral-300">
         <a
-          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-md focus:bg-primary focus:px-4 focus:py-2 focus:text-white focus:no-underline"
+          className="absolute -left-full top-4 z-50 rounded-md bg-primary px-4 py-2 text-white no-underline focus:left-4"
           href="#main"
         >
           Skip to content
