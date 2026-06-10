@@ -100,7 +100,7 @@ const BlogPostPage = async ({ params }: BlogPostPageProps) => {
   };
 
   return (
-    <main className="mx-auto max-w-3xl">
+    <main className="mx-auto max-w-3xl" id="main">
       <JsonLd<BlogPosting> item={jsonLd} />
       <div className="mb-12 text-center">
         <h1 className="mb-4 text-6xl font-black">{name}</h1>

@@ -46,7 +46,7 @@ export const BlogPage = async () => {
   const { blogPosts } = await getPageData();
 
   return (
-    <main>
+    <main id="main">
       <h1 className="mb-8 text-4xl font-black">Blog</h1>
 
       <div className="grid grid-cols-1 gap-4 md:grid-cols-3">

@@ -45,7 +45,7 @@ const NowPage = async () => {
   const { content, name, publishedAt } = await getPageData();
 
   return (
-    <main>
+    <main id="main">
       <h1 className="mb-1 text-4xl font-black">{name}</h1>
       <div className="mb-8 font-medium">
         <Markdown
